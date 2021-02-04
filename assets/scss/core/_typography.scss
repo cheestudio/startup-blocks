@@ -1,0 +1,86 @@
+/* Fonts
+========================================================= */
+
+
+
+/* Headings
+========================================================= */
+h1, h2, h3, h4, h5, h6 {
+  color: black;
+  line-height: 1.2;
+  margin: 0 0 20px 0;
+  br {
+    @include for-size(tablet-sm) {
+      display: none;
+    }
+  }
+}
+
+h1 {
+  font-size: em(60);
+  @include for-size(tablet-sm) {
+
+  }
+}
+h2 {
+  font-size: em(50);
+  @include for-size(tablet-sm) {
+
+  }
+}
+h3 {
+  font-size: em(40);
+  @include for-size(tablet-sm) {
+
+  }
+}
+h4 {
+  font-size: em(30);
+  @include for-size(tablet-sm) {
+
+  }
+}
+h5 {
+  font-size: em(25);
+  @include for-size(tablet-sm) {
+
+  }
+}
+h6 {
+  font-size: em(20);
+  @include for-size(tablet-sm) {
+
+  }
+}
+
+/* Body
+========================================================= */
+body {
+  @include font;
+}
+
+main {
+  p, li {
+    @include no-margin-last;
+    font-size: em(20);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    @include for-size(tablet-sm) {
+      font-size: 1em;
+    }
+    a, a[href^="tel"] {
+      @include trans;
+      color: red;
+      text-decoration: underline;
+      &:hover, &:focus, &:active {
+        color: red;
+      }
+    }
+  }
+
+  blockquote {
+    p {
+      @include no-margin-last;
+    }
+  }
+}

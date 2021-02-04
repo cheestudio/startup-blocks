@@ -1,0 +1,28 @@
+/* POST - Single
+========================================================= */
+
+.post-single {
+  @include row-padding;
+
+  &--content {
+    .article-single {
+
+      &__title {
+        h1 {
+          text-align: center;
+        }
+      }
+
+      &__image {
+        img {
+          @include margin-center;
+          display: block;
+        }
+      }
+
+      &__meta {}
+
+      &__content {}
+    }
+  }
+}

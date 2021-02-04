@@ -1,0 +1,67 @@
+@include for-size(tablet, up) {
+
+  header {
+
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    .brand {
+      margin-right: auto;
+      img {
+        display: block;
+      }
+    }
+
+    nav {
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        li {
+          padding-left: 20px;
+          padding-right: 20px;
+          position: relative;
+          a {
+
+          }
+          &.menu-item-has-children {
+            &:hover, &:focus, &:active {
+              .sub-menu {
+                @include display(show);
+              }
+            }
+          }
+          &.current-menu-item,
+          &.current_page_ancestor {
+            > a {
+
+            }
+          }
+
+          .sub-menu {
+            @include trans;
+            @include display(hide);
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            li {
+              white-space: nowrap;
+              &.current-menu-item,
+              &.current_page_ancestor {
+
+              }
+              a {
+                &:hover, &:focus, &:active {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

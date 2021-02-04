@@ -1,0 +1,38 @@
+{
+  "name": "chee-gulp",
+  "version": "5.0.0",
+  "description": "Custom WordPress Framework",
+  "main": "gulpfile.js",
+  "license": "GPL-2.0",
+  "author": {
+    "name": "Chee Studio",
+    "url": "https://cheewebdevelopment.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cheestudio/startup.git"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^6.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-line-ending-corrector": "^1.0.3",
+    "gulp-merge-media-queries": "^0.2.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-terser-js": "^5.2.2"
+  },
+  "browserslist": [
+    "> 0.5% or last 2 versions",
+    "not dead",
+    "IE 11",
+    "Firefox ESR"
+  ]
+}

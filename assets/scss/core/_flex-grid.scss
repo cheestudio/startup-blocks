@@ -1,0 +1,24 @@
+/* Reusable Flex & Grid Classes
+========================================================= */
+
+.grid {
+  display: grid;
+  grid-gap: $grid-gap + px;
+}
+
+.flex {
+  display: flex;
+  @include for-size(tablet-sm) {
+    flex-direction: column;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.reverse {
+    @include for-size(tablet-sm, up) {
+      flex-direction: row-reverse;
+    }
+  }
+}

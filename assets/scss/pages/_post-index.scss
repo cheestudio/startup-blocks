@@ -1,0 +1,57 @@
+
+/* Post Grid Index (shared)
+========================================================= */
+.posts-grid {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    justify-content: center;
+  }
+
+  .post-entry {
+    padding: 20px;
+    border: 1px solid black;
+
+    &__title {}
+
+    &__image {
+      a, img {
+        @include margin-center;
+        display: block;
+      }
+    }
+
+    &__meta {}
+
+    &__excerpt {}
+  }
+}
+
+
+/* Post Meta (shared)
+========================================================= */
+.post-meta {
+  margin-bottom: 25px;
+  p {
+    margin-bottom: 0;
+  }
+  .date {}
+  .categories {}
+  .tags {}
+  .author {}
+}
+
+
+/* Posts / Archive / Search Index Pages (shared)
+========================================================= */
+.posts-index,
+.archive-index,
+.search-index {
+  @include row-padding;
+
+  &--title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  &--content {}
+}

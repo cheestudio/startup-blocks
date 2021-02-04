@@ -1,0 +1,28 @@
+
+/* Button Wrap
+========================================================= */
+.button-wrap {
+  margin-top: 30px;
+}
+
+
+/* Social Icons
+========================================================= */
+.social-icons {
+  ul {
+    @include list-reset;
+    display: flex;
+    @include for-size(tablet-sm) {
+      justify-content: center;
+    }
+    li {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+      a {
+        @include trans;
+        font-size: em(20);
+      }
+    }
+  }
+}
