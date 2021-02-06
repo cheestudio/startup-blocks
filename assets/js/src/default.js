@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+(function($){
 
 /* COOKIES
 ========================================================= */
@@ -110,4 +110,4 @@ function screenResize() {
 }
 ​
 
-}); // End Document Ready
+})(jQuery); // End Document Ready

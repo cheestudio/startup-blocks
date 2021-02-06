@@ -7,7 +7,16 @@
   <meta name="theme-color" content="#00704a">
   <?php wp_head(); ?>
   <link rel="alternate" type="application/rss+xml" title="<?= get_bloginfo('name'); ?> Feed" href="<?= home_url(); ?>/feed/">
+  <style>
+    .hidden {
+      opacity: 0;
+    }
 
+    .visible {
+      opacity: 1;
+      transition: opacity 800ms ease-out;
+    }
+  </style>
   <?php // Logos & Optional ACF code
   $logo_path    = get_template_directory_uri() . '/assets/img/svg/';
   $logo_desktop = $logo_path . 'logo.svg';
@@ -17,8 +26,10 @@
 </head>
 
 <body <?php body_class(); ?> id="top-of-page">
+  <script>
+    document.body.className += ' hidden';
+  </script>
   <?php if ( isset($body_code) ) echo $body_code; ?>
-
   <header class="main-banner">
     <div class="container">
       <?php if ( $logo_desktop ) : ?>

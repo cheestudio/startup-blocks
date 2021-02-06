@@ -1,8 +1,12 @@
-jQuery(document).ready(function($) {
-
 /* CUSTOM
 ========================================================= */
+window.addEventListener('DOMContentLoaded', function () {
+  document.body.className += ' visible';
+});
+
+// Doc Ready
+
+(function($){
 
 
-
-}); // End Document Ready
+})(jQuery);
