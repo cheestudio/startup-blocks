@@ -242,30 +242,6 @@ function my_custom_toolbars( $toolbars )
   return $toolbars;
 }
 
-/* ACF Global Options Page
-========================================================= */
-if ( function_exists('acf_add_options_page') ) {
-  acf_add_options_page(array(
-    'page_title'  => 'Theme Settings',
-    'menu_title'  => 'Theme Settings',
-    'menu_slug'   => 'theme-settings',
-    'capability'  => 'edit_posts',
-    'redirect'    => true
-  ));
-
-  acf_add_options_sub_page(array(
-    'page_title'  => 'Global Settings',
-    'menu_title'  => 'Global Settings',
-    'parent_slug' => 'theme-settings',
-  ));
-  
-  acf_add_options_sub_page(array(
-    'page_title'  => 'Social Media Settings',
-    'menu_title'  => 'Social Media',
-    'parent_slug' => 'theme-settings',
-  ));
-}
-
 /* ACF - WP Admin Styles
 ========================================================= */
 add_action('acf/input/admin_head', 'my_acf_admin_head');
