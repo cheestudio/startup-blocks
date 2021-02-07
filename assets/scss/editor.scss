@@ -1,7 +1,21 @@
-@import "core/base";
 @import "core/queries";
+@import "core/base-grid";
 @import "core/flex-grid";
 @import "core/variables";
+
+.interface-interface-skeleton__editor {
+  overflow: auto !important;
+}
+
+.wp-block {
+    max-width: 100%;
+}
+
+.wp-block-group__inner-container {
+    max-width: 1210px;
+  margin: 0 auto;
+  padding:0 15px;
+}
 
 body .editor-styles-wrapper, .mce-content-body,
 .edit-post-visual-editor,
@@ -33,6 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 .edit-post-visual-editor,
 .editor-post-title .editor-post-title__input, .edit-post-visual-editor p {
   @include font();
+  margin: 0 0 10px 0 !important;
 }
 body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text,
 body .mce-menu-item.mce-menu-item-preview.mce-active .mce-ico {
@@ -58,3 +73,4 @@ body .mce-menu .mce-menu-item:hover {
 }
 
 /* Block Specific Overrides */
+

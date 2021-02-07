@@ -1,0 +1,28 @@
+/* Grid & Padding Sizes
+========================================================= */
+$col-width  : 80;
+$col-gutter : 20;
+$grid-gap   : 20;
+$padding    : 15;
+
+
+/* Grid Function
+========================================================= */
+@function grid( $columns:12, $addPadding:false ) {
+  $result : ( $col-width * $columns ) + ( $col-gutter * ($columns - 1) );
+  @if ( $addPadding == true ) {
+    $result : $result + ($padding * 2);
+  }
+  @return $result + px;
+}
+
+/* Containers
+========================================================= */
+@mixin content-container( $width: 1440 + ($padding * 2) ) {
+  max-width: $width+px;
+  margin: 0 auto;
+  padding: 0 #{$padding}px;
+}
+.container {
+  @include content-container;
+}
