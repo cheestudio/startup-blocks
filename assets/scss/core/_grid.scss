@@ -1,0 +1,42 @@
+/* Reusable Flex & Grid Classes
+========================================================= */
+
+.container {
+  @include content-container;
+}
+
+.grid {
+  display: grid;
+  grid-gap: $grid-gap + px;
+}
+
+.flex {
+  display: flex;
+  @include for-size(tablet-sm) {
+    flex-direction: column;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.reverse {
+    @include for-size(tablet-sm, up) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+/* Gutenberg Width Fixes
+========================================================= */
+
+.content-blocks > *:not(.alignfull) {
+  width: 100%;
+  max-width: 1210px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-blocks > *:not(.alignfull).alignwide {
+  max-width: 1400px;
+}
