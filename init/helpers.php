@@ -11,7 +11,7 @@ function custom_login_screen() { ?>
       background: #eee !important;
     }
     #login h1 a {
-      background-image: url(<?= get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg);
+      background-image: url('<?= get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg');
       padding-bottom: 0px;
       background-size: 100%;
       width: 320px;
@@ -264,8 +264,10 @@ function my_acf_admin_head() {
 ========================================================= */
 
 function custom_color_setup() {
-  // Disable Custom Colors
-  add_theme_support( 'disable-custom-colors' );
+
+  // Disable Custom Colors (optional)
+  //add_theme_support( 'disable-custom-colors' );
+  
   // Editor Color Palette
   add_theme_support( 'editor-color-palette', array(
     array(
