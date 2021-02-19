@@ -26,6 +26,7 @@
 </head>
 
 <body <?php body_class(); ?> id="top-of-page">
+  <a class="skip-link screen-reader-text" href="#top-of-content"><?php esc_html_e( 'Skip to content', 'chee' ); ?></a>
   <script>
     document.body.className += ' hidden';
   </script>
