@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  
+
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,6 +48,7 @@ if ( isset($body_code) ) echo $body_code; ?>
 
 <header class="main-banner">
   <div class="container">
+
     <?php if ( $logo_desktop ) : ?>
       <a href="<?= home_url(); ?>" class="brand" title="Home">
         <?php svg( $logo_desktop, 'Home' ); ?>
@@ -62,4 +63,4 @@ if ( isset($body_code) ) echo $body_code; ?>
   </div>
 </header>
 
-<main>
+<main id="top-of-content">
