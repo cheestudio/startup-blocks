@@ -98,17 +98,16 @@ add_action('acf/init', function () {
 
 });
 
+
 /* Options Page */
 
-/**
- * Register Fields
- */
-
-acf_add_options_page([
+if(class_exists('ACF')) {
+  acf_add_options_page([
     'page_title' => 'Theme Options',
     'menu_title' => 'Theme Options',
     'menu_slug'  => 'theme-options',
     'capability' => 'edit_theme_options',
     'position'   => '999',
     'autoload'   => true
-]);
+  ]);
+}
