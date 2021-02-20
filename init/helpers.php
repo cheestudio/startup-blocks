@@ -260,7 +260,7 @@ function my_acf_admin_head() {
   <?php
 }
 
-/* Gutenberg Colors
+/* Block Editor Colors
 ========================================================= */
 
 // Disable Custom Colors (optional)
