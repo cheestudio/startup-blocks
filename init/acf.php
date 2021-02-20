@@ -98,7 +98,6 @@ add_action('acf/init', function () {
 
 });
 
-
 /* Options Page */
 
 if(class_exists('ACF')) {

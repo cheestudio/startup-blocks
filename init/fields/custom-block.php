@@ -14,6 +14,13 @@ $name
 	'instructions' => '',
 	'layout' => 'block',
 ])
+
+/* Reference all field options here:
+
+https://github.com/tdwesten/acf-fieldattributes-cheatsheet/blob/master/acf-fieldattributes-cheatsheet.md
+
+*/
+
 ->endGroup()
 ->setLocation('block', '==', 'acf/'.$path);
 
