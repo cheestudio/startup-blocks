@@ -263,31 +263,30 @@ function my_acf_admin_head() {
 /* Gutenberg Colors
 ========================================================= */
 
-function custom_color_setup() {
+// Disable Custom Colors (optional)
+//add_theme_support( 'disable-custom-colors' );
 
-  // Disable Custom Colors (optional)
-  //add_theme_support( 'disable-custom-colors' );
-  
-  // Editor Color Palette
-  add_theme_support( 'editor-color-palette', array(
-    array(
-      'name'  => __( 'Red' ),
-      'slug'  => 'red',
-      'color' => '#ff0000',
-    ),
-    array(
-      'name'  => __( 'Green' ),
-      'slug'  => 'green',
-      'color' => '#00ff0e',
-    ),
-    array(
-      'name'  => __( 'Blue' ),
-      'slug'  => 'blue',
-      'color' => '#000dff',
-    )
-  ) );
+function block_editor_color_map() {
+  $colors_vars = array(
+    'Black' => '#000',
+    'White' => '#fff'
+  );
+  $colors = array();
+  foreach ($colors_vars as $name => $hex) {
+   $colors[] = array(
+    'name'  => __( $name ),
+    'slug'  => strtolower($name),
+    'color' => $hex,
+  );
+ }
+ return $colors;
 }
-add_action( 'after_setup_theme', 'custom_color_setup' );
+
+function custom_block_editor_colors(){
+  $colors = block_editor_color_map();
+  add_theme_support( 'editor-color-palette', $colors );
+}
+add_action( 'after_setup_theme', 'custom_block_editor_colors' );
 
 /* ACF Block Class/ID
 ========================================================= */
