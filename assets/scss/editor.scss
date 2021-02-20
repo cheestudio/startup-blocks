@@ -69,10 +69,11 @@
     }
   }
 
-    blockquote {
-      p {
+  blockquote {
+    p {
 
-      }
+    }
+  }
 }
 
 
@@ -93,17 +94,17 @@
   padding:0 15px;
 }
 
-  .edit-post-visual-editor .button,
-  .mce-content-body .button,
-  .wp-block.editor-block .button,
-  .wp-block-freeform.block-library-rich-text__tinymce .button, .wp-block-button__link,
-  .acf-block-preview {
-    .button {
-     @include button;
-   }
-   .wp-block-button .wp-block-button__link {
-    @include button;
-  }
+.edit-post-visual-editor .button,
+.mce-content-body .button,
+.wp-block.editor-block .button,
+.wp-block-freeform.block-library-rich-text__tinymce .button, .wp-block-button__link,
+.acf-block-preview {
+  .button {
+   @include button;
+ }
+ .wp-block-button .wp-block-button__link {
+  @include button;
+}
 }
 .editor-rich-text__tinymce.mce-content-body {
   line-height: 1.5;
