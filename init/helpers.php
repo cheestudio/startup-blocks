@@ -256,6 +256,15 @@ function my_acf_admin_head() {
       color: #555;
       line-height: 1;
       margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    #poststuff .acf-postbox .postbox-header h2{
+      display: block;
+      text-align: center;
+      font-size: 20px;
+      color: #555;
+      line-height: 1;
+      text-transform: uppercase;
     }
   </style>
   <?php
