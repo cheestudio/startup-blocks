@@ -1,10 +1,20 @@
+/* Color VARs
+========================================================= */
+
+$black:#000;
+
 /* Colors Classes
 ========================================================= */
 
-.has-COLOR_VAR-background-color {
-  background-color: $COLOR_VAR;
-}
+$colors: (
+	"black":$black,
+	);
 
-.has-COLOR_VAR-color {
-  color: $COLOR_VAR;
+@each $name, $hex in $colors {
+	.has-#{$name}-background-color {
+		background-color: $hex;
+	}
+	.has-#{$name}-color {
+		color: $hex;
+	}
 }
