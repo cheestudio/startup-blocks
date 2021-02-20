@@ -248,7 +248,8 @@ add_action('acf/input/admin_head', 'my_acf_admin_head');
 function my_acf_admin_head() {
   ?>
   <style type="text/css">
-    .acf-field-group > .acf-label label {
+    .acf-block-fields > .acf-field-group > .acf-label label,
+    .acf-block-fields > .acf-field-repeater > .acf-label label {
       display: block;
       text-align: center;
       font-size: 20px;
