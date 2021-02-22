@@ -68,7 +68,7 @@ add_action('acf/init', function () {
       'post_types'        => $post_types,
       'render_template'   => get_template_directory() . '/partials/blocks/'.$template_path.'/template.php',
       'enqueue_assets'    => 'block_assets',
-      'mode'              => 'auto',
+      'mode'              => $meta['mode'] ? $meta['mode'] : 'edit',
       'align'             => $meta['align'] ? $meta['align'] : 'full',
       'icon'              => $meta['icon'],
       'supports'          => array(
