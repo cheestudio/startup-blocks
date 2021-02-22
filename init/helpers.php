@@ -285,7 +285,7 @@ $color_vars = array(
 
 // Disable Custom Colors (optional)
 //add_theme_support( 'disable-custom-colors' );
-//
+
 function block_editor_color_map() {
   global $color_vars;
   $colors = array();
@@ -311,7 +311,8 @@ add_action( 'after_setup_theme', 'custom_block_editor_colors' );
 
 function output_the_colors() {
 
-  $color_palette = current( (array) get_theme_support( 'editor-color-palette' ) ); // use defined Block Editor colors
+// use defined Block Editor color array
+  $color_palette = current( (array) get_theme_support( 'editor-color-palette' ) ); 
 
   if ( !$color_palette )
     return;
@@ -336,7 +337,7 @@ function custom_acf_colors() {
       args.palettes = <?php echo $custom_colors; ?>
       // return colors
       return args;
-               });
+    });
    })(jQuery);
  </script>
 <?php }
