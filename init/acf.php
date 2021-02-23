@@ -11,6 +11,11 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 define('FIELDS_DIR', dirname(__FILE__) . '/fields');
 if (is_dir(FIELDS_DIR)) {
   add_action('acf/init', function () {
+    foreach (glob(FIELDS_DIR . '/partials/*.php') as $partial) { //include partials first
+      if (file_exists($partial)) {
+        include $partial;
+      }  
+    }
     foreach (glob(FIELDS_DIR . '/*.php') as $file_path) {
       if (($fields = require_once $file_path) !== true) {
         if (!is_array($fields)) {
@@ -25,6 +30,7 @@ if (is_dir(FIELDS_DIR)) {
     }
   });
 }
+
 
 /**
  * Register Blocks (optional)
