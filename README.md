@@ -1,4 +1,4 @@
-## Chee Studio: Startup Theme - Gutenberg Blocks
+## Chee Studio: Startup Theme - Blocks
 
 [chee.studio](https://cheewebdevelopment.com)
 
