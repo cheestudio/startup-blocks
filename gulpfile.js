@@ -9,14 +9,15 @@ DEVELOPER_MODE = true,
 
 ROOT           = './',
 STYLES_MAIN    = './assets/scss/main.scss',
-EDITOR_STYLES  = './assets/scss/editor.scss',
 STYLES_SOURCE  = './assets/scss/**/*.scss',
+EDITOR_STYLES  = './assets/scss/editor.scss',
 BLOCKS_SOURCE  = './partials/blocks/**/*.scss',
 JS_SOURCE      = ['./assets/js/src/plugins/*.js','./assets/js/src/*.js'],
 JS_DEST        = './assets/js/',
 SVG_SOURCE     = './assets/img/svg/*.svg',
 ALL_IMAGES     = './assets/img/*.{png,jpg,jpeg,gif}',
-ALL_PHP        = './**/*.php';
+ALL_PHP        = './**/*.php',
+IGNORE         = './node_modules/**/*';
 
 
 /* Plugin VARs
@@ -168,7 +169,7 @@ function watchFiles(done) {
   watch( BLOCKS_SOURCE, block_styles );
   watch( EDITOR_STYLES, editor_styles );
   if ( DEVELOPER_MODE ) {
-    watch( ALL_PHP, reload );
+    watch( ALL_PHP, !IGNORE, reload );
     watch( ALL_IMAGES, reload );
     watch( JS_SOURCE, series(scriptsJS, reload) );
     watch( SVG_SOURCE, { events: ['add', 'change'] }, reload );
@@ -185,7 +186,7 @@ function watchFiles(done) {
 if ( DEVELOPER_MODE ) {
   var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles, browserSyncInit );
 } else {
-  var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles);
+  var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles );
 }
 
 exports.default = build;
