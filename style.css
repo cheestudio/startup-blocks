@@ -121,9 +121,34 @@ q:before {
   content: none
 }
 .container {
-  max-width: 1470px;
+  max-width: 1210px;
   margin: 0 auto;
   padding: 0 15px
+}
+.grid {
+  display: grid;
+  grid-gap: 20px
+}
+.flex {
+  display: flex
+}
+.flex.wrap {
+  flex-wrap: wrap
+}
+.content-blocks > :not(.alignfull) {
+  width: 100%;
+  max-width: 1210px;
+  margin-left: auto;
+  margin-right: auto
+}
+.content-blocks > :not(.alignfull).alignwide {
+  max-width: 1400px
+}
+.has-black-background-color {
+  background-color: #000
+}
+.has-black-color {
+  color: #000
 }
 .button,
 button,
@@ -205,16 +230,6 @@ main p a[href^=tel]:hover {
 }
 main blockquote p:last-of-type {
   margin-bottom: 0
-}
-.grid {
-  display: grid;
-  grid-gap: 20px
-}
-.flex {
-  display: flex
-}
-.flex.wrap {
-  flex-wrap: wrap
 }
 .footer--logo a,
 .footer--logo img {
@@ -336,11 +351,6 @@ form input[type=radio]:focus {
 * * {
   box-sizing: border-box
 }
-* {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-tap-highlight-color: transparent;
-  outline: 0
-}
 ::selection {
   background: #000;
   color: #fff
@@ -353,7 +363,6 @@ a {
   text-decoration: none
 }
 a:active,
-a:focus,
 a:hover {
   outline: 0
 }
@@ -664,6 +673,42 @@ img {
 }
 .page-404 {
   text-align: center
+}
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px,1px,1px,1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute!important;
+  width: 1px;
+  word-wrap: normal!important
+}
+.screen-reader-text:focus {
+  background-color: #000;
+  border-radius: 3px;
+  border: none;
+  clip: auto!important;
+  -webkit-clip-path: none;
+  clip-path: none;
+  color: #fff;
+  display: block;
+  font-size: 1.25em;
+  font-weight: 700;
+  height: auto;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  line-height: normal;
+  padding: 10px;
+  text-decoration: none;
+  top: 50px;
+  width: 150px;
+  text-align: center;
+  z-index: 100000
 }
 .mobile-nav-wrap {
   display: none
@@ -1025,6 +1070,9 @@ img {
   }
 }
 @media only screen and (max-width:767px) {
+  .flex {
+    flex-direction: column
+  }
   h1 br,
   h2 br,
   h3 br,
@@ -1036,9 +1084,6 @@ img {
   main li,
   main p {
     font-size: 1em
-  }
-  .flex {
-    flex-direction: column
   }
   .social-icons ul {
     justify-content: center

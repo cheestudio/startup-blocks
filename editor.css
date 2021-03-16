@@ -1,0 +1,201 @@
+.container {
+  max-width: 1210px;
+  margin: 0 auto;
+  padding: 0 15px
+}
+.grid {
+  display: grid;
+  grid-gap: 20px
+}
+.flex {
+  display: flex
+}
+.flex.wrap {
+  flex-wrap: wrap
+}
+.content-blocks > :not(.alignfull) {
+  width: 100%;
+  max-width: 1210px;
+  margin-left: auto;
+  margin-right: auto
+}
+.content-blocks > :not(.alignfull).alignwide {
+  max-width: 1400px
+}
+.edit-post-visual-editor.editor-styles-wrapper .acf-block-preview .button,
+.edit-post-visual-editor.editor-styles-wrapper .acf-block-preview .wp-block-button .wp-block-button__link,
+.edit-post-visual-editor.editor-styles-wrapper .edit-post-visual-editor .button .button,
+.edit-post-visual-editor.editor-styles-wrapper .edit-post-visual-editor .button .wp-block-button .wp-block-button__link,
+.edit-post-visual-editor.editor-styles-wrapper .mce-content-body .button .button,
+.edit-post-visual-editor.editor-styles-wrapper .mce-content-body .button .wp-block-button .wp-block-button__link,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-button__link .button,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-button__link .wp-block-button .wp-block-button__link,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .button,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .wp-block-button .wp-block-button__link,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block.editor-block .button .button,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block.editor-block .button .wp-block-button .wp-block-button__link {
+  transition: .6s cubic-bezier(.23,1,.32,1);
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 40px;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: baseline;
+  font-size: 1.125em;
+  line-height: 1.2;
+  -webkit-appearance: none
+}
+.has-black-background-color {
+  background-color: #000
+}
+.has-black-color {
+  color: #000
+}
+.edit-post-visual-editor.editor-styles-wrapper h1,
+.edit-post-visual-editor.editor-styles-wrapper h2,
+.edit-post-visual-editor.editor-styles-wrapper h3,
+.edit-post-visual-editor.editor-styles-wrapper h4,
+.edit-post-visual-editor.editor-styles-wrapper h5,
+.edit-post-visual-editor.editor-styles-wrapper h6 {
+  line-height: 1.3
+}
+.edit-post-visual-editor.editor-styles-wrapper h1 {
+  font-size: 4em
+}
+.edit-post-visual-editor.editor-styles-wrapper h2 {
+  font-size: 2.625em
+}
+.edit-post-visual-editor.editor-styles-wrapper h3 {
+  font-size: 1.75em
+}
+.edit-post-visual-editor.editor-styles-wrapper h4 {
+  font-size: 1.5em;
+  color: #000
+}
+.edit-post-visual-editor.editor-styles-wrapper h5 {
+  font-size: 1.375em
+}
+.edit-post-visual-editor.editor-styles-wrapper h6 {
+  font-size: 1.25em;
+  color: #000
+}
+.edit-post-visual-editor.editor-styles-wrapper .acf-block-preview .button,
+.edit-post-visual-editor.editor-styles-wrapper .edit-post-visual-editor .button .button,
+.edit-post-visual-editor.editor-styles-wrapper .mce-content-body .button .button,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-button__link .button,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .button,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block.editor-block .button .button {
+  background-color: #fff;
+  color: #000;
+  border-color: #000
+}
+.edit-post-visual-editor.editor-styles-wrapper .acf-block-preview .button:active,
+.edit-post-visual-editor.editor-styles-wrapper .acf-block-preview .button:focus,
+.edit-post-visual-editor.editor-styles-wrapper .acf-block-preview .button:hover,
+.edit-post-visual-editor.editor-styles-wrapper .edit-post-visual-editor .button .button:active,
+.edit-post-visual-editor.editor-styles-wrapper .edit-post-visual-editor .button .button:focus,
+.edit-post-visual-editor.editor-styles-wrapper .edit-post-visual-editor .button .button:hover,
+.edit-post-visual-editor.editor-styles-wrapper .mce-content-body .button .button:active,
+.edit-post-visual-editor.editor-styles-wrapper .mce-content-body .button .button:focus,
+.edit-post-visual-editor.editor-styles-wrapper .mce-content-body .button .button:hover,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-button__link .button:active,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-button__link .button:focus,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-button__link .button:hover,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .button:active,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .button:focus,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .button:hover,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block.editor-block .button .button:active,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block.editor-block .button .button:focus,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block.editor-block .button .button:hover {
+  color: #fff;
+  background-color: #000
+}
+.edit-post-visual-editor.editor-styles-wrapper .acf-block-preview .wp-block-button .wp-block-button__link,
+.edit-post-visual-editor.editor-styles-wrapper .edit-post-visual-editor .button .wp-block-button .wp-block-button__link,
+.edit-post-visual-editor.editor-styles-wrapper .mce-content-body .button .wp-block-button .wp-block-button__link,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-button__link .wp-block-button .wp-block-button__link,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .wp-block-button .wp-block-button__link,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block.editor-block .button .wp-block-button .wp-block-button__link {
+  background-color: #fff;
+  color: #000;
+  border-color: #000
+}
+.edit-post-visual-editor.editor-styles-wrapper .acf-block-preview .wp-block-button .wp-block-button__link:active,
+.edit-post-visual-editor.editor-styles-wrapper .acf-block-preview .wp-block-button .wp-block-button__link:focus,
+.edit-post-visual-editor.editor-styles-wrapper .acf-block-preview .wp-block-button .wp-block-button__link:hover,
+.edit-post-visual-editor.editor-styles-wrapper .edit-post-visual-editor .button .wp-block-button .wp-block-button__link:active,
+.edit-post-visual-editor.editor-styles-wrapper .edit-post-visual-editor .button .wp-block-button .wp-block-button__link:focus,
+.edit-post-visual-editor.editor-styles-wrapper .edit-post-visual-editor .button .wp-block-button .wp-block-button__link:hover,
+.edit-post-visual-editor.editor-styles-wrapper .mce-content-body .button .wp-block-button .wp-block-button__link:active,
+.edit-post-visual-editor.editor-styles-wrapper .mce-content-body .button .wp-block-button .wp-block-button__link:focus,
+.edit-post-visual-editor.editor-styles-wrapper .mce-content-body .button .wp-block-button .wp-block-button__link:hover,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-button__link .wp-block-button .wp-block-button__link:active,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-button__link .wp-block-button .wp-block-button__link:focus,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-button__link .wp-block-button .wp-block-button__link:hover,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .wp-block-button .wp-block-button__link:active,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .wp-block-button .wp-block-button__link:focus,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .wp-block-button .wp-block-button__link:hover,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block.editor-block .button .wp-block-button .wp-block-button__link:active,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block.editor-block .button .wp-block-button .wp-block-button__link:focus,
+.edit-post-visual-editor.editor-styles-wrapper .wp-block.editor-block .button .wp-block-button .wp-block-button__link:hover {
+  color: #fff;
+  background-color: #000
+}
+.interface-interface-skeleton__editor {
+  overflow: auto!important
+}
+.wp-block {
+  max-width: 100%
+}
+.wp-block-group__inner-container {
+  max-width: 1210px;
+  margin: 0 auto;
+  padding: 0 15px
+}
+.editor-rich-text__tinymce.mce-content-body {
+  line-height: 1.5
+}
+h1.editor-rich-text__tinymce.mce-content-body,
+h2.editor-rich-text__tinymce.mce-content-body,
+h3.editor-rich-text__tinymce.mce-content-body,
+h4.editor-rich-text__tinymce.mce-content-body,
+h5.editor-rich-text__tinymce.mce-content-body,
+h6.editor-rich-text__tinymce.mce-content-body {
+  line-height: 1.2
+}
+body .mce-menu-item.mce-menu-item-preview.mce-active .mce-ico,
+body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
+  color: #fff
+}
+.editor-styles-wrapper ul.acf-checkbox-list,
+.editor-styles-wrapper ul.acf-radio-list {
+  margin-bottom: 0
+}
+.is-on-top {
+  z-index: 20;
+  position: relative
+}
+@media only screen and (min-width:768px) {
+  .flex.reverse {
+    flex-direction: row-reverse
+  }
+}
+@media only screen and (max-width:767px) {
+  .flex {
+    flex-direction: column
+  }
+}
+@media only screen and (max-width:480px) {
+  .edit-post-visual-editor.editor-styles-wrapper h1 br,
+  .edit-post-visual-editor.editor-styles-wrapper h2 br,
+  .edit-post-visual-editor.editor-styles-wrapper h3 br,
+  .edit-post-visual-editor.editor-styles-wrapper h4 br,
+  .edit-post-visual-editor.editor-styles-wrapper h5 br,
+  .edit-post-visual-editor.editor-styles-wrapper h6 br {
+    display: none
+  }
+}
