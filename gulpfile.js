@@ -6,6 +6,7 @@
 const
 PROJECT_NAME   = 'FOLDERNAME',
 DEVELOPER_MODE = true,
+BLOCK_MODE = false,
 
 ROOT           = './',
 STYLES_MAIN    = './assets/scss/main.scss',
@@ -16,8 +17,7 @@ JS_SOURCE      = ['./assets/js/src/plugins/*.js','./assets/js/src/*.js'],
 JS_DEST        = './assets/js/',
 SVG_SOURCE     = './assets/img/svg/*.svg',
 ALL_IMAGES     = './assets/img/*.{png,jpg,jpeg,gif}',
-ALL_PHP        = './**/*.php',
-IGNORE         = './node_modules/**/*';
+ALL_PHP        = './**/*.php';
 
 
 /* Plugin VARs
@@ -86,54 +86,57 @@ function styles() {
 /* Block SCSS Styles
 ========================================================= */
 function block_styles() {
-  return src( BLOCKS_SOURCE, { base: "./" })
-  .pipe( plumber( { errorHandler: onError } ) )
-  .pipe( sass() )
-  .pipe( autoprefixer() )
-  .pipe( mmq( { log: true } ) )
-  .pipe( cleancss({
-    format: 'beautify',
-    level: {
-      1: {
-        roundingPrecision: 'all=10, px=2, em=2, rem=2, font-size=2, line-height=2'
-      },
-      2: {
-        mergeNonAdjacentRules: false,
-        mergeMedia: false
+  if(BLOCK_MODE) {
+    return src( BLOCKS_SOURCE, { base: "./" })
+    .pipe( plumber( { errorHandler: onError } ) )
+    .pipe( sass() )
+    .pipe( autoprefixer() )
+    .pipe( mmq( { log: true } ) )
+    .pipe( cleancss({
+      format: 'beautify',
+      level: {
+        1: {
+          roundingPrecision: 'all=10, px=2, em=2, rem=2, font-size=2, line-height=2'
+        },
+        2: {
+          mergeNonAdjacentRules: false,
+          mergeMedia: false
+        }
       }
-    }
-  }))
-  .pipe( cleancss( { level: 0 } ) )
-  .pipe( lineec() )
-  .pipe(dest("."))
-  .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
+    }))
+    .pipe( cleancss( { level: 0 } ) )
+    .pipe( lineec() )
+    .pipe(dest("."))
+    .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
+  }
 }
 
 /* Editor Styles
 ========================================================= */
 function editor_styles() {
-  return src( EDITOR_STYLES )
-  .pipe( plumber( { errorHandler: onError } ) )
-  .pipe( sass() )
-  .pipe( autoprefixer() )
-  .pipe( mmq( { log: true } ) )
-  .pipe( cleancss({
-    format: 'beautify',
-    level: {
-      1: {
-        roundingPrecision: 'all=10, px=2, em=2, rem=2, font-size=2, line-height=2'
-      },
-      2: {
-        mergeNonAdjacentRules: false,
-        mergeMedia: false
+  if(BLOCK_MODE) {
+    return src( EDITOR_STYLES )
+    .pipe( plumber( { errorHandler: onError } ) )
+    .pipe( sass() )
+    .pipe( autoprefixer() )
+    .pipe( mmq( { log: true } ) )
+    .pipe( cleancss({
+      format: 'beautify',
+      level: {
+        1: {
+          roundingPrecision: 'all=10, px=2, em=2, rem=2, font-size=2, line-height=2'
+        },
+        2: {
+          mergeNonAdjacentRules: false,
+          mergeMedia: false
+        }
       }
-    }
-  }))
-  .pipe( lineec() )
-  .pipe( dest( ROOT ) )
-  .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
+    }))
+    .pipe( lineec() )
+    .pipe( dest( ROOT ) )
+    .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
+  }
 }
-
 /* JS Files
 ========================================================= */
 function scriptsJS() {
@@ -166,10 +169,12 @@ function reload(done) {
 ========================================================= */
 function watchFiles(done) {
   watch( STYLES_SOURCE, styles );
-  watch( BLOCKS_SOURCE, block_styles );
-  watch( EDITOR_STYLES, editor_styles );
+  if(BLOCK_MODE) {
+    watch( BLOCKS_SOURCE, block_styles );
+    watch( EDITOR_STYLES, editor_styles );
+  }
   if ( DEVELOPER_MODE ) {
-    watch( ALL_PHP, !IGNORE, reload );
+    watch( ALL_PHP, reload );
     watch( ALL_IMAGES, reload );
     watch( JS_SOURCE, series(scriptsJS, reload) );
     watch( SVG_SOURCE, { events: ['add', 'change'] }, reload );
@@ -183,10 +188,20 @@ function watchFiles(done) {
 
 /* Build
 ========================================================= */
-if ( DEVELOPER_MODE ) {
-  var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles, browserSyncInit );
-} else {
-  var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles );
+if(BLOCK_MODE) { // BLOCKS
+  if ( DEVELOPER_MODE ) {
+    var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles, browserSyncInit );
+  } else {
+    var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles);
+  }
 }
+else { // no BLOCKS
+  if ( DEVELOPER_MODE ) {
+    var build  = parallel( styles, scriptsJS, watchFiles, browserSyncInit );
+  } else {
+    var build  = parallel( styles, scriptsJS, watchFiles);
+  }
+}
+
 
 exports.default = build;
