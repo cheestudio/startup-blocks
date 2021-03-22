@@ -83,10 +83,9 @@ function styles() {
   .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
 }
 
-/* Block SCSS Styles
+/* Block SCSS Styles (only used if BLOCK_MODE set to TRUE)
 ========================================================= */
 function block_styles() {
-  if(BLOCK_MODE) {
     return src( BLOCKS_SOURCE, { base: "./" })
     .pipe( plumber( { errorHandler: onError } ) )
     .pipe( sass() )
@@ -108,13 +107,11 @@ function block_styles() {
     .pipe( lineec() )
     .pipe(dest("."))
     .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
-  }
 }
 
-/* Editor Styles
+/* Editor Styles (only used if BLOCK_MODE set to TRUE)
 ========================================================= */
 function editor_styles() {
-  if(BLOCK_MODE) {
     return src( EDITOR_STYLES )
     .pipe( plumber( { errorHandler: onError } ) )
     .pipe( sass() )
@@ -135,8 +132,8 @@ function editor_styles() {
     .pipe( lineec() )
     .pipe( dest( ROOT ) )
     .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
-  }
 }
+
 /* JS Files
 ========================================================= */
 function scriptsJS() {
@@ -188,14 +185,14 @@ function watchFiles(done) {
 
 /* Build
 ========================================================= */
-if(BLOCK_MODE) { // BLOCKS
+if(BLOCK_MODE) { // BLOCKS workflow
   if ( DEVELOPER_MODE ) {
     var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles, browserSyncInit );
   } else {
     var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles);
   }
 }
-else { // no BLOCKS
+else { // no BLOCKS workflow
   if ( DEVELOPER_MODE ) {
     var build  = parallel( styles, scriptsJS, watchFiles, browserSyncInit );
   } else {
