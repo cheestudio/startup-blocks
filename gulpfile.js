@@ -86,52 +86,52 @@ function styles() {
 /* Block SCSS Styles (only used if BLOCK_MODE set to TRUE)
 ========================================================= */
 function block_styles() {
-    return src( BLOCKS_SOURCE, { base: "./" })
-    .pipe( plumber( { errorHandler: onError } ) )
-    .pipe( sass() )
-    .pipe( autoprefixer() )
-    .pipe( mmq( { log: true } ) )
-    .pipe( cleancss({
-      format: 'beautify',
-      level: {
-        1: {
-          roundingPrecision: 'all=10, px=2, em=2, rem=2, font-size=2, line-height=2'
-        },
-        2: {
-          mergeNonAdjacentRules: false,
-          mergeMedia: false
-        }
+  return src( BLOCKS_SOURCE, { base: "./" })
+  .pipe( plumber( { errorHandler: onError } ) )
+  .pipe( sass() )
+  .pipe( autoprefixer() )
+  .pipe( mmq( { log: true } ) )
+  .pipe( cleancss({
+    format: 'beautify',
+    level: {
+      1: {
+        roundingPrecision: 'all=10, px=2, em=2, rem=2, font-size=2, line-height=2'
+      },
+      2: {
+        mergeNonAdjacentRules: false,
+        mergeMedia: false
       }
-    }))
-    .pipe( cleancss( { level: 0 } ) )
-    .pipe( lineec() )
-    .pipe(dest("."))
-    .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
+    }
+  }))
+  .pipe( cleancss( { level: 0 } ) )
+  .pipe( lineec() )
+  .pipe(dest("."))
+  .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
 }
 
 /* Editor Styles (only used if BLOCK_MODE set to TRUE)
 ========================================================= */
 function editor_styles() {
-    return src( EDITOR_STYLES )
-    .pipe( plumber( { errorHandler: onError } ) )
-    .pipe( sass() )
-    .pipe( autoprefixer() )
-    .pipe( mmq( { log: true } ) )
-    .pipe( cleancss({
-      format: 'beautify',
-      level: {
-        1: {
-          roundingPrecision: 'all=10, px=2, em=2, rem=2, font-size=2, line-height=2'
-        },
-        2: {
-          mergeNonAdjacentRules: false,
-          mergeMedia: false
-        }
+  return src( EDITOR_STYLES )
+  .pipe( plumber( { errorHandler: onError } ) )
+  .pipe( sass() )
+  .pipe( autoprefixer() )
+  .pipe( mmq( { log: true } ) )
+  .pipe( cleancss({
+    format: 'beautify',
+    level: {
+      1: {
+        roundingPrecision: 'all=10, px=2, em=2, rem=2, font-size=2, line-height=2'
+      },
+      2: {
+        mergeNonAdjacentRules: false,
+        mergeMedia: false
       }
-    }))
-    .pipe( lineec() )
-    .pipe( dest( ROOT ) )
-    .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
+    }
+  }))
+  .pipe( lineec() )
+  .pipe( dest( ROOT ) )
+  .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
 }
 
 /* JS Files
@@ -140,7 +140,12 @@ function scriptsJS() {
   return src( JS_SOURCE )
   .pipe( plumber( { errorHandler: onError } ) )
   .pipe( concat( 'all.min.js' ) )
-  .pipe( terser() )
+  .pipe(terser({
+    compress: {
+      unused : false,
+      drop_debugger: false
+    }
+  }))
   .pipe( plumber.stop() )
   .pipe( dest( JS_DEST ) )
 }
