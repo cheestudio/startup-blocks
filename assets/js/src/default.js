@@ -1,5 +1,3 @@
-(function($){
-
 /* COOKIES
 ========================================================= */
 
@@ -16,6 +14,8 @@ function setCookie(name, value, days) {
   document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
 }
 
+
+(function($){ //Doc Ready
 
 /* MOBILE NAV
 ========================================================= */
