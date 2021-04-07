@@ -2,7 +2,11 @@
 
 [chee.studio](https://cheewebdevelopment.com)
 
-This minimal and light "framework" was developed to streamline custom WordPress theme development. Whereas many frameworks focus on WordPress' blogging capabilities, this framework is meant for sites where WordPress will be used primarily as a *content framework*, as well as a blogging tool. The structure is fairly self explanatory, and also contains collection of various helpers and functions that are useful in every day WordPress development. It assumes GULP will be used for asset compiling, and SCSS for all CSS management. It also contains two optional workflows for leveraging [ACF Builder](https://github.com/StoutLogic/acf-builder) and [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/). Either of these can be excluded without impacting the functionality of the rest of the framework.
+This minimal "framework" was developed to streamline custom WordPress theme development, preferably using [ACF Builder](https://github.com/StoutLogic/acf-builder) and [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/). Whereas many frameworks focus on WordPress' blogging capabilities, this framework is meant for sites where WordPress will be used primarily as a *content framework*, as well as a blogging tool. The structure is fairly self explanatory, and also contains collection of various helpers and functions that are useful in every day WordPress development. It assumes GULP will be used for asset compiling, and SCSS for all CSS management. It also contains two optional workflows for leveraging [ACF Builder](https://github.com/StoutLogic/acf-builder) and [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/). Either of these can be easily disabled without impacting the functionality of the rest of the framework.
+
+**Important Note:** This framework is not meant to be a *turn-key* theme, and won't offer many options beyond being an organized and streamlined way to develop a custom site using WordPress and ACF. It's a way to stay consistent and organized and provide a solid jumping off point for each project, utilizing native WordPress functionality as much as possible. It's simple, uncomplicated, and *stays out of your way*.
+
+Yet, since it's very unassuming, it will blend easily with any particular development style, as well integrate into other platforms such as WooCommerce, Elementor and Beaver Builder, if one chooses to use them.
 
 ### Setup gulpfile.js
 
