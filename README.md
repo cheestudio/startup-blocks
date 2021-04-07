@@ -33,7 +33,7 @@ This framework will automatically register field groups, based off their path, u
 2) Within the `init/acf.php` contains a loop that will grab all field includes and automatically register them. 
 3) File names should be unique, as well as the `FieldsBuilder` names.
 
-*To remove ACF Builder workflow: Delete the `/acf-builder/` folder, as well as the automatic ACF Builder registration function in `init/acf.php` (lines `6` through `32`).*
+*To remove ACF Builder workflow:* Delete the `/acf-builder/` folder, as well as the automatic ACF Builder registration function in `init/acf.php` (lines `6` through `32`).
 
 ### Registering ACF Blocks
 
@@ -46,7 +46,7 @@ This framework will automatically register [ACF Blocks](https://www.advancedcust
 * **script.js -** This file contains all the JS specific code for the individual block. *This file is optional.*
 * The GULP Workflow, if `BLOCK_MODE` is set to `TRUE`, will automatically compile all SCSS files it finds in these block directories.
 
-*To remove ACF Blocks workflow: Delete the `/partials/blocks/` folder, as well as the automatic ACF Block registration functions in `init/acf.php` (lines `35` through `105`).*
+*To remove ACF Blocks workflow:* Delete the `/partials/blocks/` folder, as well as the automatic ACF Block registration functions in `init/acf.php` (lines `35` through `105`).
 
 ### Connecting Fields to Blocks (if using ACF Builder)
 
