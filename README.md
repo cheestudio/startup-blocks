@@ -39,23 +39,21 @@ This framework will automatically register ACF Blocks based off their simple pat
 
 1. The `partials/blocks` is the folder where all custom Blocks should be located. The function in `init/acf.php` will loop through all sub-folders in this directory and register the blocks based off their folder path name. 
 2. Each Block contains three components:
-
-a) **template.php -** This file contains all the markup and logic of the block, as well as the template tags to determine it's attributes
-b) **style.scss -** This is the SCSS that will compile to CSS for both the front end view and Block Editor preview
-c) **script.js -** This file contains all the JS specific code for the individual block. *This file is optional.*
-d) The GULP Workflow, if `BLOCK_MODE` is set to `TRUE`, will automatically compile all SCSS files it finds in these block directories.
+* **template.php -** This file contains all the markup and logic of the block, as well as the template tags to determine it's attributes
+* **style.scss -** This is the SCSS that will compile to CSS for both the front end view and Block Editor preview
+* **script.js -** This file contains all the JS specific code for the individual block. *This file is optional.*
+* The GULP Workflow, if `BLOCK_MODE` is set to `TRUE`, will automatically compile all SCSS files it finds in these block directories.
 
 ### Connecting Fields to Blocks (if using ACF Builder)
 
 This framework can easily connect custom field groups to blocks, purely based off the file/path names outlined above. 
 
 1. Add a Field Group file in `/init/fields` using `custom-block.php` as an example. This field group template will do a number of things:
-
-a) Set up the paths required, based off the file name
-b) Create a formatted string based on the path
-c) Create an ACF Group name based off the string
-d) Create a "human readable" Group Label, based off the string (this can be overwritten, as well)
-e) Create a Block Title that will be formatted nicely when used within the Block Editor
+* Set up the paths required, based off the file name
+* Create a formatted string based on the path
+* Create an ACF Group name based off the string
+* Create a "human readable" Group Label, based off the string (this can be overwritten, as well)
+* Create a Block Title that will be formatted nicely when used within the Block Editor
 
 Notice near the end of the file is where the location gets automatically set, based off the file name itself: 
 
