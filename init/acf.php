@@ -1,13 +1,16 @@
 <?php
-/* ACF Builder + Block Registration
+/* ACF Builder + Block Registration Workflows (optional)
 ========================================================= */
 
+$acf_builder = true;
+$acf_blocks = true;
 
-/**
- * Register Fields
- */
+ 
+/* Register Fields (can be removed if $acf_builder == false)
+========================================================= */
 
-use StoutLogic\AcfBuilder\FieldsBuilder;
+use StoutLogic\AcfBuilder\FieldsBuilder; 
+function acf_field_builder_registration(){
 define('FIELDS_DIR', dirname(__FILE__) . '/fields');
 if (is_dir(FIELDS_DIR)) {
   add_action('acf/init', function () {
@@ -30,12 +33,12 @@ if (is_dir(FIELDS_DIR)) {
     }
   });
 }
+}
 
+/* Register Blocks (can be removed if $acf_blocks == false)
+========================================================= */
 
-/**
- * Register Blocks (optional)
- */
-
+function acf_blocks_registration(){
 define('BLOCKS_DIR', dirname(__FILE__,2) . '/partials/blocks');
 add_action('acf/init', function () {
 
@@ -101,10 +104,21 @@ add_action('acf/init', function () {
      }
    }
  }
-
 });
+}
 
-/* Options Page */
+/* Toggle Builder/Block Workflows
+========================================================= */
+
+if($acf_builder == true) {
+  acf_field_builder_registration();
+}
+
+if($acf_blocks == true) {
+  acf_blocks_registration();
+}
+
+/* ACF Options Page */
 
 if(class_exists('ACF')) {
   acf_add_options_page([
