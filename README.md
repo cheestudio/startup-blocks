@@ -41,7 +41,7 @@ This framework will automatically register field groups, based off their path, u
 
 ### Registering ACF Blocks
 
-This framework will automatically register [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/) based off their simple path name and template tags. *This workflow is optional.*
+This framework will automatically register [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/) based off their path name and template tags. *This workflow is optional.*
 
 1. The `partials/blocks` is the folder where all custom Blocks should be located. The function in `init/acf.php` will loop through all sub-folders in this directory and register the blocks based off their folder path name. 
 2. Each Block contains three components:
