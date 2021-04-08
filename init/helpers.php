@@ -417,3 +417,11 @@ function post_pagination( $pages = '', $range = 2 ) {
       echo "<a class='last-link' href='" . get_pagenum_link($pages) . "' title='Go to Last Page'>>></a>";
   }
 }
+
+
+/* Move Yoast to bottom of edit page
+========================================================= */
+add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
+function yoasttobottom() {
+  return 'low';
+}
