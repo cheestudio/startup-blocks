@@ -2,7 +2,7 @@
 
 [chee.studio](https://cheewebdevelopment.com)
 
-This minimal "framework" was developed to streamline custom WordPress theme development, preferably using [ACF Builder](https://github.com/StoutLogic/acf-builder) and [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/). Whereas many frameworks focus on WordPress' blogging capabilities, this framework is meant for sites where WordPress will be used primarily as a *content framework*, as well as a blogging tool. The structure is fairly self explanatory, and also contains collection of various helpers and functions that are useful in every day WordPress development. It assumes GULP will be used for asset compiling, and SCSS for all CSS management. It also contains two optional workflows for leveraging [ACF Builder](https://github.com/StoutLogic/acf-builder) and [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/). Either of these can be easily disabled without impacting the functionality of the rest of the framework.
+This minimal "framework" was developed to streamline custom WordPress theme development, preferably using [ACF Builder](https://github.com/StoutLogic/acf-builder) and [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/). Whereas many frameworks focus on WordPress' blogging capabilities, this framework is meant for sites where WordPress will be used primarily as a *content framework*, as well as a blogging tool. The structure is fairly self explanatory, and also contains collection of various helpers and functions that are useful in every day WordPress development. It assumes GULP will be used for asset compiling, and SCSS for all CSS management. The workflows for ACF Builder and ACF Blocks can be easily disabled without impacting the functionality of the rest of the framework.
 
 **Important Note:** This framework is not meant to be a *turn-key* theme, and won't offer many options beyond being an organized and streamlined way to develop a custom site using WordPress and ACF. It's a way to stay consistent and organized and provide a solid jumping off point for each project, utilizing native WordPress functionality as much as possible. It's simple, uncomplicated, and *stays out of your way*.
 
@@ -31,7 +31,7 @@ Yet, since it's very unassuming, it will blend easily with any particular develo
 
 ### Registering ACF Field Groups
 
-This framework will automatically register field groups, based off their path, using the powerful [ACF Builder](https://github.com/StoutLogic/acf-builder) to construct the fields. *This workflow is optional.*
+This framework will automatically register field groups, based off their path, using ACF Builder to construct the fields. *This workflow is optional.*
 
 1) Within the `init/fields` folder is where includes for various field types would be located. 
 2) Within the `init/acf.php` contains a loop that will grab all field includes and automatically register them. 
@@ -45,7 +45,7 @@ This framework will automatically register [ACF Blocks](https://www.advancedcust
 
 1. The `partials/blocks` is the folder where all custom Blocks should be located. The function in `init/acf.php` will loop through all sub-folders in this directory and register the blocks based off their folder path name. 
 2. Each Block contains three components:
-* **template.php -** This file contains all the markup and logic of the block, as well as the template tags to determine it's attributes
+* **template.php -** This file contains all the markup and logic of the block, as well as the template tags to determine its attributes
 * **style.scss -** This is the SCSS that will compile to CSS for both the front end view and Block Editor preview
 * **script.js -** This file contains all the JS specific code for the individual block. *This file is optional.*
 * The GULP Workflow, if `BLOCK_MODE` is set to `TRUE`, will automatically compile all SCSS files it finds in these block directories.
