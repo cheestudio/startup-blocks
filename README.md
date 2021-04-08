@@ -45,7 +45,7 @@ This framework will automatically register [ACF Blocks](https://www.advancedcust
 
 1. The `partials/blocks` is the folder where all custom Blocks should be located. The function in `init/acf.php` will loop through all sub-folders in this directory and register the blocks based off their folder path name. 
 2. Each Block contains three components:
-* **template.php -** This file contains all the markup and logic of the block, as well as the template tags to determine it's attributes
+* **template.php -** This file contains all the markup and logic of the block, as well as the template tags to determine its attributes
 * **style.scss -** This is the SCSS that will compile to CSS for both the front end view and Block Editor preview
 * **script.js -** This file contains all the JS specific code for the individual block. *This file is optional.*
 * The GULP Workflow, if `BLOCK_MODE` is set to `TRUE`, will automatically compile all SCSS files it finds in these block directories.
