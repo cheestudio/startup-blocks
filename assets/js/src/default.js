@@ -52,10 +52,10 @@ $('.mobile-nav ul li.menu-item-has-children').each( function(){
 ========================================================= */
 function headerHeight() {
   if (window.matchMedia('(min-width: 1025px)').matches) {
-    heightOffset = 0;
+    var heightOffset = 0;
   }
   else {
-    heightOffset = $('.mobile-nav-wrap').outerHeight();
+    var heightOffset = $('.mobile-nav-wrap').outerHeight();
   }
 }
 
