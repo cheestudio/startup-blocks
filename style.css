@@ -1,6 +1,6 @@
 /*!
 Theme Name: {CLIENT NAME}
-Description: Custom Wordpress Theme for {CLIENT NAME}
+Description: Custom Wordpress Theme for {SITE NAME}
 Author: {CLIENT NAME}
 Author URI: http://{CLIENT URL}
 */
@@ -124,10 +124,6 @@ q:before {
   max-width: 1210px;
   margin: 0 auto;
   padding: 0 15px
-}
-.grid {
-  display: grid;
-  grid-gap: 20px
 }
 .flex {
   display: flex
@@ -773,6 +769,12 @@ img {
   margin-left: auto;
   margin-right: auto;
   display: block
+}
+@media only screen and (min-width:481px) {
+  .grid {
+    display: grid;
+    grid-gap: 20px
+  }
 }
 @media only screen and (min-width:768px) {
   .flex.reverse {
