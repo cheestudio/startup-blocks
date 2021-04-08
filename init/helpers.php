@@ -248,6 +248,39 @@ add_action('acf/input/admin_head', 'my_acf_admin_head');
 function my_acf_admin_head() {
   ?>
   <style type="text/css">
+    .acf-field.center {
+      text-align: center;
+    }
+    .acf-field.center .image-wrap,
+    .acf-field.center .image-wrap img {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .acf-field-button-group.center {
+      text-align: center;
+    }
+    .acf-field.hide-border > .acf-label {
+      display: none;
+    }
+    .acf-field.hide-border > .acf-input > .acf-fields {
+      border: none;
+    }
+    table.acf-table tbody td {
+      vertical-align: middle;
+    }
+    table.acf-table th.acf-th {
+      text-align: center;
+      font-weight: bold;
+    }
+    .acf-field-wysiwyg.short .mce-edit-area iframe {
+      height: auto !important;
+    }
+    .acf-field.heading > .acf-label {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
     .acf-block-fields > .acf-field-group > .acf-label label,
     .acf-block-fields > .acf-field-repeater > .acf-label label {
       display: block;
