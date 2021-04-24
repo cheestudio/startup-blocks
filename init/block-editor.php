@@ -2,6 +2,10 @@
 /* BLOCK EDITOR FUNCTIONS
 ========================================================= */
 
+/* Disable Gutenberg Sitewide
+========================================================= */
+//add_filter('use_block_editor_for_post', '__return_false', 10);
+
 /* Disable Gutenberg Per Post Type
 ========================================================= */
 add_filter('use_block_editor_for_post_type', 'prefix_disable_gutenberg', 10, 2);
