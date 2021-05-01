@@ -109,15 +109,19 @@ form input[type=file]:focus, form input[type=radio]:focus, form input[type=check
   margin: 0;
   h2.gform_submission_error {
     font-size: 18px;
-    color: red;
+    color: $border-color-error;
   }
   form {
     .gform-body {
       margin-bottom: 25px;
+      .gform_fields {
+        grid-row-gap: 25px;
+      }
       .gfield_label {
         font-weight: 400;
         display: block;
         margin-bottom: 5px;
+        font-size: em(14);
         .gfield_required {
           color: red;
         }
