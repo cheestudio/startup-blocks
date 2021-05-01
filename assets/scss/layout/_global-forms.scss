@@ -52,13 +52,13 @@ form input[type=file]:focus, form input[type=radio]:focus, form input[type=check
 /* Error Styles
 ========================================================= */
 .gform_wrapper.gform_validation_error {
-  .validation_message, li.gfield.gfield_error .gfield_description {
+  .validation_message, .gfield.gfield_error .gfield_description {
     font-size: 12px;
     font-weight: normal;
     color: $border-color-error;
     display: none;
   }
-  li.gfield.gfield_error, li.gfield_contains_required.gfield_creditcard_warning {
+  .gfield.gfield_error, .gfield_contains_required.gfield_creditcard_warning {
     background-color: transparent !important;
     border: none !important;
     padding: 0;
@@ -66,7 +66,7 @@ form input[type=file]:focus, form input[type=radio]:focus, form input[type=check
       margin-top: 0;
     }
   }
-  li.gfield_error {
+  .gfield.gfield_error {
     input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), select, textarea {
       border-top-width: $border-width-top+px;
       border-bottom-width: $border-width-bottom+px;
@@ -80,8 +80,8 @@ form input[type=file]:focus, form input[type=radio]:focus, form input[type=check
       }
     }
   }
-  li.gfield.gfield_error.gfield_contains_required {
-    label.gfield_label, div.ginput_container {
+  .gfield.gfield_error.gfield_contains_required {
+    label.gfield_label, .ginput_container {
       color: $border-color-error !important;
     }
   }
@@ -107,34 +107,39 @@ form input[type=file]:focus, form input[type=radio]:focus, form input[type=check
 ========================================================= */
 .gform_wrapper {
   margin: 0;
+  h2.gform_submission_error {
+    font-size: 18px;
+    color: red;
+  }
   form {
-    .gform_body {
-      ul {
-        @include list-reset;
-        li {
-
-          .gfield_label {
-            .gfield_required {
-              color: red;
-            }
-          }
-          input, textarea {
-            width: 100%;
-          }
-          .ginput_container_consent {
-            display: flex;
-            align-items: center;
-            input {
-              width: auto;
-              margin-right: 20px;
-            }
-          }
+    .gform-body {
+      margin-bottom: 25px;
+      .gfield_label {
+        font-weight: 400;
+        display: block;
+        margin-bottom: 5px;
+        .gfield_required {
+          color: red;
+        }
+      }
+      .gfield_checkbox {
+        margin-top: 10px;
+      }
+      .gchoice {
+        margin-bottom: 15px;
+      }
+      .ginput_container_consent {
+        display: flex;
+        align-items: center;
+        input {
+          width: auto;
+          margin-right: 20px;
         }
       }
     }
     
     .gform_footer {
-
+      text-align: right;
       button {
 
       }
