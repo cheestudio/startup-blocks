@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 
 /* Project VARs
@@ -6,7 +6,7 @@
 const
 PROJECT_NAME   = 'FOLDERNAME',
 DEVELOPER_MODE = true,
-BLOCK_MODE = false,
+BLOCK_MODE     = true,
 
 ROOT           = './',
 STYLES_MAIN    = './assets/scss/main.scss',
@@ -16,13 +16,14 @@ BLOCKS_SOURCE  = './partials/blocks/**/*.scss',
 JS_SOURCE      = ['./assets/js/src/plugins/*.js','./assets/js/src/*.js'],
 JS_DEST        = './assets/js/',
 SVG_SOURCE     = './assets/img/svg/*.svg',
-ALL_IMAGES     = './assets/img/*.{png,jpg,jpeg,gif}',
-ALL_PHP        = './**/*.php';
+//ALL_IMAGES     = './assets/img/*.{png,jpg,jpeg,gif}',
+ALL_PHP        = './**/*.php',
+IGNORE         = './node_modules/**/*';
 
 
 /* Plugin VARs
 ========================================================= */
-const { src, dest, watch, series, parallel } = require('gulp'),
+const { src, dest, watch, series, parallel, lastRun } = require('gulp'),
 autoprefixer = require('gulp-autoprefixer'),
 cleancss     = require('gulp-clean-css'),
 concat       = require('gulp-concat'),
@@ -43,8 +44,8 @@ browsersync  = require('browser-sync').create();
 ========================================================= */
 var onError = function(err) {
   notify.onError({
-    title:    "Error:",
-    message:  "<%= error.message %>"
+    title:    'Error:',
+    message:  '<%= error.message %>'
   })(err);
 
   this.emit('end');
@@ -83,10 +84,11 @@ function styles() {
   .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
 }
 
+
 /* Block SCSS Styles (only used if BLOCK_MODE set to TRUE)
 ========================================================= */
 function block_styles() {
-  return src( BLOCKS_SOURCE, { base: "./" })
+  return src( BLOCKS_SOURCE, { base: './', since: lastRun(block_styles) } )
   .pipe( plumber( { errorHandler: onError } ) )
   .pipe( sass() )
   .pipe( autoprefixer() )
@@ -105,9 +107,11 @@ function block_styles() {
   }))
   .pipe( cleancss( { level: 0 } ) )
   .pipe( lineec() )
-  .pipe(dest("."))
+  .pipe( plumber.stop() )
+  .pipe( dest('.'))
   .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
 }
+
 
 /* Editor Styles (only used if BLOCK_MODE set to TRUE)
 ========================================================= */
@@ -130,9 +134,10 @@ function editor_styles() {
     }
   }))
   .pipe( lineec() )
+  .pipe( plumber.stop() )
   .pipe( dest( ROOT ) )
-  .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
 }
+
 
 /* JS Files
 ========================================================= */
@@ -171,13 +176,13 @@ function reload(done) {
 ========================================================= */
 function watchFiles(done) {
   watch( STYLES_SOURCE, styles );
-  if(BLOCK_MODE) {
+  if ( BLOCK_MODE ) {
     watch( BLOCKS_SOURCE, block_styles );
     watch( EDITOR_STYLES, editor_styles );
   }
   if ( DEVELOPER_MODE ) {
-    watch( ALL_PHP, reload );
-    watch( ALL_IMAGES, reload );
+    watch( ALL_PHP, !IGNORE, reload );
+    //watch( ALL_IMAGES, reload );
     watch( JS_SOURCE, series(scriptsJS, reload) );
     watch( SVG_SOURCE, { events: ['add', 'change'] }, reload );
   }
@@ -190,20 +195,19 @@ function watchFiles(done) {
 
 /* Build
 ========================================================= */
-if(BLOCK_MODE) { // BLOCKS workflow
+if ( BLOCK_MODE ) { // BLOCKS workflow
   if ( DEVELOPER_MODE ) {
     var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles, browserSyncInit );
   } else {
     var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles);
   }
 }
-else { // no BLOCKS workflow
+else { // not BLOCKS workflow
   if ( DEVELOPER_MODE ) {
     var build  = parallel( styles, scriptsJS, watchFiles, browserSyncInit );
   } else {
     var build  = parallel( styles, scriptsJS, watchFiles);
   }
 }
-
 
 exports.default = build;
