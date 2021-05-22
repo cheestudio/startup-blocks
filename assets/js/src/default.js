@@ -10,8 +10,13 @@ function getCookie(name) {
 // Set Cookie
 function setCookie(name, value, days) {
   var d = new Date;
+  if ( days != '0' ) {
   d.setTime(d.getTime() + 24*60*60*1000*days);
-  document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+    var expiretime = d.toGMTString();
+  } else {
+    var expiretime = 0;
+  }
+  document.cookie = name + "=" + value + ";path=/;expires=" + expiretime;
 }
 
 (function($){ //Doc Ready
