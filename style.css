@@ -174,21 +174,27 @@ h6 {
   line-height: 1.2;
   margin: 0 0 20px
 }
+.h1,
 h1 {
   font-size: 3.75em
 }
+.h2,
 h2 {
   font-size: 3.125em
 }
+.h3,
 h3 {
   font-size: 2.5em
 }
+.h4,
 h4 {
   font-size: 1.875em
 }
+.h5,
 h5 {
   font-size: 1.5625em
 }
+.h6,
 h6 {
   font-size: 1.25em
 }
