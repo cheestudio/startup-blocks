@@ -897,8 +897,7 @@ img {
     justify-content: space-between;
     width: 100%
   }
-  .mobile-nav-wrap .mobile-nav-header .mobile-brand img,
-  .mobile-nav-wrap .mobile-nav-header .mobile-brand svg {
+  .mobile-nav-wrap .mobile-nav-header .mobile-brand img {
     display: block
   }
   .mobile-nav-wrap .mobile-nav-header .navbar-toggle {
@@ -957,7 +956,7 @@ img {
     list-style: none
   }
   .mobile-nav-wrap .mobile-nav ul li {
-    display: block;
+    display: flex;
     position: relative;
     margin: 0;
     border-bottom: 1px solid #eee
@@ -965,6 +964,7 @@ img {
   .mobile-nav-wrap .mobile-nav ul li > a {
     transition: .6s cubic-bezier(.23,1,.32,1);
     display: block;
+    flex: 1;
     color: #000;
     font-size: 1em;
     line-height: 1.2;
@@ -979,21 +979,41 @@ img {
     background-color: #000;
     color: #fff
   }
+  .mobile-nav-wrap .mobile-nav ul li > a:active ~ .expand,
+  .mobile-nav-wrap .mobile-nav ul li > a:focus ~ .expand,
+  .mobile-nav-wrap .mobile-nav ul li > a:hover ~ .expand {
+    background-color: #000
+  }
+  .mobile-nav-wrap .mobile-nav ul li > a:active ~ .expand > svg path,
+  .mobile-nav-wrap .mobile-nav ul li > a:focus ~ .expand > svg path,
+  .mobile-nav-wrap .mobile-nav ul li > a:hover ~ .expand > svg path {
+    stroke: #fff
+  }
   .mobile-nav-wrap .mobile-nav ul li .expand {
     transition: .6s cubic-bezier(.23,1,.32,1);
+    padding: 0;
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 25px;
-    background: url(assets/img/svg/nav-caret-right.svg) center no-repeat;
-    background-color: transparent!important;
+    flex: 0 1 65px;
     z-index: 1000
   }
-  .mobile-nav-wrap .mobile-nav ul li .expand:active,
-  .mobile-nav-wrap .mobile-nav ul li .expand:focus,
-  .mobile-nav-wrap .mobile-nav ul li .expand:hover {
+  .mobile-nav-wrap .mobile-nav ul li .expand:active svg,
+  .mobile-nav-wrap .mobile-nav ul li .expand:focus svg,
+  .mobile-nav-wrap .mobile-nav ul li .expand:hover svg {
     transform: rotate(-180deg)
+  }
+  .mobile-nav-wrap .mobile-nav ul li .expand:active svg path,
+  .mobile-nav-wrap .mobile-nav ul li .expand:focus svg path,
+  .mobile-nav-wrap .mobile-nav ul li .expand:hover svg path {
+    stroke: #fff
+  }
+  .mobile-nav-wrap .mobile-nav ul li .expand svg {
+    transition: .6s cubic-bezier(.23,1,.32,1);
+    width: 15px;
+    height: 100%;
+    margin: auto
+  }
+  .mobile-nav-wrap .mobile-nav ul li .expand svg path {
+    transition: .6s cubic-bezier(.23,1,.32,1)
   }
   .mobile-nav-wrap .mobile-nav ul li .close-sub {
     transition: .6s cubic-bezier(.23,1,.32,1);

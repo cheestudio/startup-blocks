@@ -57,7 +57,7 @@ $link-current-color      : white;
       width: 100%;
 
       .mobile-brand {
-        img, svg {
+        img {
           display: block;
         }
       }
@@ -118,13 +118,15 @@ $link-current-color      : white;
       ul {
         @include list-reset;
         li {
-          display: block;
+          display: flex;
+          //align-items: center;
           position: relative;
           margin: 0;
           border-bottom: 1px solid $link-border-color;
           > a {
             @include trans;
             display: block;
+            flex: 1;
             color: $link-color;
             font-size: 1em;
             line-height: 1.2;
@@ -135,21 +137,38 @@ $link-current-color      : white;
             &:hover, &:focus, &:active {
               background-color: $link-hover-background;
               color: $link-hover-color;
+              ~ .expand {
+                background-color: $link-hover-background;
+                > svg path {
+                  stroke: $link-hover-color;
+                }
+              }
             }
           }
 
           .expand {
             @include trans;
+            display: inline-flex;
+            padding: 0;
             display: block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 25px;
-            background: url('assets/img/svg/nav-caret-right.svg') center no-repeat;
-            background-color: transparent !important;
+            flex: 0 1 65px;
             z-index: 1000;
             &:hover, &:focus, &:active {
-              transform: rotate(-180deg);
+              svg {
+                transform: rotate(-180deg);
+                path {
+                  stroke: $link-hover-color;
+                }
+              }
+            }
+            svg {
+              @include trans;
+              width: 15px;
+              height: 100%;
+              margin: auto;
+              path {
+                @include trans;
+              }
             }
           }
 

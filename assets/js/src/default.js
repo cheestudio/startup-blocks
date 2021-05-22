@@ -34,13 +34,13 @@ $('.navbar-toggle').click( function() {
 });
 
 // Flyout Menus for Sub Nav
-$('.mobile-nav ul li').has('ul').prepend('<a href="#" class="expand" aria-label="Expand Menu"><span class="sr-only">Expand Menu</span></a>');
+$('.mobile-nav ul li').has('ul').append('<a href="#" class="expand" aria-label="Expand Menu"><span class="sr-only">Expand Menu</span><svg viewBox="0 0 15 15" width="15" height="15" xmlns="http://www.w3.org/2000/svg" role="img"><path fill="none" stroke="#000000" stroke-width="3" d="M4.7,13.1l5.6-5.6L4.7,1.9"/></svg></a>');
 $('.mobile-nav .sub-menu').prepend('<a href="#" class="close-sub" aria-label="Close Submenu"><span class="sr-only">Close Submenu</span></a>');
 $('.mobile-nav ul .menu-item-has-children > a.expand').click(function(e) {
   var current = $(this);
   e.preventDefault();
-  $("~ ul", current).toggleClass('sub-open');
-  $(current).toggleClass('expand-open');
+  current.toggleClass('sub-open expand-open');
+  current.prev().toggleClass('sub-open');
 });
 $('.close-sub').click(function(e){
   e.preventDefault();
