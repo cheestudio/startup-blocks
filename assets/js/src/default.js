@@ -1,3 +1,4 @@
+
 /* COOKIES
 ========================================================= */
 
@@ -19,7 +20,7 @@ function setCookie(name, value, days) {
   document.cookie = name + "=" + value + ";path=/;expires=" + expiretime;
 }
 
-(function($){ //Doc Ready
+(function($) { // Doc Ready
 
 /* MOBILE NAV
 ========================================================= */
@@ -53,65 +54,20 @@ $('.mobile-nav ul li.menu-item-has-children').each( function(){
 });
 
 
-/* HEADER HEIGHT OFFSET
-========================================================= */
-function headerHeight() {
-  if (window.matchMedia('(min-width: 1025px)').matches) {
-    var heightOffset = 0;
-  }
-  else {
-    var heightOffset = $('.mobile-nav-wrap').outerHeight();
-  }
-}
-
-
 /* SMOOTH INTERNAL LINKS
 ========================================================= */
 $('a[href*="#"]').not('[href="#"]').click( function(event) {
   if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
     var target = $(this.hash);
     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-    headerHeight();
     if ( target.length ) {
       event.preventDefault();
       $('html, body').animate({
-        scrollTop: target.offset().top - heightOffset + 1
+        scrollTop: target.offset().top
       }, 800);
     }
   }
 });
 
-
-/* SCREEN RESIZING
-========================================================= */
-
-// Detect Resize w Delay (change var to true to enable detection)
-var enableResizeWatch = false;
-
-if (enableResizeWatch === true) {
-  var resizeTimer;
-  var windowWidth = $(window).width();
-
-  $(window).resize( function() {
-    clearTimeout(resizeTimer);
-    var currentWidth = $(window).width();
-
-    if ( windowWidth !== currentWidth) {
-      windowWidth = currentWidth;
-      resizeTimer = setTimeout(screenResize, 500);
-    }
-  });
-}
-
-// Function to run after resize
-function screenResize() {
-  if (window.matchMedia('(min-width: 1025px)').matches) {
-    // is >= desktop
-  }
-  else {
-    // is <= tablet
-  }
-}
-​
 
 })(jQuery); // End Document Ready
