@@ -276,35 +276,35 @@ form input[type=file]:focus,
 form input[type=radio]:focus {
   outline: #000 auto 1px
 }
-.gform_wrapper.gform_validation_error .validation_message,
-.gform_wrapper.gform_validation_error li.gfield.gfield_error .gfield_description {
+.gform_wrapper.gform_validation_error .gfield.gfield_error .gfield_description,
+.gform_wrapper.gform_validation_error .validation_message {
   font-size: 12px;
   font-weight: 400;
   color: red;
   display: none
 }
-.gform_wrapper.gform_validation_error li.gfield.gfield_error,
-.gform_wrapper.gform_validation_error li.gfield_contains_required.gfield_creditcard_warning {
+.gform_wrapper.gform_validation_error .gfield.gfield_error,
+.gform_wrapper.gform_validation_error .gfield_contains_required.gfield_creditcard_warning {
   background-color: transparent!important;
   border: none!important;
   padding: 0
 }
-.gform_wrapper.gform_validation_error li.gfield.gfield_error.gfield_contains_required label.gfield_label,
-.gform_wrapper.gform_validation_error li.gfield_contains_required.gfield_creditcard_warning.gfield_contains_required label.gfield_label {
+.gform_wrapper.gform_validation_error .gfield.gfield_error.gfield_contains_required label.gfield_label,
+.gform_wrapper.gform_validation_error .gfield_contains_required.gfield_creditcard_warning.gfield_contains_required label.gfield_label {
   margin-top: 0
 }
-.gform_wrapper.gform_validation_error li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
-.gform_wrapper.gform_validation_error li.gfield_error select,
-.gform_wrapper.gform_validation_error li.gfield_error textarea {
+.gform_wrapper.gform_validation_error .gfield.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+.gform_wrapper.gform_validation_error .gfield.gfield_error select,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea {
   border-color: red;
   border-width: 2px
 }
-.gform_wrapper.gform_validation_error li.gfield_error .gfield_checkbox li label,
-.gform_wrapper.gform_validation_error li.gfield_error .gfield_radio li label {
+.gform_wrapper.gform_validation_error .gfield.gfield_error .gfield_checkbox li label,
+.gform_wrapper.gform_validation_error .gfield.gfield_error .gfield_radio li label {
   color: red
 }
-.gform_wrapper.gform_validation_error li.gfield.gfield_error.gfield_contains_required div.ginput_container,
-.gform_wrapper.gform_validation_error li.gfield.gfield_error.gfield_contains_required label.gfield_label {
+.gform_wrapper.gform_validation_error .gfield.gfield_error.gfield_contains_required .ginput_container,
+.gform_wrapper.gform_validation_error .gfield.gfield_error.gfield_contains_required label.gfield_label {
   color: red!important
 }
 .validation_error {
@@ -323,25 +323,41 @@ form input[type=radio]:focus {
 .gform_wrapper {
   margin: 0
 }
-.gform_wrapper form .gform_body ul {
-  margin: 0;
-  padding: 0;
-  list-style: none
-}
-.gform_wrapper form .gform_body ul li .gfield_label .gfield_required {
+.gform_wrapper h2.gform_submission_error {
+  font-size: 18px;
   color: red
 }
-.gform_wrapper form .gform_body ul li input,
-.gform_wrapper form .gform_body ul li textarea {
-  width: 100%
+.gform_wrapper form .gform-body {
+  margin-bottom: 25px
 }
-.gform_wrapper form .gform_body ul li .ginput_container_consent {
+.gform_wrapper form .gform-body .gform_fields {
+  grid-row-gap: 25px
+}
+.gform_wrapper form .gform-body .gfield_label {
+  font-weight: 400;
+  display: block;
+  margin-bottom: 5px;
+  font-size: .875em
+}
+.gform_wrapper form .gform-body .gfield_label .gfield_required {
+  color: red
+}
+.gform_wrapper form .gform-body .gfield_checkbox {
+  margin-top: 10px
+}
+.gform_wrapper form .gform-body .gchoice {
+  margin-bottom: 15px
+}
+.gform_wrapper form .gform-body .ginput_container_consent {
   display: flex;
   align-items: center
 }
-.gform_wrapper form .gform_body ul li .ginput_container_consent input {
+.gform_wrapper form .gform-body .ginput_container_consent input {
   width: auto;
   margin-right: 20px
+}
+.gform_wrapper form .gform_footer {
+  text-align: right
 }
 *,
 * * {

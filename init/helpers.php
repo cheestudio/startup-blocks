@@ -32,7 +32,7 @@ function custom_login_screen() { ?>
       cursor: pointer;
       display: inline-block;
       font-size: 16px;
-      font-weight: bold;
+      font-weight: 700;
       line-height: 1;
       padding: 10px 30px;
       text-align: center;
@@ -271,7 +271,7 @@ function my_acf_admin_head() {
     }
     table.acf-table th.acf-th {
       text-align: center;
-      font-weight: bold;
+      font-weight: 700;
     }
     .acf-field-wysiwyg.short .mce-edit-area iframe {
       height: auto !important;
