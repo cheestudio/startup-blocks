@@ -870,24 +870,24 @@ img {
   .wp-caption {
     width: auto!important
   }
-  main {
-    margin-top: 60px
-  }
   .desktop-nav-wrap,
   header .brand {
     display: none
   }
+  header > .container {
+    padding-left: 0;
+    padding-right: 0
+  }
   .mobile-nav-wrap {
-    position: fixed;
+    position: sticky;
     display: flex;
     align-items: center;
     background: #fff;
     box-shadow: 0 0 5px rgba(0,0,0,.1);
-    left: 0;
-    top: 0;
     min-height: 60px;
     padding-left: 15px;
     padding-right: 15px;
+    top: 0;
     width: 100%;
     z-index: 3000
   }
@@ -1078,7 +1078,7 @@ img {
     color: #fff
   }
   .mobile-nav-wrap.open {
-    background-color: #fff
+    background-color: red
   }
   .mobile-nav-wrap.open .navbar-toggle .icon-bar {
     transition: .6s cubic-bezier(.23,1,.32,1);

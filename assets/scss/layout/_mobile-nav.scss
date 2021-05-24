@@ -1,7 +1,7 @@
 /* Mobile NAV
 ========================================================= */
 $menu-background         : white;
-$menu-background-open    : white;
+$menu-background-open    : red;
 $menu-dropdown-color     : white;
 $sub-menu-background     : #eee;
 $sub-menu-text-color     : black;
@@ -27,26 +27,25 @@ $link-current-color      : white;
 }
 
 @include for-size(tablet) {
-  main {
-    margin-top: 60px;
-  }
-
   header .brand,
   .desktop-nav-wrap {
     display: none;
   }
+  header > .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   .mobile-nav-wrap {
-    position: fixed;
+    position: sticky;
     display: flex;
     align-items: center;
     background: $menu-background;
     box-shadow: 0px 0px 5px rgba(black, 0.1);
-    left: 0;
-    top: 0;
     min-height: 60px;
     padding-left: 15px;
     padding-right: 15px;
+    top: 0;
     width: 100%;
     z-index: 3000;
 
