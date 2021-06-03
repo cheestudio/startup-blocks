@@ -146,6 +146,12 @@ q:before {
 .has-black-color {
   color: #000
 }
+.has-white-background-color {
+  background-color: #fff
+}
+.has-white-color {
+  color: #fff
+}
 .button,
 button,
 input[type=submit] {

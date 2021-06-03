@@ -1,14 +1,16 @@
 /* Color VARs
 ========================================================= */
 
-$black:#000;
+$black : #000000;
+$white : #ffffff;
 
 /* Colors Classes
 ========================================================= */
 
 $colors: (
-	"black":$black,
-	);
+	"black" : $black,
+  "white" : $white,
+  );
 
 @each $name, $hex in $colors {
 	.has-#{$name}-background-color {

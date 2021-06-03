@@ -1,3 +1,8 @@
+/* Color VARs
+========================================================= */
+@import "colors";
+
+
 /* Fonts
 ========================================================= */
 @mixin font( $style:'body' ) {
@@ -10,16 +15,13 @@
 }
 
 
-/* Color VARs
-========================================================= */
-
-
 /* EM to PX
 ========================================================= */
 $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
 	@return #{$pixels/$context}em;
 }
+
 
 /* BG Image
 ========================================================= */
@@ -30,6 +32,7 @@ $browser-context: 16; // Default
 		size     : $sizing;
 	}
 }
+
 
 /* Padding - Global Rows
 ========================================================= */
@@ -58,6 +61,7 @@ $browser-context: 16; // Default
 @mixin trans( $property:all, $duration:600, $easing:cubic-bezier(.23,1,.32,1) ) {
 	transition: $property $duration+ms $easing;
 }
+
 
 /* Font Awesome 5 ( needs content specified )
 ========================================================= */
