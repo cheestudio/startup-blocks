@@ -326,44 +326,48 @@ form input[type=radio]:focus {
   left: -9000px;
   position: absolute!important
 }
-.gform_wrapper {
+.gform_wrapper.gravity-theme {
   margin: 0
 }
-.gform_wrapper h2.gform_submission_error {
+.gform_wrapper.gravity-theme h2.gform_submission_error {
   font-size: 18px;
   color: red
 }
-.gform_wrapper form .gform-body {
+.gform_wrapper.gravity-theme form .gform-body {
   margin-bottom: 25px
 }
-.gform_wrapper form .gform-body .gform_fields {
+.gform_wrapper.gravity-theme form .gform-body .gform_fields {
   grid-row-gap: 25px
 }
-.gform_wrapper form .gform-body .gfield_label {
+.gform_wrapper.gravity-theme form .gform-body .gfield_label {
   font-weight: 400;
   display: block;
   margin-bottom: 5px;
   font-size: .875em
 }
-.gform_wrapper form .gform-body .gfield_label .gfield_required {
+.gform_wrapper.gravity-theme form .gform-body .gfield_label .gfield_required {
   color: red
 }
-.gform_wrapper form .gform-body .gfield_checkbox {
+.gform_wrapper.gravity-theme form .gform-body .gfield_checkbox {
   margin-top: 10px
 }
-.gform_wrapper form .gform-body .gchoice {
+.gform_wrapper.gravity-theme form .gform-body .gchoice {
   margin-bottom: 15px
 }
-.gform_wrapper form .gform-body .ginput_container_consent {
+.gform_wrapper.gravity-theme form .gform-body .ginput_container_consent {
   display: flex;
   align-items: center
 }
-.gform_wrapper form .gform-body .ginput_container_consent input {
+.gform_wrapper.gravity-theme form .gform-body .ginput_container_consent input {
   width: auto;
   margin-right: 20px
 }
-.gform_wrapper form .gform_footer {
+.gform_wrapper.gravity-theme form .gform_footer {
+  margin: 0;
   text-align: right
+}
+.gform_wrapper.gravity-theme form .gform_footer button {
+  margin: 0
 }
 *,
 * * {
