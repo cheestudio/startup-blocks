@@ -3,7 +3,7 @@
 (function($){
 
 /*	initializeBlock = function() {
-		$().each(function(){
+		$(SECTION).each(function(){
 			
 		});
 	}

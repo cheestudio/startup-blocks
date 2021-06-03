@@ -4,21 +4,21 @@
 /* Project VARs
 ========================================================= */
 const
-PROJECT_NAME   = 'FOLDERNAME',
-DEVELOPER_MODE = true,
-BLOCK_MODE     = true,
+PROJECT_NAME     = 'FOLDERNAME',
+DEVELOPER_MODE   = true,
+BLOCK_MODE       = true,
 
-ROOT           = './',
-STYLES_MAIN    = './assets/scss/main.scss',
-STYLES_SOURCE  = './assets/scss/**/*.scss',
-EDITOR_STYLES  = './assets/scss/editor.scss',
-BLOCKS_SOURCE  = './partials/blocks/**/*.scss',
-JS_SOURCE      = ['./assets/js/src/plugins/*.js','./assets/js/src/*.js'],
-JS_DEST        = './assets/js/',
-SVG_SOURCE     = './assets/img/svg/*.svg',
-//ALL_IMAGES     = './assets/img/*.{png,jpg,jpeg,gif}',
-ALL_PHP        = './**/*.php',
-IGNORE         = './node_modules/**/*';
+ROOT             = './',
+STYLES_MAIN      = './assets/scss/main.scss',
+STYLES_SOURCE    = './assets/scss/**/*.scss',
+EDITOR_STYLES    = './assets/scss/editor.scss',
+BLOCKS_SOURCE    = './partials/blocks/**/*.scss',
+BLOCKS_JS_SOURCE = './partials/blocks/**/*.js',
+JS_SOURCE        = ['./assets/js/src/plugins/*.js','./assets/js/src/*.js'],
+JS_DEST          = './assets/js/',
+SVG_SOURCE       = './assets/img/svg/*.svg',
+ALL_PHP          = './**/*.php',
+IGNORE           = './node_modules/**/*';
 
 
 /* Plugin VARs
@@ -178,11 +178,11 @@ function watchFiles(done) {
   watch( STYLES_SOURCE, styles );
   if ( BLOCK_MODE ) {
     watch( BLOCKS_SOURCE, block_styles );
+    watch( BLOCKS_JS_SOURCE, reload );
     watch( EDITOR_STYLES, editor_styles );
   }
   if ( DEVELOPER_MODE ) {
     watch( ALL_PHP, !IGNORE, reload );
-    //watch( ALL_IMAGES, reload );
     watch( JS_SOURCE, series(scriptsJS, reload) );
     watch( SVG_SOURCE, { events: ['add', 'change'] }, reload );
   }
