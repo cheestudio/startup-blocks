@@ -12,6 +12,8 @@ $colors: (
   "white" : $white,
   );
 
+/* Block Editor Colors */
+
 @each $name, $hex in $colors {
 	.has-#{$name}-background-color {
 		background-color: $hex;
@@ -19,4 +21,12 @@ $colors: (
 	.has-#{$name}-color {
 		color: $hex;
 	}
+}
+
+/* Global CSS Variables */
+
+@each $name, $hex in $colors {
+ :root {
+  --#{$name}: #{$hex}
+ }
 }

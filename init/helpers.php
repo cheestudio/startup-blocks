@@ -96,15 +96,7 @@ function svg($path, $alt='')
 
 /* Gravity Forms Button Markup
 ========================================================= */
-/**
- * Filters the next, previous and submit buttons.
- * Replaces the forms <input> buttons with <button> while maintaining attributes from original <input>.
- *
- * @param string $button Contains the <input> tag to be filtered.
- * @param object $form Contains all the properties of the current form.
- *
- * @return string The filtered button.
- */
+
 add_filter( 'gform_next_button', 'input_to_button', 10, 2 );
 add_filter( 'gform_previous_button', 'input_to_button', 10, 2 );
 add_filter( 'gform_submit_button', 'input_to_button', 10, 2 );
@@ -351,122 +343,6 @@ function my_acf_admin_head()
 </style>
 <?php
 }
-
-/* Block/TinyMCE/ACF Editor Colors
-========================================================= */
-
-/* Global Color Definitions */
-
-$color_vars = array(
-  'Black' => '000000',
-  'White' => 'ffffff'
-);
-
-/* Block Editor Colors
------------------------------------*/
-
-// Disable Custom Colors (optional)
-//add_theme_support( 'disable-custom-colors' );
-
-function block_editor_color_map()
-{
-    global $color_vars;
-    $colors = array();
-    foreach ($color_vars as $name => $hex) {
-        $colors[] = array(
-    'name'  => __($name),
-    'slug'  => strtolower($name),
-    'color' => '#'.$hex,
-  );
-    }
-    return $colors;
-}
-
-function custom_block_editor_colors()
-{
-    $colors = block_editor_color_map();
-    add_theme_support('editor-color-palette', $colors);
-}
-add_action('after_setup_theme', 'custom_block_editor_colors');
-
-
-/* Branded Color Picker for ACF
------------------------------------*/
-
-function output_the_colors()
-{
-
-// use defined Block Editor color array
-    $color_palette = current((array) get_theme_support('editor-color-palette'));
-
-    if (!$color_palette) {
-        return;
-    }
-
-    ob_start();
-
-    echo '[';
-    foreach ($color_palette as $color) {
-        echo "'" . $color['color'] . "', ";
-    }
-    echo ']';
-
-    return ob_get_clean();
-}
-
-function custom_acf_colors()
-{
-    $custom_colors = output_the_colors(); ?>
-<script type="text/javascript">
-  (function($) {
-    acf.add_filter('color_picker_args', function(args, $field) {
-      args.palettes = <?php echo $custom_colors; ?>
-        // return colors
-        return args;
-    });
-  })(jQuery);
-</script>
-<?php
-}
-add_action('acf/input/admin_footer', 'custom_acf_colors');
-
-/* Add Custom Colors to ACF Wizzy
------------------------------------*/
-
-function custom_tinymce_colors($init)
-{
-    global $color_vars;
-    $colors_custom = array();
-    foreach ($color_vars as $name => $hex) {
-        $colors_custom[] = $hex;
-        $colors_custom[] = $name;
-    }
-    $colors = $colors_custom;
-    $init['textcolor_map']  = json_encode($colors);
-    return $init;
-}
-add_filter('tiny_mce_before_init', 'custom_tinymce_colors');
-
-
-/* ACF Block Class/ID
-========================================================= */
-
-function block_class_id($block_entry, $class)
-{
-    $className = $class;
-    $id = $block_entry['id'];
-    if (!empty($block_entry['anchor'])) {
-        $id = $block_entry['anchor'];
-    }
-    if (!empty($block_entry['className'])) {
-        $className .= ' ' . $block_entry['className'];
-    }
-    if (!empty($block_entry['align'])) {
-        $className .= ' align' . $block_entry['align'];
-    }
-    echo 'id="'.esc_attr($id).'" class="'.esc_attr($className).'"';
-}
-
 
 /* Disable Image Side scaling on upload
 ========================================================= */
