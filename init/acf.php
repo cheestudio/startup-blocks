@@ -107,6 +107,26 @@ add_action('acf/init', function () {
 });
 }
 
+/* ACF Block Class/ID Helper Function
+========================================================= */
+
+function block_class_id($block_entry, $class)
+{
+    $className = $class;
+    $id = $block_entry['id'];
+    if (!empty($block_entry['anchor'])) {
+        $id = $block_entry['anchor'];
+    }
+    if (!empty($block_entry['className'])) {
+        $className .= ' ' . $block_entry['className'];
+    }
+    if (!empty($block_entry['align'])) {
+        $className .= ' align' . $block_entry['align'];
+    }
+    echo 'id="'.esc_attr($id).'" class="'.esc_attr($className).'"';
+}
+
+
 /* Toggle Builder/Block Workflows
 ========================================================= */
 
