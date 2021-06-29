@@ -50,20 +50,3 @@ function insert_custom_image_sizes($sizes) {
   'before_title'  => '<h3>',
   'after_title'   => '</h3>',
   ));*/
-
-/* Custom Gutenberg Block Categories
-========================================================= */
-
-function custom_block_categories( $categories ) {
-    return array_merge(
-        array(
-            array(
-                'slug' => 'custom_blocks',
-                'title' => __( 'Custom Blocks'),
-                'icon'  => 'wordpress',
-            ),
-        ),
-         $categories
-    );
-}
-add_filter( 'block_categories', 'custom_block_categories', 10, 2 );

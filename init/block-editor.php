@@ -62,3 +62,21 @@ add_filter( 'use_block_editor_for_post_type', 'chee_disable_gutenberg', 10, 2 );
 
 }
 add_action( 'admin_head', 'chee_disable_classic_editor' );*/
+
+
+/* Custom Block Categories
+========================================================= */
+
+function custom_block_categories( $categories ) {
+  return array_merge(
+      array(
+          array(
+              'slug' => 'custom_blocks',
+              'title' => __( 'Custom Blocks'),
+              'icon'  => 'wordpress',
+          ),
+      ),
+       $categories
+  );
+}
+add_filter( 'block_categories', 'custom_block_categories', 10, 2 );
