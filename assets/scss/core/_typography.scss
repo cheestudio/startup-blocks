@@ -60,21 +60,13 @@ body {
 }
 
 main {
+
   p, li {
-    @include no-margin-last;
     font-size: em(20);
     line-height: 1.2;
     margin-bottom: 20px;
     @include for-size(tablet-sm) {
       font-size: 1em;
-    }
-    a, a[href^="tel"] {
-      @include trans;
-      color: red;
-      text-decoration: underline;
-      &:hover, &:focus, &:active {
-        color: red;
-      }
     }
   }
 
@@ -82,5 +74,14 @@ main {
     p {
       @include no-margin-last;
     }
+  }
+}
+
+a, a[href^="tel"] {
+  @include trans;
+  color: red;
+  text-decoration: underline;
+  &:hover, &:focus, &:active {
+    color: red;
   }
 }
