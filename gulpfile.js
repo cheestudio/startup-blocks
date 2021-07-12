@@ -33,7 +33,7 @@ mmq          = require('gulp-merge-media-queries'),
 notify       = require('gulp-notify'),
 plumber      = require('gulp-plumber'),
 rename       = require('gulp-rename'),
-sass         = require('gulp-sass'),
+sass         = require('gulp-sass')(require('sass')),
 sassglob     = require('gulp-sass-glob'),
 gulpif       = require('gulp-if'),
 terser       = require('gulp-terser-js'),
@@ -57,7 +57,9 @@ var onError = function(err) {
 function styles() {
   return src( STYLES_MAIN )
   .pipe( plumber( { errorHandler: onError } ) )
-  .pipe( sassglob() )
+  .pipe( sassglob({
+    allowEmpty: true
+  }) )
   .pipe( sass() )
   .pipe( autoprefixer() )
   .pipe( mmq( { log: true } ) )
