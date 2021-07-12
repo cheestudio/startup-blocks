@@ -1,3 +1,7 @@
+/* SASS Includes
+========================================================= */
+@use "sass:math";
+
 /* Color VARs
 ========================================================= */
 @import "colors";
@@ -14,13 +18,18 @@
 	}
 }
 
-
 /* EM to PX
 ========================================================= */
 $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
-	@return #{$pixels/$context}em;
+    @return math.div($pixels,$context)+em;
 }
+
+/* REM to PX
+========================================================= */
+@function rem($size) {
+	@return math.div($size, 16px) * 1rem;
+ }
 
 
 /* BG Image
