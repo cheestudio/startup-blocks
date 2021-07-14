@@ -21,7 +21,7 @@ $border-radius       : 0;
 $box-shadow          : none;
 
 form input[type], form select, form textarea {
-  @include trans( $easing:linear );
+  @include trans( $ease:linear );
   display: inline-block;
   border-top-width: $border-width-top+px;
   border-bottom-width: $border-width-bottom+px;

@@ -63,8 +63,8 @@ $browser-context: 16; // Default
 
 /* Global Transition ( property, duration, easing )
 ========================================================= */
-@mixin trans( $property:all, $duration:600, $easing:cubic-bezier(.23,1,.32,1) ) {
-	transition: $property $duration+ms $easing;
+@mixin trans( $prop:all, $dur:600, $ease:cubic-bezier(.23,1,.32,1) ) {
+	transition: $prop $dur+ms $ease;
 }
 
 
