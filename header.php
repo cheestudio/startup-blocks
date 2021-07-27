@@ -51,7 +51,7 @@ if ( isset($body_code) ) echo $body_code; ?>
 
     <?php if ( $logo_desktop ) : ?>
       <a href="<?= home_url(); ?>" class="brand" title="Home">
-        <?php svg( $logo_desktop, 'Home' ); ?>
+        <img src="<?= esc_html( $logo_desktop ); ?>" alt="Site Logo">
       </a>
     <?php endif; ?>
 

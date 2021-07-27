@@ -6,7 +6,7 @@ $logo = url_exists( $logo_path . 'logo-mobile.svg' ) ? $logo_path . 'logo-mobile
   <div class="mobile-nav-header">
     <?php if ( $logo ) : ?>
       <a href="<?= home_url(); ?>" class="mobile-brand" title="Tap to Go Home" aria-label="Go Home">
-        <?php svg( $logo, 'Home' ); ?>
+        <img src="<?= esc_html( $logo ); ?>" alt="Site Logo">
       </a>
     <?php endif; ?>
 

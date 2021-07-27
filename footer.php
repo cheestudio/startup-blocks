@@ -10,7 +10,7 @@ $footer_code = get_field('footer_code', 'option'); ?>
     <?php if ( $logo ) : ?>
       <div class="footer--logo">
         <a href="#top-of-page" class="footer-brand" title="Go to Top of Page">
-          <?php svg( $logo, 'Home' ); ?>
+          <img src="<?= esc_html( $logo ); ?>" alt="Site Logo">
         </a>
       </div>
     <?php endif; ?>

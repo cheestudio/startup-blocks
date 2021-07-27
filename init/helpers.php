@@ -61,42 +61,9 @@ function custom_login_screen() { ?>
 </style>
 <?php }
 
-/* If File Exists (used to verify .svg files exist primarily)
-========================================================= */
-function url_exists($url)
-{
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_NOBODY, true);
-    curl_exec($ch);
-    $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-    if ($code == 200) {
-        $status = true;
-    } else {
-        $status = false;
-    }
-    curl_close($ch);
-
-    return $status;
-}
-
-
-/* Output Inline SVG
-========================================================= */
-function svg($path, $alt='')
-{
-    if (url_exists($path)) :
-    $ext = pathinfo($path, PATHINFO_EXTENSION);
-    if ($ext == 'svg') :
-      echo file_get_contents($path); else :
-      echo "<img src='{$path}' alt='{$alt}'>";
-    endif;
-    endif;
-}
 
 /* Gravity Forms Button Markup
 ========================================================= */
-
 add_filter( 'gform_next_button', 'input_to_button', 10, 2 );
 add_filter( 'gform_previous_button', 'input_to_button', 10, 2 );
 add_filter( 'gform_submit_button', 'input_to_button', 10, 2 );
