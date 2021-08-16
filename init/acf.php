@@ -83,7 +83,8 @@ add_action('acf/init', function () {
       'align'             => $meta['align'] ? $meta['align'] : 'full',
       'icon'              => $meta['icon'],
       'supports'          => array(
-        'align' => array( 'center','wide','full' ),
+        'align' => array('left','center', 'right', 'wide', 'full'),
+        'align_text' => array( 'left','center','right' ),
         'customClassName' => true
       ),
     ));
