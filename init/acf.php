@@ -76,7 +76,9 @@ add_action('acf/init', function () {
       'category'          => 'custom_blocks',
       'post_types'        => $post_types,
       'render_template'   => get_template_directory() . '/partials/blocks/'.$template_path.'/template.php',
-      'enqueue_assets'    => 'block_assets',
+      'enqueue_assets' => function () use ($template_path) {
+        block_assets($template_path);
+       },
       'mode'              => $meta['mode'] ? $meta['mode'] : 'edit',
       'align'             => $meta['align'] ? $meta['align'] : 'full',
       'icon'              => $meta['icon'],
@@ -88,21 +90,17 @@ add_action('acf/init', function () {
   }
 
 // Register existing block assets
-  function block_assets() {
-    foreach (glob(BLOCKS_DIR . '/**/*.php') as $filepath) {
-      // Establish template path for each block directory
-      $block_name = basename(dirname($filepath));
-      $block_styles = get_template_directory() . '/partials/blocks/'.$block_name.'/style.css';
-      $block_script = get_template_directory() . '/partials/blocks/'.$block_name.'/script.js';
-      if ( file_exists( $block_styles ) ) {
-        $cache_bust = '?'.filemtime($block_styles);
-        wp_enqueue_style( $block_name, get_template_directory_uri() . '/partials/blocks/'.$block_name.'/style.css',array(),$cache_bust);
-      }
-      if ( file_exists( $block_script ) ) {
-       $cache_bust = '?'.filemtime($block_script);
-       wp_enqueue_script( $block_name, get_template_directory_uri() . '/partials/blocks/'.$block_name.'/script.js', array('jquery'), $cache_bust, true );
-     }
-   }
+function block_assets($template_path) {
+  $block_styles = get_template_directory() . '/partials/blocks/' . $template_path . '/style.css';
+  $block_script = get_template_directory() . '/partials/blocks/' . $template_path . '/script.js';
+  if (file_exists($block_styles)) {
+   $cache_bust = '?' . filemtime($block_styles);
+   wp_enqueue_style($template_path, get_template_directory_uri() . '/partials/blocks/' . $template_path . '/style.css', array(), $cache_bust);
+  }
+  if (file_exists($block_script)) {
+   $cache_bust = '?' . filemtime($block_script);
+   wp_enqueue_script($template_path, get_template_directory_uri() . '/partials/blocks/' . $template_path . '/script.js', array('jquery'), $cache_bust, true);
+  }
  }
 });
 }
