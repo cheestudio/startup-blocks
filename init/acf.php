@@ -84,7 +84,7 @@ add_action('acf/init', function () {
       'icon'              => $meta['icon'],
       'supports'          => array(
         'align' => array('left','center', 'right', 'wide', 'full'),
-        'align_text' => array( 'left','center','right' ),
+        'align_text' => array('left','center','right'),
         'customClassName' => true
       ),
     ));
