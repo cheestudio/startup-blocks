@@ -1,7 +1,6 @@
-
 <?php // Social Icons
+if (function_exists('get_field')) {
 $icons = get_field('social_media_icons', 'option'); ?>
-
 <?php if ( $icons ) : ?>
   <div class="social-icons">
     <ul>
@@ -24,3 +23,4 @@ $icons = get_field('social_media_icons', 'option'); ?>
     </ul>
   </div>
 <?php endif; ?>
+<?php } ?>

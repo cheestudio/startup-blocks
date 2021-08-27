@@ -24,9 +24,11 @@
 <?php 
 // Logos & Optional ACF code
 $logo_path    = get_template_directory_uri() . '/assets/img/svg/';
-$logo_desktop = $logo_path . 'logo.svg';
+$logo = $logo_path . 'logo.svg';
+if(function_exists('get_field')){
 $head_code    = get_field('head_code', 'option');
 $body_code    = get_field('body_code', 'option');
+}
 if ( isset( $head_code ) ) echo $head_code; ?>
 </head>
 
@@ -49,9 +51,9 @@ if ( isset($body_code) ) echo $body_code; ?>
 <header class="main-banner">
   <div class="container">
 
-    <?php if ( $logo_desktop ) : ?>
+    <?php if ( $logo ) : ?>
       <a href="<?= home_url(); ?>" class="brand" title="Home">
-        <img src="<?= esc_html( $logo_desktop ); ?>" alt="Site Logo">
+        <img src="<?= esc_html( $logo ); ?>" alt="Site Logo">
       </a>
     <?php endif; ?>
 
