@@ -9,7 +9,7 @@
 	@if ( $style == 'body' ) {
 		// font-family here
 	}
-	@elseif ( $style == 'heading' ) {
+	@else if ( $style == 'heading' ) {
 		// font-family here
 	}
 }
@@ -80,7 +80,7 @@ $browser-context: 16; // Default
 		font-family: "Font Awesome 5 Free";
 		font-weight: $weight;
 	}
-	@elseif ( $type == 'brands' ) {
+	@else if ( $type == 'brands' ) {
 		font-family: "Font Awesome 5 Brands";
 	}
 }
@@ -115,7 +115,7 @@ $browser-context: 16; // Default
 		top: 50%;
 		transform: translateY(-50%);
 	}
-	@elseif $dir == horiz {
+	@else if $dir == horiz {
 		left: 50%;
 		transform: translateX(-50%);
 	}
@@ -126,7 +126,7 @@ $browser-context: 16; // Default
 		opacity: 1;
 		visibility: visible;
 	}
-	@elseif $state == hide {
+	@else if $state == hide {
 		opacity: 0;
 		visibility: hidden;
 	}
