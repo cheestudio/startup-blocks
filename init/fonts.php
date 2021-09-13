@@ -2,7 +2,7 @@
 /* Custom Font Embeds
 ========================================================= */
 
-function chee_enqueue_custom_fonts(){
+function chee_enqueue_custom_fonts() {
 	// wp_enqueue_style('typekit', "https://use.typekit.net/rfw6ied.css" );
 	// wp_enqueue_script('fontawesome', "https://use.fontawesome.com/430a4cedb2.js" );
 }

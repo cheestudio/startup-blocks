@@ -1,9 +1,9 @@
-<?php // VARs & optional ACF code
+
+<?php // VARs & Optional ACF Footer Code
 $logo = get_template_directory_uri() . '/assets/img/svg/logo.svg';
-if (function_exists('get_field')) {
+if ( function_exists('get_field') ) :
  $footer_code = get_field('footer_code', 'option');
-}
-?>
+endif; ?>
 
 </main>
 
@@ -29,11 +29,9 @@ if (function_exists('get_field')) {
   </div>
 </footer>
 
-<?php wp_footer();?>
+<?php wp_footer(); ?>
 
-<?php if (isset($footer_code)) {
- echo $footer_code;
-}
-?>
+<?php if ( isset($footer_code) ) echo $footer_code; ?>
+
 </body>
 </html>
