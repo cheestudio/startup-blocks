@@ -117,7 +117,7 @@ blockquote:after,
 blockquote:before,
 q:after,
 q:before {
-  content: '';
+  content: "";
   content: none
 }
 .container {
@@ -140,18 +140,6 @@ q:before {
 .content-blocks > :not(.alignfull).alignwide {
   max-width: 1400px
 }
-.has-black-background-color {
-  background-color: #000
-}
-.has-black-color {
-  color: #000
-}
-.has-white-background-color {
-  background-color: #fff
-}
-.has-white-color {
-  color: #fff
-}
 .button,
 button,
 input[type=submit] {
@@ -169,6 +157,22 @@ input[type=submit] {
   font-size: 1.125em;
   line-height: 1.2;
   -webkit-appearance: none
+}
+.has-black-background-color {
+  background-color: #000
+}
+.has-black-color {
+  color: #000
+}
+.has-white-background-color {
+  background-color: #fff
+}
+.has-white-color {
+  color: #fff
+}
+:root {
+  --black: #000000;
+  --white: #ffffff
 }
 h1,
 h2,
@@ -210,34 +214,21 @@ main p {
   line-height: 1.2;
   margin-bottom: 20px
 }
-main li:last-of-type,
-main p:last-of-type {
-  margin-bottom: 0
-}
-main li a,
-main li a[href^=tel],
-main p a,
-main p a[href^=tel] {
-  transition: .6s cubic-bezier(.23,1,.32,1);
-  color: red;
-  text-decoration: underline
-}
-main li a:active,
-main li a:focus,
-main li a:hover,
-main li a[href^=tel]:active,
-main li a[href^=tel]:focus,
-main li a[href^=tel]:hover,
-main p a:active,
-main p a:focus,
-main p a:hover,
-main p a[href^=tel]:active,
-main p a[href^=tel]:focus,
-main p a[href^=tel]:hover {
-  color: red
-}
 main blockquote p:last-of-type {
   margin-bottom: 0
+}
+a,
+a[href^=tel] {
+  transition: .6s cubic-bezier(.23,1,.32,1);
+  color: red
+}
+a:active,
+a:focus,
+a:hover,
+a[href^=tel]:active,
+a[href^=tel]:focus,
+a[href^=tel]:hover {
+  color: red
 }
 .footer--logo a,
 .footer--logo img {
@@ -440,7 +431,7 @@ q {
 }
 q:after,
 q:before {
-  content: '';
+  content: "";
   content: none
 }
 small {
@@ -888,8 +879,11 @@ img {
     padding-left: 0;
     padding-right: 0
   }
+  main {
+    margin-top: 60px
+  }
   .mobile-nav-wrap {
-    position: sticky;
+    position: fixed;
     display: flex;
     align-items: center;
     background: #fff;
@@ -936,7 +930,7 @@ img {
   .mobile-nav-wrap .mobile-nav-header .navbar-toggle .icon-bar:nth-child(2):after,
   .mobile-nav-wrap .mobile-nav-header .navbar-toggle .icon-bar:nth-child(2):before {
     transition: .6s cubic-bezier(.23,1,.32,1);
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     background-color: #000;
