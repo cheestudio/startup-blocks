@@ -141,6 +141,7 @@ q:before {
   max-width: 1400px
 }
 .button,
+.gform_wrapper.gravity-theme form .gform_footer button,
 button,
 input[type=submit] {
   transition: .6s cubic-bezier(.23,1,.32,1);
@@ -234,19 +235,106 @@ a[href^=tel]:hover {
 .footer--logo img {
   display: block
 }
+.gform_wrapper.gform_validation_error .gform_validation_errors {
+  border-color: red;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 25px;
+  border-width: 2px
+}
+.gform_wrapper.gform_validation_error .gform_validation_errors:active,
+.gform_wrapper.gform_validation_error .gform_validation_errors:focus,
+.gform_wrapper.gform_validation_error .gform_validation_errors:hover {
+  border-color-active: #000
+}
+.gform_wrapper.gform_validation_error .gform_validation_errors h2.gform_submission_error {
+  font-size: 18px;
+  color: red
+}
+.gform_wrapper.gform_validation_error .gfield.gfield_error input,
+.gform_wrapper.gform_validation_error .gfield.gfield_error label,
+.gform_wrapper.gform_validation_error .gfield.gfield_error legend,
+.gform_wrapper.gform_validation_error .gfield.gfield_error select,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea {
+  border-color: red;
+  border-radius: 0;
+  box-shadow: none;
+  color: red;
+  border-width: 2px
+}
+.gform_wrapper.gform_validation_error .gfield.gfield_error input:active,
+.gform_wrapper.gform_validation_error .gfield.gfield_error input:focus,
+.gform_wrapper.gform_validation_error .gfield.gfield_error input:hover,
+.gform_wrapper.gform_validation_error .gfield.gfield_error label:active,
+.gform_wrapper.gform_validation_error .gfield.gfield_error label:focus,
+.gform_wrapper.gform_validation_error .gfield.gfield_error label:hover,
+.gform_wrapper.gform_validation_error .gfield.gfield_error legend:active,
+.gform_wrapper.gform_validation_error .gfield.gfield_error legend:focus,
+.gform_wrapper.gform_validation_error .gfield.gfield_error legend:hover,
+.gform_wrapper.gform_validation_error .gfield.gfield_error select:active,
+.gform_wrapper.gform_validation_error .gfield.gfield_error select:focus,
+.gform_wrapper.gform_validation_error .gfield.gfield_error select:hover,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:active,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:focus,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:hover {
+  border-color-active: #000
+}
+.gform_wrapper.gform_validation_error .gfield.gfield_error input::-webkit-input-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error label::-webkit-input-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error legend::-webkit-input-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error select::-webkit-input-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea::-webkit-input-placeholder {
+  color: red
+}
+.gform_wrapper.gform_validation_error .gfield.gfield_error input:-moz-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error label:-moz-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error legend:-moz-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error select:-moz-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:-moz-placeholder {
+  color: red
+}
+.gform_wrapper.gform_validation_error .gfield.gfield_error input::-moz-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error label::-moz-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error legend::-moz-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error select::-moz-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea::-moz-placeholder {
+  color: red
+}
+.gform_wrapper.gform_validation_error .gfield.gfield_error input:-ms-input-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error label:-ms-input-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error legend:-ms-input-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error select:-ms-input-placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:-ms-input-placeholder {
+  color: red
+}
+.gform_wrapper.gform_validation_error .gfield.gfield_error .gfield_description,
+.gform_wrapper.gform_validation_error .validation_message {
+  display: none
+}
 form input[type],
 form select,
 form textarea {
-  transition: .6s linear;
-  display: inline-block;
-  border-style: solid;
+  transition: .3s cubic-bezier(.23,1,.32,1);
   border-color: #000;
   border-radius: 0;
   box-shadow: none;
+  display: inline-block;
+  border-style: solid;
   padding: 10px 15px!important;
   font-family: inherit;
   color: #000;
   border-width: 2px
+}
+form input[type]:active,
+form input[type]:focus,
+form input[type]:hover,
+form select:active,
+form select:focus,
+form select:hover,
+form textarea:active,
+form textarea:focus,
+form textarea:hover {
+  border-color-active: #000
 }
 form input[type]::-webkit-input-placeholder,
 form select::-webkit-input-placeholder,
@@ -272,66 +360,14 @@ form input[type]:focus,
 form select:focus,
 form textarea:focus {
   outline: 0;
-  border-color: #000
-}
-form input[type=checkbox]:focus,
-form input[type=file]:focus,
-form input[type=radio]:focus {
-  outline: #000 auto 1px
-}
-.gform_wrapper.gform_validation_error .gfield.gfield_error .gfield_description,
-.gform_wrapper.gform_validation_error .validation_message {
-  font-size: 12px;
-  font-weight: 400;
-  color: red;
-  display: none
-}
-.gform_wrapper.gform_validation_error .gfield.gfield_error,
-.gform_wrapper.gform_validation_error .gfield_contains_required.gfield_creditcard_warning {
-  background-color: transparent!important;
-  border: none!important;
-  padding: 0
-}
-.gform_wrapper.gform_validation_error .gfield.gfield_error.gfield_contains_required label.gfield_label,
-.gform_wrapper.gform_validation_error .gfield_contains_required.gfield_creditcard_warning.gfield_contains_required label.gfield_label {
-  margin-top: 0
-}
-.gform_wrapper.gform_validation_error .gfield.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
-.gform_wrapper.gform_validation_error .gfield.gfield_error select,
-.gform_wrapper.gform_validation_error .gfield.gfield_error textarea {
-  border-color: red;
-  border-width: 2px
-}
-.gform_wrapper.gform_validation_error .gfield.gfield_error .gfield_checkbox li label,
-.gform_wrapper.gform_validation_error .gfield.gfield_error .gfield_radio li label {
-  color: red
-}
-.gform_wrapper.gform_validation_error .gfield.gfield_error.gfield_contains_required .ginput_container,
-.gform_wrapper.gform_validation_error .gfield.gfield_error.gfield_contains_required label.gfield_label {
-  color: red!important
-}
-.validation_error {
-  color: red!important;
-  font-size: 12px!important;
-  display: none
-}
-.gform_confirmation_wrapper .gform_confirmation_message {
-  margin: 0
-}
-.gform_validation_container {
-  display: none!important;
-  left: -9000px;
-  position: absolute!important
+  border-color: green
 }
 .gform_wrapper.gravity-theme {
   margin: 0
 }
-.gform_wrapper.gravity-theme h2.gform_submission_error {
-  font-size: 18px;
-  color: red
-}
 .gform_wrapper.gravity-theme form .gform-body {
-  margin-bottom: 25px
+  padding-top: 25px;
+  padding-bottom: 25px
 }
 .gform_wrapper.gravity-theme form .gform-body .gform_fields {
   grid-row-gap: 25px
@@ -339,32 +375,48 @@ form input[type=radio]:focus {
 .gform_wrapper.gravity-theme form .gform-body .gfield_label {
   font-weight: 400;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   font-size: .875em
 }
 .gform_wrapper.gravity-theme form .gform-body .gfield_label .gfield_required {
   color: red
 }
+.gform_wrapper.gravity-theme form .gform-body .ginput_container_address label {
+  padding-top: 15px
+}
 .gform_wrapper.gravity-theme form .gform-body .gfield_checkbox {
   margin-top: 10px
 }
 .gform_wrapper.gravity-theme form .gform-body .gchoice {
-  margin-bottom: 15px
+  margin-bottom: 10px
+}
+.gform_wrapper.gravity-theme form .gform-body .gchoice input,
+.gform_wrapper.gravity-theme form .gform-body .gfield_checkbox input {
+  margin-right: 7px
 }
 .gform_wrapper.gravity-theme form .gform-body .ginput_container_consent {
   display: flex;
   align-items: center
 }
 .gform_wrapper.gravity-theme form .gform-body .ginput_container_consent input {
-  width: auto;
-  margin-right: 20px
+  margin-right: 10px
 }
 .gform_wrapper.gravity-theme form .gform_footer {
   margin: 0;
-  text-align: right
+  padding-top: 25px;
+  padding-bottom: 25px
 }
 .gform_wrapper.gravity-theme form .gform_footer button {
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
   margin: 0
+}
+.gform_wrapper.gravity-theme form .gform_footer button:active,
+.gform_wrapper.gravity-theme form .gform_footer button:focus,
+.gform_wrapper.gravity-theme form .gform_footer button:hover {
+  color: #fff;
+  background-color: #000
 }
 *,
 * * {
