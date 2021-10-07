@@ -51,6 +51,16 @@
 .has-black-color {
   color: #000
 }
+.has-white-background-color {
+  background-color: #fff
+}
+.has-white-color {
+  color: #fff
+}
+:root {
+  --black: #000000;
+  --white: #ffffff
+}
 .edit-post-visual-editor.editor-styles-wrapper h1,
 .edit-post-visual-editor.editor-styles-wrapper h2,
 .edit-post-visual-editor.editor-styles-wrapper h3,
