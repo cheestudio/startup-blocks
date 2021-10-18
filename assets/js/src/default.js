@@ -49,7 +49,7 @@ $('.close-sub').click(function(e){
 
 // Add Sub Nav Titles Dynamically
 $('.mobile-nav ul li.menu-item-has-children').each( function(){
-  var navSectionTitle = $(this).find('.expand').next().html();
+  var navSectionTitle = $(this).find('.expand').prev().prev().html();
   $(this).find('.sub-menu').prepend('<div class="sub-menu-title">' + navSectionTitle + '</div>');
 });
 

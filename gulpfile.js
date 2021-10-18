@@ -4,7 +4,7 @@
 /* Project VARs
 ========================================================= */
 const
-PROJECT_NAME     = 'FOLDERNAME',
+PROJECT_NAME     = 'startup-blocks',
 DEVELOPER_MODE   = true,
 BLOCK_MODE       = true,
 
