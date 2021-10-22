@@ -79,4 +79,4 @@ function custom_block_categories( $categories ) {
        $categories
   );
 }
-add_filter( 'block_categories', 'custom_block_categories', 10, 2 );
+add_filter( 'block_categories_all', 'custom_block_categories', 10, 2 );
