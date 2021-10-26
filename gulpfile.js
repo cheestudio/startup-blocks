@@ -120,6 +120,9 @@ function block_styles() {
 function editor_styles() {
   return src( EDITOR_STYLES )
   .pipe( plumber( { errorHandler: onError } ) )
+  .pipe( sassglob({
+    allowEmpty: true
+  }) )  
   .pipe( sass() )
   .pipe( autoprefixer() )
   .pipe( mmq( { log: true } ) )
