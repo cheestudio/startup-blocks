@@ -83,7 +83,8 @@ function acf_blocks_registration() {
         'supports'          => array(
           'align' => array('left','center', 'right', 'wide', 'full'),
           'align_text' => array('left','center','right'),
-          'customClassName' => true
+          'customClassName' => true,
+          'anchor' => true
         ),
       ));
     }
