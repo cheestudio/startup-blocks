@@ -156,7 +156,7 @@ function fieldGroupName($file){
   $path = basename( dirname($file));
   $name = str_replace('-', '_', $path);
   $group = $name . '_group';
-  return $group;
+  return get_field($group);
 }
 
 /* Toggle Builder/Block Workflows
