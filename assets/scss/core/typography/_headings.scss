@@ -1,0 +1,29 @@
+/* Headings
+========================================================= */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 15px 0;
+  br {
+   @include for-size(tablet) {
+    display: none;
+   }
+  }
+ }
+ 
+ h1, .h1, %h1, .preset1 {
+  @extend %preset1;
+ }
+ h2, .h2, %h2, .preset2 {
+  @extend %preset2;
+ }
+ h3, .h3, %h3, .preset3 {
+  @extend %preset3;
+ }
+ h4, .h4, %h4, .preset4 {
+  @extend %preset4;
+ }
+ h5, .h5, %h5, .preset5 {
+  @extend %preset5;
+ }
+ h6, .h6, %h6, .preset6 {
+  @extend %preset6;
+ }

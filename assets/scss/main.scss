@@ -13,13 +13,12 @@ Author URI: https://github.com/cheestudio/startup-blocks
 /* Core
 ========================================================= */
 @import "core/reset";
-@import "core/queries";
-@import "core/grid-setup";
-@import "core/grid";
-@import "core/variables";
-@import "core/colors";
-@import "core/typography";
-
+@import "core/variables/queries";
+@import "core/layout/grid-setup";
+@import "core/layout/grid";
+@import "core/variables/variables";
+@import "core/variables/colors";
+@import "core/typography/main";
 
 /* Global
 ========================================================= */
