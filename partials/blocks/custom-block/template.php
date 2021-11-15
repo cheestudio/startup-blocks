@@ -7,7 +7,13 @@ Block Align: full
 Block Icon: format-image
 Post Types: post, page
 */
-$group = get_field('custom_block_group');
+$group = get_field(fieldGroupName(__FILE__)); //REQUIRED
+
+/* 
+$example_field = $group['example_field];
+*/
+
+
 ?>
 <section <?php block_class_id($block,'CUSTOM-BLOCK-CLASS');?>>
 
