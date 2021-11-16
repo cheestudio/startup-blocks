@@ -5,13 +5,15 @@
 @import "core/layout/grid";
 @import "core/variables/variables";
 @import "core/variables/colors";
-@import "core/typography/main";
+@import "core/typography/fonts";
+@import "core/typography/presets";
 
 /* Typography
 ========================================================= */
 
 .editor-styles-wrapper {
-
+  
+  @include font();
   @import "elements/**/*.scss";
   @import "core/typography/headings";
 
