@@ -2,11 +2,21 @@
 
 [chee.studio](https://cheewebdevelopment.com)
 
-This minimal "framework" was developed to streamline custom WordPress theme development, preferably using [ACF Builder](https://github.com/StoutLogic/acf-builder) and [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/). Whereas many frameworks focus on WordPress' blogging capabilities, this framework is meant for sites where WordPress will be used primarily as a *content framework*, as well as a blogging tool. The structure is fairly self explanatory, and also contains collection of various helpers and functions that are useful in every day WordPress development. It assumes GULP will be used for asset compiling, and SCSS for all CSS management. The workflows for ACF Builder and ACF Blocks can be easily disabled without impacting the functionality of the rest of the framework.
+This minimal "framework" was developed to streamline custom WordPress theme development, preferably using [ACF Builder](https://github.com/StoutLogic/acf-builder) and [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/). Whereas many frameworks focus on WordPress' blogging capabilities, this framework is meant for sites where WordPress will be used primarily as a *content framework*, as well as a blogging tool. The structure is fairly self explanatory, and also contains collection of various helpers and functions that are useful in every day WordPress development. It assumes GULP will be used for asset compiling, and SCSS for all CSS management. The workflows for ACF Builder and ACF Blocks can be easily disabled without impacting the functionality of the rest of the framework (although you'd be missing out on the best parts!).
 
-**Important Note:** This framework is not meant to be a *turn-key* theme, and won't offer many options beyond being an organized and streamlined way to develop a custom site using WordPress and ACF. It's a way to stay consistent and organized and provide a solid jumping off point for each project, utilizing native WordPress functionality as much as possible. It's simple, uncomplicated, and *stays out of your way*.
+**Important Note:** This framework is not meant to be a *turn-key* theme, and won't offer many options beyond being an organized and streamlined way to develop a custom site using WordPress/ACF/Blocks. It's a way to stay consistent and organized and provide a solid jumping off point for each project, utilizing native WordPress functionality as much as possible. 
 
-Yet, since it's very unassuming, it will blend easily with any particular development style, as well integrate into other platforms such as WooCommerce, Elementor and Beaver Builder, if one chooses to use them.
+Since it's very unassuming, it should also blend easily with any particular development style, as well integrate into other platforms such as WooCommerce, Elementor and Beaver Builder, if one chooses to use them.
+
+There's absolutely nothing proprietary here, but there is a specific organization/architecture that needs to be understood, especially if you're inheriting a site built using it. 🙂 
+
+### Setup
+
+1) [Setting up the Build System (GULP)](#setup-gulpfilejs)
+2) [Setting up the SCSS and JS Compiling](#compile-styles--js)
+3) [Registering Fields Groups via ACF Builder](#registering-acf-field-groups)
+4) [Registering Blocks](#registering-acf-blocks)
+5) [Connecting Field Groups to Blocks](#connecting-fields-to-blocks-if-using-acf-builder)
 
 ### Setup gulpfile.js
 
@@ -31,21 +41,25 @@ Yet, since it's very unassuming, it will blend easily with any particular develo
 
 ### Registering ACF Field Groups
 
-This framework will automatically register field groups, based off their path, using ACF Builder to construct the fields. *This workflow is optional.*
+This framework will automatically register field groups located in `/init/fields`. 
+*This workflow is optional.*
 
-1) Within the `init/fields` folder is where includes for various field types would be located. 
-2) Within the `init/acf.php` contains a loop that will grab all field includes and automatically register them. 
+1) Within the `init/acf.php` contains a loop that will grab all field includes and automatically register them. 
+2) Within the `init/fields` folder is where includes for various field types would be located, with the *exception* of `blocks`. 
 3) File names should be unique, as well as the `FieldsBuilder` names.
+4) Partials for re-use should be placed under `/init/fields/partials`. 
+**Note:** Partials are parsed alphabetically
 
 *To disable ACF Builder workflow:* Set `$acf_builder` to `FALSE` in `/init/acf.php`.
 
 ### Registering ACF Blocks
 
-This framework will automatically register [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/) based off their path name and template tags. *This workflow is optional.*
+This framework will automatically register [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/) based off their path name and template tags. See `partials/blocks/custom-block/` for an example. *This workflow is optional.*
 
 1. The `partials/blocks` is the folder where all custom Blocks should be located. The function in `init/acf.php` will loop through all sub-folders in this directory and register the blocks based off their folder path name. 
-2. Each Block contains three components:
-* **template.php -** This file contains all the markup and logic of the block, as well as the template tags to determine its attributes
+2. Each Block contains four components:
+* **fields.php -** This file contains the ACF Builder fields for the block. **Note:** All fields for Blocks are automatically placed into a Group field for organization and easi retreival within `template.php`.
+* **template.php -** This file contains all the markup and logic of the block, as well as the template tags to determine its Block attributes (e.g.. Title, Icon, Alignments). Located at the top of `template.php` (following the template tags) is a simple function which will automatically establish the `$group` variable for all fields.
 * **style.scss -** This is the SCSS that will compile to CSS for both the front end view and Block Editor preview
 * **script.js -** This file contains all the JS specific code for the individual block. *This file is optional.*
 * The GULP Workflow, if `BLOCK_MODE` is set to `TRUE`, will automatically compile all SCSS files it finds in these block directories.
@@ -54,21 +68,15 @@ This framework will automatically register [ACF Blocks](https://www.advancedcust
 
 ### Connecting Fields to Blocks (if using ACF Builder)
 
-This framework can easily connect custom field groups to blocks, purely based off the file/path names outlined above. 
+As stated above, this framework uses the folder/path name of the block and automatically connects the ACF Field Group to a Block by creating a `fields.php` inside the block folder.
 
-1. Add a Field Group file in `/init/fields` using `custom-block.php` as an example. This field group template will do a number of things:
+**This file will do a number of things:**
+
 * Set up the paths required, based off the file name
 * Create a formatted string based on the path
 * Create an ACF Group name based off the string
 * Create a "human readable" Group Label, based off the string (this can be overwritten, as well)
 * Create a Block Title that will be formatted nicely when used within the Block Editor
 
-Notice near the end of the file is where the location gets automatically set, based off the file name itself: 
+That's it. 👌🏻 Go build something cool.
 
-`->setLocation('block', '==', 'acf/'.$path);`
-
-2. Inside `partials/blocks`, create a `/custom-block/` *folder*. 
-
-3. Since the ACF Group *file name* matches the block *folder name*, the fields will be automatically registered to this block.
-
-**That's it!** You're ready to start building with ACF Builder/ACF Blocks.
