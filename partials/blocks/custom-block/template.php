@@ -7,7 +7,7 @@ Block Align: full
 Block Icon: format-image
 Post Types: post, page
 */
-$group = fieldGroupName(__FILE__); //REQUIRED
+$group = blockFieldGroup(__FILE__); //REQUIRED
 
 /* 
 $example_field = $group['example_field];

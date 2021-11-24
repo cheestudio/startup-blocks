@@ -152,7 +152,7 @@ function block_class_id($block_entry, $class) {
 
 /* Block Field Group Path
 ========================================================= */
-function fieldGroupName($file){
+function blockFieldGroup($file){
   $path = basename( dirname($file));
   $name = str_replace('-', '_', $path);
   $group = $name . '_group';
