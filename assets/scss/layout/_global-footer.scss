@@ -1,14 +1,17 @@
 .footer {
 
-  &--menu {}
+ &--menu {}
 
-  &--copyright {}
+ &--copyright {}
 
-  &--social {}
+ &--social {}
 
-  &--logo {
-    a, img {
-      display: block;
-    }
+ &--logo {
+  a {
+   display: inline-block;
   }
+  img {
+   display: block;
+  }
+ }
 }
