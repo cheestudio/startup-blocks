@@ -2,65 +2,6 @@
 /* HELPER FUNCTIONS
 ========================================================= */
 
-/* Custom Login Screen
-========================================================= */
-add_action('login_enqueue_scripts', 'custom_login_screen');
-function custom_login_screen() { ?>
-  <style type="text/css">
-    body {
-      background: #eee !important;
-    }
-
-    #login h1 a {
-      padding-bottom: 0px;
-      background-image: url('<?= get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg');
-      background-size: contain;
-      width: 200px;
-      height: 100px;
-    }
-
-    #login a {
-      transition: .6s cubic-bezier(.23, 1, .32, 1);
-      color: black !important;
-    }
-
-    #login a:hover {
-      color: #ccc !important;
-    }
-
-    #login #wp-submit {
-      background: black;
-      border-radius: 0;
-      border: 2px solid black;
-      box-shadow: none;
-      color: white;
-      cursor: pointer;
-      display: inline-block;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1;
-      padding: 10px 30px;
-      text-align: center;
-      text-shadow: none;
-      transition: .6s cubic-bezier(.23, 1, .32, 1);
-      user-select: none;
-      vertical-align: baseline;
-      white-space: nowrap;
-      zoom: 1;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      -webkit-user-drag: none;
-      -webkit-user-select: none;
-    }
-
-    #login #wp-submit:hover {
-      border-color: black;
-      color: black;
-      background: white;
-    }
-  </style>
-<?php }
-
 
 /* Gravity Forms Button Markup
 ========================================================= */
