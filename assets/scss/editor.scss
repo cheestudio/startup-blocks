@@ -11,11 +11,12 @@
 /* Typography
 ========================================================= */
 
-.editor-styles-wrapper {
+body .editor-styles-wrapper {
   
   @include font();
   @import "elements/**/*.scss";
   @import "core/typography/headings";
+  @import "core/typography/elements";
 
   .edit-post-visual-editor .button,
   .mce-content-body .button,
