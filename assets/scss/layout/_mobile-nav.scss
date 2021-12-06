@@ -193,7 +193,7 @@ $link-current-color : white;
 
      .sub-menu {
       @include trans;
-      @include display(hide);
+      @include display('hide');
       position: fixed;
       background-color: $link-background;
       border: none;
@@ -204,7 +204,7 @@ $link-current-color : white;
       height: 100%;
       z-index: 4000;
       &.sub-open {
-       @include display(show);
+       @include display('show');
        transform: translateX(0);
       }
       &:before {

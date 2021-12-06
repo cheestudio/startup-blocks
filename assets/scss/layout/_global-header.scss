@@ -29,7 +29,7 @@
           &.menu-item-has-children {
             &:hover, &:focus, &:active {
               .sub-menu {
-                @include display(show);
+                @include display('show');
               }
             }
           }
@@ -42,7 +42,7 @@
 
           .sub-menu {
             @include trans;
-            @include display(hide);
+            @include display('hide');
             display: block;
             position: absolute;
             top: 100%;
