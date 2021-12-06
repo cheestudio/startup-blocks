@@ -867,12 +867,12 @@ img {
     grid-gap: 20px
   }
 }
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:769px) {
   .flex.reverse {
     flex-direction: row-reverse
   }
 }
-@media only screen and (min-width:1001px) {
+@media only screen and (min-width:1025px) {
   header.main-banner .container {
     display: flex;
     align-items: center
@@ -947,7 +947,7 @@ img {
     font-size: 1.25em
   }
 }
-@media only screen and (max-width:1000px) {
+@media only screen and (max-width:1024px) {
   .h1,
   .preset1,
   h1 {
@@ -1243,7 +1243,7 @@ img {
     padding-bottom: 60px
   }
 }
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .flex {
     flex-direction: column
   }
