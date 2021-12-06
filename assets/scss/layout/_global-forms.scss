@@ -64,31 +64,26 @@ $box-shadow          : none;
 }
 
 
-/* Global Default Styles
-========================================================= */
-form input[type], form select, form textarea {
-  @include trans( all, 300 );
-  @include formInputStyles;
-  display: inline-block;
-  border-style: solid;
-  padding: 10px 15px !important;
-  font-family: inherit;
-  color: black;
-  @include placeholder {
-    color: black;
-  }
-}
-
-form input[type]:focus, form select:focus, form textarea:focus {
-  outline: 0;
-  border-color: $border-color-active;
-}
-
 /* Gravity Form
 ========================================================= */
 .gform_wrapper.gravity-theme {
   margin: 0;
   form {
+    input[type], select, textarea {
+      @include trans( all, 300 );
+      @include formInputStyles;
+      display: inline-block;
+      border-style: solid;
+      padding: 10px 15px !important;
+      font-family: inherit;
+      color: black;
+      @include placeholder {
+        color: black;
+      }
+      &:focus {
+        border-color: $border-color-active;
+      }
+    }
     .gform-body {
       padding-top: 25px;
       padding-bottom: 25px;

@@ -1,8 +1,9 @@
 /*!
-Theme Name: {CLIENT NAME}
-Description: Custom Wordpress Theme for {SITE NAME}
-Author: {CLIENT NAME}
-Author URI: http://{CLIENT URL}
+Theme Name: {CLIENT}
+Description: Custom Blocks Framework | Created for {CLIENT}
+Version: N/A
+Author: {AGENCY}
+Author URI: https://github.com/cheestudio/startup-blocks
 */
 a,
 abbr,
@@ -175,45 +176,50 @@ input[type=submit] {
   --black: #000000;
   --white: #ffffff
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #000;
-  line-height: 1.2;
-  margin: 0 0 20px
-}
 .h1,
+.preset1,
 h1 {
-  font-size: 3.75em
+  font-size: 4.375em;
+  line-height: 110%;
+  font-weight: 600
 }
 .h2,
+.preset2,
 h2 {
-  font-size: 3.125em
+  font-size: 3.125em;
+  line-height: 125%;
+  font-weight: 500
 }
 .h3,
+.preset3,
 h3 {
-  font-size: 2.5em
+  font-size: 2.5em;
+  line-height: 130%;
+  font-weight: 600
 }
 .h4,
+.preset4,
 h4 {
-  font-size: 1.875em
+  font-size: 1.875em;
+  line-height: 130%
 }
 .h5,
+.preset5,
 h5 {
-  font-size: 1.5625em
+  font-size: 1.5em;
+  line-height: 140%
 }
 .h6,
+.preset6,
 h6 {
-  font-size: 1.25em
+  font-size: 1.25em;
+  line-height: 150%
 }
 main li,
 main p {
   font-size: 1.25em;
-  line-height: 1.2;
-  margin-bottom: 20px
+  line-height: 165%;
+  margin-bottom: 25px
 }
 main blockquote p:last-of-type {
   margin-bottom: 0
@@ -221,7 +227,7 @@ main blockquote p:last-of-type {
 a,
 a[href^=tel] {
   transition: .6s cubic-bezier(.23,1,.32,1);
-  color: red
+  color: inherit
 }
 a:active,
 a:focus,
@@ -229,9 +235,19 @@ a:hover,
 a[href^=tel]:active,
 a[href^=tel]:focus,
 a[href^=tel]:hover {
-  color: red
+  color: #ccc
 }
-.footer--logo a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 15px
+}
+.footer--logo a {
+  display: inline-block
+}
 .footer--logo img {
   display: block
 }
@@ -311,9 +327,12 @@ a[href^=tel]:hover {
 .gform_wrapper.gform_validation_error .validation_message {
   display: none
 }
-form input[type],
-form select,
-form textarea {
+.gform_wrapper.gravity-theme {
+  margin: 0
+}
+.gform_wrapper.gravity-theme form input[type],
+.gform_wrapper.gravity-theme form select,
+.gform_wrapper.gravity-theme form textarea {
   transition: .3s cubic-bezier(.23,1,.32,1);
   border-color: #000;
   border-radius: 0;
@@ -325,45 +344,41 @@ form textarea {
   color: #000;
   border-width: 2px
 }
-form input[type]:active,
-form input[type]:focus,
-form input[type]:hover,
-form select:active,
-form select:focus,
-form select:hover,
-form textarea:active,
-form textarea:focus,
-form textarea:hover {
+.gform_wrapper.gravity-theme form input[type]:active,
+.gform_wrapper.gravity-theme form input[type]:focus,
+.gform_wrapper.gravity-theme form input[type]:hover,
+.gform_wrapper.gravity-theme form select:active,
+.gform_wrapper.gravity-theme form select:focus,
+.gform_wrapper.gravity-theme form select:hover,
+.gform_wrapper.gravity-theme form textarea:active,
+.gform_wrapper.gravity-theme form textarea:focus,
+.gform_wrapper.gravity-theme form textarea:hover {
   border-color-active: #000
 }
-form input[type]::-webkit-input-placeholder,
-form select::-webkit-input-placeholder,
-form textarea::-webkit-input-placeholder {
+.gform_wrapper.gravity-theme form input[type]::-webkit-input-placeholder,
+.gform_wrapper.gravity-theme form select::-webkit-input-placeholder,
+.gform_wrapper.gravity-theme form textarea::-webkit-input-placeholder {
   color: #000
 }
-form input[type]:-moz-placeholder,
-form select:-moz-placeholder,
-form textarea:-moz-placeholder {
+.gform_wrapper.gravity-theme form input[type]:-moz-placeholder,
+.gform_wrapper.gravity-theme form select:-moz-placeholder,
+.gform_wrapper.gravity-theme form textarea:-moz-placeholder {
   color: #000
 }
-form input[type]::-moz-placeholder,
-form select::-moz-placeholder,
-form textarea::-moz-placeholder {
+.gform_wrapper.gravity-theme form input[type]::-moz-placeholder,
+.gform_wrapper.gravity-theme form select::-moz-placeholder,
+.gform_wrapper.gravity-theme form textarea::-moz-placeholder {
   color: #000
 }
-form input[type]:-ms-input-placeholder,
-form select:-ms-input-placeholder,
-form textarea:-ms-input-placeholder {
+.gform_wrapper.gravity-theme form input[type]:-ms-input-placeholder,
+.gform_wrapper.gravity-theme form select:-ms-input-placeholder,
+.gform_wrapper.gravity-theme form textarea:-ms-input-placeholder {
   color: #000
 }
-form input[type]:focus,
-form select:focus,
-form textarea:focus {
-  outline: 0;
+.gform_wrapper.gravity-theme form input[type]:focus,
+.gform_wrapper.gravity-theme form select:focus,
+.gform_wrapper.gravity-theme form textarea:focus {
   border-color: green
-}
-.gform_wrapper.gravity-theme {
-  margin: 0
 }
 .gform_wrapper.gravity-theme form .gform-body {
   padding-top: 25px;
@@ -856,44 +871,35 @@ img {
     flex-direction: row-reverse
   }
 }
-@media only screen and (min-width:768px) and (max-width:1024px) {
-  .archive-index,
-  .post-single,
-  .posts-index,
-  .search-index {
-    padding-top: 50px;
-    padding-bottom: 50px
-  }
-}
-@media only screen and (min-width:1025px) {
-  header .container {
+@media only screen and (min-width:1001px) {
+  header.main-banner .container {
     display: flex;
     align-items: center
   }
-  header .brand {
+  header.main-banner .brand {
     margin-right: auto
   }
-  header .brand img {
+  header.main-banner .brand img {
     display: block
   }
-  header nav ul {
+  header.main-banner nav ul {
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center
   }
-  header nav ul li {
+  header.main-banner nav ul li {
     padding-left: 20px;
     padding-right: 20px;
     position: relative
   }
-  header nav ul li.menu-item-has-children:active .sub-menu,
-  header nav ul li.menu-item-has-children:focus .sub-menu,
-  header nav ul li.menu-item-has-children:hover .sub-menu {
+  header.main-banner nav ul li.menu-item-has-children:active .sub-menu,
+  header.main-banner nav ul li.menu-item-has-children:focus .sub-menu,
+  header.main-banner nav ul li.menu-item-has-children:hover .sub-menu {
     opacity: 1;
     visibility: visible
   }
-  header nav ul li .sub-menu {
+  header.main-banner nav ul li .sub-menu {
     transition: .6s cubic-bezier(.23,1,.32,1);
     opacity: 0;
     visibility: hidden;
@@ -902,18 +908,78 @@ img {
     top: 100%;
     left: 0
   }
-  header nav ul li .sub-menu li {
+  header.main-banner nav ul li .sub-menu li {
     white-space: nowrap
   }
   .archive-index,
   .post-single,
   .posts-index,
   .search-index {
-    padding-top: 100px;
-    padding-bottom: 100px
+    padding-top: 120px;
+    padding-bottom: 120px
   }
 }
-@media only screen and (max-width:1024px) {
+@media only screen and (max-width:1366px) {
+  .h1,
+  .preset1,
+  h1 {
+    font-size: 3.5em
+  }
+  .h2,
+  .preset2,
+  h2 {
+    font-size: 2.5em
+  }
+  .h3,
+  .preset3,
+  h3 {
+    font-size: 2em
+  }
+  .h4,
+  .preset4,
+  h4 {
+    font-size: 1.6875em
+  }
+  .h5,
+  .preset5,
+  h5 {
+    font-size: 1.25em
+  }
+}
+@media only screen and (max-width:1000px) {
+  .h1,
+  .preset1,
+  h1 {
+    font-size: 2.5em
+  }
+  .h2,
+  .preset2,
+  h2 {
+    font-size: 1.875em
+  }
+  .h3,
+  .preset3,
+  h3 {
+    font-size: 1.75em
+  }
+  .h4,
+  .preset4,
+  h4 {
+    font-size: 1.5em
+  }
+  .h6,
+  .preset6,
+  h6 {
+    font-size: 1em
+  }
+  h1 br,
+  h2 br,
+  h3 br,
+  h4 br,
+  h5 br,
+  h6 br {
+    display: none
+  }
   .alignleft,
   .alignright {
     float: none;
@@ -1168,31 +1234,26 @@ img {
     min-height: 60px;
     z-index: 100
   }
+  .archive-index,
+  .post-single,
+  .posts-index,
+  .search-index {
+    padding-top: 60px;
+    padding-bottom: 60px
+  }
 }
 @media only screen and (max-width:767px) {
   .flex {
     flex-direction: column
   }
-  h1 br,
-  h2 br,
-  h3 br,
-  h4 br,
-  h5 br,
-  h6 br {
-    display: none
-  }
-  main li,
-  main p {
-    font-size: 1em
-  }
   .social-icons ul {
     justify-content: center
   }
-  .archive-index,
-  .post-single,
-  .posts-index,
-  .search-index {
-    padding-top: 50px;
-    padding-bottom: 50px
+}
+@media only screen and (max-width:480px) {
+  main li,
+  main p {
+    font-size: 1em;
+    line-height: 170%
   }
 }
