@@ -46,9 +46,11 @@ if ( isset($body_code) ) echo $body_code; ?>
   <div class="container">
 
     <?php if ( $logo ) : ?>
-      <a href="<?= home_url(); ?>" class="brand" title="Home">
-        <img src="<?= esc_url( $logo ); ?>" alt="Site Logo">
-      </a>
+      <div class="logo-brand">
+        <a href="<?= home_url(); ?>" class="brand" title="Home">
+          <img src="<?= esc_url( $logo ); ?>" alt="Site Logo">
+        </a>
+      </div>
     <?php endif; ?>
 
     <nav>

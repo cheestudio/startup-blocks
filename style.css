@@ -877,39 +877,43 @@ img {
     display: flex;
     align-items: center
   }
-  header.main-banner .brand {
+  header.main-banner .logo-brand {
     margin-right: auto
   }
-  header.main-banner .brand img {
+  header.main-banner .logo-brand img {
     display: block
   }
-  header.main-banner nav ul {
+  header.main-banner .desktop-nav-wrap > ul {
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center
   }
-  header.main-banner nav ul li {
+  header.main-banner .desktop-nav-wrap > ul > li {
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 20px
+  }
+  header.main-banner .desktop-nav-wrap > ul > li.menu-item-has-children {
     position: relative
   }
-  header.main-banner nav ul li.menu-item-has-children:active .sub-menu,
-  header.main-banner nav ul li.menu-item-has-children:focus .sub-menu,
-  header.main-banner nav ul li.menu-item-has-children:hover .sub-menu {
+  header.main-banner .desktop-nav-wrap > ul > li.menu-item-has-children:active .sub-menu,
+  header.main-banner .desktop-nav-wrap > ul > li.menu-item-has-children:focus .sub-menu,
+  header.main-banner .desktop-nav-wrap > ul > li.menu-item-has-children:hover .sub-menu {
     opacity: 1;
     visibility: visible
   }
-  header.main-banner nav ul li .sub-menu {
+  header.main-banner .desktop-nav-wrap > ul > li .sub-menu {
     transition: .6s cubic-bezier(.23,1,.32,1);
     opacity: 0;
     visibility: hidden;
     display: block;
     position: absolute;
     top: 100%;
-    left: 0
+    left: 0;
+    margin: 0;
+    padding: 20px
   }
-  header.main-banner nav ul li .sub-menu li {
+  header.main-banner .desktop-nav-wrap > ul > li .sub-menu li {
     white-space: nowrap
   }
   .archive-index,
