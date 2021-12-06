@@ -341,6 +341,7 @@ h6 {
   border-style: solid;
   padding: 10px 15px!important;
   font-family: inherit;
+  line-height: normal;
   color: #000;
   border-width: 2px
 }

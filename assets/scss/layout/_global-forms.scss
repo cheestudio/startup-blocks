@@ -76,6 +76,7 @@ $box-shadow          : none;
       border-style: solid;
       padding: 10px 15px !important;
       font-family: inherit;
+      line-height: normal;
       color: black;
       @include placeholder {
         color: black;
