@@ -1,8 +1,4 @@
 <?php
-/* HELPER FUNCTIONS
-========================================================= */
-
-
 /* Gravity Forms Button Markup
 ========================================================= */
 add_filter( 'gform_next_button', 'input_to_button', 10, 2 );
@@ -180,6 +176,7 @@ function my_custom_toolbars($toolbars)
   return $toolbars;
 }
 
+
 /* ACF - WP Admin Styles
 ========================================================= */
 add_action('acf/input/admin_head', 'my_acf_admin_head');
@@ -245,6 +242,7 @@ function my_acf_admin_head()
   <?php
 }
 
+
 /* Disable Image Side scaling on upload
 ========================================================= */
 add_filter('big_image_size_threshold', 3840);
@@ -291,9 +289,27 @@ function post_pagination($pages = '', $range = 2)
   }
 }
 
+
 /* Move Yoast to bottom of edit page
 ========================================================= */
-
 add_filter('wpseo_metabox_prio', function () {
   return 'low';
 });
+
+
+/* SVG Function
+========================================================= */
+function svg( $path, $alt='' ) {
+  $file = wp_remote_get( $path );
+  if ( is_array($file) && !is_wp_error($file) && $file['response']['code'] === 200 ) :
+    if ( $file['headers']['content-type'] === 'image/svg+xml' ) :
+      echo $file['body'];
+    elseif ( in_array($file['headers']['content-type'], array('image/png', 'image/jpeg', 'image/gif', 'image/webp', 'image/apng')) ) :
+      echo "<img src='{$path}' alt='{$alt}'>";
+    else :
+      return '';
+    endif;
+  else :
+    return '';
+  endif;
+}

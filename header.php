@@ -8,16 +8,16 @@
   <?php wp_head(); ?>
   <link rel="alternate" type="application/rss+xml" title="<?= get_bloginfo('name'); ?> Feed" href="<?= home_url(); ?>/feed/">
 
-<!-- Content Fade In Styles -->
-<style>
-  .hidden {
-    opacity: 0;
-  }
-  .visible {
-    opacity: 1;
-    transition: opacity 800ms ease-out;
-  }
-</style>
+  <!-- Content Fade In Styles -->
+  <style>
+    .hidden {
+      opacity: 0;
+    }
+    .visible {
+      opacity: 1;
+      transition: opacity 800ms ease-out;
+    }
+  </style>
 
 <?php // Logos & Optional ACF Header Code
 $logo_path = get_template_directory_uri() . '/assets/img/svg/';
@@ -31,13 +31,13 @@ if ( isset( $head_code ) ) echo $head_code; ?>
 
 <body <?php body_class(); ?> id="top-of-page">
 
-<!-- Accessbility Skip to Content -->
-<a class="skip-link screen-reader-text" href="#top-of-content"><?php esc_html_e( 'Skip to content', 'chee' ); ?></a>
+  <!-- Accessbility Skip to Content -->
+  <a class="skip-link screen-reader-text" href="#top-of-content"><?php esc_html_e( 'Skip to content', 'chee' ); ?></a>
 
-<!-- Content Fade In JS -->
-<script>
-  document.body.className += ' hidden';
-</script>
+  <!-- Content Fade In JS -->
+  <script>
+    document.body.className += ' hidden';
+  </script>
 
 <?php // Optional ACF Body Code
 if ( isset($body_code) ) echo $body_code; ?>
@@ -48,7 +48,7 @@ if ( isset($body_code) ) echo $body_code; ?>
     <?php if ( $logo ) : ?>
       <div class="logo-brand">
         <a href="<?= home_url(); ?>" class="brand" title="Home">
-          <img src="<?= esc_url( $logo ); ?>" alt="Site Logo">
+          <?php svg( $logo, 'Site Logo' ); ?>
         </a>
       </div>
     <?php endif; ?>

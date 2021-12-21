@@ -3,7 +3,7 @@
   <div class="mobile-nav-header">
     <?php if ( $logo ) : ?>
       <a href="<?= home_url(); ?>" class="mobile-brand" title="Tap to Go Home" aria-label="Go Home">
-        <img src="<?= esc_url( $logo ); ?>" alt="Site Logo">
+        <?php svg( $logo, 'Site Logo' ); ?>
       </a>
     <?php endif; ?>
 
