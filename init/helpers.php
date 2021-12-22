@@ -295,21 +295,3 @@ function post_pagination($pages = '', $range = 2)
 add_filter('wpseo_metabox_prio', function () {
   return 'low';
 });
-
-
-/* SVG Function
-========================================================= */
-function svg( $path, $alt='' ) {
-  $file = wp_remote_get( $path );
-  if ( is_array($file) && !is_wp_error($file) && $file['response']['code'] === 200 ) :
-    if ( $file['headers']['content-type'] === 'image/svg+xml' ) :
-      echo $file['body'];
-    elseif ( in_array($file['headers']['content-type'], array('image/png', 'image/jpeg', 'image/gif', 'image/webp', 'image/apng')) ) :
-      echo "<img src='{$path}' alt='{$alt}'>";
-    else :
-      return '';
-    endif;
-  else :
-    return '';
-  endif;
-}

@@ -13,7 +13,7 @@ endif; ?>
     <?php if ($logo): ?>
       <div class="footer--logo">
         <a href="<?= home_url(); ?>" class="footer-brand" title="Go to Top of Page">
-          <?php svg( $logo, 'Site Logo' ); ?>
+          <img src="<?= $logo; ?>" alt="Site Logo">
         </a>
       </div>
     <?php endif;?>

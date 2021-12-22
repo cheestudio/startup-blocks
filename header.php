@@ -48,7 +48,7 @@ if ( isset($body_code) ) echo $body_code; ?>
     <?php if ( $logo ) : ?>
       <div class="logo-brand">
         <a href="<?= home_url(); ?>" class="brand" title="Home">
-          <?php svg( $logo, 'Site Logo' ); ?>
+          <img src="<?= $logo; ?>" alt="Site Logo">
         </a>
       </div>
     <?php endif; ?>
