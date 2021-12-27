@@ -1,12 +1,11 @@
 <div class="mobile-nav-wrap">
 
   <div class="mobile-nav-header">
-    <?php if ( $logo ) : ?>
+
       <a href="<?= home_url(); ?>" class="mobile-brand" title="Tap to Go Home" aria-label="Go Home">
         <img src="<?= $logo; ?>" alt="Site Logo">
       </a>
-    <?php endif; ?>
-
+      
     <button class="navbar-toggle" title="Tap to Open Menu" aria-label="Open Menu">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>

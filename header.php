@@ -45,13 +45,11 @@ if ( isset($body_code) ) echo $body_code; ?>
 <header class="main-banner">
   <div class="container">
 
-    <?php if ( $logo ) : ?>
       <div class="logo-brand">
         <a href="<?= home_url(); ?>" class="brand" title="Home">
           <img src="<?= $logo; ?>" alt="Site Logo">
         </a>
       </div>
-    <?php endif; ?>
 
     <nav>
       <?php include( locate_template('partials/navs/nav-desktop.php') ); ?>
