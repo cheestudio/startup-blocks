@@ -135,3 +135,10 @@ $box-shadow          : none;
     }
   }
 }
+
+.gform_confirmation_wrapper  {
+
+  .gform_confirmation_message {
+    @extend %body-copy;
+  }
+}

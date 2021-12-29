@@ -219,10 +219,14 @@ h6 {
   font-size: 1.25em;
   line-height: 150%
 }
+.gform_confirmation_wrapper .gform_confirmation_message,
 main li,
 main p {
   font-size: 1.25em;
-  line-height: 165%;
+  line-height: 165%
+}
+main li,
+main p {
   margin-bottom: 25px
 }
 main blockquote p:last-of-type {
@@ -1254,6 +1258,7 @@ img {
   }
 }
 @media only screen and (max-width:480px) {
+  .gform_confirmation_wrapper .gform_confirmation_message,
   main li,
   main p {
     font-size: 1em;
