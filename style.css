@@ -126,6 +126,10 @@ q:before {
   margin: 0 auto;
   padding: 0 15px
 }
+.grid {
+  display: grid;
+  grid-gap: 20px
+}
 .flex {
   display: flex
 }
@@ -261,7 +265,7 @@ h6 {
 .gform_wrapper.gform_validation_error .gform_validation_errors:active,
 .gform_wrapper.gform_validation_error .gform_validation_errors:focus,
 .gform_wrapper.gform_validation_error .gform_validation_errors:hover {
-  border-color-active: #000
+  border-color: green
 }
 .gform_wrapper.gform_validation_error .gform_validation_errors h2.gform_submission_error {
   font-size: 18px;
@@ -293,7 +297,7 @@ h6 {
 .gform_wrapper.gform_validation_error .gfield.gfield_error textarea:active,
 .gform_wrapper.gform_validation_error .gfield.gfield_error textarea:focus,
 .gform_wrapper.gform_validation_error .gfield.gfield_error textarea:hover {
-  border-color-active: #000
+  border-color: green
 }
 .gform_wrapper.gform_validation_error .gfield.gfield_error input::-webkit-input-placeholder,
 .gform_wrapper.gform_validation_error .gfield.gfield_error label::-webkit-input-placeholder,
@@ -354,7 +358,7 @@ h6 {
 .gform_wrapper.gravity-theme form textarea:active,
 .gform_wrapper.gravity-theme form textarea:focus,
 .gform_wrapper.gravity-theme form textarea:hover {
-  border-color-active: #000
+  border-color: green
 }
 .gform_wrapper.gravity-theme form input[type]::-webkit-input-placeholder,
 .gform_wrapper.gravity-theme form select::-webkit-input-placeholder,
@@ -860,12 +864,6 @@ img {
   margin-left: auto;
   margin-right: auto;
   display: block
-}
-@media only screen and (min-width:481px) {
-  .grid {
-    display: grid;
-    grid-gap: 20px
-  }
 }
 @media only screen and (min-width:769px) {
   .flex.reverse {

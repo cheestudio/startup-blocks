@@ -6,10 +6,8 @@
 }
 
 .grid {
-  @include for-size(phone, up) {
-    display: grid;
-    grid-gap: $grid-gap + px;
-  }
+  display: grid;
+  grid-gap: $grid-gap + px;
 }
 
 .flex {
