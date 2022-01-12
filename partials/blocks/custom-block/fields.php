@@ -16,7 +16,7 @@ $name
 ]) //REQUIRED GROUP
 
 
-
+->addText('sup')
 /* Reference all field options here:
 https://github.com/tdwesten/acf-fieldattributes-cheatsheet/blob/master/acf-fieldattributes-cheatsheet.md
 */
