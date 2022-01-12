@@ -2,7 +2,7 @@
 
 [chee.studio](https://cheewebdevelopment.com)
 
-Chee Blocks is a "framework" was developed to streamline custom WordPress theme development, preferably using [ACF Builder](https://github.com/StoutLogic/acf-builder) and [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/). When fully utilized, it's most useful feature is the automatic registration of Blocks and ACF Fields based on paths, which enable a modular and "portable" approach to Block development *(e.g. you can copy a "block" from one project to another and retain all it's fields, style and functionality).*
+Chee Blocks is a "framework" was developed to streamline custom WordPress theme development, preferably using [ACF Builder](https://github.com/StoutLogic/acf-builder) and [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/). When fully utilized, it's most useful feature is the automatic registration of Blocks and ACF Fields based on paths, which enable self-contained Blocks and a portable approach to Block development *(e.g. you can copy a "block" from one project to another and retain all it's fields, style and functionality).*
 
 Whereas many frameworks focus on WordPress' blogging capabilities, this framework is meant for sites where WordPress will be used primarily as a *content framework*, as well as a blogging tool. The structure is fairly self explanatory, and also contains collection of various helpers and functions that are useful in every day WordPress development. It assumes GULP will be used for asset compiling, and SCSS for all CSS management. The workflows for ACF Builder and ACF Blocks can be easily disabled without impacting the functionality of the rest of the framework (although you'd be missing out on the best parts!).
 
