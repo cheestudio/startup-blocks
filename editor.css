@@ -3,6 +3,10 @@
   margin: 0 auto;
   padding: 0 15px
 }
+.grid {
+  display: grid;
+  grid-gap: 20px
+}
 .flex {
   display: flex
 }
@@ -220,13 +224,7 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
   z-index: 20;
   position: relative
 }
-@media only screen and (min-width:481px) {
-  .grid {
-    display: grid;
-    grid-gap: 20px
-  }
-}
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:769px) {
   .flex.reverse {
     flex-direction: row-reverse
   }
@@ -258,7 +256,7 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
     font-size: 1.25em
   }
 }
-@media only screen and (max-width:1000px) {
+@media only screen and (max-width:1024px) {
   body .editor-styles-wrapper .h1,
   body .editor-styles-wrapper .preset1,
   body .editor-styles-wrapper h1 {
@@ -293,7 +291,7 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
     display: none
   }
 }
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .flex {
     flex-direction: column
   }

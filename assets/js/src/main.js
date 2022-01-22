@@ -1,8 +1,8 @@
 /* CUSTOM
 ========================================================= */
-window.addEventListener('DOMContentLoaded', function () {
-  document.body.className += ' visible';
-});
+// window.addEventListener('DOMContentLoaded', function () {
+
+// });
 
 // Doc Ready
 
