@@ -61,7 +61,12 @@ This framework will automatically register [ACF Blocks](https://www.advancedcust
 1. The `partials/blocks` is the folder where all custom Blocks should be located. The function in `init/acf.php` will loop through all sub-folders in this directory and register the blocks based off their folder path name. 
 2. Each Block contains four components:
 * **fields.php -** This file contains the ACF Builder fields for the block. **Note:** All fields for Blocks are automatically placed into a Group field for organization and easy retreival within `template.php`.
-* **template.php -** This file contains all the markup and logic of the block, as well as the template tags to determine its Block attributes (e.g.. Title, Icon, Alignments). Located at the top of `template.php` (following the template tags) is a simple function which will automatically establish the `$group` variable for all fields.
+* **template.php -** This file contains all the markup and logic of the block, as well as the template tags to determine its Block attributes (e.g.. Title, Icon, Alignments). Located at the top of `template.php` (following the template tags) is a simple function which will automatically establish the `$group` variable for all fields:
+
+```php
+$group = blockFieldGroup(__FILE__); //REQUIRED
+```
+
 * **style.scss -** This is the SCSS that will compile to CSS for both the front end view and Block Editor preview
 * **script.js -** This file contains all the JS specific code for the individual block. *This file is optional.*
 * The GULP Workflow, if `BLOCK_MODE` is set to `TRUE`, will automatically compile all SCSS files it finds in these block directories.
@@ -74,6 +79,16 @@ As stated above, this framework uses the folder/path name of the block and autom
 
 **This file will do a number of things:**
 
+```php
+use StoutLogic\AcfBuilder\FieldsBuilder;
+$path = basename(__DIR__);
+$name = str_replace('-', '_', $path);
+$group_name = $name . '_group';
+$group_label = str_replace('-', ' ', $path);
+$name = new FieldsBuilder($name);
+```
+
+* Import ACF Builder Class
 * Set up the paths required, based off the file name
 * Create a formatted string based on the path
 * Create an ACF Group name based off the string
