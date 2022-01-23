@@ -65,6 +65,9 @@ This framework will automatically register [ACF Blocks](https://www.advancedcust
 
 ```php
 $group = blockFieldGroup(__FILE__); //REQUIRED
+
+/* Usage */
+$example_field = $group['example_field];
 ```
 
 * **style.scss -** This is the SCSS that will compile to CSS for both the front end view and Block Editor preview
