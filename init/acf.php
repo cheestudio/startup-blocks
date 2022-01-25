@@ -147,6 +147,9 @@ function block_class_id($block_entry, $class) {
  if (!empty($block_entry['align'])) {
   $className .= ' align' . $block_entry['align'];
  }
+ if (!empty($block_entry['align_text'])) {
+  $className .= ' text-align' . $block_entry['align_text'];
+ }
  echo 'id="' . esc_attr($id) . '" class="' . esc_attr($className) . '"';
 }
 
