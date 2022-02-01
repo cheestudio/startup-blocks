@@ -38,7 +38,6 @@ $box-shadow          : none;
 ========================================================= */
 .gform_wrapper.gform_validation_error {
   .gform_validation_errors {
-    @include formInputStyles;
     margin-bottom: 25px;
     border-color: $border-color-error;
     h2.gform_submission_error {
@@ -48,7 +47,6 @@ $box-shadow          : none;
   }
   .gfield.gfield_error {
     input, select, textarea, legend, label {
-      @include formInputStyles;
       color: $border-color-error;
       border-color: $border-color-error;
       @include placeholder {
