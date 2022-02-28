@@ -2,6 +2,7 @@
 /* Theme Initialization
 ========================================================= */
 require_once('acf-builder/autoload.php');
+require_once locate_template('/init/cpt-base.php');     // Custom Post Types
 require_once locate_template('/init/shortcodes.php');    // Shortcodes
 require_once locate_template('/init/constants.php');    // Initial theme setup and constants
 require_once locate_template('/init/scripts.php');    // Theme Scripts and Stylesheets

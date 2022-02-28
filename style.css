@@ -260,16 +260,8 @@ h6 {
   display: block
 }
 .gform_wrapper.gform_validation_error .gform_validation_errors {
-  border-color: red;
-  border-radius: 0;
-  box-shadow: none;
   margin-bottom: 25px;
-  border-width: 2px
-}
-.gform_wrapper.gform_validation_error .gform_validation_errors:active,
-.gform_wrapper.gform_validation_error .gform_validation_errors:focus,
-.gform_wrapper.gform_validation_error .gform_validation_errors:hover {
-  border-color: green
+  border-color: red
 }
 .gform_wrapper.gform_validation_error .gform_validation_errors h2.gform_submission_error {
   font-size: 18px;
@@ -280,28 +272,8 @@ h6 {
 .gform_wrapper.gform_validation_error .gfield.gfield_error legend,
 .gform_wrapper.gform_validation_error .gfield.gfield_error select,
 .gform_wrapper.gform_validation_error .gfield.gfield_error textarea {
-  border-color: red;
-  border-radius: 0;
-  box-shadow: none;
   color: red;
-  border-width: 2px
-}
-.gform_wrapper.gform_validation_error .gfield.gfield_error input:active,
-.gform_wrapper.gform_validation_error .gfield.gfield_error input:focus,
-.gform_wrapper.gform_validation_error .gfield.gfield_error input:hover,
-.gform_wrapper.gform_validation_error .gfield.gfield_error label:active,
-.gform_wrapper.gform_validation_error .gfield.gfield_error label:focus,
-.gform_wrapper.gform_validation_error .gfield.gfield_error label:hover,
-.gform_wrapper.gform_validation_error .gfield.gfield_error legend:active,
-.gform_wrapper.gform_validation_error .gfield.gfield_error legend:focus,
-.gform_wrapper.gform_validation_error .gfield.gfield_error legend:hover,
-.gform_wrapper.gform_validation_error .gfield.gfield_error select:active,
-.gform_wrapper.gform_validation_error .gfield.gfield_error select:focus,
-.gform_wrapper.gform_validation_error .gfield.gfield_error select:hover,
-.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:active,
-.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:focus,
-.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:hover {
-  border-color: green
+  border-color: red
 }
 .gform_wrapper.gform_validation_error .gfield.gfield_error input::-webkit-input-placeholder,
 .gform_wrapper.gform_validation_error .gfield.gfield_error label::-webkit-input-placeholder,
@@ -869,6 +841,22 @@ img {
   margin-right: auto;
   display: block
 }
+body footer,
+body header {
+  display: none
+}
+body main {
+  display: flex;
+  min-height: 100vh
+}
+#training {
+  margin: auto;
+  border: 2px solid #fff;
+  padding: 20px;
+  border-radius: 100px;
+  -webkit-animation: 90s ease-in-out infinite both zoom;
+  animation: 90s ease-in-out infinite both zoom
+}
 @media only screen and (min-width:769px) {
   .flex.reverse {
     flex-direction: row-reverse
@@ -1263,5 +1251,27 @@ img {
   main p {
     font-size: 1em;
     line-height: 170%
+  }
+}
+@-webkit-keyframes zoom {
+  0% {
+    transform: scale(1)
+  }
+  50% {
+    transform: scale(4)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+@keyframes zoom {
+  0% {
+    transform: scale(1)
+  }
+  50% {
+    transform: scale(4)
+  }
+  100% {
+    transform: scale(1)
   }
 }

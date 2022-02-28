@@ -6,6 +6,4 @@
 
 
 
-
-
 <?php get_footer(); ?>
