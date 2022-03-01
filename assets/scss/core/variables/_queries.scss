@@ -14,16 +14,19 @@ $breakpoints: (
 
 /* Media Breakpoints
 ========================================================= */
-@mixin for-size( $breakpoint, $direction:down ) {
+@mixin for-size( $breakpoint, $direction:down, $offset:none) {
 
   // If the breakpoint exists in the map.
   @if map-has-key( $breakpoints, $breakpoint ) {
 
     $breakpoint-value: map-get( $breakpoints, $breakpoint );
 
-    // Offset UP by +1 to avoid conflicts
-    @if $direction == up {
-      @media only screen and (min-width: $breakpoint-value + 1) { @content; }
+    // Optional: Offset UP by +1 to avoid conflicts
+    @if $direction == up and $offset == offset {
+      @media only screen and (max-width: $breakpoint-value + 1) { @content; }
+    }   
+    @else if $direction == up {
+      @media only screen and (min-width: $breakpoint-value) { @content; }
     }
     @else if $direction == down {
       @media only screen and (max-width: $breakpoint-value) { @content; }
@@ -33,7 +36,7 @@ $breakpoints: (
   // Use manual breakpoint instead if map doesn't exist
   @else {
     @if $direction == up {
-      @media only screen and (min-width: $breakpoint + 1) { @content; }
+      @media only screen and (min-width: $breakpoint) { @content; }
     }
     @else if $direction == down {
       @media only screen and (max-width: $breakpoint) { @content; }
@@ -54,7 +57,7 @@ $breakpoints: (
     $upper-breakpoint: map-get( $breakpoints, $upper );
 
     // Write the media query
-    @media only screen and (min-width: $lower-breakpoint + 1) and (max-width: ($upper-breakpoint)) { @content; }
+    @media only screen and (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint)) { @content; }
   }
 
   // If the breakpoints don't exist, allow manual breakpoints
