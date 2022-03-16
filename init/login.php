@@ -26,8 +26,8 @@ function custom_login_screen() { ?>
       padding-bottom: 0px;
       background-image: url('<?= get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg');
       background-size: contain;
-      width: 200px;
-      height: 100px;
+      width: 320px;
+      height: 200px;
     }
 
     #login a {
