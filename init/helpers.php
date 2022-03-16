@@ -238,6 +238,9 @@ function my_acf_admin_head()
       line-height: 1;
       text-transform: uppercase;
     }
+    .acf-field-link .link-wrap > span {
+      display: block;
+    }
   </style>
   <?php
 }
