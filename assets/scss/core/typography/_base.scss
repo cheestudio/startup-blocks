@@ -1,27 +1,26 @@
 /* Body
 ========================================================= */
 body {
- @include font;
+  @include font;
 }
 
 main {
- p, li {
-  @extend %body-copy;
-  margin-bottom: 25px;
- }
-
- blockquote {
-  p {
-   @include no-margin-last;
+  p, li {
+    @extend %body-copy;
+    margin-bottom: 25px;
+    a {
+      @include trans;
+      color: inherit;
+      text-decoration: underline;
+      &:hover, &:focus, &:active {
+        color: red;
+      }
+    }
   }
- }
-}
 
-a, a[href^="tel"] {
- @include trans;
- color: inherit;
- text-decoration: underline;
- &:hover, &:focus, &:active {
-  color: #ccc;
- }
+  blockquote {
+    p {
+      @include no-margin-last;
+    }
+  }
 }
