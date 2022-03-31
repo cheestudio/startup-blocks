@@ -2,7 +2,10 @@
 /* Template Name: DEFAULT STYLES
 ========================================================= */ ?>
 
-<?php get_header(); ?>
+<?php 
+  if ( !defined('ABSPATH') ) exit;
+  get_header();
+?>
 <link rel="stylesheet" id="gform_basic-css" href="http://localhost/startup-blocks/wp-content/plugins/gravityforms/css/basic.min.css?ver=2.5.5.1" type="text/css" media="all">
 <link rel="stylesheet" id="gform_theme_ie11-css" href="http://localhost/startup-blocks/wp-content/plugins/gravityforms/css/theme-ie11.min.css?ver=2.5.5.1" type="text/css" media="all">
 <link rel="stylesheet" id="gform_theme-css" href="http://localhost/startup-blocks/wp-content/plugins/gravityforms/css/theme.min.css?ver=2.5.5.1" type="text/css" media="all">

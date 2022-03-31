@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php 
+  if ( !defined('ABSPATH') ) exit;
+  get_header();
+?>
 
 
 <section class="search-index">

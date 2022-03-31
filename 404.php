@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php 
+  if ( !defined('ABSPATH') ) exit;
+  get_header();
+?>
 
 
 <?php // Look for a page slug "error-404"

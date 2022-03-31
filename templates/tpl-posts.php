@@ -2,7 +2,10 @@
 /* Template Name: Posts Index
 ========================================================= */ ?>
 
-<?php get_header(); ?>
+<?php 
+  if ( !defined('ABSPATH') ) exit;
+  get_header();
+?>
 
 
 <section class="posts-index">
