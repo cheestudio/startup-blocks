@@ -1,4 +1,10 @@
 <?php
+
+/* ACF Key
+========================================================= */
+
+define('ACF_PRO_LICENSE', 'b3JkZXJfaWQ9MzQ3NTJ8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTE0IDE5OjU3OjM0' );
+
 /* ACF Builder + Block Registration Workflows (optional)
 ========================================================= */
 $acf_builder = true;
