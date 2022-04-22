@@ -224,7 +224,7 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
   z-index: 20;
   position: relative
 }
-@media only screen and (min-width:769px) {
+@media only screen and (min-width:768px) {
   .flex.reverse {
     flex-direction: row-reverse
   }

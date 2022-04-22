@@ -229,21 +229,22 @@ main li,
 main p {
   margin-bottom: 25px
 }
+main li a,
+main p a {
+  transition: .6s cubic-bezier(.23,1,.32,1);
+  color: inherit;
+  text-decoration: underline
+}
+main li a:active,
+main li a:focus,
+main li a:hover,
+main p a:active,
+main p a:focus,
+main p a:hover {
+  color: red
+}
 main blockquote p:last-of-type {
   margin-bottom: 0
-}
-a,
-a[href^=tel] {
-  transition: .6s cubic-bezier(.23,1,.32,1);
-  color: inherit
-}
-a:active,
-a:focus,
-a:hover,
-a[href^=tel]:active,
-a[href^=tel]:focus,
-a[href^=tel]:hover {
-  color: #ccc
 }
 h1,
 h2,
@@ -260,16 +261,8 @@ h6 {
   display: block
 }
 .gform_wrapper.gform_validation_error .gform_validation_errors {
-  border-color: red;
-  border-radius: 0;
-  box-shadow: none;
   margin-bottom: 25px;
-  border-width: 2px
-}
-.gform_wrapper.gform_validation_error .gform_validation_errors:active,
-.gform_wrapper.gform_validation_error .gform_validation_errors:focus,
-.gform_wrapper.gform_validation_error .gform_validation_errors:hover {
-  border-color: green
+  border-color: red
 }
 .gform_wrapper.gform_validation_error .gform_validation_errors h2.gform_submission_error {
   font-size: 18px;
@@ -280,28 +273,8 @@ h6 {
 .gform_wrapper.gform_validation_error .gfield.gfield_error legend,
 .gform_wrapper.gform_validation_error .gfield.gfield_error select,
 .gform_wrapper.gform_validation_error .gfield.gfield_error textarea {
-  border-color: red;
-  border-radius: 0;
-  box-shadow: none;
   color: red;
-  border-width: 2px
-}
-.gform_wrapper.gform_validation_error .gfield.gfield_error input:active,
-.gform_wrapper.gform_validation_error .gfield.gfield_error input:focus,
-.gform_wrapper.gform_validation_error .gfield.gfield_error input:hover,
-.gform_wrapper.gform_validation_error .gfield.gfield_error label:active,
-.gform_wrapper.gform_validation_error .gfield.gfield_error label:focus,
-.gform_wrapper.gform_validation_error .gfield.gfield_error label:hover,
-.gform_wrapper.gform_validation_error .gfield.gfield_error legend:active,
-.gform_wrapper.gform_validation_error .gfield.gfield_error legend:focus,
-.gform_wrapper.gform_validation_error .gfield.gfield_error legend:hover,
-.gform_wrapper.gform_validation_error .gfield.gfield_error select:active,
-.gform_wrapper.gform_validation_error .gfield.gfield_error select:focus,
-.gform_wrapper.gform_validation_error .gfield.gfield_error select:hover,
-.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:active,
-.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:focus,
-.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:hover {
-  border-color: green
+  border-color: red
 }
 .gform_wrapper.gform_validation_error .gfield.gfield_error input::-webkit-input-placeholder,
 .gform_wrapper.gform_validation_error .gfield.gfield_error label::-webkit-input-placeholder,
@@ -869,12 +842,12 @@ img {
   margin-right: auto;
   display: block
 }
-@media only screen and (min-width:769px) {
+@media only screen and (min-width:768px) {
   .flex.reverse {
     flex-direction: row-reverse
   }
 }
-@media only screen and (min-width:1025px) {
+@media only screen and (min-width:1024px) {
   header.main-banner .container {
     display: flex;
     align-items: center
