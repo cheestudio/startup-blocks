@@ -37,7 +37,6 @@ sass         = require('gulp-sass')(require('sass')),
 sassglob     = require('gulp-sass-glob'),
 gulpif       = require('gulp-if'),
 terser       = require('gulp-terser-js'),
-sourcemaps   = require('gulp-sourcemaps'),
 browsersync  = require('browser-sync').create();
 
 
