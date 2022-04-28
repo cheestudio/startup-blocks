@@ -2,18 +2,17 @@
 
 /* Admin Notices
 ========================================================= */
-
-function acf_builder_notice() {
- global $pagenow;
- if (!is_admin()) return false;
- if ($pagenow == 'edit.php' &&  $_GET['post_type'] == 'acf-field-group') {
-  echo '<div class="notice notice-error">
-         <h2>Custom Fields managed via ACF Builder</h2>
-         <p>ACF Builder library is located within the /init/ of this theme folder. Please <a target="_blank" rel="noopener" href="https://github.com/cheestudio/startup-blocks">view the README for more information</a> on this theme and the field management workflow.</p>
-     </div>';
- }
-}
 add_action('admin_notices', 'acf_builder_notice');
+function acf_builder_notice() {
+  global $pagenow;
+  if ( !is_admin() ) return false;
+  if ($pagenow == 'edit.php' &&  $_GET['post_type'] == 'acf-field-group') {
+    echo '<div class="notice notice-error">
+    <h2>Custom Fields managed via ACF Builder</h2>
+    <p>ACF Builder library is located within the /init/ of this theme folder. Please <a target="_blank" rel="noopener" href="https://github.com/cheestudio/startup-blocks">view the README for more information</a> on this theme and the field management workflow.</p>
+    </div>';
+  }
+}
 
 /* Gravity Forms Button Markup
 ========================================================= */
@@ -29,10 +28,10 @@ function input_to_button($button, $form) {
  $input->removeAttribute('value');
  foreach ($input->attributes as $attribute) {
   $new_button->setAttribute($attribute->name, $attribute->value);
- }
- $input->parentNode->replaceChild($new_button, $input);
+}
+$input->parentNode->replaceChild($new_button, $input);
 
- return $dom->saveHtml($new_button);
+return $dom->saveHtml($new_button);
 }
 
 /* Gravity Forms anchor creation
@@ -59,8 +58,8 @@ function post_name_in_body_class($classes) {
   $parent = get_page($post->post_parent);
   array_push($classes, "{$post->post_name}");
   array_push($classes, "{$parent->post_name}");
- }
- return $classes;
+}
+return $classes;
 }
 
 /* Replace "Howdy" on Admin
@@ -72,7 +71,7 @@ function replace_howdy($wp_admin_bar) {
  $wp_admin_bar->add_node(array(
   'id' => 'my-account',
   'title' => $newtitle,
- ));
+));
 }
 
 /* Hide Help on Admin
@@ -81,7 +80,7 @@ add_action('admin_head', 'hide_help');
 function hide_help() {
  echo '<style type="text/css">
             #contextual-help-link-wrap { display: none !important; }
-  </style>';
+ </style>';
 }
 
 /* Remove footer branding
@@ -164,7 +163,7 @@ function my_custom_toolbars($toolbars) {
   'removeformat',
   'fullscreen',
   'hr',
- );
+);
  return $toolbars;
 }
 
@@ -173,66 +172,66 @@ function my_custom_toolbars($toolbars) {
 add_action('acf/input/admin_head', 'my_acf_admin_head');
 function my_acf_admin_head() {
  ?>
-  <style type="text/css">
-    .acf-field.center {
-      text-align: center;
-    }
-    .acf-field.center .image-wrap,
-    .acf-field.center .image-wrap img {
-      float: none;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .acf-field-button-group.center {
-      text-align: center;
-    }
-    .acf-field.hide-border>.acf-label {
-      display: none;
-    }
-    .acf-field.hide-border>.acf-input>.acf-fields {
-      border: none;
-    }
-    table.acf-table tbody td {
-      vertical-align: middle;
-    }
-    table.acf-table th.acf-th {
-      text-align: center;
-      font-weight: 700;
-    }
-    .acf-field-wysiwyg.short .mce-edit-area iframe {
-      height: auto !important;
-    }
-    .acf-field.heading>.acf-label {
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 20px;
-    }
-    .acf-block-fields>.acf-field-group>.acf-label label,
-    .acf-block-fields>.acf-field-repeater>.acf-label label {
-      display: block;
-      text-align: center;
-      font-size: 20px;
-      color: #555;
-      line-height: 1;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-    .acf-relationship ul.acf-bl {
-      text-align: left;
-    }
-    #poststuff .acf-postbox .postbox-header h2 {
-      display: block;
-      text-align: center;
-      font-size: 20px;
-      color: #555;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-    .acf-field-link .link-wrap > span {
-      display: block;
-    }
-  </style>
-  <?php
+ <style type="text/css">
+  .acf-field.center {
+    text-align: center;
+  }
+  .acf-field.center .image-wrap,
+  .acf-field.center .image-wrap img {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .acf-field-button-group.center {
+    text-align: center;
+  }
+  .acf-field.hide-border>.acf-label {
+    display: none;
+  }
+  .acf-field.hide-border>.acf-input>.acf-fields {
+    border: none;
+  }
+  table.acf-table tbody td {
+    vertical-align: middle;
+  }
+  table.acf-table th.acf-th {
+    text-align: center;
+    font-weight: 700;
+  }
+  .acf-field-wysiwyg.short .mce-edit-area iframe {
+    height: auto !important;
+  }
+  .acf-field.heading>.acf-label {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  .acf-block-fields>.acf-field-group>.acf-label label,
+  .acf-block-fields>.acf-field-repeater>.acf-label label {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    color: #555;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .acf-relationship ul.acf-bl {
+    text-align: left;
+  }
+  #poststuff .acf-postbox .postbox-header h2 {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    color: #555;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .acf-field-link .link-wrap > span {
+    display: block;
+  }
+</style>
+<?php
 }
 
 /* Disable Image Side scaling on upload
@@ -247,36 +246,36 @@ function post_pagination($pages = '', $range = 2) {
 
  if (empty($paged)) {
   $paged = 1;
- }
- if ($pages == '') {
+}
+if ($pages == '') {
   global $wp_query;
   $pages = $wp_query->max_num_pages;
   if (!$pages) {
    $pages = 1;
-  }
  }
+}
 
- if (1 != $pages) {
+if (1 != $pages) {
   if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) {
    echo "<a class='first-link' href='" . get_pagenum_link(1) . "' title='Go to First Page'><<</a>";
-  }
-  if ($paged > 1 && $showitems < $pages) {
+ }
+ if ($paged > 1 && $showitems < $pages) {
    echo "<a class='prev-link' href='" . get_pagenum_link($paged - 1) . "' title='Go to Previous Page'><</a>";
-  }
+ }
 
-  for ($i = 1; $i <= $pages; $i++) {
+ for ($i = 1; $i <= $pages; $i++) {
    if (1 != $pages && (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems)) {
     echo ($paged == $i) ? "<span class='current'>{$i}</span>" : "<a href='" . get_pagenum_link($i) . "' class='inactive' title='Go to Page {$i}'>{$i}</a>";
-   }
   }
+}
 
-  if ($paged < $pages && $showitems < $pages) {
-   echo "<a class='next-link' href='" . get_pagenum_link($paged + 1) . "' title='Go to Next Page'>></a>";
-  }
-  if ($paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages) {
-   echo "<a class='last-link' href='" . get_pagenum_link($pages) . "' title='Go to Last Page'>>></a>";
-  }
- }
+if ($paged < $pages && $showitems < $pages) {
+ echo "<a class='next-link' href='" . get_pagenum_link($paged + 1) . "' title='Go to Next Page'>></a>";
+}
+if ($paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages) {
+ echo "<a class='last-link' href='" . get_pagenum_link($pages) . "' title='Go to Last Page'>>></a>";
+}
+}
 }
 
 /* Move Yoast to bottom of edit page
@@ -297,7 +296,11 @@ function custom_order_post_type($query) {
   if ($query->get('post_type') == 'page') {
    $query->set('orderby', 'title');
    $query->set('order', 'ASC');
-  }
  }
- return $query;
 }
+return $query;
+}
+
+/* Limit Post Revisions
+========================================================= */
+if (!defined('WP_POST_REVISIONS')) define('WP_POST_REVISIONS', 20);
