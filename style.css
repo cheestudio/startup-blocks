@@ -276,20 +276,6 @@ h6 {
   color: red;
   border-color: red
 }
-.gform_wrapper.gform_validation_error .gfield.gfield_error input::-webkit-input-placeholder,
-.gform_wrapper.gform_validation_error .gfield.gfield_error label::-webkit-input-placeholder,
-.gform_wrapper.gform_validation_error .gfield.gfield_error legend::-webkit-input-placeholder,
-.gform_wrapper.gform_validation_error .gfield.gfield_error select::-webkit-input-placeholder,
-.gform_wrapper.gform_validation_error .gfield.gfield_error textarea::-webkit-input-placeholder {
-  color: red
-}
-.gform_wrapper.gform_validation_error .gfield.gfield_error input:-moz-placeholder,
-.gform_wrapper.gform_validation_error .gfield.gfield_error label:-moz-placeholder,
-.gform_wrapper.gform_validation_error .gfield.gfield_error legend:-moz-placeholder,
-.gform_wrapper.gform_validation_error .gfield.gfield_error select:-moz-placeholder,
-.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:-moz-placeholder {
-  color: red
-}
 .gform_wrapper.gform_validation_error .gfield.gfield_error input::-moz-placeholder,
 .gform_wrapper.gform_validation_error .gfield.gfield_error label::-moz-placeholder,
 .gform_wrapper.gform_validation_error .gfield.gfield_error legend::-moz-placeholder,
@@ -302,6 +288,13 @@ h6 {
 .gform_wrapper.gform_validation_error .gfield.gfield_error legend:-ms-input-placeholder,
 .gform_wrapper.gform_validation_error .gfield.gfield_error select:-ms-input-placeholder,
 .gform_wrapper.gform_validation_error .gfield.gfield_error textarea:-ms-input-placeholder {
+  color: red
+}
+.gform_wrapper.gform_validation_error .gfield.gfield_error input::placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error label::placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error legend::placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error select::placeholder,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea::placeholder {
   color: red
 }
 .gform_wrapper.gform_validation_error .gfield.gfield_error .gfield_description,
@@ -337,16 +330,6 @@ h6 {
 .gform_wrapper.gravity-theme form textarea:hover {
   border-color: green
 }
-.gform_wrapper.gravity-theme form input[type]::-webkit-input-placeholder,
-.gform_wrapper.gravity-theme form select::-webkit-input-placeholder,
-.gform_wrapper.gravity-theme form textarea::-webkit-input-placeholder {
-  color: #000
-}
-.gform_wrapper.gravity-theme form input[type]:-moz-placeholder,
-.gform_wrapper.gravity-theme form select:-moz-placeholder,
-.gform_wrapper.gravity-theme form textarea:-moz-placeholder {
-  color: #000
-}
 .gform_wrapper.gravity-theme form input[type]::-moz-placeholder,
 .gform_wrapper.gravity-theme form select::-moz-placeholder,
 .gform_wrapper.gravity-theme form textarea::-moz-placeholder {
@@ -355,6 +338,11 @@ h6 {
 .gform_wrapper.gravity-theme form input[type]:-ms-input-placeholder,
 .gform_wrapper.gravity-theme form select:-ms-input-placeholder,
 .gform_wrapper.gravity-theme form textarea:-ms-input-placeholder {
+  color: #000
+}
+.gform_wrapper.gravity-theme form input[type]::placeholder,
+.gform_wrapper.gravity-theme form select::placeholder,
+.gform_wrapper.gravity-theme form textarea::placeholder {
   color: #000
 }
 .gform_wrapper.gravity-theme form input[type]:focus,
