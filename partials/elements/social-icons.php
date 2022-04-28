@@ -9,7 +9,7 @@ if ( function_exists('get_field') ) :
         <?php foreach ( $icons as $icon ) :
           $title = $icon['title'];
           $link  = $icon['link'];
-          $class = $icon['class']; ?>
+          $class = $icon['class_name']; ?>
           <li>
             <a 
             href   = "<?= $link; ?>"
