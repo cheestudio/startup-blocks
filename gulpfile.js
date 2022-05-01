@@ -5,7 +5,7 @@
 ========================================================= */
 const
 PROJECT_NAME     = 'blocks',
-DEVELOPER_MODE   = true,
+PREVIEW_MODE     = true,
 BLOCK_MODE       = true,
 
 ROOT             = './',
@@ -83,7 +83,7 @@ function styles() {
   .pipe( cleancss( { level: 0 } ) )
   .pipe( plumber.stop() )
   .pipe( dest( ROOT ) )
-  .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
+  .pipe( gulpif( PREVIEW_MODE, browsersync.stream() ) )
 }
 
 
@@ -111,7 +111,7 @@ function block_styles() {
   .pipe( lineec() )
   .pipe( plumber.stop() )
   .pipe( dest('.'))
-  .pipe( gulpif( DEVELOPER_MODE, browsersync.stream() ) )
+  .pipe( gulpif( PREVIEW_MODE, browsersync.stream() ) )
 }
 
 
@@ -186,7 +186,7 @@ function watchFiles(done) {
     watch( BLOCKS_JS_SOURCE, reload );
     watch( EDITOR_STYLES, editor_styles );
   }
-  if ( DEVELOPER_MODE ) {
+  if ( PREVIEW_MODE ) {
     watch( ALL_PHP, !IGNORE, reload );
     watch( JS_SOURCE, series(scriptsJS, reload) );
     watch( SVG_SOURCE, { events: ['add', 'change'] }, reload );
@@ -201,14 +201,14 @@ function watchFiles(done) {
 /* Build
 ========================================================= */
 if ( BLOCK_MODE ) { // BLOCKS workflow
-  if ( DEVELOPER_MODE ) {
+  if ( PREVIEW_MODE ) {
     var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles, browserSyncInit );
   } else {
     var build  = parallel( styles, block_styles, editor_styles, scriptsJS, watchFiles);
   }
 }
 else { // not BLOCKS workflow
-  if ( DEVELOPER_MODE ) {
+  if ( PREVIEW_MODE ) {
     var build  = parallel( styles, scriptsJS, watchFiles, browserSyncInit );
   } else {
     var build  = parallel( styles, scriptsJS, watchFiles);
