@@ -26,7 +26,7 @@ $browser-context: 16; // Default
 /* REM to PX
 ========================================================= */
 @function rem($size) {
-  @return math.div($size, 16px) * 1rem;
+  @return (math.div($size, 16) + rem);
 }
 
 
