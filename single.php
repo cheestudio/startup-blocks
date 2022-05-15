@@ -4,7 +4,7 @@
 ?>
 
 
-<?php if ( have_posts() ) : the_post();?>
+<?php if ( have_posts() ):?>
   <section class="post-single">
     <div class="container">
 
