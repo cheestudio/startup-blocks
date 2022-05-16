@@ -5,3 +5,12 @@ $colors: (
 'black' : #000000,
 'white' : #ffffff
 );
+
+/* SCSS Colors */
+
+@function color($name){
+  @if not map-get($colors, $name+''){
+      @error "Color `#{$name}` not found in map $colors";
+  }
+  @return var(--#{unquote($name)});
+}
