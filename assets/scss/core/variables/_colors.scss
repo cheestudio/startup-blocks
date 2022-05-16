@@ -14,10 +14,10 @@
 
 @each $name, $hex in $colors {
 	.has-#{$name}-background-color {
-		background-color: $hex;
+		background-color: var(--#{$name});
 	}
 	.has-#{$name}-color {
-		color: $hex;
+		color: var(--#{$name});
 	}
 }
 
