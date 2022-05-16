@@ -1,7 +1,6 @@
 @include for-size(tablet, up) {
-
+  
   header.main-banner {
-
     .container {
       display: flex;
       align-items: center;
@@ -13,66 +12,69 @@
         display: block;
       }
     }
+  }
 
-    .desktop-nav-wrap {
-      // shared
-      ul {
+    
+  .desktop-nav-wrap {
+    // shared
+    ul {
+      
+    }
+    
+    li {
+      
+    }
 
-        li {
-
-          a {
-
+    a {
+      
+    }
+    
+    // top level + sub menu
+    > ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      > li {
+        padding-left: 20px;
+        padding-right: 20px;
+        > a {
+          
+        }
+        &.menu-item-has-children {
+          position: relative;
+          &:hover, &:focus, &:active {
+            .sub-menu {
+              @include display('show');
+            }
           }
         }
-      }
-
-      // top level + sub menu
-      > ul {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        > li {
-          padding-left: 20px;
-          padding-right: 20px;
+        &.current-menu-item,
+        &.current_page_ancestor,
+        &.current-menu-ancestor {
           > a {
-
+            
           }
-          &.menu-item-has-children {
-            position: relative;
-            &:hover, &:focus, &:active {
-              .sub-menu {
-                @include display('show');
-              }
+        }
+        .sub-menu {
+          @include trans;
+          @include display('hide');
+          display: block;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          margin: 0;
+          padding: 20px;
+          li {
+            white-space: nowrap;
+            &.current-menu-item,
+            &.current_page_ancestor,
+            &.current-menu-ancestor {
+              
             }
-          }
-          &.current-menu-item,
-          &.current_page_ancestor,
-          &.current-menu-ancestor {
-            > a {
-
-            }
-          }
-          .sub-menu {
-            @include trans;
-            @include display('hide');
-            display: block;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            margin: 0;
-            padding: 20px;
-            li {
-              white-space: nowrap;
-              &.current-menu-item,
-              &.current_page_ancestor,
-              &.current-menu-ancestor {
-
-              }
-              a {
-                &:hover, &:focus, &:active {
-
-                }
+            a {
+              &:hover, &:focus, &:active {
+                
               }
             }
           }
@@ -80,4 +82,5 @@
       }
     }
   }
+
 }
