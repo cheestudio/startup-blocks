@@ -8,16 +8,15 @@ main {
   p, li {
     @extend %body-copy;
     margin-bottom: 25px;
-    a {
-      @include trans;
-      color: inherit;
-      text-decoration: underline;
-      &:hover, &:focus, &:active {
-        color: red;
-      }
+  }
+  a {
+    @include trans;
+    color: inherit;
+    text-decoration: underline;
+    &:hover, &:focus, &:active {
+      color: red;
     }
   }
-
   blockquote {
     p {
       @include no-margin-last;
