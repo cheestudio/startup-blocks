@@ -5,6 +5,7 @@
 
 define('ACF_PRO_LICENSE', 'b3JkZXJfaWQ9MzQ3NTJ8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTE0IDE5OjU3OjM0' );
 
+
 /* ACF Builder + Block Registration Workflows (optional)
 ========================================================= */
 $acf_builder = true;
@@ -170,6 +171,14 @@ function blockFieldGroup($file){
   $group = $name . '_group';
   return get_field($group);
 }
+
+/* Block Asset Path 
+   usage: echo block_path(__DIR__);
+========================================================= */
+function block_path($dir) {
+  return esc_url(get_template_directory_uri()).'/partials/blocks/'.basename($dir);
+}
+
 
 /* Toggle Builder/Block Workflows
 ========================================================= */
