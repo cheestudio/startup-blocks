@@ -156,11 +156,12 @@ function block_class_id($block_entry, $class) {
   }
   
   $output = 'class="' . esc_attr($className) . '"'; 
-  if ($id) $output .= 'id="' . esc_attr($id) . '"'; 
+  if (isset($id)) $output .= 'id="' . esc_attr($id) . '"'; 
  
   echo $output;
-  
+
  }
+
 /* Block Field Group Path
 ========================================================= */
 function blockFieldGroup($file){
