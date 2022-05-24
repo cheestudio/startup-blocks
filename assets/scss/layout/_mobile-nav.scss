@@ -161,7 +161,6 @@ $link-current-color : red;
             color: $link-color;
             font-size: rem(20);
             line-height: 1.4;
-            font-weight: 600;
             margin: 0;
             padding: 12px 25px;
             background-color: $link-background;
@@ -231,11 +230,8 @@ $link-current-color : red;
               a {
                 border: none;
                 display: block;
-                font-size: 16px;
-                font-weight: 500;
-                letter-spacing: 1px;
+                font-size: rem(16);
                 color: black;
-                text-transform: none;
                 padding-top: 10px;
                 padding-bottom: 10px;
               }
@@ -274,7 +270,7 @@ $link-current-color : red;
               margin-left: 25px;
               background-color: black;
               color: white;
-              font-size: em(18);
+              font-size: rem(18);
             }
           }
         }
@@ -304,7 +300,6 @@ $link-current-color : red;
       }
     }
   }
-  
 }
 
 // Accessibility Tag
