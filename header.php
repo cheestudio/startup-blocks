@@ -9,8 +9,7 @@
   <link rel="alternate" type="application/rss+xml" title="<?= get_bloginfo('name'); ?> Feed" href="<?= home_url(); ?>/feed/">
 
   <?php // Logos & Optional ACF Header Code
-  $logo_path = get_template_directory_uri() . '/assets/img/svg/';
-  $logo      = $logo_path . 'logo.svg';
+  $logo = get_template_directory_uri() . '/assets/img/svg/logo.svg';
   if ( function_exists('get_field') ) :
     $head_code    = get_field('head_code', 'option');
     $body_code    = get_field('body_code', 'option');
@@ -36,8 +35,8 @@
       </div>
 
       <nav>
-        <?php include( locate_template('partials/navs/nav-desktop.php') ); ?>
-        <?php include( locate_template('partials/navs/nav-mobile.php') ); ?>
+        <?php get_template_part('partials/navs/nav-desktop');?>
+        <?php get_template_part('partials/navs/nav-mobile');?>
       </nav>
 
     </div>

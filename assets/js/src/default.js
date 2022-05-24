@@ -25,7 +25,7 @@ function setCookie(name, value, days) {
 /* MOBILE NAV
 ========================================================= */
 
-// Hamburgler Toggle
+// Mobile Nav Toggle
 $('.navbar-toggle').click( function() {
   $('.mobile-nav').fadeToggle();
   $(this).parents('.mobile-nav-wrap').toggleClass('open');
@@ -33,24 +33,21 @@ $('.navbar-toggle').click( function() {
   return false;
 });
 
-// Flyout Menus for Sub Nav
-$('.mobile-nav ul li').has('ul').append('<a href="#" class="expand" aria-label="Expand Menu"><span class="sr-only">Expand Menu</span><svg viewBox="0 0 15 15" width="15" height="15" xmlns="http://www.w3.org/2000/svg" role="img"><path fill="none" stroke="#000000" stroke-width="3" d="M4.7,13.1l5.6-5.6L4.7,1.9"/></svg></a>');
-$('.mobile-nav .sub-menu').prepend('<a href="#" class="close-sub" aria-label="Close Submenu"><span class="sr-only">Close Submenu</span></a>');
-$('.mobile-nav ul .menu-item-has-children > a.expand').click(function(e) {
-  var current = $(this);
-  e.preventDefault();
-  current.toggleClass('sub-open expand-open');
-  current.prev().toggleClass('sub-open');
-});
-$('.close-sub').click(function(e){
-  e.preventDefault();
-  $(this).parent().removeClass('sub-open');
-});
+// Mobile Nav with Dropdown Menus
 
-// Add Sub Nav Titles Dynamically
-$('.mobile-nav ul li.menu-item-has-children').each( function(){
-  var navSectionTitle = $(this).find('.expand').prev().prev().html();
-  $(this).find('.sub-menu').prepend('<div class="sub-menu-title">' + navSectionTitle + '</div>');
+$('.mobile-menu li').has('ul').find('> a').after('<a href="#" class="expand" aria-label="Expand Menu"></a>');
+$('.mobile-menu .menu-item-has-children > .expand').click( function(e) {
+  e.preventDefault();
+  var current = $(this);
+  current.toggleClass('sub-menu-open');
+  current.prev().toggleClass('sub-menu-open');
+  var isSubMenu = current.parents('.sub-menu').length;
+  if ( isSubMenu == 0 ) {
+    current.parents('.mobile-parent-menu').siblings().find('.sub-menu').slideUp(400);
+  }
+  current.next().slideToggle();
+  current.parent().siblings('.menu-item-has-children').find('a').removeClass('sub-menu-open');
+  current.parent().siblings('.menu-item-has-children').find('.sub-menu').slideUp(400);
 });
 
 

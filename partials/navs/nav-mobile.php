@@ -1,3 +1,4 @@
+<?php $logo = get_template_directory_uri() . '/assets/img/svg/logo-mobile.svg';?>
 <div class="mobile-nav-wrap">
 
   <div class="mobile-nav-header">
