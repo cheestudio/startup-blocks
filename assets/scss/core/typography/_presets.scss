@@ -2,73 +2,73 @@
 ========================================================= */
 
 %preset1 {
-  font-size: em(70);
+  font-size: rem(70);
   line-height: 110%;
   font-weight: 600;
   @include for-size(laptop) {
-   font-size: em(56);
+   font-size: rem(56);
   }
   @include for-size(tablet) {
-   font-size: em(40);
+   font-size: rem(40);
   }
  }
  
  %preset2 {
-  font-size: em(50);
+  font-size: rem(50);
   line-height: 125%;
   font-weight: 500;
   @include for-size(laptop) {
-   font-size: em(40);
+   font-size: rem(40);
   }
   @include for-size(tablet) {
-   font-size: em(30);
+   font-size: rem(30);
   }
  }
  
  %preset3 {
-  font-size: em(40);
+  font-size: rem(40);
   line-height: 130%;
   font-weight: 600;
   @include for-size(laptop) {
-   font-size: em(32);
+   font-size: rem(32);
   }
   @include for-size(tablet) {
-   font-size: em(28);
+   font-size: rem(28);
   }
  }
  
  %preset4 {
-  font-size: em(30);
+  font-size: rem(30);
   line-height: 130%;
   @include for-size(laptop) {
-   font-size: em(27);
+   font-size: rem(27);
   }
   @include for-size(tablet) {
-   font-size: em(24);
+   font-size: rem(24);
   }
  }
  
  %preset5 {
-  font-size: em(24);
+  font-size: rem(24);
   line-height: 140%;
   @include for-size(laptop) {
-   font-size: em(20);
+   font-size: rem(20);
   }
  }
  
  %preset6 {
-  font-size: em(20);
+  font-size: rem(20);
   line-height: 150%;
   @include for-size(tablet) {
-   font-size: em(16);
+   font-size: rem(16);
   }
  }
  
  %body-copy {
-  font-size: em(20);
+  font-size: rem(20);
   line-height: 165%;
   @include for-size(phone) {
-   font-size: em(16);
+   font-size: rem(16);
    line-height: 170%;
   }
  }
