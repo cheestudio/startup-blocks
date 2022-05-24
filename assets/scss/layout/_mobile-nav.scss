@@ -13,8 +13,8 @@ $link-background : white;
 $link-color : black;
 $link-border-color : transparent;
 
-$link-hover-background : red;
-$link-hover-color : black;
+$link-hover-background : transparent;
+$link-hover-color : red;
 
 $link-current-background : transparent;
 $link-current-color : red;
@@ -231,7 +231,6 @@ $link-current-color : red;
                 border: none;
                 display: block;
                 font-size: rem(16);
-                color: black;
                 padding-top: 10px;
                 padding-bottom: 10px;
               }
