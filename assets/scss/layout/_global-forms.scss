@@ -56,34 +56,6 @@ form {
   }
 }
 
-
-/* Error Styles
-========================================================= */
-.gform_wrapper.gform_validation_error {
-  .gform_validation_errors {
-    margin-bottom: 25px;
-    border-color: $border-color-error;
-    h2.gform_submission_error {
-      font-size: 18px;
-      color: $border-color-error;
-    }
-  }
-  .gfield.gfield_error {
-    input, select, textarea, legend, label {
-      color: $border-color-error;
-      border-color: $border-color-error;
-      @include placeholder {
-        color: $border-color-error;
-      }
-      
-    }
-  }
-  .validation_message, .gfield.gfield_error .gfield_description {
-    display: none;
-  }
-}
-
-
 /* Gravity Form
 ========================================================= */
 .gform_wrapper.gravity-theme {
@@ -145,5 +117,32 @@ form {
   
   .gform_confirmation_message {
     @extend %body-copy;
+  }
+}
+
+
+/* Gravity Form Error Styles
+========================================================= */
+.gform_wrapper.gform_validation_error {
+  .gform_validation_errors {
+    margin-bottom: 25px;
+    border-color: $border-color-error;
+    h2.gform_submission_error {
+      font-size: 18px;
+      color: $border-color-error;
+    }
+  }
+  .gfield.gfield_error {
+    input, select, textarea, legend, label {
+      color: $border-color-error;
+      border-color: $border-color-error;
+      @include placeholder {
+        color: $border-color-error;
+      }
+      
+    }
+  }
+  .validation_message, .gfield.gfield_error .gfield_description {
+    display: none;
   }
 }
