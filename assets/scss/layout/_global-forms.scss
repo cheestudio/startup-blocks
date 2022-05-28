@@ -34,6 +34,28 @@ $box-shadow          : none;
   }
 }
 
+/* Global Form Elements
+========================================================= */
+
+form {
+  input[type], select, textarea {
+    @include trans( all, 300 );
+    @include formInputStyles;
+    display: inline-block;
+    border-style: solid;
+    padding: 10px 15px !important;
+    font-family: inherit;
+    line-height: normal;
+    color: black;
+    @include placeholder {
+      color: black;
+    }
+    &:focus {
+      border-color: $border-color-active;
+    }
+  }
+}
+
 
 /* Error Styles
 ========================================================= */
@@ -53,7 +75,7 @@ $box-shadow          : none;
       @include placeholder {
         color: $border-color-error;
       }
-
+      
     }
   }
   .validation_message, .gfield.gfield_error .gfield_description {
@@ -67,22 +89,6 @@ $box-shadow          : none;
 .gform_wrapper.gravity-theme {
   margin: 0;
   form {
-    input[type], select, textarea {
-      @include trans( all, 300 );
-      @include formInputStyles;
-      display: inline-block;
-      border-style: solid;
-      padding: 10px 15px !important;
-      font-family: inherit;
-      line-height: normal;
-      color: black;
-      @include placeholder {
-        color: black;
-      }
-      &:focus {
-        border-color: $border-color-active;
-      }
-    }
     .gform-body {
       padding-top: 25px;
       padding-bottom: 25px;
@@ -122,7 +128,7 @@ $box-shadow          : none;
         }
       }
     }
-
+    
     .gform_footer {
       margin: 0;
       padding-top: 25px;
@@ -136,7 +142,7 @@ $box-shadow          : none;
 }
 
 .gform_confirmation_wrapper  {
-
+  
   .gform_confirmation_message {
     @extend %body-copy;
   }
