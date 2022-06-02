@@ -234,6 +234,13 @@ function my_acf_admin_head() {
   .acf-field-link .link-wrap > span {
     display: block;
   }
+  form.metabox-location-side #poststuff .postbox-header h2 {
+    font-size: 13px;
+    text-align: left;
+    text-transform: none;
+    padding: 0 16px;
+    font-weight: 500;
+  }
 </style>
 <?php
 }
