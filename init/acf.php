@@ -85,6 +85,7 @@ function acf_blocks_registration() {
     'category' => 'Block Category',
     'post_types' => 'Post Types',
     'mode' => 'Block Mode',
+    'toggle' => 'Block Toggle',
     'align' => 'Block Align',
     'icon' => 'Block Icon',
    ));
@@ -116,10 +117,10 @@ function acf_blocks_registration() {
     'align' => $meta['align'] ? $meta['align'] : 'full',
     'icon' => $meta['icon'],
     'supports' => array(
-     'align' => array('left', 'center', 'right', 'wide', 'full'),
-     'align_text' => array('left', 'center', 'right'),
      'customClassName' => true,
-     'anchor' => true
+     'anchor' => true,
+     'jsx' => true,
+     'mode' => $meta['toggle'] == 'false' ? false : true
     ),
    ));
   }

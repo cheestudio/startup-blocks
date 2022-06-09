@@ -5,6 +5,7 @@ Block Description: Description for Custom Block
 Block Category: Custom
 Block Align: full
 Block Icon: format-image
+Block Toggle: true
 Post Types: post, page
 */
 $group = blockFieldGroup(__FILE__); //REQUIRED
