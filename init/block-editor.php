@@ -85,23 +85,14 @@ add_filter( 'block_categories_all', 'custom_block_categories', 10, 2 );
 /* Patterns
 ========================================================= */
 
-function chee_patterns() {
-
+function chee_patterns_init() {
   remove_theme_support('core-block-patterns');
- 
   register_block_pattern_category( 'chee', array('label' => __('Chee', 'chee')) );
-  
-  register_block_pattern(
-   'chee/chee-intro',
-   array(
-    'title' => __('Chee Pattern: Header and Copy Block', 'chee'),
- 
-    'description' => _x('Simple header and copy block pattern', 'chee'),
- 
-    'content' => "<!-- wp:heading {\"textAlign\":\"center\"} -->\r\n<h2 class=\"has-text-align-center\">Heading Goes Here</h2>\r\n<!-- /wp:heading -->\r\n\r\n<!-- wp:paragraph {\"align\":\"center\"} -->\r\n<p class=\"has-text-align-center\">Paragraph Copy Goes Here</p>\r\n<!-- /wp:paragraph -->",
- 
-    'categories' => array('chee'),
-   )
-  );
 } 
-add_action('init', 'chee_patterns');
+
+add_action('after_setup_theme', 'chee_patterns_init');
+
+/* Remove Default Container Styles (unused FSE editing feature)
+========================================================= */
+
+remove_filter( 'render_block', 'wp_render_layout_support_flag', 10, 2 );
