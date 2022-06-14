@@ -91,8 +91,3 @@ function chee_patterns_init() {
 } 
 
 add_action('after_setup_theme', 'chee_patterns_init');
-
-/* Remove Default Container Styles (unused FSE editing feature)
-========================================================= */
-
-remove_filter( 'render_block', 'wp_render_layout_support_flag', 10, 2 );
