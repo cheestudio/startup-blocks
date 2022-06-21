@@ -1,12 +1,13 @@
 <?php
 // Example of a partial field
-// 
-// Usage: ->addFields($partial_reuse)
+
+// Usage: ->addFields($partial)
 
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-$partial_reuse = new FieldsBuilder('partial_reuse');
+$partial = new FieldsBuilder('partial');
 
-$partial_reuse
+$partial
 
-->addText('example_field');
+->addText('example_field')
+;
