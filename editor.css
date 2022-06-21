@@ -50,16 +50,16 @@ body .editor-styles-wrapper .wp-block.editor-block .button .wp-block-button .wp-
   -webkit-appearance: none
 }
 .has-black-background-color {
-  background-color: #000
+  background-color: var(--black)
 }
 .has-black-color {
-  color: #000
+  color: var(--black)
 }
 .has-white-background-color {
-  background-color: #fff
+  background-color: var(--white)
 }
 .has-white-color {
-  color: #fff
+  color: var(--white)
 }
 :root {
   --black: #000000;
@@ -68,40 +68,40 @@ body .editor-styles-wrapper .wp-block.editor-block .button .wp-block-button .wp-
 body .editor-styles-wrapper .h1,
 body .editor-styles-wrapper .preset1,
 body .editor-styles-wrapper h1 {
-  font-size: 4.375em;
+  font-size: 4.375rem;
   line-height: 110%;
   font-weight: 600
 }
 body .editor-styles-wrapper .h2,
 body .editor-styles-wrapper .preset2,
 body .editor-styles-wrapper h2 {
-  font-size: 3.125em;
+  font-size: 3.125rem;
   line-height: 125%;
   font-weight: 500
 }
 body .editor-styles-wrapper .h3,
 body .editor-styles-wrapper .preset3,
 body .editor-styles-wrapper h3 {
-  font-size: 2.5em;
+  font-size: 2.5rem;
   line-height: 130%;
   font-weight: 600
 }
 body .editor-styles-wrapper .h4,
 body .editor-styles-wrapper .preset4,
 body .editor-styles-wrapper h4 {
-  font-size: 1.875em;
+  font-size: 1.875rem;
   line-height: 130%
 }
 body .editor-styles-wrapper .h5,
 body .editor-styles-wrapper .preset5,
 body .editor-styles-wrapper h5 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   line-height: 140%
 }
 body .editor-styles-wrapper .h6,
 body .editor-styles-wrapper .preset6,
 body .editor-styles-wrapper h6 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
   line-height: 150%
 }
 body .editor-styles-wrapper .button-wrap {
@@ -233,54 +233,54 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
   body .editor-styles-wrapper .h1,
   body .editor-styles-wrapper .preset1,
   body .editor-styles-wrapper h1 {
-    font-size: 3.5em
+    font-size: 3.5rem
   }
   body .editor-styles-wrapper .h2,
   body .editor-styles-wrapper .preset2,
   body .editor-styles-wrapper h2 {
-    font-size: 2.5em
+    font-size: 2.5rem
   }
   body .editor-styles-wrapper .h3,
   body .editor-styles-wrapper .preset3,
   body .editor-styles-wrapper h3 {
-    font-size: 2em
+    font-size: 2rem
   }
   body .editor-styles-wrapper .h4,
   body .editor-styles-wrapper .preset4,
   body .editor-styles-wrapper h4 {
-    font-size: 1.6875em
+    font-size: 1.6875rem
   }
   body .editor-styles-wrapper .h5,
   body .editor-styles-wrapper .preset5,
   body .editor-styles-wrapper h5 {
-    font-size: 1.25em
+    font-size: 1.25rem
   }
 }
 @media only screen and (max-width:1024px) {
   body .editor-styles-wrapper .h1,
   body .editor-styles-wrapper .preset1,
   body .editor-styles-wrapper h1 {
-    font-size: 2.5em
+    font-size: 2.5rem
   }
   body .editor-styles-wrapper .h2,
   body .editor-styles-wrapper .preset2,
   body .editor-styles-wrapper h2 {
-    font-size: 1.875em
+    font-size: 1.875rem
   }
   body .editor-styles-wrapper .h3,
   body .editor-styles-wrapper .preset3,
   body .editor-styles-wrapper h3 {
-    font-size: 1.75em
+    font-size: 1.75rem
   }
   body .editor-styles-wrapper .h4,
   body .editor-styles-wrapper .preset4,
   body .editor-styles-wrapper h4 {
-    font-size: 1.5em
+    font-size: 1.5rem
   }
   body .editor-styles-wrapper .h6,
   body .editor-styles-wrapper .preset6,
   body .editor-styles-wrapper h6 {
-    font-size: 1em
+    font-size: 1rem
   }
   body .editor-styles-wrapper h1 br,
   body .editor-styles-wrapper h2 br,

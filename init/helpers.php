@@ -7,15 +7,15 @@ function acf_builder_notice() {
  global $pagenow;
  if (!is_admin()) {
   return false;
- }
- if ($pagenow == 'edit.php') {
+}
+if ($pagenow == 'edit.php') {
   if (isset($_GET['post_type']) && $_GET['post_type'] == 'acf-field-group') {
    echo '<div class="notice notice-error">
-    <h2>Custom Fields managed via ACF Builder</h2>
-    <p>ACF Builder library is located within the /init/ of this theme folder. Please <a target="_blank" rel="noopener" href="https://github.com/cheestudio/startup-blocks">view the README for more information</a> on this theme and the field management workflow.</p>
-    </div>';
-  }
+   <h2>Custom Fields managed via ACF Builder</h2>
+   <p>ACF Builder library is located within the /init/ of this theme folder. Please <a target="_blank" rel="noopener" href="https://github.com/cheestudio/startup-blocks">view the README for more information</a> on this theme and the field management workflow.</p>
+   </div>';
  }
+}
 }
 
 /* Gravity Forms Button Markup
@@ -252,41 +252,41 @@ add_filter('big_image_size_threshold', 3840);
 /* Numerical Pagination
 ========================================================= */
 function post_pagination($pages = '', $range = 2) {
- $showitems = ($range * 2) + 1;
- global $paged;
+  $showitems = ($range * 2) + 1;
+  global $paged;
 
- if (empty($paged)) {
-  $paged = 1;
-}
-if ($pages == '') {
-  global $wp_query;
-  $pages = $wp_query->max_num_pages;
-  if (!$pages) {
-   $pages = 1;
- }
-}
-
-if (1 != $pages) {
-  if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) {
-   echo "<a class='first-link' href='" . get_pagenum_link(1) . "' title='Go to First Page'><<</a>";
- }
- if ($paged > 1 && $showitems < $pages) {
-   echo "<a class='prev-link' href='" . get_pagenum_link($paged - 1) . "' title='Go to Previous Page'><</a>";
- }
-
- for ($i = 1; $i <= $pages; $i++) {
-   if (1 != $pages && (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems)) {
-    echo ($paged == $i) ? "<span class='current'>{$i}</span>" : "<a href='" . get_pagenum_link($i) . "' class='inactive' title='Go to Page {$i}'>{$i}</a>";
+  if (empty($paged)) {
+    $paged = 1;
   }
-}
+  if ($pages == '') {
+    global $wp_query;
+    $pages = $wp_query->max_num_pages;
+    if (!$pages) {
+      $pages = 1;
+    }
+  }
 
-if ($paged < $pages && $showitems < $pages) {
- echo "<a class='next-link' href='" . get_pagenum_link($paged + 1) . "' title='Go to Next Page'>></a>";
-}
-if ($paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages) {
- echo "<a class='last-link' href='" . get_pagenum_link($pages) . "' title='Go to Last Page'>>></a>";
-}
-}
+  if (1 != $pages) {
+    if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) {
+      echo "<a class='first-link' href='" . get_pagenum_link(1) . "' title='Go to First Page'><<</a>";
+    }
+    if ($paged > 1 && $showitems < $pages) {
+      echo "<a class='prev-link' href='" . get_pagenum_link($paged - 1) . "' title='Go to Previous Page'><</a>";
+    }
+
+    for ($i = 1; $i <= $pages; $i++) {
+      if (1 != $pages && (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems)) {
+        echo ($paged == $i) ? "<span class='current'>{$i}</span>" : "<a href='" . get_pagenum_link($i) . "' class='inactive' title='Go to Page {$i}'>{$i}</a>";
+      }
+    }
+
+    if ($paged < $pages && $showitems < $pages) {
+      echo "<a class='next-link' href='" . get_pagenum_link($paged + 1) . "' title='Go to Next Page'>></a>";
+    }
+    if ($paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages) {
+      echo "<a class='last-link' href='" . get_pagenum_link($pages) . "' title='Go to Last Page'>>></a>";
+    }
+  }
 }
 
 /* Move Yoast to bottom of edit page
@@ -303,13 +303,55 @@ add_filter('xmlrpc_enabled', '__return_false');
 ========================================================= */
 add_filter('pre_get_posts', 'custom_order_post_type');
 function custom_order_post_type($query) {
- if ($query->is_admin) {
-  if ($query->get('post_type') == 'page') {
-   $query->set('orderby', 'title');
-   $query->set('order', 'ASC');
- }
+  if ($query->is_admin) {
+    if ($query->get('post_type') == 'page') {
+      $query->set('orderby', 'title');
+      $query->set('order', 'ASC');
+    }
+  }
+  return $query;
 }
-return $query;
+
+
+/* Output inline SVG
+========================================================= */
+function svg_inline($filename = false, $path = false, $echo = true) {
+
+  // set file path (default to /assets/ dir)
+  if ( $path ) {
+    $filepath = $path;
+  } else if ( $filename ) {
+    $filepath = get_stylesheet_directory_uri() . '/assets/img/svg/' . $filename;
+  } else {
+    return false;
+  }
+
+  // require mime type .svg & valid url
+  $args_get = array(
+    'headers' => array(
+      'Content-Type' => 'image/svg+xml',
+    ),
+    'response' => array(
+      'code' => 200,
+    )
+  );
+
+  // get file using above settings
+  $svg_file = wp_safe_remote_get( $filepath, $args_get );
+
+  // exit if fail
+  if ( is_wp_error($svg_file) || $svg_file['response']['code'] != 200 || $svg_file['headers']['content-type'] != 'image/svg+xml' ) {
+    return false;
+  }
+
+  // if file found, output or return result
+  else {
+    if ( $echo ) {
+      echo wp_remote_retrieve_body( $svg_file );
+    } else {
+      return wp_remote_retrieve_body( $svg_file );
+    }
+  }
 }
 
 /* Limit Post Revisions
