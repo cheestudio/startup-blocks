@@ -43,7 +43,7 @@ form {
     @include formInputStyles;
     display: inline-block;
     border-style: solid;
-    padding: 10px 15px !important;
+    padding: 10px 15px;
     font-family: inherit;
     line-height: normal;
     color: black;
