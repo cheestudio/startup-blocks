@@ -3,7 +3,7 @@
 $col-width  : 80;
 $col-gutter : 20;
 $grid-gap   : 20;
-$padding    : 15;
+$padding    : 20;
 
 
 /* Grid Function
@@ -19,8 +19,8 @@ $padding    : 15;
 
 /* Containers
 ========================================================= */
-@mixin content-container( $width: 1180 + ($padding * 2) ) {
-  max-width: $width+px;
-  margin: 0 auto;
-  padding: 0 #{$padding}px;
+@mixin content-container( $width: 1400 + ($padding * 2) ) {
+  max-width : $width+px;
+  margin    : 0 auto;
+  padding   : 0 #{$padding}px;
 }
