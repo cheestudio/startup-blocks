@@ -8,6 +8,5 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 $partial = new FieldsBuilder('partial');
 
 $partial
-
-->addText('example_field')
+->addText('partial_example')
 ;

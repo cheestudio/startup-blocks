@@ -1,7 +1,7 @@
 <?php
 /*
 Block Name: Custom Block Title
-Block Description: Description for Custom Block
+Block Description: DESCRIPTION NEEDED
 Block Category: Custom
 Block Align: full
 Block Icon: block-default

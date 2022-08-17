@@ -1,0 +1,41 @@
+@import "../../../assets/scss/core/variables/queries";
+@import "../../../assets/scss/core/variables/variables";
+@import "../../../assets/scss/core/typography/presets";
+
+/* Custom Block Styles
+========================================================= */
+$class: '.text-video-row';
+
+#{$class} {
+
+  &.reverse {
+    @include for-size(tablet-sm, up) {
+      #{$class}--content {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  #{$class}--heading {
+    text-align: center;
+    h2 {
+      margin-bottom: 50px;
+    }
+  }
+
+  #{$class}--content {
+    grid-gap: 50px;
+  }
+  
+  .video {
+    @include for-size(tablet-sm, up) {
+      flex: 0 1 50%;
+    } 
+  }
+
+  .text {
+    @include for-size(tablet-sm, up) {
+      flex: 0 1 50%;
+    }
+  }
+}

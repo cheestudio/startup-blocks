@@ -1,7 +1,11 @@
+section > .wrapper {
+  padding-left: 20px;
+  padding-right: 20px
+}
 .container {
-  max-width: 1210px;
+  max-width: 1220px;
   margin: 0 auto;
-  padding: 0 15px
+  padding: 0 20px
 }
 .grid {
   display: grid;
@@ -103,6 +107,10 @@ body .editor-styles-wrapper .preset6,
 body .editor-styles-wrapper h6 {
   font-size: 1.25rem;
   line-height: 150%
+}
+body .editor-styles-wrapper figure img {
+  display: block;
+  width: 100%
 }
 body .editor-styles-wrapper .button-wrap {
   margin-top: 30px

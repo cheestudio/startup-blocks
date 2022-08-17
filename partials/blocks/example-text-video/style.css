@@ -1,0 +1,1 @@
+.text-video-row .text-video-row--heading{text-align:center}.text-video-row .text-video-row--heading h2{margin-bottom:50px}.text-video-row .text-video-row--content{grid-gap:50px}@media only screen and (min-width:768px){.text-video-row.reverse .text-video-row--content{flex-direction:row-reverse}.text-video-row .text,.text-video-row .video{flex:0 1 50%}}

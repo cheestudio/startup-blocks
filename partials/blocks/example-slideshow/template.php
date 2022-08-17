@@ -1,0 +1,26 @@
+<?php
+/*
+Block Name: Image Slideshow
+Block Description: Description for Custom Block
+Block Category: Custom
+Block Align: full
+Block Icon: block-default
+Block Toggle: true
+Post Types: post, page
+*/
+
+// Block Image Preview
+if ( isset($block['data']['block_preview']) ) :
+  block_preview(__FILE__);
+
+// Block Content
+else :
+  $group = blockFieldGroup(__FILE__); // REQUIRED
+  // $example_field = $group['example_field]
+  ?>
+
+  <section <?php block_class_id( $block,'CUSTOM-BLOCK-CLASS' ); ?>>
+
+  </section>
+
+<?php endif; ?>
