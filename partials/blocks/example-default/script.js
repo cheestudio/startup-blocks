@@ -4,7 +4,8 @@
 
 	/* initializeBlock = function() {
   		$(SECTION).each( function(){
-  			
+  			let VAR = $(this).find('.CLASS');
+        // do something
   		});
   	}
   initializeBlock();*/

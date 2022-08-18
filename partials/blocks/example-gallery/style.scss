@@ -1,0 +1,38 @@
+@import "../../../assets/scss/core/variables/queries";
+@import "../../../assets/scss/core/variables/variables";
+@import "../../../assets/scss/core/typography/presets";
+
+/* Custom Block Styles
+========================================================= */
+$class: '.image-gallery-row';
+
+#{$class} {
+
+  #{$class}--heading {
+    text-align: center;
+    h2 {
+      margin-bottom: 50px;
+    }
+  }
+
+  #{$class}--gallery {
+    grid-template-columns: repeat(4, 1fr);
+    @include for-size(laptop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include for-size(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include for-size(tablet-sm) {
+      grid-template-columns: 1fr;
+    }
+    figure {
+      a {
+        display: block;
+        &:hover, &:focus, &:active {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

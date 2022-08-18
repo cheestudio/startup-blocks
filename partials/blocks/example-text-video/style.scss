@@ -30,7 +30,10 @@ $class: '.text-video-row';
   .video {
     @include for-size(tablet-sm, up) {
       flex: 0 1 50%;
-    } 
+    }
+    a {
+      display: block;
+    }
   }
 
   .text {

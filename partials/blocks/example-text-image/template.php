@@ -21,16 +21,16 @@ else :
 ?>
 
   <?php if ( !empty($content) && $image ) : ?>
-    <section <?php block_class_id( $block,'text-image-medium-row' . $direction ); ?>>
+    <section <?php block_class_id( $block,'text-image-row' . $direction ); ?>>
       <div class="wrapper flex">
 
-        <div class="text-image-medium-row--image">
+        <div class="text-image-row--image">
           <figure>
             <?php echo wp_get_attachment_image( $image['id'], 'wide-small' ); ?>  
           </figure>
         </div>
 
-        <div class="text-image-medium-row--content">
+        <div class="text-image-row--content">
           <div class="inner">
             <?= $content; ?>
             <?php get_template_part('partials/elements/button', null, [ 

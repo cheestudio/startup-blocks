@@ -15,14 +15,18 @@ $name
   'layout'       => 'block',
 ]) // REQUIRED GROUP
 
-
-/* 
-Reference all available field options here:
-https://github.com/Log1x/acf-builder-cheatsheet
-https://github.com/tdwesten/acf-fieldattributes-cheatsheet/blob/master/acf-fieldattributes-cheatsheet.md
-https://github.com/StoutLogic/acf-builder/wiki/field-types
-*/
-
+  ->addText('heading', [
+    'label' => 'Section Heading',
+    'wrapper' => [
+      'class' => 'center',
+    ]
+  ])
+  ->addGallery('gallery', [
+    'label' => 'Image Gallery',
+    'wrapper' => [
+      'class' => 'center',
+    ]
+  ])
 
 ->endGroup() // END REQUIRED GROUP
 ->setLocation('block', '==', 'acf/'.$path);
