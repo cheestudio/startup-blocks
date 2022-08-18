@@ -29,7 +29,7 @@ figure {
       }
       a {
         @include trans;
-        font-size: em(20);
+        font-size: rem(20);
       }
     }
   }
