@@ -143,6 +143,7 @@ $browser-context: 16; // Default
   vertical-align: baseline;
   font-size: rem(18);
   line-height: 1.2;
+  text-decoration: none;
   -webkit-appearance: none;
 }
 @mixin button($color:black, $bg:white, $border:black) {

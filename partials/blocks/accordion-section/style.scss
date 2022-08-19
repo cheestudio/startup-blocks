@@ -1,0 +1,138 @@
+@import "../../../assets/scss/core/variables/queries";
+@import "../../../assets/scss/core/variables/variables";
+@import "../../../assets/scss/core/typography/presets";
+
+/* Block Styles
+========================================================= */
+$class: '.accordion-row';
+
+#{$class} {
+
+  #{$class}--heading {
+    text-align: center;
+    h2 {
+      margin-bottom: 50px;
+    }
+  }
+
+  #{$class}--content {
+
+  }
+  .entry {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+    &.active {
+      .toggle {
+        .plus {
+          display: none;
+        }
+        .minus {
+          display: block;
+        }
+      }
+    }
+    .toggle {
+      background: gray;
+      a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        padding: 10px 20px;
+        // &:after {
+        //   @include trans;
+        //   content: '+';
+        //   display: block;
+        //   flex: 0 0 50px;
+        //   font-size: rem(50);
+        //   font-weight: 700;
+        //   text-align: center;
+        // }
+      }
+      svg {
+        width: 24px;
+        margin-left: 20px;
+      }
+      .minus {
+        display: none;
+      }
+      h3 {
+        flex: 1;
+        margin-bottom: 0;
+        margin-right: 20px;
+      }
+    }
+    .inner {
+      display: none;
+      background-color: lightgrey;
+      padding: 20px;
+      img {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+// #{$class} {
+//   position: relative;
+//   @include row-padding;
+
+//   .container {
+//     position: relative;
+//     z-index: 1;
+//   }
+// }
+
+// .accordion-content {
+//   display: none;
+// }
+
+// .accordion-section-entry {
+//   padding: 10px 40px;
+//   background-color: #eee;
+//   color: #333;
+//   @include trans($prop:opacity);
+//   @include for-size(phone) {
+//     padding: 20px;
+//   }
+//   &:not(:last-child) {
+//     margin-bottom: 10px;
+//   }
+//   h3 {
+//     margin-bottom: 0;
+//     font-size: em(28);
+//     a {
+//       display:flex;
+//       justify-content: space-between;
+//       align-items: center;
+//       position: relative;
+//       text-decoration: none;
+//       font-size: inherit;
+//       &:after {
+//         content: '+';
+//         display: block;
+//         flex:0 0 auto;
+//         color: #333;
+//         font-weight: 100;
+//         margin-left: 20px;
+//       }
+//       &:hover, &:focus {
+//         color: inherit !important;
+//         &:hover {
+//           &:after {
+//             color: red;
+//           }
+//         }
+//       }
+//       &.opened {
+//         &:after {
+//           content: '-';
+//         }
+//       }
+//     }
+//   }
+//   .accordion-copy {
+//     padding: 10px 0;
+//   }
+// }
