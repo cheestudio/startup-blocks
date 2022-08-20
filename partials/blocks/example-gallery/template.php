@@ -1,10 +1,10 @@
 <?php
 /*
 Block Name: Image Gallery
-Block Description: Image gallery w popup & heading
-Block Category: Custom
+Block Description: Image gallery grid w popup & heading
+Block Category: Custom {CLIENT} Blocks
 Block Align: full
-Block Icon: block-default
+Block Icon: screenoptions
 Block Toggle: true
 Post Types: post, page
 */

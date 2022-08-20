@@ -2,9 +2,9 @@
 /*
 Block Name: Image Carousel
 Block Description: Image carousel slideshow w popup & heading
-Block Category: Custom
+Block Category: Custom {CLIENT} Blocks
 Block Align: full
-Block Icon: block-default
+Block Icon: format-gallery
 Block Toggle: true
 Post Types: post, page
 */
@@ -18,7 +18,7 @@ else :
   $group   = blockFieldGroup(__FILE__); // REQUIRED
   $heading = $group['heading'];
   $gallery = $group['gallery'];
-?>
+  ?>
 
   <?php if ( $gallery ) : ?>
     <section <?php block_class_id( $block,'image-carousel-row' ); ?>>
@@ -29,10 +29,9 @@ else :
         <div class="image-carousel-row--gallery carousel">
           <?php foreach ( $gallery as $image ) : ?>
             <figure 
-            style = "background-image: url(<?= $image['sizes']['large']; ?>);"
             class = "carousel__slide"
-              data-fancybox = "carousel"
-              data-src      = "<?= $image['sizes']['large']; ?>"
+            data-fancybox = "carousel"
+            data-lazy-src = "<?= $image['sizes']['large']; ?>"
             ></figure>
           <?php endforeach; ?>
         </div>

@@ -27,17 +27,24 @@ $name
       'width' => '20%',
     ]
   ])
-  ->addImage('image', [
+  ->addImage('image_bg', [
+    'label' => 'Background Image',
     'wrapper' => [
       'class' => 'center',
-      'width' => '30%',
+      'width' => '40%',
+    ]
+  ])
+  ->addImage('image', [
+    'label' => 'Side Image',
+    'wrapper' => [
+      'class' => 'center',
+      'width' => '40%',
     ]
   ])
   ->addWysiwyg('content', [
     'media_upload' => 0,
     'wrapper' => [
       'class' => 'center',
-      'width' => '50%',
     ]
   ])
   ->addFields($button)

@@ -10,37 +10,25 @@ $name        = new FieldsBuilder($name);
 
 $name
 ->addGroup($group_name, [
-  'label'        => ucwords($group_label).' Block',
+  'label'        => ucwords($group_label) . ' Block',
   'instructions' => '',
   'layout'       => 'block',
 ]) // REQUIRED GROUP
 
-  ->addButtonGroup('direction', [
-    'label'  => 'Image Side',
-    'layout' => 'vertical',
-    'choices' => [
-      'normal'  => 'Left',
-      'reverse' => 'Right',
-    ],
+  ->addWysiwyg('content', [
+    'media_upload' => 0,
     'wrapper' => [
       'class' => 'center',
-      'width' => '20%',
+      'width' => '60%',
     ]
   ])
   ->addImage('image', [
     'wrapper' => [
       'class' => 'center',
-      'width' => '30%',
+      'width' => '40%',
     ]
   ])
-  ->addWysiwyg('content', [
-    'media_upload' => 0,
-    'wrapper' => [
-      'class' => 'center',
-      'width' => '50%',
-    ]
-  ])
-  ->addFields($button)
+  ->addFields($buttons)
 
 ->endGroup() // END REQUIRED GROUP
 ->setLocation('block', '==', 'acf/'.$path);

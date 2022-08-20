@@ -16,10 +16,11 @@ $name
 ]) // REQUIRED GROUP
 
   ->addButtonGroup('direction', [
+    'label'  => 'Image Side',
     'layout' => 'vertical',
     'choices' => [
-      'normal'  => 'Normal',
-      'reverse' => 'Reverse',
+      'normal'  => 'Left',
+      'reverse' => 'Right',
     ],
     'wrapper' => [
       'class' => 'center',

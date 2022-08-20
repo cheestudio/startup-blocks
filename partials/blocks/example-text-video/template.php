@@ -2,9 +2,10 @@
 /*
 Block Name: Text & Video
 Block Description: 50/50 video popup, direction, text, heading & button
-Block Category: Custom
+Block Category: Custom {CLIENT} Blocks
 Block Align: full
-Block Icon: playlist-video
+Block Icon: format-video
+Block Toggle: true
 Post Types: post, page
 */
 
@@ -19,7 +20,7 @@ else :
   $content   = $group['content'];
   $image     = $group['image'];
   $video_url = $group['video_url'];
-  $direction    = $group['direction'] === 'reverse' ? ' reverse' : NULL;
+  $direction = $group['direction'] === 'reverse' ? ' reverse' : NULL;
 ?>
 
   <?php if ( !empty($content) && !empty($video_url) ) : ?>
@@ -32,10 +33,12 @@ else :
           <div class="video">
             <figure>
               <a 
-              href  = "<?= $video_url; ?>"
-              title = "Open video in popup"
-              data-fancybox = "video-gallery"
-              ><?php echo wp_get_attachment_image( $image['id'], 'large' ); ?></a>
+                href  = "<?= $video_url; ?>"
+                title = "Open video in popup"
+                data-fancybox = "video-gallery">
+                <?php echo wp_get_attachment_image( $image['id'], 'large' ); ?>
+                <?php svg_inline('icon-play-video.svg'); ?>
+              </a>
             </figure>
           </div>
           <div class="text">

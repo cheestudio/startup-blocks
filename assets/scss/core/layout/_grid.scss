@@ -1,11 +1,5 @@
 /* Reusable Flex & Grid Classes
 ========================================================= */
-
-section > .wrapper {
-  padding-left: $padding + px;
-  padding-right: $padding + px;
-}
-
 .container {
   @include content-container;
 }

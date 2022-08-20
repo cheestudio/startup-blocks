@@ -1,10 +1,10 @@
 <?php
 /*
-Block Name: Text & Image
-Block Description: 50/50 image, text, heading, direction & button
+Block Name: Hero
+Block Description: Large hero w background image, text, button & opt. side image
 Block Category: Custom {CLIENT} Blocks
 Block Align: full
-Block Icon: index-card
+Block Icon: cover-image
 Block Toggle: true
 Post Types: post, page
 */
@@ -16,22 +16,27 @@ if ( isset($block['data']['block_preview']) ) :
 // Block Content
 else :
   $group        = blockFieldGroup(__FILE__); // REQUIRED
-  $image        = $group['image'];
   $content      = $group['content'];
+  $image        = $group['image'];
+  $image_bg     = $group['image_bg'];
+  $image_bg_url = $group['image_bg']['sizes']['large'];
   $direction    = $group['direction'] === 'reverse' ? ' reverse' : NULL;
 ?>
 
-  <?php if ( !empty($content) && $image ) : ?>
-    <section <?php block_class_id( $block,'text-image-row' . $direction ); ?>>
+  <?php if ( !empty($content) ) : ?>
+    <section <?php block_class_id( $block,'hero-row' . $direction ); ?>
+    <?php if ( $image_bg_url ) echo "style='background-image: url({$image_bg_url});'"; ?>>
       <div class="wrapper flex">
 
-        <div class="text-image-row--image">
-          <figure>
-            <?php echo wp_get_attachment_image( $image['id'], 'large' ); ?>  
-          </figure>
+        <div class="hero-row--image">
+          <?php if ( $image ) : ?>
+            <figure>
+              <?php echo wp_get_attachment_image( $image['id'], 'large' ); ?>  
+            </figure>
+          <?php endif; ?>
         </div>
 
-        <div class="text-image-row--content">
+        <div class="hero-row--content">
           <div class="inner">
             <?= $content; ?>
             <?php get_template_part('partials/elements/button', null, [ 

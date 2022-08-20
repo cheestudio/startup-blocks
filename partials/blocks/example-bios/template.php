@@ -1,10 +1,11 @@
 <?php
 /*
 Block Name: Biographies
-Block Description: Bios row w image, text, button & popup
-Block Category: Custom
+Block Description: Unlimited bios w image, text, button & popup
+Block Category: Custom {CLIENT} Blocks
 Block Align: full
-Block Icon: id
+Block Icon: id-alt
+Block Toggle: true
 Post Types: post, page
 */
 

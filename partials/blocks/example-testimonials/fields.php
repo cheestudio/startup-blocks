@@ -10,37 +10,42 @@ $name        = new FieldsBuilder($name);
 
 $name
 ->addGroup($group_name, [
-  'label'        => ucwords($group_label).' Block',
+  'label'        => ucwords($group_label) . ' Block',
   'instructions' => '',
   'layout'       => 'block',
 ]) // REQUIRED GROUP
 
-  ->addButtonGroup('direction', [
-    'label'  => 'Image Side',
-    'layout' => 'vertical',
-    'choices' => [
-      'normal'  => 'Left',
-      'reverse' => 'Right',
-    ],
+  ->addText('heading', [
+    'label' => 'Section Heading',
     'wrapper' => [
       'class' => 'center',
-      'width' => '20%',
     ]
   ])
-  ->addImage('image', [
+  ->addRepeater('quotes_rep',[
+    'label' => 'Quotes',
+    'layout' => 'table',
+    'button_label' => 'Add Testimonial',
     'wrapper' => [
       'class' => 'center',
-      'width' => '30%',
     ]
   ])
-  ->addWysiwyg('content', [
-    'media_upload' => 0,
-    'wrapper' => [
-      'class' => 'center',
-      'width' => '50%',
-    ]
-  ])
-  ->addFields($button)
+    ->addImage('image', [
+      'wrapper' => [
+        'width' => '30%',
+      ]
+    ])
+    ->addWysiwyg('content', [
+      'media_upload' => 0,
+      'wrapper' => [
+        'width' => '40%',
+      ]
+    ])
+    ->addText('author', [
+      'wrapper' => [
+        'width' => '30%',
+      ]
+    ])
+  ->endRepeater()
 
 ->endGroup() // END REQUIRED GROUP
 ->setLocation('block', '==', 'acf/'.$path);

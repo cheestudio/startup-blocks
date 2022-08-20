@@ -8,8 +8,18 @@ figure {
   }
 }
 
-/* Button Wrap
+/* Buttons Wrap
 ========================================================= */
+.buttons-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .button {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
 .button-wrap {
   padding-top: 30px;
 }

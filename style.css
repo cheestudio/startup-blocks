@@ -121,10 +121,6 @@ q:before {
   content: "";
   content: none
 }
-section > .wrapper {
-  padding-left: 20px;
-  padding-right: 20px
-}
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -164,8 +160,9 @@ input[type=submit] {
   -ms-user-select: none;
   user-select: none;
   vertical-align: baseline;
-  font-size: 1.125em;
+  font-size: 1.125rem;
   line-height: 1.2;
+  text-decoration: none;
   -webkit-appearance: none
 }
 .has-black-background-color {
@@ -1008,7 +1005,7 @@ form textarea:focus {
   font-weight: 400;
   display: block;
   margin-bottom: 6px;
-  font-size: .875em
+  font-size: .875rem
 }
 .gform_wrapper.gravity-theme form .gform-body .gfield_label .gfield_required {
   color: red
@@ -1393,7 +1390,7 @@ img {
   text-align: center
 }
 .wp-caption p {
-  font-size: .75em;
+  font-size: .75rem;
   margin: 10px 0;
   font-style: italic
 }
@@ -1440,7 +1437,7 @@ img {
   clip-path: none;
   color: #fff;
   display: block;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   font-weight: 700;
   height: auto;
   left: 0;
@@ -1472,8 +1469,17 @@ figure img {
   display: block;
   width: 100%
 }
+.buttons-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap
+}
+.buttons-wrap .button {
+  margin-left: 10px;
+  margin-right: 10px
+}
 .button-wrap {
-  margin-top: 30px
+  padding-top: 30px
 }
 .social-icons ul {
   margin: 0;
@@ -1486,7 +1492,7 @@ figure img {
 }
 .social-icons ul li a {
   transition: .6s cubic-bezier(.23,1,.32,1);
-  font-size: 1.25em
+  font-size: 1.25rem
 }
 .posts-grid .grid {
   grid-template-columns: repeat(auto-fill,minmax(320px,1fr));

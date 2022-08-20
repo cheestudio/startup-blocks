@@ -1,1 +1,1 @@
-.text-image-row .wrapper{grid-gap:50px}@media only screen and (min-width:768px){.text-image-row.reverse .wrapper{flex-direction:row-reverse}.text-image-row .text-image-row--content,.text-image-row .text-image-row--image{flex:0 1 50%}}
+.text-image-row .wrapper{gap:50px}@media only screen and (min-width:768px){.text-image-row.reverse .wrapper{flex-direction:row-reverse}.text-image-row .text-image-row--content,.text-image-row .text-image-row--image{flex:0 1 50%}}

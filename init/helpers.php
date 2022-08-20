@@ -241,6 +241,12 @@ function my_acf_admin_head() {
     padding: 0 16px;
     font-weight: 500;
   }
+  .acf-field-group[data-name="button_group"] .acf-fields {
+    border: none;
+  }
+  .acf-field-group[data-name="button_group"] > .acf-label {
+    display: none;
+  }
 </style>
 <?php
 }
@@ -354,3 +360,17 @@ function svg_inline($filename = false, $path = false, $echo = true) {
 /* Limit Post Revisions
 ========================================================= */
 if (!defined('WP_POST_REVISIONS')) define('WP_POST_REVISIONS', 20);
+
+/* Excerpt
+========================================================= */
+// Word Length
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+function custom_excerpt_length( $length ) {
+  return 30;
+}
+
+// Read More
+add_filter( 'excerpt_more', 'excerpt_more', 999 );
+function excerpt_more( $more ) {
+  return ' ...';
+}

@@ -1,10 +1,11 @@
 <?php
 /*
 Block Name: Accordion / FAQs
-Block Description: Unlimited accordion items w title & text content
+Block Description: Unlimited items w title & basic text content
 Block Category: Custom {CLIENT} Blocks
 Block Align: full
-Block Icon: plus-alt
+Block Icon: list-view
+Block Toggle: true
 Post Types: post, page
 */
 

@@ -6,11 +6,11 @@
 (function($){
 
 	initializeBlock = function() {
-		$('.image-carousel-row').each( function() {
-			let images = $(this).find('.carousel');
+		$('.testimonials-row').each( function() {
+			let quotes = $(this).find('.carousel');
       
-      if ( images.length ) {
-        const imageCarousel = new Carousel(images[0], {
+      if ( quotes.length ) {
+        const imageCarousel = new Carousel(quotes[0], {
           'slidesPerPage' : 1,
           'center' : false,
         });
