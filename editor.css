@@ -243,7 +243,7 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
     flex-direction: row-reverse
   }
 }
-@media only screen and (max-width:1366px) {
+@media only screen and (max-width:1440px) {
   body .editor-styles-wrapper .h1,
   body .editor-styles-wrapper .preset1,
   body .editor-styles-wrapper h1 {

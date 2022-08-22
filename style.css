@@ -1608,7 +1608,7 @@ figure img {
     padding-bottom: 120px
   }
 }
-@media only screen and (max-width:1366px) {
+@media only screen and (max-width:1440px) {
   .h1,
   .preset1,
   h1 {
