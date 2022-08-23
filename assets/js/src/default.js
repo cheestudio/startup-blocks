@@ -35,7 +35,7 @@ $('.navbar-toggle').click( function() {
 
 // Mobile Nav with Dropdown Menus
 
-$('.mobile-menu li').has('ul').find('> a').after('<a href="#" class="expand" aria-label="Expand Menu"></a>');
+$('.mobile-menu li').has('ul').find('> a').after('<a href="#" class="expand" aria-label="Expand Menu"><svg viewBox="0 0 15 15" width="15" height="15" xmlns="http://www.w3.org/2000/svg" role="img"><path fill="none" stroke="#000000" stroke-width="3" d="M4.7,13.1l5.6-5.6L4.7,1.9"/></svg></a>');
 $('.mobile-menu .menu-item-has-children > .expand').click( function(e) {
   e.preventDefault();
   var current = $(this);

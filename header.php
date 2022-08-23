@@ -12,8 +12,8 @@
   require_once locate_template('/init/shortcodes.php');
   $logo = get_template_directory_uri() . '/assets/img/svg/logo.svg';
   if ( function_exists('get_field') ) :
-    $head_code    = get_field('head_code', 'option');
-    $body_code    = get_field('body_code', 'option');
+    $head_code = get_field('head_code', 'option');
+    $body_code = get_field('body_code', 'option');
   endif;
   if ( isset( $head_code ) ) echo $head_code; ?>
 </head>

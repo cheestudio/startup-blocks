@@ -301,7 +301,6 @@ add_filter('wpseo_metabox_prio', function () {
  return 'low';
 });
 
-
 /* Sort Post Type by Title
 ========================================================= */
 add_filter('pre_get_posts', 'custom_order_post_type');
@@ -314,7 +313,6 @@ function custom_order_post_type($query) {
   }
   return $query;
 }
-
 
 /* Output inline SVG
 ========================================================= */
