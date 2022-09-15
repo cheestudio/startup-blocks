@@ -251,10 +251,6 @@ function my_acf_admin_head() {
 <?php
 }
 
-/* Disable Image Side scaling on upload
-========================================================= */
-add_filter('big_image_size_threshold', 3840);
-
 /* Numerical Pagination
 ========================================================= */
 function post_pagination($pages = '', $range = 2) {
