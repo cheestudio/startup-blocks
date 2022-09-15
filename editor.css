@@ -1,7 +1,7 @@
 .container {
-  max-width: 1210px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 15px
+  padding: 0 20px
 }
 .grid {
   display: grid;
@@ -45,8 +45,9 @@ body .editor-styles-wrapper .wp-block.editor-block .button .wp-block-button .wp-
   -ms-user-select: none;
   user-select: none;
   vertical-align: baseline;
-  font-size: 1.125em;
+  font-size: 1.125rem;
   line-height: 1.2;
+  text-decoration: none;
   -webkit-appearance: none
 }
 .has-black-background-color {
@@ -104,8 +105,21 @@ body .editor-styles-wrapper h6 {
   font-size: 1.25rem;
   line-height: 150%
 }
+body .editor-styles-wrapper figure img {
+  display: block;
+  width: 100%
+}
+body .editor-styles-wrapper .buttons-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap
+}
+body .editor-styles-wrapper .buttons-wrap .button {
+  margin-left: 10px;
+  margin-right: 10px
+}
 body .editor-styles-wrapper .button-wrap {
-  margin-top: 30px
+  padding-top: 30px
 }
 body .editor-styles-wrapper .social-icons ul {
   margin: 0;
@@ -118,7 +132,7 @@ body .editor-styles-wrapper .social-icons ul li:not(:last-child) {
 }
 body .editor-styles-wrapper .social-icons ul li a {
   transition: .6s cubic-bezier(.23,1,.32,1);
-  font-size: 1.25em
+  font-size: 1.25rem
 }
 body .editor-styles-wrapper h1,
 body .editor-styles-wrapper h2,
@@ -229,7 +243,7 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
     flex-direction: row-reverse
   }
 }
-@media only screen and (max-width:1366px) {
+@media only screen and (max-width:1440px) {
   body .editor-styles-wrapper .h1,
   body .editor-styles-wrapper .preset1,
   body .editor-styles-wrapper h1 {

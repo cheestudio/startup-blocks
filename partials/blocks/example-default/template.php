@@ -1,8 +1,8 @@
 <?php
 /*
 Block Name: Custom Block Title
-Block Description: Description for Custom Block
-Block Category: Custom
+Block Description: DESCRIPTION NEEDED
+Block Category: Custom {CLIENT} Blocks
 Block Align: full
 Block Icon: block-default
 Block Toggle: true

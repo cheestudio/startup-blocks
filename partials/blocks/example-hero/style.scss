@@ -1,0 +1,57 @@
+@import "../../../assets/scss/core/variables/queries";
+@import "../../../assets/scss/core/variables/variables";
+@import "../../../assets/scss/core/typography/presets";
+
+/* Custom Block Styles
+========================================================= */
+$class: '.hero-row';
+
+#{$class} {
+  @include bg;
+
+  &.normal {
+    @include for-size(tablet, up) {
+      figure {
+        margin-left: auto;
+      }
+    }
+  }
+  &.reverse {
+    @include for-size(tablet, up) {
+      .wrapper {
+        flex-direction: row-reverse;
+      }
+      .inner {
+        margin-left: auto;
+      }
+    }
+  }
+
+  .wrapper {
+    align-items: center;
+    min-height: 100vh;
+    gap: 100px;
+    @include for-size(tablet) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  #{$class}--image {
+    @include for-size(tablet-sm, up) {
+      flex: 0 1 50%;
+    }
+    figure {
+      max-width: 650px;
+    }
+  }
+
+  #{$class}--content {
+    @include for-size(tablet-sm, up) {
+      flex: 0 1 50%;
+    }
+    .inner {
+      max-width: 650px;
+    }
+  }
+}

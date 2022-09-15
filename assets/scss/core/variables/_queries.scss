@@ -7,9 +7,11 @@ $breakpoints: (
   phone      : 480px,
   tablet-sm  : 768px,
   tablet     : 1024px,
-  laptop     : 1366px,
-  desktop    : 1680px
-);
+  laptop-sm  : 1280px,
+  laptop     : 1440px,
+  desktop-sm : 1680px,
+  desktop    : 1920px
+  );
 
 
 /* Media Breakpoints
@@ -21,25 +23,28 @@ $breakpoints: (
 
     $breakpoint-value: map-get( $breakpoints, $breakpoint );
 
-    // Optional: Offset UP by +1 to avoid conflicts
-    @if $direction == up and $offset == offset {
-      @media only screen and (min-width: $breakpoint-value + 1) { @content; }
+    // Optional: Offset by +/- 1 to avoid conflicts
+    @if ($direction == down) and ($offset == none) {
+      @media only screen and (max-width: $breakpoint-value) { @content; }
     }   
-    @else if $direction == up {
+    @else if ($direction == up) and ($offset == none) {
       @media only screen and (min-width: $breakpoint-value) { @content; }
     }
-    @else if $direction == down {
-      @media only screen and (max-width: $breakpoint-value) { @content; }
+    @else if ($direction == down) and ($offset == offset) {
+      @media only screen and (max-width: $breakpoint-value - 1) { @content; }
+    } 
+    @else if ($direction == up) and ($offset == offset) {
+      @media only screen and (min-width: $breakpoint-value + 1) { @content; }
     }
   }
 
   // Use manual breakpoint instead if map doesn't exist
   @else {
-    @if $direction == up {
-      @media only screen and (min-width: $breakpoint) { @content; }
-    }
-    @else if $direction == down {
+    @if ($direction == down) {
       @media only screen and (max-width: $breakpoint) { @content; }
+    }
+    @else if ($direction == up) {
+      @media only screen and (min-width: $breakpoint) { @content; }
     }
   }
 }

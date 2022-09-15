@@ -7,7 +7,8 @@ body {
 main {
   p, li {
     @extend %body-copy;
-    margin-bottom: 25px;
+    @include no-margin-last;
+    margin-bottom: 20px;
   }
   a {
     @include trans;

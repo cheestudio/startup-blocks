@@ -1,0 +1,64 @@
+@import "../../../assets/scss/core/variables/queries";
+@import "../../../assets/scss/core/variables/variables";
+@import "../../../assets/scss/core/typography/presets";
+
+/* Block Styles
+========================================================= */
+$class: '.accordion-row';
+
+#{$class} {
+
+  #{$class}--heading {
+    text-align: center;
+    h2 {
+      margin-bottom: 50px;
+    }
+  }
+
+  #{$class}--content {
+
+  }
+  .entry {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+    &.active {
+      .plus {
+        display: none;
+      }
+      .minus {
+        display: block;
+      }
+    }
+    .toggle {
+      background: gray;
+      a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        padding: 20px;
+      }
+      svg {
+        width: 24px;
+        margin-left: 20px;
+      }
+      .minus {
+        display: none;
+      }
+      h3 {
+        flex: 1;
+        margin-bottom: 0;
+        margin-right: 20px;
+      }
+    }
+    .inner {
+      display: none;
+      background-color: lightgrey;
+      padding: 20px;
+      img {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

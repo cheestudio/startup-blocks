@@ -1,10 +1,28 @@
 
-/* Button Wrap
+/* Figure Img
 ========================================================= */
-.button-wrap {
-  margin-top: 30px;
+figure {
+  img {
+    display: block;
+    width: 100%;
+  }
 }
 
+/* Buttons Wrap
+========================================================= */
+.buttons-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .button {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.button-wrap {
+  padding-top: 30px;
+}
 
 /* Social Icons
 ========================================================= */
@@ -21,7 +39,7 @@
       }
       a {
         @include trans;
-        font-size: em(20);
+        font-size: rem(20);
       }
     }
   }

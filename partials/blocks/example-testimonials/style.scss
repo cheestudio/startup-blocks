@@ -1,0 +1,47 @@
+@import "../../../assets/scss/core/variables/queries";
+@import "../../../assets/scss/core/variables/variables";
+@import "../../../assets/scss/core/typography/presets";
+
+/* Custom Block Styles
+========================================================= */
+$class: '.testimonials-row';
+
+#{$class} {
+
+  #{$class}--heading {
+    text-align: center;
+    h2 {
+      
+    }
+  }
+
+  #{$class}--quotes {
+
+  }
+  blockquote {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    .inner {
+      @include margin-center;
+      max-width: 800px;
+      padding: 20px;
+    }
+    figure {
+      margin-bottom: 20px;
+    }
+    img {
+      @include margin-center;
+      width: 100px;
+      border-radius: 50%;
+    }
+    p {
+      @include for-size(tablet-sm, up) {
+        font-size: rem(24);
+      }
+      &.author {
+        font-weight: 700;
+      }
+    }
+  }
+}

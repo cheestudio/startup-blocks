@@ -1,0 +1,106 @@
+@import "../../../assets/scss/core/variables/queries";
+@import "../../../assets/scss/core/variables/variables";
+@import "../../../assets/scss/core/typography/presets";
+
+/* Custom Block Styles
+========================================================= */
+$class: '.bios-row';
+
+#{$class} {
+
+  #{$class}--title {
+    text-align: center;
+    h2 {
+      margin-bottom: 50px;
+    }
+  }
+
+  #{$class}--content {
+
+  }
+
+  .bio-toggles {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    @include for-size(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include for-size(tablet-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .bio {
+    @include margin-center;
+    margin-bottom: 50px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    p {
+      @include for-size(tablet-sm) {
+        text-align: center;
+      }
+    }
+    h3 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .title {
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    figure {
+      @include margin-center;
+      max-width: 300px;
+      margin-bottom: 25px;
+    }
+    img {
+      border-radius: 50%;
+      width: 100%;
+    }
+    .button-wrap {
+      margin-top: auto;
+      text-align: center;
+    }
+  }
+}
+
+.bio-modals {
+  display: none;
+}
+
+.bio-modal {
+  @include margin-center;
+  max-width: 1100px;
+  background-color: white;
+  padding: clamp(50px, 4vw, 75px) clamp(35px, 4vw, 50px);
+  .flex {
+    gap: 50px;
+  }
+  .image {
+    flex: 0 0 25%;
+  }
+  figure {
+    @include margin-center;
+    max-width: 300px;
+    margin-bottom: 25px;
+  }
+  .inner {
+    flex: 1;
+  }
+  h3 {
+    margin-bottom: 10px;
+  }
+  .title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  p {
+    @extend %body-copy;
+    @include no-margin-last;
+  }
+}

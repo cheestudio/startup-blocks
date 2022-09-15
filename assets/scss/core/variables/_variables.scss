@@ -141,8 +141,9 @@ $browser-context: 16; // Default
   text-align: center;
   user-select: none;
   vertical-align: baseline;
-  font-size: em(18);
+  font-size: rem(18);
   line-height: 1.2;
+  text-decoration: none;
   -webkit-appearance: none;
 }
 @mixin button($color:black, $bg:white, $border:black) {

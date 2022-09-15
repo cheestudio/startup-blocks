@@ -1,0 +1,27 @@
+@import "../../../assets/scss/core/variables/queries";
+@import "../../../assets/scss/core/variables/variables";
+@import "../../../assets/scss/core/typography/presets";
+
+/* Custom Block Styles
+========================================================= */
+$class: '.image-carousel-row';
+
+#{$class} {
+
+  #{$class}--heading {
+    text-align: center;
+    h2 {
+      margin-bottom: 50px;
+    }
+  }
+
+  #{$class}--gallery {
+    figure {
+      @include bg;
+      width: 100%;
+      height: 50vh;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}

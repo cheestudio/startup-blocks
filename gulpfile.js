@@ -9,15 +9,15 @@ PREVIEW_MODE     = true,
 BLOCK_MODE       = true,
 
 ROOT             = './',
+STYLES_EDITOR    = './assets/scss/editor.scss',
 STYLES_MAIN      = './assets/scss/main.scss',
 STYLES_SOURCE    = './assets/scss/**/*.scss',
-EDITOR_STYLES    = './assets/scss/editor.scss',
 BLOCKS_SOURCE    = './partials/blocks/**/*.scss',
 BLOCKS_JS_SOURCE = './partials/blocks/**/*.js',
-JS_SOURCE        = ['./assets/js/src/plugins/*.js','./assets/js/src/*.js'],
+JS_SOURCE        = './assets/js/src/**/*.js',
 JS_DEST          = './assets/js/',
 SVG_SOURCE       = './assets/img/svg/*.svg',
-ALL_PHP          = './**/*.php',
+PHP_SOURCE       = './**/*.php',
 IGNORE           = './node_modules/**/*';
 
 
@@ -118,7 +118,7 @@ function block_styles() {
 /* Editor Styles (only used if BLOCK_MODE set to TRUE)
 ========================================================= */
 function editor_styles() {
-  return src( EDITOR_STYLES )
+  return src( STYLES_EDITOR )
   .pipe( plumber( { errorHandler: onError } ) )
   .pipe( sassglob({
     allowEmpty: true
@@ -184,10 +184,10 @@ function watchFiles(done) {
   if ( BLOCK_MODE ) {
     watch( BLOCKS_SOURCE, block_styles );
     watch( BLOCKS_JS_SOURCE, reload );
-    watch( EDITOR_STYLES, editor_styles );
+    watch( STYLES_EDITOR, editor_styles );
   }
   if ( PREVIEW_MODE ) {
-    watch( ALL_PHP, !IGNORE, reload );
+    watch( PHP_SOURCE, !IGNORE, reload );
     watch( JS_SOURCE, series(scriptsJS, reload) );
     watch( SVG_SOURCE, { events: ['add', 'change'] }, reload );
   }

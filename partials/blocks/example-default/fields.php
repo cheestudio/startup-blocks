@@ -18,6 +18,7 @@ $name
 
 /* 
 Reference all available field options here:
+
 https://github.com/Log1x/acf-builder-cheatsheet
 https://github.com/tdwesten/acf-fieldattributes-cheatsheet/blob/master/acf-fieldattributes-cheatsheet.md
 https://github.com/StoutLogic/acf-builder/wiki/field-types

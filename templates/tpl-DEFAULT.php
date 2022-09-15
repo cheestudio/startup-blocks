@@ -3,8 +3,8 @@
 ========================================================= */ ?>
 
 <?php 
-  if ( !defined('ABSPATH') ) exit;
-  get_header();
+if ( !defined('ABSPATH') ) exit;
+get_header();
 ?>
 
 
@@ -79,6 +79,12 @@
     <p>Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Nulla quis lorem ut libero malesuada feugiat. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus.</p>
 
     <hr>
+
+    <?php gravity_form('Example Form', true, true, false, '', false); ?>
+
+        </div>
+      </form>
+    </div>
 
   </div>
 </div>
