@@ -22,6 +22,9 @@ $class: '.accordion-row';
     &:not(:last-child) {
       margin-bottom: 5px;
     }
+    .minus {
+      display: none;
+    }
     &.active {
       .plus {
         display: none;
@@ -42,9 +45,6 @@ $class: '.accordion-row';
       svg {
         width: 24px;
         margin-left: 20px;
-      }
-      .minus {
-        display: none;
       }
       h3 {
         flex: 1;
