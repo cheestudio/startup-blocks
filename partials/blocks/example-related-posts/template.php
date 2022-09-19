@@ -19,7 +19,7 @@ else :
   $choice = $group['related_choice'];
   ?>
 
-  <section class="related-posts-row">
+  <section <?php block_class_id( $block,'related-posts-row' . $direction ); ?>
     <div class="wrapper">
 
       <div class="related-posts-row--title">
@@ -39,18 +39,22 @@ else :
             $excerpt   = get_the_excerpt($id); ?>
 
             <article class="post">
-              <a href="<?= $permalink; ?>" title="View The <?= $title; ?> Article">
-                <?php if ( $image_id != 0 ) : ?>
-                  <figure class="image">
+              <?php if ( $image_id != 0 ) : ?>
+                <figure class="image">
+                    <a href="<?= $permalink; ?>" title="View The <?= $title; ?> Article">
                     <?php echo wp_get_attachment_image( $image_id, 'medium' ); ?>
+                    </a>
                   </figure>
                 <?php endif; ?>
-                <h3><?= $title; ?></h3>
+                <h3>
+                <a href="<?= $permalink; ?>" title="View The <?= $title; ?> Article">
+                  <?= $title; ?>
+                </a>
+                </h3>
                 <p><?= $excerpt; ?></p>
                 <div class="button-wrap">
-                  <span class="button">Read More</span>
+                  <a href="<?php the_permalink();?>" class="button">Read More</a>
                 </div>
-              </a>
             </article>
 
           <?php endforeach; ?>
@@ -79,18 +83,22 @@ else :
           <?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
 
             <article class="post">
-              <a href="<?php the_permalink(); ?>" title="View The <?= the_title(); ?> Article">
-                <?php if ( has_post_thumbnail() ) : ?>
-                  <figure class="image">
+              <?php if ( has_post_thumbnail() ) : ?>
+                <figure class="image">
+                    <a href="<?php the_permalink(); ?>" title="View The <?= the_title(); ?> Article">
                     <?php the_post_thumbnail('medium'); ?>
+                  </a>
                   </figure>
                 <?php endif; ?>
-                <h3><?php the_title(); ?></h3>
+                <h3>
+                <a href="<?= $permalink; ?>" title="View The <?= $title; ?> Article">  
+                <?php the_title(); ?>
+                </a>
+              </h3>
                 <?php the_excerpt(); ?>
                 <div class="button-wrap">
-                  <span class="button">Read More</span>
+                  <a href="<?php the_permalink();?>" class="button">Read More</a>
                 </div>
-              </a>
             </article>
 
           <?php endwhile; ?>
