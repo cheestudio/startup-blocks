@@ -13,8 +13,8 @@
             
             parent.toggleClass('active');
             parent.siblings('.active').removeClass('active');
-            parent.siblings('.active').find('.inner').slideUp();
-            current.parent().next().slideToggle();
+            parent.siblings('.active').find('.inner').stop().slideUp();
+            current.parent().next().stop().slideToggle();
           });
         }
       });
