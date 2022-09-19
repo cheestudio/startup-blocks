@@ -91,13 +91,15 @@ else :
                   </figure>
                 <?php endif; ?>
                 <h3>
-                <a href="<?= $permalink; ?>" title="View The <?= $title; ?> Article">  
+                <a href="<?php the_permalink(); ?>" title="View The <?= the_title(); ?> Article">
                 <?php the_title(); ?>
                 </a>
               </h3>
                 <?php the_excerpt(); ?>
                 <div class="button-wrap">
-                  <a href="<?php the_permalink();?>" class="button">Read More</a>
+                <a class="button" href="<?php the_permalink(); ?>" title="View The <?= the_title(); ?> Article">
+                  Read More
+                </a>
                 </div>
             </article>
 
