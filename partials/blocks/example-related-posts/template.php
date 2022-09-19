@@ -19,7 +19,7 @@ else :
   $choice = $group['related_choice'];
   ?>
 
-  <section <?php block_class_id( $block,'related-posts-row' . $direction ); ?>
+  <section <?php block_class_id( $block,'related-posts-row' . $direction ); ?>>
     <div class="wrapper">
 
       <div class="related-posts-row--title">
