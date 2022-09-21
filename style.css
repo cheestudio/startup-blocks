@@ -122,13 +122,13 @@ q:before {
   content: none
 }
 .container {
-  max-width: 1440px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 20px
+  padding: 0 15px
 }
 .grid {
   display: grid;
-  grid-gap: 20px
+  grid-gap: 15px
 }
 .flex {
   display: flex
