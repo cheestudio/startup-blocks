@@ -12,6 +12,6 @@ $color  = $group['color'];
     href  = "<?= esc_url( $link['url'] ); ?>" 
     title = "Link to <?= esc_attr( $link['title'] ); ?>" 
     <?= !empty( $link['target'] ) ? "target='_blank'" : NULL; ?>
-    ><?= esc_html( $link['title'] ); ?></a>
+    ><span><?= esc_html( $link['title'] ); ?></span></a>
   </div>
 <?php endif; ?>
