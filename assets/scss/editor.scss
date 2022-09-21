@@ -11,11 +11,15 @@
 ========================================================= */
 
 body .editor-styles-wrapper {
-  
+
   @include font();
   @import "elements/**/*.scss";
   @import "core/typography/headings";
 
+  h1.wp-block-post-title {
+   font-size: 40px; 
+  }
+  
   .edit-post-visual-editor .button,
   .mce-content-body .button,
   .wp-block.editor-block .button,
@@ -28,7 +32,6 @@ body .editor-styles-wrapper {
     @include button;
   }
 }
-
 }
 
 
