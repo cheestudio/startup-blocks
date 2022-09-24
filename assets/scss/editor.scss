@@ -4,8 +4,7 @@
 @import "core/layout/grid";
 @import "core/variables/variables";
 @import "core/variables/colors";
-@import "core/typography/fonts";
-@import "core/typography/presets";
+@import "core/typography/main";
 
 /* Typography
 ========================================================= */
@@ -14,7 +13,7 @@ body .editor-styles-wrapper {
 
   @include font();
   @import "elements/**/*.scss";
-  @import "core/typography/headings";
+  @import "layout/**/*.scss";
 
   h1.wp-block-post-title {
    font-size: 40px; 
