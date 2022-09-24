@@ -41,21 +41,21 @@ There's absolutely nothing proprietary here, but there is a specific organizatio
 2. All other `.scss` files found in other folders, such as `elements, layout, pages` are automatically included when compiled and do not need to be added to `main.scss`
 3. All `.scss` files will compile to `style.css` (easy to read format for dev only) and `style.min.css` that is served to the public
 4. All `.js` files from `assets/js/src/` compile to `all.min.js`
-5. Any JS scripts added to the `src/plugins` folder will be included first and compiled into the minified `all.min.js` file
+5. Any JS scripts added to the `assets/js/src/plugins` folder will be included first and then compiled into the minified `all.min.js` file
 
 
 ### Registering ACF Field Groups
 
-This framework will automatically register field groups located in `/init/fields`. 
+This framework will automatically register field groups located in `init/fields`. 
 *This workflow is optional.*
 
 1) Within the `init/acf.php` contains a loop that will grab all field includes and automatically register them
 2) Within the `init/fields` folder is where includes for various field types would be located, with the *exception* of `blocks`
 3) File names should be unique, as well as the `FieldsBuilder` names
-4) Partials for re-use should be placed under `/init/fields/partials`
-**Note:** Partials are parsed alphabetically. If you need to load one prior to others, add a `_` prefix to the filename (see `_button.php` as an example)
+4) Partials that are re-used should be placed under `init/fields/partials`
+**Note:** Partials are parsed alphabetically. If you need to load one prior to others, add a `_` prefix to the filename (*see `_button.php` as an example*)
 
-*To disable ACF Builder workflow:* Set `$acf_builder` to `FALSE` in `/init/acf.php`.
+*To disable ACF Builder workflow:* Set `$acf_builder` to `FALSE` in `init/acf.php`.
 
 ### Registering ACF Blocks
 
@@ -75,15 +75,15 @@ $example_field = $group['example_field];
 
 * **style.scss -** This is the SCSS that will compile to `style.css` that is used in both the frontend and backend Gutenberg Block Editor preview views
 * **script.js -** This file contains all the JS specific code for the individual block. *This file is optional*
-* You can create and add a 450px x 250px image named `preview.jpg` to the Block folder to automatically display a preview in the backend Gutenberg editor when hovering over the list of Blocks to add
-* Duplicate the `example-default` folder to create new Blocks. There are URL links in the `template.php` file that give provide examples for the proper syntax to use to register ACF fields in the `fields.php` file
-* The GULP Workflow, if `BLOCK_MODE` is set to `TRUE`, will automatically compile all SCSS files it finds in these block directories
+* You can create an optional 450 x 250 pixel image named `preview.jpg` add it to the Block folder to automatically display a preview in the backend Gutenberg editor when hovering over the list of Blocks to add (*recommended*)
+* Duplicate the `example-default` folder to create new Blocks. There are URL links in the `template.php` file that provide examples for the proper syntax to use to register ACF fields in the `fields.php` file
+* The GULP Workflow (if `BLOCK_MODE` is set to `TRUE`), will automatically compile all SCSS files it finds in these block directories
 
-*To disable ACF Blocks workflow:* Set `$acf_blocks` to `FALSE` in `/init/acf.php`.
+*To disable ACF Blocks workflow:* Set `$acf_blocks` to `FALSE` in `init/acf.php`.
 
 ### Connecting Fields to Blocks (if using ACF Builder)
 
-As stated above, this framework uses the folder/path name of the block and automatically connects the ACF Field Group to a Block by creating a `fields.php` inside the block folder.
+As stated above, this framework uses the folder/path name of the block to register and automatically connects the ACF Field Group to a Block by creating a `fields.php` inside the block folder.
 
 **This file will do a number of things:**
 
