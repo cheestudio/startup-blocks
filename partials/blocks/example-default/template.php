@@ -17,10 +17,16 @@ if ( isset($block['data']['block_preview']) ) :
 else :
   $group = blockFieldGroup(__FILE__); // REQUIRED
   // $example_field = $group['example_field]
-  ?>
+?>
 
   <section <?php block_class_id( $block,'CUSTOM-BLOCK-CLASS' ); ?>>
+    <div class="wrapper">
+      
+      <div class="CUSTOM-BLOCK-CLASS--content">
+        
+      </div>
 
+    </div>
   </section>
 
 <?php endif; ?>

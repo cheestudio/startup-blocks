@@ -19,13 +19,14 @@ if ( isset($block['data']['block_preview']) ) :
 else :
   $group   = blockFieldGroup(__FILE__); // REQUIRED
   $heading = $group['heading'];
-  $bios    = $group['bios_rep']; // image, name, title, bio_short, bio_long ?>
+  $bios    = $group['bios_rep']; // image, name, title, bio_short, bio_long 
+?>
 
   <?php if ( $bios ) : ?>
     <section <?php block_class_id( $block,'bios-row' ); ?>>
       <div class="wrapper">
 
-        <?php if ( !empty($heading) ) echo "<div class='bios-row--title'><h2>{$heading}</h2></div>"; ?>
+        <?php if ( !empty($heading) ) { ?><div class="bios-row--title"><h2><?= $heading; ?></h2></div><?php } ?>
 
         <div class="bios-row--content">
           <div class="bio-toggles grid">
@@ -39,9 +40,11 @@ else :
                 <figure>
                   <?php echo wp_get_attachment_image( $image['id'], 'medium' ); ?>
                 </figure>
-                <?php if ( !empty($name) ) echo "<h3>{$name}</h3>"; ?>
-                <?php if ( !empty($title) ) echo "<p class='title'>{$title}</p>"; ?>
-                <?php if ( !empty($bio_short) ) echo "<div class='text'>{$bio_short}</div>"; ?>
+
+                <?php if ( !empty($name) ) { ?><h3><?= $name; ?></h3><?php } ?>
+                <?php if ( !empty($title) ) { ?><p class="title"><?= $title; ?></p><?php } ?>
+                <?php if ( !empty($bio_short) ) { ?><div class="text"><?= $bio_short; ?></div><?php } ?>
+
                 <div class="button-wrap">
                   <a 
                   class = "button"
@@ -69,9 +72,9 @@ else :
                     </figure>
                   </div>
                   <div class="inner">
-                    <?php if ( !empty($name) ) echo "<h3>{$name}</h3>"; ?>
-                    <?php if ( !empty($title) ) echo "<p class='title'>{$title}</p>"; ?>
-                    <?php if ( !empty($bio_long) ) echo "<div class='text'>{$bio_long}</div>"; ?>
+                <?php if ( !empty($name) ) { ?><h3><?= $name; ?></h3><?php } ?>
+                <?php if ( !empty($title) ) { ?><p class="title"><?= $title; ?></p><?php } ?>
+                <?php if ( !empty($bio_long) ) { ?><div class="text"><?= $bio_long; ?></div><?php } ?>
                   </div>
                 </div>
               </div>

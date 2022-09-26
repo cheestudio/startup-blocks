@@ -18,7 +18,7 @@ else :
   $group   = blockFieldGroup(__FILE__); // REQUIRED
   $content = $group['content'];
   $image   = $group['image'];
-  ?>
+?>
 
   <?php if ( !empty($content) ) : ?>
     <section <?php block_class_id( $block,'cta-banner-row' ); ?> style="background-image: url(<?= $image['sizes']['large']; ?>);">

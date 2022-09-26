@@ -17,7 +17,7 @@ if ( isset($block['data']['block_preview']) ) :
 else :
   $group  = blockFieldGroup(__FILE__); // REQUIRED
   $choice = $group['related_choice'];
-  ?>
+?>
 
   <section <?php block_class_id( $block,'related-posts-row' ); ?>>
     <div class="wrapper">

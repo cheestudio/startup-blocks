@@ -18,13 +18,17 @@ else :
   $group = blockFieldGroup(__FILE__); // REQUIRED
   $heading = $group['heading'];
   $gallery = $group['gallery'];
-  ?>
+?>
 
   <?php if ( $gallery ) : ?>
     <section <?php block_class_id( $block,'image-gallery-row' ); ?>>
       <div class="wrapper">
 
-        <?php if ( !empty($heading) ) echo "<div class='image-gallery-row--heading'><h2>{$heading}</h2></div>"; ?>
+        <?php if ( !empty($heading) ) : ?>
+          <div class="image-gallery-row--heading">
+            <h2><?= $heading; ?></h2>
+          </div>
+        <?php endif; ?>
 
         <div class="image-gallery-row--gallery grid">
           <?php foreach ( $gallery as $image ) : ?>

@@ -24,7 +24,11 @@ else :
     <section <?php block_class_id( $block,'testimonials-row' ); ?>>
       <div class="wrapper">
 
-        <?php if ( !empty($heading) ) echo "<div class='testimonials-row--heading'><h2>{$heading}</h2></div>"; ?>
+        <?php if ( !empty($heading) ) : ?>
+          <div class="testimonials-row--heading">
+            <h2><?= $heading; ?></h2>
+          </div>
+        <?php endif; ?>
 
         <div class="testimonials-row--quotes carousel">
           <?php foreach ( $quotes as $quote ) : 
@@ -39,7 +43,7 @@ else :
                   </figure>
                 <?php endif; ?>
                 <?= $content; ?>
-                <?php if ( !empty($author) ) echo "<p class='author'>{$author}</p>"; ?>
+                <?php if ( !empty($author) ) { ?><p class="author"><?= $author; ?></p><?php } ?>
               </div>
             </blockquote>
           <?php endforeach; ?>

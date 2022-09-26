@@ -15,16 +15,20 @@ if ( isset($block['data']['block_preview']) ) :
 
 // Block Content
 else :
-  $group = blockFieldGroup(__FILE__); // REQUIRED
-  $heading = $group['heading'];
+  $group    = blockFieldGroup(__FILE__); // REQUIRED
+  $heading  = $group['heading'];
   $sections = $group['sections_rep'];
-  ?>
+?>
 
   <?php if ( $sections ) : $i = 0; ?>
     <section <?php block_class_id( $block,'accordion-row' ); ?>>
       <div class="wrapper">
-        
-        <?php if ( !empty($heading) ) echo "<div class='accordion-row--heading'><h2>{$heading}</h2></div>"; ?>
+
+        <?php if ( !empty($heading) ) : ?>
+          <div class="accordion-row--heading">
+            <h2><?= $heading; ?></h2>
+          </div>
+        <?php endif; ?>
 
         <div class="accordion-row--content">
           <?php foreach ( $sections as $section ) : $i++; // title, content ?>

@@ -27,8 +27,12 @@ else :
     <section <?php block_class_id( $block,'text-video-row' . $direction  ); ?>>
       <div class="wrapper">
 
-        <?php if ( !empty($heading) ) echo "<div class='text-video-row--heading'><h2>{$heading}</h2></div>"; ?>
-
+        <?php if ( !empty($heading) ) : ?>
+          <div class="text-video-row--heading">
+            <h2><?= $heading; ?></h2>
+          </div>
+        <?php endif; ?>
+        
         <div class="text-video-row--content flex">
           <div class="video">
             <figure>
