@@ -37,7 +37,7 @@ else :
               title         = "View larger image"
               data-fancybox = "gallery"
               data-src      = "<?= $image['sizes']['large']; ?>"
-              ><?php echo wp_get_attachment_image( $image['id'], 'medium' ); ?></a>
+              ><?= wp_get_attachment_image( $image['id'], 'medium' ); ?></a>
             </figure>
           <?php endforeach; ?>
         </div>

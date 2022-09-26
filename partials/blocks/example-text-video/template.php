@@ -40,7 +40,7 @@ else :
                 href  = "<?= $video_url; ?>"
                 title = "Open video in popup"
                 data-fancybox = "video-gallery">
-                <?php echo wp_get_attachment_image( $image['id'], 'large' ); ?>
+                <?= wp_get_attachment_image( $image['id'], 'large' ); ?>
                 <?php svg_inline('icon-play-video.svg'); ?>
               </a>
             </figure>

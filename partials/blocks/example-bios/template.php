@@ -38,7 +38,7 @@ else :
               $bio_short = $bio['bio_short']; ?>
               <div class="bio">
                 <figure>
-                  <?php echo wp_get_attachment_image( $image['id'], 'medium' ); ?>
+                  <?= wp_get_attachment_image( $image['id'], 'medium' ); ?>
                 </figure>
 
                 <?php if ( !empty($name) ) { ?><h3><?= $name; ?></h3><?php } ?>
@@ -68,7 +68,7 @@ else :
                 <div class="flex">
                   <div class="image">
                     <figure>
-                      <?php echo wp_get_attachment_image( $image['id'], 'square' ); ?>
+                      <?= wp_get_attachment_image( $image['id'], 'square' ); ?>
                     </figure>
                   </div>
                   <div class="inner">

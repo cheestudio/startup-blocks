@@ -39,7 +39,7 @@ else :
               <div class="inner">
                 <?php if ( $image ) : ?>
                   <figure>
-                    <?php echo wp_get_attachment_image( $image['id'], 'thumbnail' ); ?>
+                    <?= wp_get_attachment_image( $image['id'], 'thumbnail' ); ?>
                   </figure>
                 <?php endif; ?>
                 <?= $content; ?>

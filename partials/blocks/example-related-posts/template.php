@@ -42,7 +42,7 @@ else :
               <?php if ( $image_id != 0 ) : ?>
                 <figure class="image">
                     <a href="<?= $permalink; ?>" title="View The <?= $title; ?> Article">
-                    <?php echo wp_get_attachment_image( $image_id, 'medium' ); ?>
+                    <?= wp_get_attachment_image( $image_id, 'medium' ); ?>
                     </a>
                   </figure>
                 <?php endif; ?>

@@ -27,7 +27,7 @@ else :
 
         <div class="text-image-row--image">
           <figure>
-            <?php echo wp_get_attachment_image( $image['id'], 'large' ); ?>  
+            <?= wp_get_attachment_image( $image['id'], 'large' ); ?>  
           </figure>
         </div>
 

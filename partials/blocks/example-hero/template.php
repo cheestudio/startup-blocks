@@ -31,7 +31,7 @@ else :
         <div class="hero-row--image">
           <?php if ( $image ) : ?>
             <figure>
-              <?php echo wp_get_attachment_image( $image['id'], 'large' ); ?>  
+              <?= wp_get_attachment_image( $image['id'], 'large' ); ?>  
             </figure>
           <?php endif; ?>
         </div>
