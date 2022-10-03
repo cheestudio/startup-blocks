@@ -11,8 +11,8 @@
       
       if ( images.length ) {
         const imageCarousel = new Carousel(images[0], {
-          'slidesPerPage' : 1,
-          'center' : false,
+          slidesPerPage : 1,
+          center : false,
         });
       }
     });
