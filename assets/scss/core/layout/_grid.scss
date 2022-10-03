@@ -1,7 +1,7 @@
 /* Grid & Padding Sizes
 ========================================================= */
-$width: 1240px;
-$padding: 15px;
+$width   : 1240px;
+$padding : 15px;
 
 /* Containers
 ========================================================= */
@@ -20,6 +20,7 @@ $padding: 15px;
 .grid {
   display: grid;
   grid-gap: 15px;
+  grid-template-columns: 1fr;
 }
 
 .flex {
@@ -41,7 +42,6 @@ $padding: 15px;
 
 /* Gutenberg Width Fixes
 ========================================================= */
-
 .content-blocks > *:not(.alignfull) {
   width: 100%;
   max-width: 1210px;

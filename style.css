@@ -128,7 +128,8 @@ q:before {
 }
 .grid {
   display: grid;
-  grid-gap: 15px
+  grid-gap: 15px;
+  grid-template-columns: 1fr
 }
 .flex {
   display: flex
