@@ -1,23 +1,5 @@
 <?php
 
-/* Admin Notices
-========================================================= */
-add_action('admin_notices', 'acf_builder_notice');
-function acf_builder_notice() {
- global $pagenow;
- if (!is_admin()) {
-  return false;
-}
-if ($pagenow == 'edit.php') {
-  if (isset($_GET['post_type']) && $_GET['post_type'] == 'acf-field-group') {
-   echo '<div class="notice notice-error">
-   <h2>Custom Fields managed via ACF Builder</h2>
-   <p>ACF Builder library is located within the /init/ of this theme folder. Please <a target="_blank" rel="noopener" href="https://github.com/cheestudio/startup-blocks">view the README for more information</a> on this theme and the field management workflow.</p>
-   </div>';
- }
-}
-}
-
 /* Gravity Forms Button Markup
 ========================================================= */
 add_filter('gform_next_button', 'input_to_button', 10, 2);
