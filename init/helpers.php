@@ -358,9 +358,10 @@ function excerpt_more( $more ) {
 /* Reorder Menu Items */
 
 function reorder_admin_menu( $__return_true ) {
-  return array(
+  return [
        'index.php',
        'edit.php?post_type=page',
+       'admin.php?page=gf_edit_forms',
        'edit.php',
        'edit.php?post_type=POSTTYPE',
        'separator1',
@@ -372,7 +373,7 @@ function reorder_admin_menu( $__return_true ) {
        'tools.php',
        'options-general.php',
        'separator2',
- );
+  ];
 }
 add_filter( 'custom_menu_order', 'reorder_admin_menu' );
 add_filter( 'menu_order', 'reorder_admin_menu' );
