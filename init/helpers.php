@@ -350,3 +350,55 @@ add_filter( 'excerpt_more', 'excerpt_more', 999 );
 function excerpt_more( $more ) {
   return ' ...';
 }
+
+
+/* Custom Admin Edits
+========================================================= */
+
+/* Reorder Menu Items */
+
+function reorder_admin_menu( $__return_true ) {
+  return array(
+       'index.php',
+       'edit.php?post_type=page',
+       'edit.php',
+       'edit.php?post_type=POSTTYPE',
+       'separator1',
+       'themes.php',
+        // 'edit-comments.php', (de-registered below)
+       'users.php',
+       'upload.php',
+       'plugins.php',
+       'tools.php',
+       'options-general.php',
+       'separator2',
+ );
+}
+add_filter( 'custom_menu_order', 'reorder_admin_menu' );
+add_filter( 'menu_order', 'reorder_admin_menu' );
+
+/* Remove Comments */
+
+add_action( 'admin_init', 'remove_admin_menus' );
+function remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+    remove_post_type_support( 'post', 'comments' );
+    remove_post_type_support( 'page', 'comments' );
+}
+
+/* Custom CSS */
+
+add_action('admin_head', 'custom_admin_css');
+function custom_admin_css() {
+  echo '<style>
+  #adminmenu li.wp-menu-separator {
+    margin:10px 0 5px 0;
+  }
+  #adminmenu div.separator {
+      background:rgba(255,255,255,0.1);
+  } 
+  #adminmenu .wp-submenu-head, #adminmenu a.menu-top {
+      font-size:13px;
+  }
+  </style>';
+}
