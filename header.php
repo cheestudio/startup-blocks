@@ -20,7 +20,7 @@
 
 <body <?php body_class(); ?> id="top-of-page">
 
-  <!-- Accessbility Skip to Content -->
+  <!-- Accessibility Skip to Content -->
   <a class="skip-link screen-reader-text" href="#top-of-content"><?php esc_html_e( 'Skip to content', 'chee' ); ?></a>
 
   <?php // Optional ACF Body Code

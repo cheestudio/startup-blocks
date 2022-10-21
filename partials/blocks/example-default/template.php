@@ -16,7 +16,7 @@ if ( isset($block['data']['block_preview']) ) :
 // Block Content
 else :
   $group = blockFieldGroup(__FILE__); // REQUIRED
-  // $example_field = $group['example_field]
+  // $example_field = $group['example_field'];
 ?>
 
   <section <?php block_class_id( $block,'CUSTOM-BLOCK-CLASS' ); ?>>
