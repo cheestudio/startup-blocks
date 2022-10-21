@@ -60,6 +60,9 @@ form {
 ========================================================= */
 .gform_wrapper.gravity-theme {
   margin: 0;
+  .gform_heading {
+    display: none;
+  }
   form {
     .gform-body {
       padding-top: 25px;

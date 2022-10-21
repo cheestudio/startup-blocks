@@ -995,6 +995,9 @@ form textarea:focus {
 .gform_wrapper.gravity-theme {
   margin: 0
 }
+.gform_wrapper.gravity-theme .gform_heading {
+  display: none
+}
 .gform_wrapper.gravity-theme form .gform-body {
   padding-top: 25px;
   padding-bottom: 25px
