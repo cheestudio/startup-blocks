@@ -229,6 +229,10 @@ function my_acf_admin_head() {
   .acf-field-group[data-name="button_group"] > .acf-label {
     display: none;
   }
+  .components-base-control__field > div,
+  .components-base-control__field .components-focal-point-picker {
+    height: auto;
+  }
 </style>
 <?php
 }
