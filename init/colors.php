@@ -1,11 +1,11 @@
 <?php
 
-/* ACF Colors (synced to theme.json)
+/* ACF Color Picker (synced to theme.json)
 ========================================================= */
 
-function custom_acf_colors() {?>
+function custom_acf_colors() { ?>
 <script type="text/javascript">
-(function($) 
+(function($) {
   acf.addFilter('color_picker_args', function(args) {
     const settings = wp.data.select("core/editor").getEditorSettings();
     let colors = settings.colors.map(x => x.color);
