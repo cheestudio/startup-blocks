@@ -3,7 +3,7 @@
 /* Block/TinyMCE/ACF Editor Colors
 ========================================================= */
 
-/* TinyMCE Colors (defined in theme.json) */
+/* ACF Colors (defined in theme.json) */
 
 function custom_acf_colors() { ?>
 <script type="text/javascript">
