@@ -20,12 +20,13 @@
             }, 
             { "name": "Black",
             	"slug": "black",
-            	"color": "#231F20"
+            	"color": "#000000"
             }, 
             { "name": "White",
                 "slug": "white",
                 "color": "#ffffff"
-            } ]
+            } 
+        ]
         },
         "layout": {
             "contentSize": "1200px",
