@@ -1,0 +1,90 @@
+{
+    "version": 1,
+    "settings": {
+        "color": {
+            "custom": true,
+            "customDuotone": false,
+            "customGradient": false,
+            "defaultPalette": false,
+            "defaultGradients": false,
+            "duotone": [],
+            "link": false,
+            "palette": [ {
+                "name": "Blue",
+                "slug": "blue",
+                "color": "#4eaada"
+            }, 
+            { "name": "Dark Red",
+                "slug": "dark-red",
+                "color": "#910002"
+            }, 
+            { "name": "Black",
+            	"slug": "black",
+            	"color": "#231F20"
+            }, 
+            { "name": "White",
+                "slug": "white",
+                "color": "#ffffff"
+            } ]
+        },
+        "layout": {
+            "contentSize": "1200px",
+            "wideSize": "1400px"
+        },
+        "spacing": {
+            "customMargin": true,
+            "customPadding": true,
+            "units": [ "px", "em", "vh", "vw" ]
+        },
+        "typography": {
+            "customFontSize": true,
+            "customLineHeight": true,
+            "dropCap": false,
+            "fontFamilies": [
+                {
+                    "fontFamily": "Georgia, sans-serif",
+                    "slug": "header",
+                    "name": "Header Font"
+                },
+                {
+                    "fontFamily": "Arial, sans-serif",
+                    "slug": "body",
+                    "name": "Body Font"
+                }                
+            ],
+            "fontSizes": [
+                {
+                    "slug": "fine-print",
+                    "size": "14px",
+                    "name": "Fine Print"
+                },
+                {
+                    "slug": "normal",
+                    "size": "18px",
+                    "name": "Normal"
+                },
+                {
+                    "slug": "medium",
+                    "size": "20px",
+                    "name": "Medium"
+                },                
+                {
+                    "slug": "large",
+                    "size": "26px",
+                    "name": "Large"
+                }
+            ]
+        },
+        "blocks": {
+            "core/paragraph": {
+                "color": {},
+                "custom": {},
+                "layout": {},
+                "spacing": {},
+                "typography": {}
+            },
+            "core/heading": {},
+            "etc": {}
+        }
+    }
+}

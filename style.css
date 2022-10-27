@@ -122,7 +122,7 @@ q:before {
   content: none
 }
 .container {
-  max-width: 1240px;
+  max-width: var(--wp--style--global--content-size);
   margin: 0 auto;
   padding: 0 15px
 }
@@ -139,12 +139,12 @@ q:before {
 }
 .content-blocks > :not(.alignfull) {
   width: 100%;
-  max-width: 1210px;
+  max-width: var(--wp--style--global--content-size);
   margin-left: auto;
   margin-right: auto
 }
 .content-blocks > :not(.alignfull).alignwide {
-  max-width: 1400px
+  max-width: var(--wp--style--global--wide-size)
 }
 .button,
 .gform_wrapper.gravity-theme form .gform_footer button,
@@ -165,22 +165,6 @@ input[type=submit] {
   line-height: 1.2;
   text-decoration: none;
   -webkit-appearance: none
-}
-.has-black-background-color {
-  background-color: var(--black)
-}
-.has-black-color {
-  color: var(--black)
-}
-.has-white-background-color {
-  background-color: var(--white)
-}
-.has-white-color {
-  color: var(--white)
-}
-:root {
-  --black: #000000;
-  --white: #ffffff
 }
 .h1,
 .preset1,
@@ -226,6 +210,9 @@ main li,
 main p {
   font-size: 1.125rem;
   line-height: 165%
+}
+body {
+  font-family: var(--wp--preset--font-family--body)
 }
 main li,
 main p {
@@ -830,7 +817,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .fancybox__thumb {
   position: relative;
   width: 100%;
-  padding-top: calc(100% / (var(--fancybox-thumbs-ratio,1.5)));
+  padding-top: calc(100%/(var(--fancybox-thumbs-ratio,1.5)));
   background-size: cover;
   background-position: center center;
   background-color: rgba(255,255,255,.1);
@@ -843,7 +830,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   right: 0;
   left: 0;
   z-index: 20;
-  background: linear-gradient(to top,hsla(0deg,0%,0%,0) 0,hsla(0deg,0%,0%,.006) 8.1%,hsla(0deg,0%,0%,.021) 15.5%,hsla(0deg,0%,0%,.046) 22.5%,hsla(0deg,0%,0%,.077) 29%,hsla(0deg,0%,0%,.114) 35.3%,hsla(0deg,0%,0%,.155) 41.2%,hsla(0deg,0%,0%,.198) 47.1%,hsla(0deg,0%,0%,.242) 52.9%,hsla(0deg,0%,0%,.285) 58.8%,hsla(0deg,0%,0%,.326) 64.7%,hsla(0deg,0%,0%,.363) 71%,hsla(0deg,0%,0%,.394) 77.5%,hsla(0deg,0%,0%,.419) 84.5%,hsla(0deg,0%,0%,.434) 91.9%,hsla(0deg,0%,0%,.44) 100%);
+  background: linear-gradient(to top,rgba(0,0,0,0) 0,rgba(0,0,0,.006) 8.1%,rgba(0,0,0,.021) 15.5%,rgba(0,0,0,.046) 22.5%,rgba(0,0,0,.077) 29%,rgba(0,0,0,.114) 35.3%,rgba(0,0,0,.155) 41.2%,rgba(0,0,0,.198) 47.1%,rgba(0,0,0,.242) 52.9%,rgba(0,0,0,.285) 58.8%,rgba(0,0,0,.326) 64.7%,rgba(0,0,0,.363) 71%,rgba(0,0,0,.394) 77.5%,rgba(0,0,0,.419) 84.5%,rgba(0,0,0,.434) 91.9%,rgba(0,0,0,.44) 100%);
   padding: 0;
   touch-action: none;
   display: flex;
@@ -1674,7 +1661,7 @@ figure img {
     display: none
   }
   .fancybox__slide {
-    padding: 110px 50px 50px
+    padding: calc(60px + 50px) 50px 50px
   }
   .alignleft,
   .alignright {

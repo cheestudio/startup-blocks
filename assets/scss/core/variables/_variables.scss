@@ -5,14 +5,14 @@
 @import "color-vars";
 
 
-/* Fonts
+/* Fonts (fonts defined in theme.json)
 ========================================================= */
 @mixin font( $style:'body' ) {
   @if ( $style == 'body' ) {
-    // font-family here
+    font-family: var(--wp--preset--font-family--body);
   }
   @else if ( $style == 'heading' ) {
-    // font-family here
+    font-family: var(--wp--preset--font-family--header);
   }
 }
 

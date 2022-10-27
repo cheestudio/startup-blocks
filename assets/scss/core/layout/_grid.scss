@@ -1,9 +1,9 @@
-/* Grid & Padding Sizes
+/* Grid & Padding Sizes (values defined in theme.json)
 ========================================================= */
-$width   : 1240px;
+$width   : var(--wp--style--global--content-size);
 $padding : 15px;
 
-/* Containers
+/* Containers 
 ========================================================= */
 @mixin content-container( $width: $width, $padding: $padding ) {
   max-width: $width;
@@ -44,11 +44,11 @@ $padding : 15px;
 ========================================================= */
 .content-blocks > *:not(.alignfull) {
   width: 100%;
-  max-width: 1210px;
+  max-width: var(--wp--style--global--content-size);
   margin-left: auto;
   margin-right: auto;
 }
 
 .content-blocks > *:not(.alignfull).alignwide {
-  max-width: 1400px;
+  max-width: var(--wp--style--global--wide-size);
 }

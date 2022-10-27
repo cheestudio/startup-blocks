@@ -1,5 +1,5 @@
 .container {
-  max-width: 1240px;
+  max-width: var(--wp--style--global--content-size);
   margin: 0 auto;
   padding: 0 15px
 }
@@ -16,12 +16,12 @@
 }
 .content-blocks > :not(.alignfull) {
   width: 100%;
-  max-width: 1210px;
+  max-width: var(--wp--style--global--content-size);
   margin-left: auto;
   margin-right: auto
 }
 .content-blocks > :not(.alignfull).alignwide {
-  max-width: 1400px
+  max-width: var(--wp--style--global--wide-size)
 }
 body .editor-styles-wrapper .acf-block-preview .button,
 body .editor-styles-wrapper .acf-block-preview .wp-block-button .wp-block-button__link,
@@ -54,22 +54,6 @@ body .editor-styles-wrapper input[type=submit] {
   line-height: 1.2;
   text-decoration: none;
   -webkit-appearance: none
-}
-.has-black-background-color {
-  background-color: var(--black)
-}
-.has-black-color {
-  color: var(--black)
-}
-.has-white-background-color {
-  background-color: var(--white)
-}
-.has-white-color {
-  color: var(--white)
-}
-:root {
-  --black: #000000;
-  --white: #ffffff
 }
 .h1,
 .preset1,
@@ -116,6 +100,9 @@ main p {
   font-size: 1.125rem;
   line-height: 165%
 }
+body {
+  font-family: var(--wp--preset--font-family--body)
+}
 main li,
 main p {
   margin-bottom: 20px
@@ -144,6 +131,9 @@ h4,
 h5,
 h6 {
   margin: 0 0 15px
+}
+body .editor-styles-wrapper {
+  font-family: var(--wp--preset--font-family--body)
 }
 body .editor-styles-wrapper figure img {
   display: block;
@@ -228,6 +218,9 @@ body .editor-styles-wrapper form textarea:focus {
 }
 body .editor-styles-wrapper .gform_wrapper.gravity-theme {
   margin: 0
+}
+body .editor-styles-wrapper .gform_wrapper.gravity-theme .gform_heading {
+  display: none
 }
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body {
   padding-top: 25px;
@@ -786,6 +779,12 @@ h4.editor-rich-text__tinymce.mce-content-body,
 h5.editor-rich-text__tinymce.mce-content-body,
 h6.editor-rich-text__tinymce.mce-content-body {
   line-height: 1.2
+}
+.edit-post-visual-editor,
+.edit-post-visual-editor p,
+.editor-post-title .editor-post-title__input,
+.mce-content-body .editor-styles-wrapper {
+  font-family: var(--wp--preset--font-family--body)
 }
 body .mce-menu-item.mce-menu-item-preview.mce-active .mce-ico,
 body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
