@@ -18,7 +18,8 @@ $class: '.testimonials-row';
   #{$class}--quotes {
 
   }
-  blockquote {
+  
+  .testimonial-entry {
     text-align: center;
     width: 100%;
     margin: 0;

@@ -15,36 +15,16 @@ $name
   'layout'       => 'block',
 ]) // REQUIRED GROUP
 
-  ->addText('heading', [
-    'label' => 'Section Heading',
-    'wrapper' => [
-      'class' => 'center',
-    ]
-  ])
   ->addRepeater('quotes_rep',[
     'label' => 'Quotes',
-    'layout' => 'table',
+    'layout' => 'block',
     'button_label' => 'Add Testimonial',
-    'wrapper' => [
-      'class' => 'center',
-    ]
   ])
-    ->addImage('image', [
-      'wrapper' => [
-        'width' => '30%',
-      ]
-    ])
+    ->addImage('image')
     ->addWysiwyg('content', [
       'media_upload' => 0,
-      'wrapper' => [
-        'width' => '40%',
-      ]
     ])
-    ->addText('author', [
-      'wrapper' => [
-        'width' => '30%',
-      ]
-    ])
+    ->addText('author')
   ->endRepeater()
 
 ->endGroup() // END REQUIRED GROUP
