@@ -22,7 +22,6 @@ $class: '.testimonials-row';
   .testimonial-entry {
     text-align: center;
     width: 100%;
-    margin: 0;
     .inner {
       @include margin-center;
       max-width: 800px;
@@ -30,6 +29,9 @@ $class: '.testimonials-row';
     }
     figure {
       margin-bottom: 20px;
+    }
+    blockquote {
+      margin: 0;
     }
     img {
       @include margin-center;
@@ -40,9 +42,9 @@ $class: '.testimonials-row';
       @include for-size(tablet-sm, up) {
         font-size: rem(24);
       }
-      &.author {
-        font-weight: 700;
-      }
+    }
+   cite.author {
+      font-weight: 700;
     }
   }
 }
