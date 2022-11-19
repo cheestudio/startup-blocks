@@ -9,7 +9,7 @@ Block Toggle: true
 Post Types: post, page
 */
 
-// -- NOTE: Requires LityJS -- 
+// -- NOTE: Requires Fancybox -- 
 
 // Block Image Preview
 if ( isset($block['data']['block_preview']) ) :
