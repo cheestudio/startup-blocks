@@ -1,7 +1,7 @@
 <?php
 /*
 Block Name: Biographies
-Block Description: Unlimited bios w image, text, button & popup
+Block Description: Biography Grid with Popup Modal
 Block Category: Custom {CLIENT} Blocks
 Block Align: full
 Block Icon: id-alt
