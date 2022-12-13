@@ -7,6 +7,11 @@
 //add_filter('use_block_editor_for_post', '__return_false', 10);
 
 
+/* Disable Template Editing
+========================================================= */
+remove_theme_support( 'block-templates' );
+
+
 /* Disable Gutenberg Per Post Type
 ========================================================= */
 function prefix_disable_gutenberg($current_status, $post_type) {
