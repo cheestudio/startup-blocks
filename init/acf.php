@@ -13,7 +13,7 @@ $acf_blocks = true;
 ========================================================= */
 use StoutLogic\AcfBuilder\FieldsBuilder;
 define('FIELDS_DIR', dirname(__FILE__) . '/fields');
-define('BLOCK_FIELDS_DIR', dirname(__DIR__) . '/partials/blocks/');
+define('BLOCK_FIELDS_DIR', dirname(__DIR__) . '/partials/acf-blocks/');
 
 function acf_field_builder_registration() {
  if (is_dir(FIELDS_DIR)) {
@@ -68,74 +68,16 @@ function acf_block_field_builder_registration() {
 
 /* Register Blocks (can be removed if $acf_blocks == false)
 ========================================================= */
+
 function acf_blocks_registration() {
- define('BLOCKS_DIR', dirname(__FILE__, 2) . '/partials/blocks');
- add_action('acf/init', function () {
-
-  // Retrieve all existing blocks
-  foreach (glob(BLOCKS_DIR . '/**/template.php') as $filepath) {
-
-   // Read the PHP comment meta data for the block
-   $meta = get_file_data($filepath, array(
-    'name' => 'Block Name',
-    'description' => 'Block Description',
-    'category' => 'Block Category',
-    'post_types' => 'Post Types',
-    'mode' => 'Block Mode',
-    'toggle' => 'Block Toggle',
-    'align' => 'Block Align',
-    'icon' => 'Block Icon',
-   ));
-
-   // Convert the post types to an array (or use defaults)
-   $post_types = array_filter(
-    array_map('trim', explode(',', $meta['post_types']))
-   );
-
-   if (empty($post_types)) {
-    $post_types = array('page', 'post');
-   }
-
-   // Establish template path for each block directory
-   $template_path = basename(dirname($filepath));
-
-   // Register the ACF block using template meta data
-   acf_register_block_type(array(
-    'name' => $template_path,
-    'title' => $meta['name'],
-    'description' => $meta['description'],
-    'category' => 'custom_blocks',
-    'post_types' => $post_types,
-    'render_template' => get_template_directory() . '/partials/blocks/' . $template_path . '/template.php',
-    'enqueue_assets' => function () use ($template_path) {
-     block_assets($template_path);
-    },
-    'mode' => $meta['mode'] ? $meta['mode'] : 'edit',
-    'align' => $meta['align'] ? $meta['align'] : 'full',
-    'icon' => $meta['icon'],
-    'supports' => array(
-     'customClassName' => true,
-     'anchor' => true,
-     'jsx' => true,
-     'mode' => $meta['toggle'] == 'false' ? false : true,
-    ),
-   ));
+  add_action('init', 'register_acf_blocks', 5);
+  function register_acf_blocks() {
+   define('BLOCKS_DIR', dirname(__FILE__, 2) . '/partials/acf-blocks');
+  foreach (glob(BLOCKS_DIR . '/**/block.json') as $block_path) {
+    $block_json_path = basename(dirname($block_path));
+   register_block_type(BLOCKS_DIR . '/' . $block_json_path);
   }
-
-  // Register existing block assets
-  function block_assets($template_path) {
-   $block_styles = get_template_directory() . '/partials/blocks/' . $template_path . '/style.css';
-   $block_script = get_template_directory() . '/partials/blocks/' . $template_path . '/script.js';
-   if (file_exists($block_styles)) {
-    $cache_bust = '?' . filemtime($block_styles);
-    wp_enqueue_style($template_path, get_template_directory_uri() . '/partials/blocks/' . $template_path . '/style.css', array(), $cache_bust);
-   }
-   if (file_exists($block_script)) {
-    $cache_bust = '?' . filemtime($block_script);
-    wp_enqueue_script($template_path, get_template_directory_uri() . '/partials/blocks/' . $template_path . '/script.js', array('jquery'), $cache_bust, true);
-   }
-  }
- });
+ }
 }
 
 /* ACF Block Class/ID Helper Function
@@ -174,13 +116,13 @@ function blockFieldGroup($file) {
 usage: echo block_path(__DIR__);
 ========================================================= */
 function block_path($dir) {
- return esc_url(get_template_directory_uri()) . '/partials/blocks/' . basename($dir);
+ return esc_url(get_template_directory_uri()) . '/partials/acf-blocks/' . basename($dir);
 }
 
 /* Block Image Preview
 ======================================================== */
 function block_preview($blockpath) {
- echo '<img data="block_preview" src="' . get_template_directory_uri() . '/partials/blocks/' . basename(dirname($blockpath)) . '/preview.jpg" width="450" height="250">';
+ echo '<img data="block_preview" src="' . get_template_directory_uri() . '/partials/acf-blocks/' . basename(dirname($blockpath)) . '/preview.jpg" width="450" height="250">';
 }
 
 /* Toggle Builder/Block Workflows

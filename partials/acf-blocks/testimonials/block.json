@@ -1,0 +1,37 @@
+{
+  "name": "acf/testimonials",
+  "title": "Testimonials Slider",
+  "description": "Testimonials/Quotes Slider with Images",
+  "script": "file:./script.js",
+  "editorScript": "file:./script.js",
+  "style": "file:./style.css" ,
+  "category": "custom_blocks",
+  "icon": "testimonial",
+  "keywords": ["testimonial","quotes"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "template.php",
+    "postTypes": ["post", "page"]
+  },
+  "align": "full",
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "alignContent": false,
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    },
+    "fullHeight": false,
+    "alignText": false,
+    "spacing": {
+        "margin": true,
+        "padding": true
+    },
+    "typography": {
+        "lineHeight": false,
+        "fontSize": false
+    }
+  }
+}

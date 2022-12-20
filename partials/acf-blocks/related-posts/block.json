@@ -1,0 +1,35 @@
+{
+  "name": "acf/related-posts",
+  "title": "Related Posts",
+  "description": "Recent Posts with Filter Options",
+  "style": "file:./style.css" ,
+  "category": "custom_blocks",
+  "icon": "excerpt-view",
+  "keywords": ["posts","recent","blog","related"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "template.php",
+    "postTypes": ["post", "page"]
+  },
+  "align": "full",
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "alignContent": false,
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    },
+    "fullHeight": false,
+    "alignText": false,
+    "spacing": {
+        "margin": true,
+        "padding": true
+    },
+    "typography": {
+        "lineHeight": false,
+        "fontSize": false
+    }
+  }
+}

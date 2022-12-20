@@ -1,0 +1,29 @@
+@import "../../../assets/scss/core/variables/queries";
+@import "../../../assets/scss/core/variables/variables";
+@import "../../../assets/scss/core/typography/presets";
+
+/* Custom Block Styles
+========================================================= */
+$class: '.video-popup';
+
+#{$class} {
+  a {
+    display: block;
+    position: relative;
+    &:hover, &:focus, &:active {
+      svg {
+        transform: translateY(-50%) scale(1.1);
+      }
+    }
+  }
+  .video-icon {
+    @include trans;
+    @include center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+  }
+}

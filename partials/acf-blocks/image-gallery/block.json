@@ -1,0 +1,35 @@
+{
+  "name": "acf/image-gallery",
+  "title": "Image Gallery",
+  "description": "Image Gallery with Popup",
+  "style": "file:./style.css" ,
+  "category": "custom_blocks",
+  "icon": "screenoptions",
+  "keywords": ["gallery","image popup"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "template.php",
+    "postTypes": ["post", "page"]
+  },
+  "align": "full",
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "alignContent": false,
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    },
+    "fullHeight": false,
+    "alignText": false,
+    "spacing": {
+        "margin": true,
+        "padding": true
+    },
+    "typography": {
+        "lineHeight": false,
+        "fontSize": false
+    }
+  }
+}

@@ -7,11 +7,6 @@
 //add_filter('use_block_editor_for_post', '__return_false', 10);
 
 
-/* Disable Template Editing
-========================================================= */
-remove_theme_support( 'block-templates' );
-
-
 /* Disable Gutenberg Per Post Type
 ========================================================= */
 function prefix_disable_gutenberg($current_status, $post_type) {
@@ -91,3 +86,18 @@ function chee_patterns_init() {
   register_block_pattern_category( 'chee', array('label' => __('Chee', 'chee')) );
 } 
 add_action('after_setup_theme', 'chee_patterns_init');
+
+
+/* Disable Template Editing
+========================================================= */
+remove_theme_support( 'block-templates' );
+
+/* Disable Inline Styles
+========================================================= */
+
+add_filter( 'styles_inline_size_limit', '__return_zero' );
+
+/* Conditional Block Assets (load only when used)
+========================================================= */
+
+add_filter( 'should_load_separate_core_block_assets', '__return_true' );

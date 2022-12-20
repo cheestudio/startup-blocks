@@ -1,0 +1,39 @@
+@import "../../../assets/scss/core/variables/queries";
+@import "../../../assets/scss/core/variables/variables";
+@import "../../../assets/scss/core/typography/presets";
+
+/* Custom Block Styles
+========================================================= */
+$class: '.related-posts-row';
+
+#{$class} {
+
+  #{$class}--grid {
+    grid-gap: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    @include for-size(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include for-size(tablet-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .post {
+    @include margin-center;
+    max-width: 500px;
+    a {
+      text-decoration: none !important;
+      &:hover, &:focus, &:active {
+        .button {
+          // copy button hover effect here (is a pseudo span button)
+        }
+      }
+    }
+    figure {
+      margin-bottom: 20px;
+    }
+    .button-wrap {
+      
+    }
+  }
+}

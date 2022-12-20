@@ -1,0 +1,37 @@
+{
+  "name": "acf/image-carousel",
+  "title": "Image Carousel",
+  "description": "Image Carousel with Popup",
+  "script": "file:./script.js",
+  "editorScript": "file:./script.js",
+  "style": "file:./style.css" ,
+  "category": "custom_blocks",
+  "icon": "format-gallery",
+  "keywords": ["carousel","slider","image popup"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "template.php",
+    "postTypes": ["post", "page"]
+  },
+  "align": "full",
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "alignContent": false,
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    },
+    "fullHeight": false,
+    "alignText": false,
+    "spacing": {
+        "margin": true,
+        "padding": true
+    },
+    "typography": {
+        "lineHeight": false,
+        "fontSize": false
+    }
+  }
+}
