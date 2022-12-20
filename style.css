@@ -1588,9 +1588,6 @@ figure img {
     margin: 0;
     padding: 20px
   }
-  .desktop-nav-wrap > ul > li .sub-menu li {
-    white-space: nowrap
-  }
   .archive-index,
   .post-single,
   .posts-index,

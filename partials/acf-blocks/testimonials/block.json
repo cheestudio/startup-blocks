@@ -3,7 +3,6 @@
   "title": "Testimonials Slider",
   "description": "Testimonials/Quotes Slider with Images",
   "script": "file:./script.js",
-  "editorScript": "file:./script.js",
   "style": "file:./style.css" ,
   "category": "custom_blocks",
   "icon": "testimonial",

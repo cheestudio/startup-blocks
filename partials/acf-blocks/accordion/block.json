@@ -3,7 +3,6 @@
   "title": "Accordion / FAQs",
   "description": "Accordion Show/Hide Content",
   "script": "file:./script.js",
-  "editorScript": "file:./script.js",
   "style": "file:./style.css" ,
   "category": "custom_blocks",
   "icon": "list-view",

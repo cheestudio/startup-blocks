@@ -1,6 +1,6 @@
 {
-  "name": "acf/example-hero",
-  "title": "Example Hero",
+  "name": "acf/page-hero",
+  "title": "Page Hero",
   "description": "Page Hero with Background Image and Inner Blocks",
   "style": "file:./style.css" ,
   "category": "custom_blocks",

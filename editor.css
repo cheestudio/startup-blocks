@@ -26,11 +26,7 @@
 body .editor-styles-wrapper .acf-block-preview .button,
 body .editor-styles-wrapper .acf-block-preview .wp-block-button .wp-block-button__link,
 body .editor-styles-wrapper .button,
-body .editor-styles-wrapper .edit-post-visual-editor .button .button,
-body .editor-styles-wrapper .edit-post-visual-editor .button .wp-block-button .wp-block-button__link,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform_footer button,
-body .editor-styles-wrapper .mce-content-body .button .button,
-body .editor-styles-wrapper .mce-content-body .button .wp-block-button .wp-block-button__link,
 body .editor-styles-wrapper .wp-block-button__link .button,
 body .editor-styles-wrapper .wp-block-button__link .wp-block-button .wp-block-button__link,
 body .editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .button,
@@ -697,8 +693,6 @@ body .editor-styles-wrapper h1.wp-block-post-title {
   font-size: 40px
 }
 body .editor-styles-wrapper .acf-block-preview .button,
-body .editor-styles-wrapper .edit-post-visual-editor .button .button,
-body .editor-styles-wrapper .mce-content-body .button .button,
 body .editor-styles-wrapper .wp-block-button__link .button,
 body .editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .button,
 body .editor-styles-wrapper .wp-block.editor-block .button .button {
@@ -709,12 +703,6 @@ body .editor-styles-wrapper .wp-block.editor-block .button .button {
 body .editor-styles-wrapper .acf-block-preview .button:active,
 body .editor-styles-wrapper .acf-block-preview .button:focus,
 body .editor-styles-wrapper .acf-block-preview .button:hover,
-body .editor-styles-wrapper .edit-post-visual-editor .button .button:active,
-body .editor-styles-wrapper .edit-post-visual-editor .button .button:focus,
-body .editor-styles-wrapper .edit-post-visual-editor .button .button:hover,
-body .editor-styles-wrapper .mce-content-body .button .button:active,
-body .editor-styles-wrapper .mce-content-body .button .button:focus,
-body .editor-styles-wrapper .mce-content-body .button .button:hover,
 body .editor-styles-wrapper .wp-block-button__link .button:active,
 body .editor-styles-wrapper .wp-block-button__link .button:focus,
 body .editor-styles-wrapper .wp-block-button__link .button:hover,
@@ -728,8 +716,6 @@ body .editor-styles-wrapper .wp-block.editor-block .button .button:hover {
   background-color: #000
 }
 body .editor-styles-wrapper .acf-block-preview .wp-block-button .wp-block-button__link,
-body .editor-styles-wrapper .edit-post-visual-editor .button .wp-block-button .wp-block-button__link,
-body .editor-styles-wrapper .mce-content-body .button .wp-block-button .wp-block-button__link,
 body .editor-styles-wrapper .wp-block-button__link .wp-block-button .wp-block-button__link,
 body .editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .wp-block-button .wp-block-button__link,
 body .editor-styles-wrapper .wp-block.editor-block .button .wp-block-button .wp-block-button__link {
@@ -740,12 +726,6 @@ body .editor-styles-wrapper .wp-block.editor-block .button .wp-block-button .wp-
 body .editor-styles-wrapper .acf-block-preview .wp-block-button .wp-block-button__link:active,
 body .editor-styles-wrapper .acf-block-preview .wp-block-button .wp-block-button__link:focus,
 body .editor-styles-wrapper .acf-block-preview .wp-block-button .wp-block-button__link:hover,
-body .editor-styles-wrapper .edit-post-visual-editor .button .wp-block-button .wp-block-button__link:active,
-body .editor-styles-wrapper .edit-post-visual-editor .button .wp-block-button .wp-block-button__link:focus,
-body .editor-styles-wrapper .edit-post-visual-editor .button .wp-block-button .wp-block-button__link:hover,
-body .editor-styles-wrapper .mce-content-body .button .wp-block-button .wp-block-button__link:active,
-body .editor-styles-wrapper .mce-content-body .button .wp-block-button .wp-block-button__link:focus,
-body .editor-styles-wrapper .mce-content-body .button .wp-block-button .wp-block-button__link:hover,
 body .editor-styles-wrapper .wp-block-button__link .wp-block-button .wp-block-button__link:active,
 body .editor-styles-wrapper .wp-block-button__link .wp-block-button .wp-block-button__link:focus,
 body .editor-styles-wrapper .wp-block-button__link .wp-block-button .wp-block-button__link:hover,
@@ -843,9 +823,6 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
     left: 0;
     margin: 0;
     padding: 20px
-  }
-  body .editor-styles-wrapper .desktop-nav-wrap > ul > li .sub-menu li {
-    white-space: nowrap
   }
 }
 @media only screen and (max-width:1440px) {
