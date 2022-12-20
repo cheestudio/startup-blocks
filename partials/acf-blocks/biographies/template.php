@@ -4,7 +4,7 @@ $heading = $group['heading'];
 $bios = $group['bios_rep']; // image, name, title, bio_short, bio_long
 ?>
 
-<section <?php block_class_id($block, 'bios-row');?>>
+<div <?php block_class_id($block, 'bios-row');?>>
   <div class="wrapper">
 
     <div class="bios-row--content">
@@ -57,4 +57,4 @@ $bios = $group['bios_rep']; // image, name, title, bio_short, bio_long
     </div>
 
   </div>
-</section>
+</div>
