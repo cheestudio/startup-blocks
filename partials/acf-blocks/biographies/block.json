@@ -2,7 +2,7 @@
   "name": "acf/biographies",
   "title": "Biographies",
   "description": "Biography Grid with Popup Modal",
-  "style": "file:./style.css" ,
+  "style": ["file:./style.css" ],
   "category": "custom_blocks",
   "icon": "id-alt",
   "keywords": ["bio","modal","biographies","profile"],
