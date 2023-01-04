@@ -1,26 +1,43 @@
 /* Body
 ========================================================= */
 body {
-  @include font;
+  color: $black;
+}
+
+p, li {
+  @extend %body-copy;
+  margin-bottom: 20px;
+}
+
+blockquote {
+  border-top: 2px solid $black;
+  border-bottom: 2px solid $black;
+  position: relative;
+  &:before {
+    content:'“';
+    display: block;
+    margin-bottom: 25px;
+  }
+  p {
+    @include no-margin-last;
+  }
+}
+
+/* Front End Only
+========================================================= */
+
+body {
+  &:not(.wp-admin) {
+    @include font;
+  }
 }
 
 main {
-  p, li {
-    @extend %body-copy;
-    @include no-margin-last;
-    margin-bottom: 20px;
-  }
   a {
     @include trans;
-    color: inherit;
-    text-decoration: underline;
+    color: red;
     &:hover, &:focus, &:active {
-      color: red;
-    }
-  }
-  blockquote {
-    p {
-      @include no-margin-last;
+      color:purple;
     }
   }
 }
