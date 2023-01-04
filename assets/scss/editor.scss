@@ -3,31 +3,38 @@
 @import "core/variables/queries";
 @import "core/layout/grid";
 @import "core/variables/variables";
-@import "core/typography/main";
+@import "core/typography/fonts";
 
 /* Typography
 ========================================================= */
 
-body .editor-styles-wrapper {
 
-  @include font();
+body {
   @import "elements/**/*.scss";
-  @import "layout/**/*.scss";
+  .editor-styles-wrapper {
+    
+    @include font;
+    @import "core/typography/main";
+    @import "layout/global-forms";
+    
 
-  h1.wp-block-post-title {
-   font-size: 40px; 
-  }
+    h1.wp-block-post-title {
+     font-size: 40px; 
+    }
   
-  .wp-block.editor-block .button,
-  .wp-block-freeform.block-library-rich-text__tinymce .button, .wp-block-button__link,
-  .acf-block-preview {
-    .button {
+    .edit-post-visual-editor .button,
+    .mce-content-body .button,
+    .wp-block.editor-block .button,
+    .wp-block-freeform.block-library-rich-text__tinymce .button, .wp-block-button__link,
+    .acf-block-preview {
+      .button {
+       @include button;
+     }
+    }
+    .wp-block-button .wp-block-button__link {
      @include button;
    }
-   .wp-block-button .wp-block-button__link {
-    @include button;
   }
-}
 }
 
 
@@ -40,6 +47,7 @@ body .editor-styles-wrapper {
 
 .wp-block {
   max-width: 100%;
+  @include font;
 }
 
 .wp-block-group__inner-container {
