@@ -148,6 +148,7 @@ q:before {
 }
 .button,
 .gform_wrapper.gravity-theme form .gform_footer button,
+.wp-block-button .wp-block-button__link,
 button,
 input[type=submit] {
   transition: .6s cubic-bezier(.23,1,.32,1);
@@ -206,34 +207,42 @@ h6 {
   line-height: 150%
 }
 .gform_confirmation_wrapper .gform_confirmation_message,
-main li,
-main p {
+li,
+p {
   font-size: 1.125rem;
   line-height: 165%
 }
 body {
-  font-family: var(--wp--preset--font-family--body)
+  color: var(--wp--preset--color--black)
 }
-main li,
-main p {
+li,
+p {
   margin-bottom: 20px
 }
-main li:last-of-type,
-main p:last-of-type {
+blockquote {
+  border-top: 2px solid var(--wp--preset--color--black);
+  border-bottom: 2px solid var(--wp--preset--color--black);
+  position: relative
+}
+blockquote:before {
+  content: "“";
+  display: block;
+  margin-bottom: 25px
+}
+blockquote p:last-of-type {
   margin-bottom: 0
+}
+body:not(.wp-admin) {
+  font-family: var(--wp--preset--font-family--body)
 }
 main a {
   transition: .6s cubic-bezier(.23,1,.32,1);
-  color: inherit;
-  text-decoration: underline
+  color: red
 }
 main a:active,
 main a:focus,
 main a:hover {
-  color: red
-}
-main blockquote p:last-of-type {
-  margin-bottom: 0
+  color: purple
 }
 h1,
 h2,
@@ -817,7 +826,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .fancybox__thumb {
   position: relative;
   width: 100%;
-  padding-top: calc(100%/(var(--fancybox-thumbs-ratio,1.5)));
+  padding-top: calc(100% / (var(--fancybox-thumbs-ratio,1.5)));
   background-size: cover;
   background-position: center center;
   background-color: rgba(255,255,255,.1);
@@ -830,7 +839,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   right: 0;
   left: 0;
   z-index: 20;
-  background: linear-gradient(to top,rgba(0,0,0,0) 0,rgba(0,0,0,.006) 8.1%,rgba(0,0,0,.021) 15.5%,rgba(0,0,0,.046) 22.5%,rgba(0,0,0,.077) 29%,rgba(0,0,0,.114) 35.3%,rgba(0,0,0,.155) 41.2%,rgba(0,0,0,.198) 47.1%,rgba(0,0,0,.242) 52.9%,rgba(0,0,0,.285) 58.8%,rgba(0,0,0,.326) 64.7%,rgba(0,0,0,.363) 71%,rgba(0,0,0,.394) 77.5%,rgba(0,0,0,.419) 84.5%,rgba(0,0,0,.434) 91.9%,rgba(0,0,0,.44) 100%);
+  background: linear-gradient(to top,hsla(0deg,0%,0%,0) 0,hsla(0deg,0%,0%,.006) 8.1%,hsla(0deg,0%,0%,.021) 15.5%,hsla(0deg,0%,0%,.046) 22.5%,hsla(0deg,0%,0%,.077) 29%,hsla(0deg,0%,0%,.114) 35.3%,hsla(0deg,0%,0%,.155) 41.2%,hsla(0deg,0%,0%,.198) 47.1%,hsla(0deg,0%,0%,.242) 52.9%,hsla(0deg,0%,0%,.285) 58.8%,hsla(0deg,0%,0%,.326) 64.7%,hsla(0deg,0%,0%,.363) 71%,hsla(0deg,0%,0%,.394) 77.5%,hsla(0deg,0%,0%,.419) 84.5%,hsla(0deg,0%,0%,.434) 91.9%,hsla(0deg,0%,0%,.44) 100%);
   padding: 0;
   touch-action: none;
   display: flex;
@@ -1472,6 +1481,17 @@ figure img {
 .button-wrap {
   padding-top: 30px
 }
+.wp-block-button .wp-block-button__link {
+  background-color: #fff;
+  color: #000;
+  border-color: #000
+}
+.wp-block-button .wp-block-button__link:active,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link:hover {
+  color: #fff;
+  background-color: #000
+}
 .social-icons ul {
   margin: 0;
   padding: 0;
@@ -1658,7 +1678,7 @@ figure img {
     display: none
   }
   .fancybox__slide {
-    padding: calc(60px + 50px) 50px 50px
+    padding: 110px 50px 50px
   }
   .alignleft,
   .alignright {
@@ -1933,8 +1953,8 @@ figure img {
 }
 @media only screen and (max-width:480px) {
   .gform_confirmation_wrapper .gform_confirmation_message,
-  main li,
-  main p {
+  li,
+  p {
     font-size: 1rem;
     line-height: 170%
   }

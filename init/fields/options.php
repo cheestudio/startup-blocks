@@ -8,7 +8,7 @@ $options
     'button_label' => 'Add Icon',
     'instructions' => '<p>If you are using FontAwesome icons: <br>
     Copy the <strong><em>end</em></strong> of the class name of the icon you’re wanting to use. (e.g. <em>facebook</em>) <br>
-    A list of valid brand icons <a target="_blank" href="https://fontawesome.com/v5/search?m=free&s=brands">can be seen here</a></p>',
+    A list of valid brand icons <a target="_blank" href="https://fontawesome.com/v5/search?o=r&m=free&f=brands">can be viewed here</a></p>',
       'wrapper' => [
         'class' => 'center',
       ]
