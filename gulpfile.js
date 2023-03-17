@@ -5,6 +5,7 @@
 ========================================================= */
 const
 PROJECT_NAME     = 'blocks',
+// PROJECT_PORT     = 10006,
 PREVIEW_MODE     = true,
 BLOCK_MODE       = true,
 
@@ -166,6 +167,7 @@ function scriptsJS() {
 function browserSyncInit(done) {
   browsersync.init({
     proxy: 'localhost/' + PROJECT_NAME,
+    // proxy: 'localhost:' + PROJECT_PORT,
     notify: false
   });
   done();
