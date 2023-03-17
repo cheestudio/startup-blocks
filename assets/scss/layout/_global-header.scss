@@ -50,7 +50,7 @@
           }
         }
         &.current-menu-item,
-        &.current_page_ancestor,
+        &.current-page-ancestor,
         &.current-menu-ancestor {
           > a {
             
@@ -67,7 +67,7 @@
           padding: 20px;
           li {
             &.current-menu-item,
-            &.current_page_ancestor,
+            &.current-page-ancestor,
             &.current-menu-ancestor {
               
             }
