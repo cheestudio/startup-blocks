@@ -1,91 +1,93 @@
 {
-    "version": 1,
-    "settings": {
-        "color": {
-            "custom": true,
-            "customDuotone": false,
-            "customGradient": false,
-            "defaultPalette": false,
-            "defaultGradients": false,
-            "duotone": [],
-            "link": false,
-            "palette": [ {
-                "name": "Blue",
-                "slug": "blue",
-                "color": "#4eaada"
-            }, 
-            { "name": "Dark Red",
-                "slug": "dark-red",
-                "color": "#910002"
-            }, 
-            { "name": "Black",
-            	"slug": "black",
-            	"color": "#000000"
-            }, 
-            { "name": "White",
-                "slug": "white",
-                "color": "#ffffff"
-            } 
-        ]
+  "version": 1,
+  "settings": {
+    "color": {
+      "custom": true,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "duotone": [],
+      "link": false,
+      "palette": [
+        { "name": "Black",
+         "slug": "black",
+         "color": "#000000"
+       }, 
+       { "name": "White",
+        "slug": "white",
+        "color": "#ffffff"
+      }
+    ]
+    },
+    "layout": {
+      "contentSize": "1200px",
+      "wideSize": "1400px"
+    },
+    "spacing": {
+      "customMargin": true,
+      "customPadding": true,
+      "units": [ "px", "em", "vh", "vw" ],
+      "spacingSizes": [
+        {"size": "10px", "slug": "10", "name": "10px"},
+        {"size": "20px", "slug": "20", "name": "20px"},
+        {"size": "25px", "slug": "25", "name": "25px"},
+        {"size": "30px", "slug": "30", "name": "30px"},
+        {"size": "40px", "slug": "40", "name": "40px"},
+        {"size": "50px", "slug": "50", "name": "50px"},
+        {"size": "75px", "slug": "75", "name": "75px"},
+        {"size": "100px", "slug": "100", "name": "100px"}
+      ]
+    },
+    "typography": {
+      "customFontSize": true,
+      "customLineHeight": true,
+      "dropCap": false,
+      "fontFamilies": [
+        {
+          "fontFamily": "Georgia, sans-serif",
+          "slug": "header",
+          "name": "Header Font"
         },
-        "layout": {
-            "contentSize": "1200px",
-            "wideSize": "1400px"
+        {
+          "fontFamily": "Arial, sans-serif",
+          "slug": "body",
+          "name": "Body Font"
+        }                
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "14px",
+          "name": "Small"
         },
-        "spacing": {
-            "customMargin": true,
-            "customPadding": true,
-            "units": [ "px", "em", "vh", "vw" ]
+        {
+          "slug": "medium",
+          "size": "16px",
+          "name": "Medium"
         },
-        "typography": {
-            "customFontSize": true,
-            "customLineHeight": true,
-            "dropCap": false,
-            "fontFamilies": [
-                {
-                    "fontFamily": "Georgia, sans-serif",
-                    "slug": "header",
-                    "name": "Header Font"
-                },
-                {
-                    "fontFamily": "Arial, sans-serif",
-                    "slug": "body",
-                    "name": "Body Font"
-                }                
-            ],
-            "fontSizes": [
-                {
-                    "slug": "fine-print",
-                    "size": "14px",
-                    "name": "Fine Print"
-                },
-                {
-                    "slug": "normal",
-                    "size": "18px",
-                    "name": "Normal"
-                },
-                {
-                    "slug": "medium",
-                    "size": "20px",
-                    "name": "Medium"
-                },                
-                {
-                    "slug": "large",
-                    "size": "26px",
-                    "name": "Large"
-                }
-            ]
-        },
-        "blocks": {
-            "core/paragraph": {
-                "color": {},
-                "custom": {},
-                "layout": {},
-                "spacing": {},
-                "typography": {}
-            },
-            "core/heading": {},
-            "etc": {}
+        {
+          "slug": "large",
+          "size": "20px",
+          "name": "Large"
+        },                
+        {
+          "slug": "x-large",
+          "size": "26px",
+          "name": "X-Large"
         }
+      ]
+    },
+    "blocks": {
+      "core/paragraph": {
+        "color": {},
+        "custom": {},
+        "layout": {},
+        "spacing": {},
+        "typography": {}
+      },
+      "core/heading": {},
+      "etc": {}
     }
+  }
 }
