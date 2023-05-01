@@ -1206,6 +1206,9 @@ figure,
 form {
   margin: 0
 }
+figure img {
+  display: block
+}
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
@@ -1464,10 +1467,6 @@ img {
   clip: rect(0,0,0,0);
   border: 0;
   opacity: 0
-}
-figure img {
-  display: block;
-  width: 100%
 }
 .buttons-wrap {
   display: flex;

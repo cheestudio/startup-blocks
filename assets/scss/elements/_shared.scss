@@ -1,13 +1,4 @@
 
-/* Figure Img
-========================================================= */
-figure {
-  img {
-    display: block;
-    width: 100%;
-  }
-}
-
 /* Buttons Wrap
 ========================================================= */
 .buttons-wrap {
@@ -26,7 +17,6 @@ figure {
 
 /* Buttons
 ========================================================= */
-
 .wp-block-button {
   .wp-block-button__link {
     @include button;
