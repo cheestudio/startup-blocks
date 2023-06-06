@@ -146,6 +146,18 @@ q:before {
 .content-blocks > :not(.alignfull).alignwide {
   max-width: var(--wp--style--global--wide-size)
 }
+:root {
+  --global-kb-spacing-xxs: 10px;
+  --global-kb-spacing-xs: 20px;
+  --global-kb-spacing-sm: 25px;
+  --global-kb-spacing-md: 40px;
+  --global-kb-spacing-lg: 50px;
+  --global-kb-spacing-xl: 75px;
+  --global-kb-spacing-xxl: 100px;
+  --global-kb-spacing-3xl: 150px;
+  --global-kb-spacing-4xl: 200px;
+  --global-kb-spacing-5xl: 250px
+}
 .button,
 .gform_wrapper.gravity-theme form .gform_footer button,
 .wp-block-button .wp-block-button__link,
