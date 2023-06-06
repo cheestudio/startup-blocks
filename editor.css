@@ -48,10 +48,6 @@ body .wp-block-button .wp-block-button__link {
   text-decoration: none;
   -webkit-appearance: none
 }
-body figure img {
-  display: block;
-  width: 100%
-}
 body .buttons-wrap {
   display: flex;
   align-items: center;
