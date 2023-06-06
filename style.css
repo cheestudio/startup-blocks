@@ -1023,24 +1023,26 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .gform_wrapper.gravity-theme form .gform-body .gfield_label .gfield_required {
   color: red
 }
-.gform_wrapper.gravity-theme form .gform-body .ginput_container_address label {
+.gform_wrapper.gravity-theme form .gform-body .gfield--type-address .ginput_container_address label {
   padding-top: 15px
 }
-.gform_wrapper.gravity-theme form .gform-body .gfield_checkbox {
+.gform_wrapper.gravity-theme form .gform-body .gfield--type-checkbox .ginput_container,
+.gform_wrapper.gravity-theme form .gform-body .gfield--type-radio .ginput_container {
   margin-top: 10px
 }
-.gform_wrapper.gravity-theme form .gform-body .gchoice {
+.gform_wrapper.gravity-theme form .gform-body .gfield--type-checkbox .gchoice,
+.gform_wrapper.gravity-theme form .gform-body .gfield--type-radio .gchoice {
   margin-bottom: 10px
 }
-.gform_wrapper.gravity-theme form .gform-body .gchoice input,
-.gform_wrapper.gravity-theme form .gform-body .gfield_checkbox input {
+.gform_wrapper.gravity-theme form .gform-body .gfield--type-checkbox input,
+.gform_wrapper.gravity-theme form .gform-body .gfield--type-radio input {
   margin-right: 7px
 }
-.gform_wrapper.gravity-theme form .gform-body .ginput_container_consent {
+.gform_wrapper.gravity-theme form .gform-body .gfield--type-consent .ginput_container_consent {
   display: flex;
   align-items: center
 }
-.gform_wrapper.gravity-theme form .gform-body .ginput_container_consent input {
+.gform_wrapper.gravity-theme form .gform-body .gfield--type-consent input {
   margin-right: 10px
 }
 .gform_wrapper.gravity-theme form .gform_footer {

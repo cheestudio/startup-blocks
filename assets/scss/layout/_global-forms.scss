@@ -42,6 +42,8 @@ $box-shadow          : none;
   .gform_heading {
     display: none;
   }
+
+  // Global
   form {
     input[type], select, textarea {
       @include trans( all, 300 );
@@ -75,31 +77,51 @@ $box-shadow          : none;
           color: $border-color-error;
         }
       }
-      .ginput_container_address {
-        label {
-          padding-top: 15px;
+
+      // Fields
+      .gfield--type-text {}
+      .gfield--type-phone {}
+      .gfield--type-email {}
+      .gfield--type-select {}
+      .gfield--type-textarea {}
+      .gfield--type-address {
+        .ginput_container_address {
+          label {
+            padding-top: 15px;
+          }
         }
       }
-      .gfield_checkbox {
-        margin-top: 10px;
-      }
-      .gchoice {
-        margin-bottom: 10px;
-      }
-      .gfield_checkbox, .gchoice {
+      .gfield--type-checkbox, .gfield--type-radio {
+        .ginput_container {
+          margin-top: 10px;
+        }
+        .gchoice {
+          margin-bottom: 10px;
+        }
         input {
           margin-right: 7px;
         }
       }
-      .ginput_container_consent {
-        display: flex;
-        align-items: center;
+      .gfield--type-checkbox {}
+      .gfield--type-radio {}
+      .gfield--type-website {}
+      .gfield--type-date {}
+      .gfield--type-fileupload {}
+      .gfield--type-list {}
+      .gfield--type-multiselect {}
+      .gfield--type-number {}
+      .gfield--type-consent {
+        .ginput_container_consent {
+          display: flex;
+          align-items: center;
+        }
         input {
           margin-right: 10px;
         }
       }
     }
     
+    // Footer
     .gform_footer {
       margin: 0;
       padding-top: 25px;
@@ -112,8 +134,8 @@ $box-shadow          : none;
   }
 }
 
+// Confirmation Message
 .gform_confirmation_wrapper  {
-  
   .gform_confirmation_message {
     @extend %body-copy;
   }
