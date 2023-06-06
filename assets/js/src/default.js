@@ -20,6 +20,19 @@ function setCookie(name, value, days) {
   document.cookie = name + "=" + value + ";path=/;expires=" + expiretime;
 }
 
+// Debounce
+function debounce(func, delay) {
+  let timerId;
+  return function() {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timerId);
+    timerId = setTimeout(function() {
+      func.apply(context, args);
+    }, delay);
+  };
+}
+
 (function($) { // Doc Ready
 
 /* MOBILE NAV
