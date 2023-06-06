@@ -45,6 +45,7 @@ form {
     border-style: solid;
     padding: 10px 15px;
     font-family: inherit;
+    font-size: 16px !important;
     line-height: normal;
     color: black;
     @include placeholder {
