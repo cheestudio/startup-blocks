@@ -355,12 +355,8 @@ function excerpt_more( $more ) {
   return ' ...';
 }
 
-
-/* Custom Admin Edits
+/* Reorder Menu Items
 ========================================================= */
-
-/* Reorder Menu Items */
-
 function reorder_admin_menu( $__return_true ) {
   return [
        'index.php',
@@ -382,17 +378,50 @@ function reorder_admin_menu( $__return_true ) {
 add_filter( 'custom_menu_order', 'reorder_admin_menu' );
 add_filter( 'menu_order', 'reorder_admin_menu' );
 
-/* Remove Comments */
+/* Remove All Comments
+========================================================= */
+add_action('admin_init', function () {
+  // Redirect any user trying to access comments page
+  global $pagenow;
 
-add_action( 'admin_init', 'remove_admin_menus' );
-function remove_admin_menus() {
-    remove_menu_page( 'edit-comments.php' );
-    remove_post_type_support( 'post', 'comments' );
-    remove_post_type_support( 'page', 'comments' );
-}
+  if ($pagenow === 'edit-comments.php') {
+    wp_safe_redirect(admin_url());
+    exit;
+  }
 
-/* Custom CSS */
+  // Remove comments metabox from dashboard
+  remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
 
+  // Disable support for comments and trackbacks in post types
+  foreach (get_post_types() as $post_type) {
+    if (post_type_supports($post_type, 'comments')) {
+      remove_post_type_support($post_type, 'comments');
+      remove_post_type_support($post_type, 'trackbacks');
+    }
+  }
+});
+
+// Close comments on the front-end
+add_filter('comments_open', '__return_false', 20, 2);
+add_filter('pings_open', '__return_false', 20, 2);
+
+// Hide existing comments
+add_filter('comments_array', '__return_empty_array', 10, 2);
+
+// Remove comments page in menu
+add_action('admin_menu', function () {
+  remove_menu_page('edit-comments.php');
+});
+
+// Remove comments links from admin bar
+add_action('init', function () {
+  if (is_admin_bar_showing()) {
+    remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
+  }
+});
+
+/* Custom CSS
+========================================================= */
 add_action('admin_head', 'custom_admin_css');
 function custom_admin_css() {
   echo '<style>
@@ -408,10 +437,8 @@ function custom_admin_css() {
   </style>';
 }
 
-
 /* Disable Pingbacks
 ========================================================= */
-
 add_filter('xmlrpc_methods', function($methods) {
   unset($methods['pingback.ping']); 
   return $methods; 
