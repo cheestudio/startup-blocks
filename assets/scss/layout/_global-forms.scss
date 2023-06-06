@@ -34,28 +34,6 @@ $box-shadow          : none;
   }
 }
 
-/* Global Form Elements
-========================================================= */
-
-form {
-  input[type], select, textarea {
-    @include trans( all, 300 );
-    @include formInputStyles;
-    display: inline-block;
-    border-style: solid;
-    padding: 10px 15px;
-    font-family: inherit;
-    font-size: 16px !important;
-    line-height: normal;
-    color: black;
-    @include placeholder {
-      color: black;
-    }
-    &:focus {
-      border-color: $border-color-active;
-    }
-  }
-}
 
 /* Gravity Form
 ========================================================= */
@@ -65,6 +43,23 @@ form {
     display: none;
   }
   form {
+    input[type], select, textarea {
+      @include trans( all, 300 );
+      @include formInputStyles;
+      display: inline-block;
+      border-style: solid;
+      padding: 10px 15px;
+      font-family: inherit;
+      font-size: 16px !important;
+      line-height: normal;
+      color: black;
+      @include placeholder {
+        color: black;
+      }
+      &:focus {
+        border-color: $border-color-active;
+      }
+    }
     .gform-body {
       padding-top: 25px;
       padding-bottom: 25px;
@@ -138,6 +133,7 @@ form {
   }
   .gfield.gfield_error {
     input, select, textarea, legend, label {
+      @include formInputStyles;
       color: $border-color-error;
       border-color: $border-color-error;
       @include placeholder {

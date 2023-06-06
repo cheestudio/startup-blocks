@@ -954,9 +954,15 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .footer--logo img {
   display: block
 }
-form input[type],
-form select,
-form textarea {
+.gform_wrapper.gravity-theme {
+  margin: 0
+}
+.gform_wrapper.gravity-theme .gform_heading {
+  display: none
+}
+.gform_wrapper.gravity-theme form input[type],
+.gform_wrapper.gravity-theme form select,
+.gform_wrapper.gravity-theme form textarea {
   transition: .3s cubic-bezier(.23,1,.32,1);
   border-color: #000;
   border-radius: 0;
@@ -970,42 +976,36 @@ form textarea {
   color: #000;
   border-width: 2px
 }
-form input[type]:active,
-form input[type]:focus,
-form input[type]:hover,
-form select:active,
-form select:focus,
-form select:hover,
-form textarea:active,
-form textarea:focus,
-form textarea:hover {
+.gform_wrapper.gravity-theme form input[type]:active,
+.gform_wrapper.gravity-theme form input[type]:focus,
+.gform_wrapper.gravity-theme form input[type]:hover,
+.gform_wrapper.gravity-theme form select:active,
+.gform_wrapper.gravity-theme form select:focus,
+.gform_wrapper.gravity-theme form select:hover,
+.gform_wrapper.gravity-theme form textarea:active,
+.gform_wrapper.gravity-theme form textarea:focus,
+.gform_wrapper.gravity-theme form textarea:hover {
   border-color: green
 }
-form input[type]::-moz-placeholder,
-form select::-moz-placeholder,
-form textarea::-moz-placeholder {
+.gform_wrapper.gravity-theme form input[type]::-moz-placeholder,
+.gform_wrapper.gravity-theme form select::-moz-placeholder,
+.gform_wrapper.gravity-theme form textarea::-moz-placeholder {
   color: #000
 }
-form input[type]:-ms-input-placeholder,
-form select:-ms-input-placeholder,
-form textarea:-ms-input-placeholder {
+.gform_wrapper.gravity-theme form input[type]:-ms-input-placeholder,
+.gform_wrapper.gravity-theme form select:-ms-input-placeholder,
+.gform_wrapper.gravity-theme form textarea:-ms-input-placeholder {
   color: #000
 }
-form input[type]::placeholder,
-form select::placeholder,
-form textarea::placeholder {
+.gform_wrapper.gravity-theme form input[type]::placeholder,
+.gform_wrapper.gravity-theme form select::placeholder,
+.gform_wrapper.gravity-theme form textarea::placeholder {
   color: #000
 }
-form input[type]:focus,
-form select:focus,
-form textarea:focus {
+.gform_wrapper.gravity-theme form input[type]:focus,
+.gform_wrapper.gravity-theme form select:focus,
+.gform_wrapper.gravity-theme form textarea:focus {
   border-color: green
-}
-.gform_wrapper.gravity-theme {
-  margin: 0
-}
-.gform_wrapper.gravity-theme .gform_heading {
-  display: none
 }
 .gform_wrapper.gravity-theme form .gform-body {
   padding-top: 25px;
@@ -1073,8 +1073,28 @@ form textarea:focus {
 .gform_wrapper.gform_validation_error .gfield.gfield_error legend,
 .gform_wrapper.gform_validation_error .gfield.gfield_error select,
 .gform_wrapper.gform_validation_error .gfield.gfield_error textarea {
+  border-color: red;
+  border-radius: 0;
+  box-shadow: none;
   color: red;
-  border-color: red
+  border-width: 2px
+}
+.gform_wrapper.gform_validation_error .gfield.gfield_error input:active,
+.gform_wrapper.gform_validation_error .gfield.gfield_error input:focus,
+.gform_wrapper.gform_validation_error .gfield.gfield_error input:hover,
+.gform_wrapper.gform_validation_error .gfield.gfield_error label:active,
+.gform_wrapper.gform_validation_error .gfield.gfield_error label:focus,
+.gform_wrapper.gform_validation_error .gfield.gfield_error label:hover,
+.gform_wrapper.gform_validation_error .gfield.gfield_error legend:active,
+.gform_wrapper.gform_validation_error .gfield.gfield_error legend:focus,
+.gform_wrapper.gform_validation_error .gfield.gfield_error legend:hover,
+.gform_wrapper.gform_validation_error .gfield.gfield_error select:active,
+.gform_wrapper.gform_validation_error .gfield.gfield_error select:focus,
+.gform_wrapper.gform_validation_error .gfield.gfield_error select:hover,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:active,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:focus,
+.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:hover {
+  border-color: green
 }
 .gform_wrapper.gform_validation_error .gfield.gfield_error input::-moz-placeholder,
 .gform_wrapper.gform_validation_error .gfield.gfield_error label::-moz-placeholder,
