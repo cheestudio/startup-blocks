@@ -1,4 +1,3 @@
-
 <?php // VARs & Optional ACF Footer Code
 $logo = get_template_directory_uri() . '/assets/img/svg/logo.svg';
 if ( function_exists('get_field') ) :
@@ -11,11 +10,13 @@ endif; ?>
   <div class="container">
 
     <?php if ($logo): ?>
-      <div class="footer--logo">
-        <a href="#top-of-page" class="footer-brand" title="Go to Top of Page">
-          <img src="<?= $logo; ?>" alt="Site Logo">
-        </a>
-      </div>
+    <div class="footer--logo">
+      <a href="<?= home_url(); ?>" class="footer-brand" title="Link to Go Home">
+        <?php get_template_part('partials/elements/logo', null, [ 
+            'location' => 'footer',
+          ]); ?>
+      </a>
+    </div>
     <?php endif;?>
 
     <div class="footer--menu">
@@ -34,4 +35,5 @@ endif; ?>
 <?php if ( isset($footer_code) ) echo $footer_code; ?>
 
 </body>
+
 </html>

@@ -3,8 +3,10 @@
 
   <div class="mobile-nav-header">
 
-    <a href="<?= home_url(); ?>" class="mobile-brand" title="Tap to Go Home" aria-label="Go Home">
-      <img src="<?= $logo; ?>" alt="Site Logo">
+    <a href="<?= home_url(); ?>" class="mobile-brand" title="Tap to Go Home">
+      <?php get_template_part('partials/elements/logo', null, [ 
+            'location' => 'mobile',
+          ]); ?>
     </a>
 
     <button class="navbar-toggle" title="Tap to Open Menu" aria-label="Open Menu">

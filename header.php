@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
   <?php wp_head(); ?>
-  <link rel="alternate" type="application/rss+xml" title="<?= get_bloginfo('name'); ?> Feed" href="<?= home_url(); ?>/feed/">
+  <link rel="alternate" type="application/rss+xml" title="<?= get_bloginfo('name'); ?> Feed"
+    href="<?= home_url(); ?>/feed/">
 
   <?php // Logos & Optional ACF Header Code
   require_once locate_template('/init/shortcodes.php');
@@ -30,8 +32,10 @@
     <div class="container">
 
       <div class="logo-brand">
-        <a href="<?= home_url(); ?>" class="brand" title="Home">
-          <img src="<?= $logo; ?>" alt="Site Logo">
+        <a href="<?= home_url(); ?>" class="brand" title="Link to Go Home">
+          <?php get_template_part('partials/elements/logo', null, [ 
+            'location' => 'desktop',
+          ]); ?>
         </a>
       </div>
 

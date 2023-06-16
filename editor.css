@@ -23,6 +23,18 @@
 .content-blocks > :not(.alignfull).alignwide {
   max-width: var(--wp--style--global--wide-size)
 }
+:root {
+  --global-kb-spacing-xxs: 10px;
+  --global-kb-spacing-xs: 20px;
+  --global-kb-spacing-sm: 25px;
+  --global-kb-spacing-md: 40px;
+  --global-kb-spacing-lg: 50px;
+  --global-kb-spacing-xl: 75px;
+  --global-kb-spacing-xxl: 100px;
+  --global-kb-spacing-3xl: 150px;
+  --global-kb-spacing-4xl: 200px;
+  --global-kb-spacing-5xl: 250px
+}
 body .editor-styles-wrapper .acf-block-preview .button,
 body .editor-styles-wrapper .edit-post-visual-editor .button .button,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform_footer button,
@@ -172,9 +184,15 @@ body .editor-styles-wrapper h5,
 body .editor-styles-wrapper h6 {
   margin: 0 0 15px
 }
-body .editor-styles-wrapper form input[type],
-body .editor-styles-wrapper form select,
-body .editor-styles-wrapper form textarea {
+body .editor-styles-wrapper .gform_wrapper.gravity-theme {
+  margin: 0
+}
+body .editor-styles-wrapper .gform_wrapper.gravity-theme .gform_heading {
+  display: none
+}
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type],
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form select,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea {
   transition: .3s cubic-bezier(.23,1,.32,1);
   border-color: #000;
   border-radius: 0;
@@ -183,46 +201,41 @@ body .editor-styles-wrapper form textarea {
   border-style: solid;
   padding: 10px 15px;
   font-family: inherit;
+  font-size: 16px!important;
   line-height: normal;
   color: #000;
   border-width: 2px
 }
-body .editor-styles-wrapper form input[type]:active,
-body .editor-styles-wrapper form input[type]:focus,
-body .editor-styles-wrapper form input[type]:hover,
-body .editor-styles-wrapper form select:active,
-body .editor-styles-wrapper form select:focus,
-body .editor-styles-wrapper form select:hover,
-body .editor-styles-wrapper form textarea:active,
-body .editor-styles-wrapper form textarea:focus,
-body .editor-styles-wrapper form textarea:hover {
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]:active,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]:focus,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]:hover,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form select:active,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form select:focus,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form select:hover,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea:active,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea:focus,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea:hover {
   border-color: green
 }
-body .editor-styles-wrapper form input[type]::-moz-placeholder,
-body .editor-styles-wrapper form select::-moz-placeholder,
-body .editor-styles-wrapper form textarea::-moz-placeholder {
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]::-moz-placeholder,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form select::-moz-placeholder,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea::-moz-placeholder {
   color: #000
 }
-body .editor-styles-wrapper form input[type]:-ms-input-placeholder,
-body .editor-styles-wrapper form select:-ms-input-placeholder,
-body .editor-styles-wrapper form textarea:-ms-input-placeholder {
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]:-ms-input-placeholder,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form select:-ms-input-placeholder,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea:-ms-input-placeholder {
   color: #000
 }
-body .editor-styles-wrapper form input[type]::placeholder,
-body .editor-styles-wrapper form select::placeholder,
-body .editor-styles-wrapper form textarea::placeholder {
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]::placeholder,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form select::placeholder,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea::placeholder {
   color: #000
 }
-body .editor-styles-wrapper form input[type]:focus,
-body .editor-styles-wrapper form select:focus,
-body .editor-styles-wrapper form textarea:focus {
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]:focus,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form select:focus,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea:focus {
   border-color: green
-}
-body .editor-styles-wrapper .gform_wrapper.gravity-theme {
-  margin: 0
-}
-body .editor-styles-wrapper .gform_wrapper.gravity-theme .gform_heading {
-  display: none
 }
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body {
   padding-top: 25px;
@@ -240,24 +253,26 @@ body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfiel
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfield_label .gfield_required {
   color: red
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .ginput_container_address label {
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfield--type-address .ginput_container_address label {
   padding-top: 15px
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfield_checkbox {
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfield--type-checkbox .ginput_container,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfield--type-radio .ginput_container {
   margin-top: 10px
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gchoice {
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfield--type-checkbox .gchoice,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfield--type-radio .gchoice {
   margin-bottom: 10px
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gchoice input,
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfield_checkbox input {
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfield--type-checkbox input,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfield--type-radio input {
   margin-right: 7px
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .ginput_container_consent {
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfield--type-consent .ginput_container_consent {
   display: flex;
   align-items: center
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .ginput_container_consent input {
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform-body .gfield--type-consent input {
   margin-right: 10px
 }
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform_footer {
@@ -290,8 +305,28 @@ body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error legend,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error select,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error textarea {
+  border-color: red;
+  border-radius: 0;
+  box-shadow: none;
   color: red;
-  border-color: red
+  border-width: 2px
+}
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error input:active,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error input:focus,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error input:hover,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error label:active,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error label:focus,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error label:hover,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error legend:active,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error legend:focus,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error legend:hover,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error select:active,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error select:focus,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error select:hover,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error textarea:active,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error textarea:focus,
+body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error textarea:hover {
+  border-color: green
 }
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error input::-moz-placeholder,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error label::-moz-placeholder,
