@@ -612,3 +612,13 @@ if (class_exists('WP_Customize_Control')) {
     }
     add_action('customize_register', 'add_site_logos_to_customize');
   }
+
+  /* Menu Class Names
+========================================================= */
+
+function add_depth_to_nav_class($classes, $item, $args, $depth) {
+  $classes[] = 'depth-' . $depth;
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'add_depth_to_nav_class', 10, 4);
+
