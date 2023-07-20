@@ -29,7 +29,7 @@ $box-shadow          : none;
   border-color: $border-color;
   border-radius: $border-radius+px;
   box-shadow : $box-shadow;
-  &:hover, &:focus, &:active {
+  &:hover, &:focus {
     border-color:$border-color-active;
   }
 }

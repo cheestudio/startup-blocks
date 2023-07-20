@@ -29,7 +29,7 @@ $class: '.image-gallery-row';
     figure {
       a {
         display: block;
-        &:hover, &:focus, &:active {
+        &:hover, &:focus {
           cursor: pointer;
         }
       }

@@ -43,7 +43,7 @@
         }
         &.menu-item-has-children {
           position: relative;
-          &:hover, &:focus, &:active {
+          &:hover, &:focus {
             .sub-menu {
               @include display('show');
             }
@@ -72,7 +72,7 @@
               
             }
             a {
-              &:hover, &:focus, &:active {
+              &:hover, &:focus {
                 
               }
             }

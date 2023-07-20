@@ -180,7 +180,7 @@ $browser-context: 16; // Default
   background-color: $bg;
   color: $color;
   border-color: $border;
-  &:hover, &:focus, &:active {
+  &:hover, &:focus {
     color: $bg;
     background-color: $color;
   }

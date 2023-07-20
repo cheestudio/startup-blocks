@@ -23,7 +23,7 @@ $class: '.related-posts-row';
     max-width: 500px;
     a {
       text-decoration: none !important;
-      &:hover, &:focus, &:active {
+      &:hover, &:focus {
         .button {
           // copy button hover effect here (is a pseudo span button)
         }

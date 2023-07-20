@@ -10,7 +10,7 @@ $class: '.video-popup';
   a {
     display: block;
     position: relative;
-    &:hover, &:focus, &:active {
+    &:hover, &:focus {
       svg {
         transform: translateY(-50%) scale(1.1);
       }

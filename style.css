@@ -256,7 +256,6 @@ main a {
   transition: .6s cubic-bezier(.23,1,.32,1);
   color: red
 }
-main a:active,
 main a:focus,
 main a:hover {
   color: purple
@@ -981,13 +980,10 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   color: #000;
   border-width: 2px
 }
-.gform_wrapper.gravity-theme form input[type]:active,
 .gform_wrapper.gravity-theme form input[type]:focus,
 .gform_wrapper.gravity-theme form input[type]:hover,
-.gform_wrapper.gravity-theme form select:active,
 .gform_wrapper.gravity-theme form select:focus,
 .gform_wrapper.gravity-theme form select:hover,
-.gform_wrapper.gravity-theme form textarea:active,
 .gform_wrapper.gravity-theme form textarea:focus,
 .gform_wrapper.gravity-theme form textarea:hover {
   border-color: green
@@ -1061,7 +1057,6 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   border-color: #000;
   margin: 0
 }
-.gform_wrapper.gravity-theme form .gform_footer button:active,
 .gform_wrapper.gravity-theme form .gform_footer button:focus,
 .gform_wrapper.gravity-theme form .gform_footer button:hover {
   color: #fff;
@@ -1086,19 +1081,14 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   color: red;
   border-width: 2px
 }
-.gform_wrapper.gform_validation_error .gfield.gfield_error input:active,
 .gform_wrapper.gform_validation_error .gfield.gfield_error input:focus,
 .gform_wrapper.gform_validation_error .gfield.gfield_error input:hover,
-.gform_wrapper.gform_validation_error .gfield.gfield_error label:active,
 .gform_wrapper.gform_validation_error .gfield.gfield_error label:focus,
 .gform_wrapper.gform_validation_error .gfield.gfield_error label:hover,
-.gform_wrapper.gform_validation_error .gfield.gfield_error legend:active,
 .gform_wrapper.gform_validation_error .gfield.gfield_error legend:focus,
 .gform_wrapper.gform_validation_error .gfield.gfield_error legend:hover,
-.gform_wrapper.gform_validation_error .gfield.gfield_error select:active,
 .gform_wrapper.gform_validation_error .gfield.gfield_error select:focus,
 .gform_wrapper.gform_validation_error .gfield.gfield_error select:hover,
-.gform_wrapper.gform_validation_error .gfield.gfield_error textarea:active,
 .gform_wrapper.gform_validation_error .gfield.gfield_error textarea:focus,
 .gform_wrapper.gform_validation_error .gfield.gfield_error textarea:hover {
   border-color: green
@@ -1317,13 +1307,10 @@ input[type=submit] {
   color: #000;
   border-color: #000
 }
-.button:active,
 .button:focus,
 .button:hover,
-button:active,
 button:focus,
 button:hover,
-input[type=submit]:active,
 input[type=submit]:focus,
 input[type=submit]:hover {
   color: #fff;
@@ -1525,7 +1512,6 @@ img {
   color: #000;
   border-color: #000
 }
-.wp-block-button .wp-block-button__link:active,
 .wp-block-button .wp-block-button__link:focus,
 .wp-block-button .wp-block-button__link:hover {
   color: #fff;
@@ -1633,7 +1619,6 @@ img {
   .desktop-nav-wrap > ul > li.menu-item-has-children {
     position: relative
   }
-  .desktop-nav-wrap > ul > li.menu-item-has-children:active .sub-menu,
   .desktop-nav-wrap > ul > li.menu-item-has-children:focus .sub-menu,
   .desktop-nav-wrap > ul > li.menu-item-has-children:hover .sub-menu {
     opacity: 1;
@@ -1829,18 +1814,15 @@ img {
     padding: 10px 20px;
     background-color: #fff
   }
-  .mobile-nav-wrap .mobile-nav ul li a:active,
   .mobile-nav-wrap .mobile-nav ul li a:focus,
   .mobile-nav-wrap .mobile-nav ul li a:hover {
     background-color: #000;
     color: #fff
   }
-  .mobile-nav-wrap .mobile-nav ul li a:active ~ .expand,
   .mobile-nav-wrap .mobile-nav ul li a:focus ~ .expand,
   .mobile-nav-wrap .mobile-nav ul li a:hover ~ .expand {
     background-color: #000
   }
-  .mobile-nav-wrap .mobile-nav ul li a:active ~ .expand > svg path,
   .mobile-nav-wrap .mobile-nav ul li a:focus ~ .expand > svg path,
   .mobile-nav-wrap .mobile-nav ul li a:hover ~ .expand > svg path {
     stroke: #fff
@@ -1855,7 +1837,6 @@ img {
   .mobile-nav-wrap .mobile-nav ul li .expand.sub-menu-open svg {
     transform: rotate(90deg)
   }
-  .mobile-nav-wrap .mobile-nav ul li .expand:active svg path,
   .mobile-nav-wrap .mobile-nav ul li .expand:focus svg path,
   .mobile-nav-wrap .mobile-nav ul li .expand:hover svg path {
     stroke: #fff
@@ -1880,7 +1861,6 @@ img {
     background-color: transparent!important;
     z-index: 2000
   }
-  .mobile-nav-wrap .mobile-nav ul li .close-sub:active,
   .mobile-nav-wrap .mobile-nav ul li .close-sub:focus,
   .mobile-nav-wrap .mobile-nav ul li .close-sub:hover {
     transform: translateX(-5px)

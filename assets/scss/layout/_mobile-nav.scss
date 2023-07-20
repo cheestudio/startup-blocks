@@ -168,7 +168,7 @@ $link-current-color      : red;
             margin: 0;
             padding: 10px 20px;
             background-color: $link-background;
-            &:hover, &:focus, &:active {
+            &:hover, &:focus {
               background-color: $link-hover-background;
               color: $link-hover-color;
               ~ .expand {
@@ -191,7 +191,7 @@ $link-current-color      : red;
                 transform: rotate(90deg);
               }
             }
-            &:hover, &:focus, &:active {
+            &:hover, &:focus {
               svg path {
                 stroke: $link-hover-color;
               }
@@ -217,7 +217,7 @@ $link-current-color      : red;
             background: url(assets/img/svg/nav-arrow-left.svg) center no-repeat;
             background-color: transparent !important;
             z-index: 2000;
-            &:hover, &:focus, &:active {
+            &:hover, &:focus {
               transform: translateX(-5px);
             }
           }
