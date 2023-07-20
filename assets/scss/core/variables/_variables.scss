@@ -16,6 +16,7 @@
   }
 }
 
+
 /* EM to PX
 ========================================================= */
 $browser-context: 16; // Default
@@ -80,6 +81,22 @@ $browser-context: 16; // Default
   @else if ($type=='brands') {
     font-family: "Font Awesome 5 Brands";
   }
+}
+
+
+/* Clamp Dynamic Resize
+========================================================= */
+@function resize($maxSize, $minSize, $maxViewWidth, $minViewWidth) {
+  $slope: calc(($maxSize - $minSize) / ($maxViewWidth - $minViewWidth));
+  $yAxis: calc($minSize + ($minViewWidth * $slope * -1));
+
+  $minSizeRem: math.div($minSize, 16) + rem;
+  $maxSizeRem: math.div($maxSize, 16) + rem;
+  $slopeViewWidth: calc(#{$slope * 100}vw);
+  $yAxisRem: math.div($yAxis, 16) + rem;
+
+  $preferredValue: clamp($minSizeRem, calc($yAxisRem + $slopeViewWidth), $maxSizeRem);
+  @return $preferredValue;
 }
 
 
