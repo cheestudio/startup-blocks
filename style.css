@@ -239,18 +239,12 @@ li,
 p {
   margin-bottom: 20px
 }
-blockquote {
-  border-top: 2px solid var(--wp--preset--color--black);
-  border-bottom: 2px solid var(--wp--preset--color--black);
-  position: relative
+blockquote p {
+  font-size: 1.5rem
 }
-blockquote:before {
-  content: "“";
-  display: block;
-  margin-bottom: 25px
-}
-blockquote p:last-of-type {
-  margin-bottom: 0
+blockquote cite {
+  font-size: 1rem;
+  font-weight: 700
 }
 body:not(.wp-admin) {
   font-family: var(--wp--preset--font-family--body)
@@ -1585,6 +1579,9 @@ img {
   .flex.reverse {
     flex-direction: row-reverse
   }
+  .hide-mobile-up {
+    display: none
+  }
 }
 @media all and (min-width:1024px) {
   .fancybox__container {
@@ -1655,7 +1652,7 @@ img {
   .container {
     padding: 0 80px
   }
-  .hide-desktop {
+  .hide-tablet-up {
     display: none
   }
   .archive-index,

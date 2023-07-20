@@ -7,25 +7,24 @@ body {
 p, li {
   @extend %body-copy;
   margin-bottom: 20px;
+  &.has-small-font-size {}
+  &.has-medium-font-size {}
+  &.has-large-font-size {}
+  &.has-x-large-font-size {}
 }
 
 blockquote {
-  border-top: 2px solid $black;
-  border-bottom: 2px solid $black;
-  position: relative;
-  &:before {
-    content:'“';
-    display: block;
-    margin-bottom: 25px;
-  }
   p {
-    @include no-margin-last;
+    font-size: rem(24);
+  }
+  cite {
+    font-size: rem(16);
+    font-weight: 700;
   }
 }
 
 /* Front End Only
 ========================================================= */
-
 body {
   &:not(.wp-admin) {
     @include font;
@@ -37,7 +36,7 @@ main {
     @include trans;
     color: red;
     &:hover, &:focus, &:active {
-      color:purple;
+      color: purple;
     }
   }
 }

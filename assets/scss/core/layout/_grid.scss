@@ -6,7 +6,7 @@ $padding-lg: 80px;
 $padding-md: 40px;
 $padding-sm: 20px;
 
-/* Containers 
+/* Container
 ========================================================= */
 @mixin content-container($width: $width-content) {
   max-width: $width;
@@ -51,13 +51,20 @@ $padding-sm: 20px;
   }
 }
 
-.hide-desktop {
+/* Global Hide Classes
+========================================================= */
+.hide-tablet-up {
   @include for-size(tablet, up, offset) {
     display: none;
   }
 }
 .hide-tablet {
   @include for-size(tablet) {
+    display: none;
+  }
+}
+.hide-mobile-up {
+  @include for-size(tablet-sm, up, offset) {
     display: none;
   }
 }
@@ -83,7 +90,7 @@ $padding-sm: 20px;
 /* Default Kadence Spacing
 ========================================================= */
 
-// force first Column full width
+// Force first column full width
 .wp-block-kadence-column {
   &.full-width {
     grid-column: 1 / -1;
