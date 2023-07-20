@@ -1,0 +1,1 @@
+.video-popup a{display:block;position:relative}.video-popup a:focus svg,.video-popup a:hover svg{transform:translateY(-50%) scale(1.1)}.video-popup .video-icon{transition:.6s cubic-bezier(.23,1,.32,1);top:50%;transform:translateY(-50%);position:absolute;left:0;right:0;margin-left:auto;margin-right:auto;z-index:1}

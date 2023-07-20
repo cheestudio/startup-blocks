@@ -243,7 +243,8 @@ $link-current-color      : red;
           }
           &.current-menu-item,
           &.current-page-ancestor,
-          &.current-menu-ancestor {
+          &.current-menu-ancestor,
+          &.current_page_item {
             > a {
               background-color: $link-current-background;
               color: $link-current-color;

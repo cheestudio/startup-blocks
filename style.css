@@ -1889,7 +1889,8 @@ img {
   }
   .mobile-nav-wrap .mobile-nav ul li.current-menu-ancestor > a,
   .mobile-nav-wrap .mobile-nav ul li.current-menu-item > a,
-  .mobile-nav-wrap .mobile-nav ul li.current-page-ancestor > a {
+  .mobile-nav-wrap .mobile-nav ul li.current-page-ancestor > a,
+  .mobile-nav-wrap .mobile-nav ul li.current_page_item > a {
     background-color: transparent;
     color: red
   }
