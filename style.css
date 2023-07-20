@@ -123,12 +123,11 @@ q:before {
 }
 .container {
   max-width: var(--wp--style--global--content-size);
-  margin: 0 auto;
-  padding: 0 15px
+  margin: 0 auto
 }
 .grid {
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 20px;
   grid-template-columns: 1fr
 }
 .flex {
@@ -146,17 +145,26 @@ q:before {
 .content-blocks > :not(.alignfull).alignwide {
   max-width: var(--wp--style--global--wide-size)
 }
+.wp-block-kadence-column.full-width {
+  grid-column: 1/-1
+}
 :root {
   --global-kb-spacing-xxs: 10px;
   --global-kb-spacing-xs: 20px;
   --global-kb-spacing-sm: 25px;
-  --global-kb-spacing-md: 40px;
-  --global-kb-spacing-lg: 50px;
-  --global-kb-spacing-xl: 75px;
-  --global-kb-spacing-xxl: 100px;
-  --global-kb-spacing-3xl: 150px;
-  --global-kb-spacing-4xl: 200px;
-  --global-kb-spacing-5xl: 250px
+  --global-kb-spacing-md: 30px;
+  --global-kb-spacing-lg: 40px;
+  --global-kb-spacing-xl: 50px;
+  --global-kb-spacing-xxl: 75px;
+  --global-kb-spacing-3xl: 100px;
+  --global-kb-spacing-4xl: 125px;
+  --global-kb-spacing-5xl: 150px;
+  --global-row-gutter-sm: 20px;
+  --global-kb-gap-sm: 20px;
+  --global-row-gutter-md: 40px;
+  --global-kb-gap-md: 40px;
+  --global-row-gutter-lg: 60px;
+  --global-kb-gap-lg: 60px
 }
 .button,
 .gform_wrapper.gravity-theme form .gform_footer button,
@@ -1573,7 +1581,7 @@ img {
   margin-right: auto;
   display: block
 }
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:769px) {
   .flex.reverse {
     flex-direction: row-reverse
   }
@@ -1642,6 +1650,14 @@ img {
     margin: 0;
     padding: 20px
   }
+}
+@media only screen and (min-width:1025px) {
+  .container {
+    padding: 0 80px
+  }
+  .hide-desktop {
+    display: none
+  }
   .archive-index,
   .post-single,
   .posts-index,
@@ -1678,6 +1694,12 @@ img {
   }
 }
 @media only screen and (max-width:1024px) {
+  .container {
+    padding: 0 40px
+  }
+  .hide-tablet {
+    display: none
+  }
   .h1,
   .preset1,
   h1 {
@@ -1973,11 +1995,24 @@ img {
   }
 }
 @media only screen and (max-width:768px) {
+  .container {
+    padding: 0 20px
+  }
   .flex {
     flex-direction: column
   }
+  .hide-mobile {
+    display: none
+  }
   .social-icons ul {
     justify-content: center
+  }
+  .archive-index,
+  .post-single,
+  .posts-index,
+  .search-index {
+    padding-top: 60px;
+    padding-bottom: 60px
   }
 }
 @media (max-width:640px) {

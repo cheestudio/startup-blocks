@@ -48,11 +48,15 @@ $browser-context: 16; // Default
   $top-medium:60, $bottom-medium:60,
   $top-small:$top-medium, $bottom-small:$bottom-medium) {
 
-  @include for-size(tablet, up) {
+  @include for-size(tablet, up, offset) {
     padding-top: $top-large + px;
     padding-bottom: $bottom-large + px;
   }
   @include for-size(tablet) {
+    padding-top: $top-small + px;
+    padding-bottom: $bottom-small + px;
+  }
+  @include for-size(tablet-sm) {
     padding-top: $top-small + px;
     padding-bottom: $bottom-small + px;
   }
@@ -120,8 +124,16 @@ $browser-context: 16; // Default
 }
 
 @mixin padding-remove {
-  margin-left: -#{$padding}px;
-  margin-right: -#{$padding}px;
+  margin-left: -#{$padding-lg};
+  margin-right: -#{$padding-lg};
+  @include for-size(tablet) {
+    margin-left: -#{$padding-md};
+    margin-right: -#{$padding-md};
+  }
+  @include for-size(tablet-sm) {
+    margin-left: -#{$padding-sm};
+    margin-right: -#{$padding-sm};
+  }
 }
 
 @mixin center($dir:'vert') {
