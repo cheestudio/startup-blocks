@@ -16,7 +16,7 @@
         <div class="posts-grid">
           <div class="grid">
             <?php while ( have_posts() ) : the_post(); ?>
-              <?php include( locate_template('partials/posts/post-entry.php') ); ?>
+              <?php get_template_part('partials/posts/post-entry'); ?>
             <?php endwhile; ?>
           </div>
         </div>
@@ -30,7 +30,7 @@
 
     <?php if ( $wp_query->max_num_pages > 1 ) : ?>
       <div class="posts-index--pagination">
-        <?php include( locate_template('partials/posts/post-pagination.php') ); ?>
+        <?php get_template_part('partials/posts/post-pagination'); ?>
       </div>
     <?php endif; ?>
 

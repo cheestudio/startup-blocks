@@ -17,7 +17,7 @@
         <div class="posts-grid">
           <div class="flex">
             <?php while ( have_posts() ) : the_post(); ?>
-              <?php include( locate_template('partials/posts/post-entry.php') ); ?>
+              <?php get_template_part('partials/posts/post-entry'); ?>
             <?php endwhile; ?>
 
           <?php else : ?>
@@ -32,7 +32,7 @@
 
     <?php if ( $wp_query->max_num_pages > 1 ) : ?>
       <div class="search-index--pagination">
-        <?php include( locate_template('partials/posts/post-pagination.php') ); ?>
+        <?php get_template_part('partials/posts/post-pagination'); ?>
       </div>
     <?php endif; ?>
 

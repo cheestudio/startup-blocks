@@ -20,11 +20,11 @@ endif; ?>
     <?php endif;?>
 
     <div class="footer--menu">
-      <?php include locate_template('partials/navs/nav-footer.php');?>
+      <?php get_template_part('partials/navs/nav-footer'); ?>
     </div>
 
     <div class="footer--social">
-      <?php include locate_template('partials/elements/social-icons.php');?>
+      <?php get_template_part('partials/elements/social-icons'); ?>
     </div>
 
   </div>

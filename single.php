@@ -10,7 +10,7 @@
 
       <div class="post-single--content">
         <?php while ( have_posts() ) : the_post();?>
-          <?php include( locate_template('partials/posts/post-single.php') ); ?>
+          <?php get_template_part('partials/posts/post-single'); ?>
         <?php endwhile; ?>
       </div>
 

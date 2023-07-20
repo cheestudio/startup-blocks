@@ -19,7 +19,7 @@
   <?php endif; ?>
 
   <div class="post-entry__meta">
-    <?php include( locate_template('partials/posts/post-meta.php') ); ?>
+    <?php get_template_part('partials/posts/post-meta'); ?>
   </div>
 
   <div class="post-entry__excerpt">

@@ -40,8 +40,8 @@
       </div>
 
       <nav>
-        <?php get_template_part('partials/navs/nav-desktop');?>
-        <?php get_template_part('partials/navs/nav-mobile');?>
+        <?php get_template_part('partials/navs/nav-desktop'); ?>
+        <?php get_template_part('partials/navs/nav-mobile'); ?>
       </nav>
 
     </div>
