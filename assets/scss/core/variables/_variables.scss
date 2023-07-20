@@ -90,7 +90,7 @@ $browser-context: 16; // Default
 
 /* Clamp Dynamic Resize
 ========================================================= */
-@function resize($maxSize, $minSize, $maxViewWidth, $minViewWidth) {
+@function resize($minSize, $maxSize, $minViewWidth, $maxViewWidth) {
   $slope: calc(($maxSize - $minSize) / ($maxViewWidth - $minViewWidth));
   $yAxis: calc($minSize + ($minViewWidth * $slope * -1));
 

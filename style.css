@@ -190,47 +190,50 @@ input[type=submit] {
 .h1,
 .preset1,
 h1 {
-  font-size: 4.375rem;
-  line-height: 110%;
-  font-weight: 600
+  font-family: var(--wp--preset--font-family--header);
+  font-size: 3.75rem;
+  line-height: 1.2
 }
 .h2,
 .preset2,
 h2 {
+  font-family: var(--wp--preset--font-family--header);
   font-size: 3.125rem;
-  line-height: 125%;
-  font-weight: 500
+  line-height: 1.2
 }
 .h3,
 .preset3,
 h3 {
+  font-family: var(--wp--preset--font-family--header);
   font-size: 2.5rem;
-  line-height: 130%;
-  font-weight: 600
+  line-height: 1.2
 }
 .h4,
 .preset4,
 h4 {
+  font-family: var(--wp--preset--font-family--header);
   font-size: 1.875rem;
-  line-height: 130%
+  line-height: 1.2
 }
 .h5,
 .preset5,
 h5 {
+  font-family: var(--wp--preset--font-family--header);
   font-size: 1.5rem;
-  line-height: 140%
+  line-height: 1.2
 }
 .h6,
 .preset6,
 h6 {
+  font-family: var(--wp--preset--font-family--header);
   font-size: 1.25rem;
-  line-height: 150%
+  line-height: 1.2
 }
 .gform_confirmation_wrapper .gform_confirmation_message,
 li,
 p {
   font-size: 1.125rem;
-  line-height: 165%
+  line-height: 1.4
 }
 body {
   color: var(--wp--preset--color--black)
@@ -264,7 +267,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 15px
+  margin: 0 0 20px
 }
 .carousel {
   position: relative;
@@ -1663,65 +1666,11 @@ img {
     padding-bottom: 120px
   }
 }
-@media only screen and (max-width:1440px) {
-  .h1,
-  .preset1,
-  h1 {
-    font-size: 3.5rem
-  }
-  .h2,
-  .preset2,
-  h2 {
-    font-size: 2.5rem
-  }
-  .h3,
-  .preset3,
-  h3 {
-    font-size: 2rem
-  }
-  .h4,
-  .preset4,
-  h4 {
-    font-size: 1.6875rem
-  }
-  .h5,
-  .preset5,
-  h5 {
-    font-size: 1.25rem
-  }
-}
 @media only screen and (max-width:1024px) {
   .container {
     padding: 0 40px
   }
-  .hide-tablet {
-    display: none
-  }
-  .h1,
-  .preset1,
-  h1 {
-    font-size: 2.5rem
-  }
-  .h2,
-  .preset2,
-  h2 {
-    font-size: 1.875rem
-  }
-  .h3,
-  .preset3,
-  h3 {
-    font-size: 1.75rem
-  }
-  .h4,
-  .preset4,
-  h4 {
-    font-size: 1.5rem
-  }
-  .h6,
-  .preset6,
-  h6 {
-    font-size: 1rem
-  }
+  .hide-tablet,
   h1 br,
   h2 br,
   h3 br,
@@ -2021,8 +1970,7 @@ img {
   .gform_confirmation_wrapper .gform_confirmation_message,
   li,
   p {
-    font-size: 1rem;
-    line-height: 170%
+    font-size: 1rem
   }
 }
 @-webkit-keyframes fancybox-rotate {
