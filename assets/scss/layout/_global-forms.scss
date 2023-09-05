@@ -3,37 +3,47 @@
 
 // Placeholder
 @mixin placeholder {
-  &::-webkit-input-placeholder { @content; }
-  &:-moz-placeholder           { @content; }
-  &::-moz-placeholder          { @content; }
-  &:-ms-input-placeholder      { @content; }
-  &::placeholder               { @content; }
-}
-
-// Settings
-$border-width-top    : 2;
-$border-width-bottom : 2;
-$border-width-right  : 2;
-$border-width-left   : 2;
-$border-color        : black;
-$border-color-active : green;
-$border-color-error  : red;
-$border-radius       : 0;
-$box-shadow          : none;
-
-@mixin formInputStyles {
-  border-top-width: $border-width-top+px;
-  border-bottom-width: $border-width-bottom+px;
-  border-right-width: $border-width-right+px;
-  border-left-width: $border-width-left+px;
-  border-color: $border-color;
-  border-radius: $border-radius+px;
-  box-shadow : $box-shadow;
-  &:hover, &:focus {
-    border-color:$border-color-active;
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::placeholder {
+    @content;
   }
 }
 
+// Settings
+$border-width-top: 2;
+$border-width-bottom: 2;
+$border-width-right: 2;
+$border-width-left: 2;
+$border-color: black;
+$border-color-active: green;
+$border-color-error: red;
+$border-radius: 0;
+$box-shadow: none;
+
+@mixin formInputStyles {
+  border-top-width: $border-width-top + px;
+  border-bottom-width: $border-width-bottom + px;
+  border-right-width: $border-width-right + px;
+  border-left-width: $border-width-left + px;
+  border-color: $border-color;
+  border-radius: $border-radius + px;
+  box-shadow: $box-shadow;
+  &:hover,
+  &:focus {
+    border-color: $border-color-active;
+  }
+}
 
 /* Gravity Form
 ========================================================= */
@@ -45,8 +55,10 @@ $box-shadow          : none;
 
   // Global
   form {
-    input[type], select, textarea {
-      @include trans( all, 300 );
+    input[type],
+    select,
+    textarea {
+      @include trans($dur: 300);
       @include formInputStyles;
       display: inline-block;
       border-style: solid;
@@ -79,11 +91,16 @@ $box-shadow          : none;
       }
 
       // Fields
-      .gfield--type-text {}
-      .gfield--type-phone {}
-      .gfield--type-email {}
-      .gfield--type-select {}
-      .gfield--type-textarea {}
+      .gfield--type-text {
+      }
+      .gfield--type-phone {
+      }
+      .gfield--type-email {
+      }
+      .gfield--type-select {
+      }
+      .gfield--type-textarea {
+      }
       .gfield--type-address {
         .ginput_container_address {
           label {
@@ -91,7 +108,8 @@ $box-shadow          : none;
           }
         }
       }
-      .gfield--type-checkbox, .gfield--type-radio {
+      .gfield--type-checkbox,
+      .gfield--type-radio {
         .ginput_container {
           margin-top: 10px;
         }
@@ -102,14 +120,22 @@ $box-shadow          : none;
           margin-right: 7px;
         }
       }
-      .gfield--type-checkbox {}
-      .gfield--type-radio {}
-      .gfield--type-website {}
-      .gfield--type-date {}
-      .gfield--type-fileupload {}
-      .gfield--type-list {}
-      .gfield--type-multiselect {}
-      .gfield--type-number {}
+      .gfield--type-checkbox {
+      }
+      .gfield--type-radio {
+      }
+      .gfield--type-website {
+      }
+      .gfield--type-date {
+      }
+      .gfield--type-fileupload {
+      }
+      .gfield--type-list {
+      }
+      .gfield--type-multiselect {
+      }
+      .gfield--type-number {
+      }
       .gfield--type-consent {
         .ginput_container_consent {
           display: flex;
@@ -120,7 +146,7 @@ $box-shadow          : none;
         }
       }
     }
-    
+
     // Footer
     .gform_footer {
       margin: 0;
@@ -135,12 +161,11 @@ $box-shadow          : none;
 }
 
 // Confirmation Message
-.gform_confirmation_wrapper  {
+.gform_confirmation_wrapper {
   .gform_confirmation_message {
     @extend %body-copy;
   }
 }
-
 
 /* Gravity Form Error Styles
 ========================================================= */
@@ -154,17 +179,21 @@ $box-shadow          : none;
     }
   }
   .gfield.gfield_error {
-    input, select, textarea, legend, label {
+    input,
+    select,
+    textarea,
+    legend,
+    label {
       @include formInputStyles;
       color: $border-color-error;
       border-color: $border-color-error;
       @include placeholder {
         color: $border-color-error;
       }
-      
     }
   }
-  .validation_message, .gfield.gfield_error .gfield_description {
+  .validation_message,
+  .gfield.gfield_error .gfield_description {
     display: none;
   }
 }

@@ -1,22 +1,21 @@
 /* Mobile NAV
 ========================================================= */
-$menu-background         : white;
-$menu-background-open    : white;
-$menu-dropdown-color     : white;
+$menu-background: white;
+$menu-background-open: white;
+$menu-dropdown-color: white;
 
-$toggle-resting-color    : black;
-$toggle-active-color     : black;
+$toggle-resting-color: black;
+$toggle-active-color: black;
 
-$link-background         : white;
-$link-color              : black;
-$link-border-color       : lightgray;
+$link-background: white;
+$link-color: black;
+$link-border-color: lightgray;
 
-$link-hover-background   : black;
-$link-hover-color        : white;
+$link-hover-background: black;
+$link-hover-color: white;
 
-$link-current-background : transparent;
-$link-current-color      : red;
-
+$link-current-background: transparent;
+$link-current-color: red;
 
 /* Initiate Mobile Nav
 ========================================================= */
@@ -33,11 +32,11 @@ $link-current-color      : red;
     padding-left: 0;
     padding-right: 0;
   }
-  
+
   main {
     margin-top: 60px;
   }
-  
+
   .search-mobile {
     li {
       display: block;
@@ -79,13 +78,14 @@ $link-current-color      : red;
       justify-content: space-between;
       width: 100%;
       .mobile-brand {
-        @include trans($prop:opacity);
-        img, svg {
+        @include trans("opacity");
+        img,
+        svg {
           display: block;
           max-width: 100px;
         }
       }
-      
+
       .navbar-toggle {
         padding: 0;
         cursor: pointer;
@@ -113,7 +113,7 @@ $link-current-color      : red;
           &:nth-child(2):before,
           &:nth-child(2):after {
             @include trans;
-            content: '';
+            content: "";
             position: absolute;
             display: block;
             background-color: $toggle-active-color;
@@ -128,7 +128,7 @@ $link-current-color      : red;
         }
       }
     }
-    
+
     .mobile-nav {
       background: $menu-dropdown-color;
       clear: both;
@@ -168,7 +168,8 @@ $link-current-color      : red;
             margin: 0;
             padding: 10px 20px;
             background-color: $link-background;
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
               background-color: $link-hover-background;
               color: $link-hover-color;
               ~ .expand {
@@ -179,7 +180,7 @@ $link-current-color      : red;
               }
             }
           }
-          
+
           .expand {
             display: inline-flex;
             align-items: center;
@@ -191,7 +192,8 @@ $link-current-color      : red;
                 transform: rotate(90deg);
               }
             }
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
               svg path {
                 stroke: $link-hover-color;
               }
@@ -206,7 +208,7 @@ $link-current-color      : red;
               }
             }
           }
-          
+
           .close-sub {
             @include trans;
             display: block;
@@ -217,11 +219,12 @@ $link-current-color      : red;
             background: url(assets/img/svg/nav-arrow-left.svg) center no-repeat;
             background-color: transparent !important;
             z-index: 2000;
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
               transform: translateX(-5px);
             }
           }
-          
+
           .sub-menu {
             @include list-reset;
             display: none;
@@ -231,7 +234,7 @@ $link-current-color      : red;
             height: 100%;
             z-index: 4000;
             &.sub-open {
-              @include display(show);
+              @include display("show");
               transform: translateX(0);
             }
             li {
@@ -258,7 +261,7 @@ $link-current-color      : red;
         }
       }
     }
-    
+
     &.open {
       background-color: $menu-background-open;
       .navbar-toggle {

@@ -4,24 +4,21 @@
 ========================================================= */
 @import "color-vars";
 
-
 /* Fonts (fonts defined in theme.json)
 ========================================================= */
-@mixin font( $style:'body' ) {
-  @if ( $style == 'body' ) {
+@mixin font($style: "body") {
+  @if ($style == "body") {
     font-family: var(--wp--preset--font-family--body);
-  }
-  @else if ( $style == 'heading' ) {
+  } @else if ($style == "heading") {
     font-family: var(--wp--preset--font-family--header);
   }
 }
-
 
 /* EM to PX
 ========================================================= */
 $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
-  @return math.div($pixels, $context)+em;
+  @return math.div($pixels, $context) + em;
 }
 
 /* REM to PX
@@ -30,10 +27,9 @@ $browser-context: 16; // Default
   @return (math.div($size, 16) + rem);
 }
 
-
 /* BG Image
 ========================================================= */
-@mixin bg($sizing:cover, $position:center, $repeat:no-repeat) {
+@mixin bg($sizing: "cover", $position: "center", $repeat: "no-repeat") {
   background: {
     position: $position;
     repeat: $repeat;
@@ -41,13 +37,16 @@ $browser-context: 16; // Default
   }
 }
 
-
 /* Padding - Global Rows
 ========================================================= */
-@mixin row-padding ($top-large:120, $bottom-large:120,
-  $top-medium:60, $bottom-medium:60,
-  $top-small:$top-medium, $bottom-small:$bottom-medium) {
-
+@mixin row-padding(
+  $top-large: 120,
+  $bottom-large: 120,
+  $top-medium: 60,
+  $bottom-medium: 60,
+  $top-small: $top-medium,
+  $bottom-small: $bottom-medium
+) {
   @include for-size(tablet, up, offset) {
     padding-top: $top-large + px;
     padding-bottom: $bottom-large + px;
@@ -62,31 +61,27 @@ $browser-context: 16; // Default
   }
 }
 
-
 /* Global Transition ( property, duration, easing )
 ========================================================= */
-@mixin trans($prop:all, $dur:600, $ease:cubic-bezier(.23, 1, .32, 1)) {
-  transition: $prop $dur+ms $ease;
+@mixin trans($prop: "all", $dur: 600, $ease: cubic-bezier(0.23, 1, 0.32, 1)) {
+  transition: $prop $dur + ms $ease;
 }
-
 
 /* Font Awesome 5 ( needs content specified )
 ========================================================= */
-@mixin fa($type:free, $weight:900) {
+@mixin fa($type: "free", $weight: 900) {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  @if ($type=='free') {
+  @if ($type == "free") {
     font-family: "Font Awesome 5 Free";
     font-weight: $weight;
-  }
-  @else if ($type=='brands') {
+  } @else if ($type == "brands") {
     font-family: "Font Awesome 5 Brands";
   }
 }
-
 
 /* Clamp Dynamic Resize
 ========================================================= */
@@ -102,7 +97,6 @@ $browser-context: 16; // Default
   $preferredValue: clamp($minSizeRem, calc($yAxisRem + $slopeViewWidth), $maxSizeRem);
   @return $preferredValue;
 }
-
 
 /* Additional Helper Mixins
 ========================================================= */
@@ -136,28 +130,25 @@ $browser-context: 16; // Default
   }
 }
 
-@mixin center($dir:'vert') {
-  @if ($dir == 'vert') {
+@mixin center($dir: "vert") {
+  @if ($dir == "vert") {
     top: 50%;
     transform: translateY(-50%);
-  }
-  @else if ($dir == 'horiz') {
+  } @else if ($dir == "horiz") {
     left: 50%;
     transform: translateX(-50%);
   }
 }
 
-@mixin display($state:show) {
-  @if ($state == 'show') {
+@mixin display($state: "show") {
+  @if ($state == "show") {
     opacity: 1;
     visibility: visible;
-  }
-  @else if ($state == 'hide') {
+  } @else if ($state == "hide") {
     opacity: 0;
     visibility: hidden;
   }
 }
-
 
 /* Button ( color, background, border )
 ========================================================= */
@@ -175,12 +166,13 @@ $browser-context: 16; // Default
   text-decoration: none;
   -webkit-appearance: none;
 }
-@mixin button($color:black, $bg:white, $border:black) {
+@mixin button($color: black, $bg: white, $border: black) {
   @extend %btn;
   background-color: $bg;
   color: $color;
   border-color: $border;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: $bg;
     background-color: $color;
   }

@@ -1,11 +1,10 @@
 .container {
   max-width: var(--wp--style--global--content-size);
-  margin: 0 auto;
-  padding: 0 15px
+  margin: 0 auto
 }
 .grid {
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 20px;
   grid-template-columns: 1fr
 }
 .flex {
@@ -23,17 +22,26 @@
 .content-blocks > :not(.alignfull).alignwide {
   max-width: var(--wp--style--global--wide-size)
 }
+.wp-block-kadence-column.full-width {
+  grid-column: 1/-1
+}
 :root {
   --global-kb-spacing-xxs: 10px;
   --global-kb-spacing-xs: 20px;
   --global-kb-spacing-sm: 25px;
-  --global-kb-spacing-md: 40px;
-  --global-kb-spacing-lg: 50px;
-  --global-kb-spacing-xl: 75px;
-  --global-kb-spacing-xxl: 100px;
-  --global-kb-spacing-3xl: 150px;
-  --global-kb-spacing-4xl: 200px;
-  --global-kb-spacing-5xl: 250px
+  --global-kb-spacing-md: 30px;
+  --global-kb-spacing-lg: 40px;
+  --global-kb-spacing-xl: 50px;
+  --global-kb-spacing-xxl: 75px;
+  --global-kb-spacing-3xl: 100px;
+  --global-kb-spacing-4xl: 125px;
+  --global-kb-spacing-5xl: 150px;
+  --global-row-gutter-sm: 20px;
+  --global-kb-gap-sm: 20px;
+  --global-row-gutter-md: 40px;
+  --global-kb-gap-md: 40px;
+  --global-row-gutter-lg: 60px;
+  --global-kb-gap-lg: 60px
 }
 body .editor-styles-wrapper .acf-block-preview .button,
 body .editor-styles-wrapper .edit-post-visual-editor .button .button,
@@ -77,7 +85,6 @@ body .wp-block-button .wp-block-button__link {
   color: #000;
   border-color: #000
 }
-body .wp-block-button .wp-block-button__link:active,
 body .wp-block-button .wp-block-button__link:focus,
 body .wp-block-button .wp-block-button__link:hover {
   color: #fff;
@@ -102,47 +109,50 @@ body .editor-styles-wrapper {
 body .editor-styles-wrapper .h1,
 body .editor-styles-wrapper .preset1,
 body .editor-styles-wrapper h1 {
-  font-size: 4.375rem;
-  line-height: 110%;
-  font-weight: 600
+  font-family: var(--wp--preset--font-family--header);
+  font-size: 3.75rem;
+  line-height: 1.2
 }
 body .editor-styles-wrapper .h2,
 body .editor-styles-wrapper .preset2,
 body .editor-styles-wrapper h2 {
+  font-family: var(--wp--preset--font-family--header);
   font-size: 3.125rem;
-  line-height: 125%;
-  font-weight: 500
+  line-height: 1.2
 }
 body .editor-styles-wrapper .h3,
 body .editor-styles-wrapper .preset3,
 body .editor-styles-wrapper h3 {
+  font-family: var(--wp--preset--font-family--header);
   font-size: 2.5rem;
-  line-height: 130%;
-  font-weight: 600
+  line-height: 1.2
 }
 body .editor-styles-wrapper .h4,
 body .editor-styles-wrapper .preset4,
 body .editor-styles-wrapper h4 {
+  font-family: var(--wp--preset--font-family--header);
   font-size: 1.875rem;
-  line-height: 130%
+  line-height: 1.2
 }
 body .editor-styles-wrapper .h5,
 body .editor-styles-wrapper .preset5,
 body .editor-styles-wrapper h5 {
+  font-family: var(--wp--preset--font-family--header);
   font-size: 1.5rem;
-  line-height: 140%
+  line-height: 1.2
 }
 body .editor-styles-wrapper .h6,
 body .editor-styles-wrapper .preset6,
 body .editor-styles-wrapper h6 {
+  font-family: var(--wp--preset--font-family--header);
   font-size: 1.25rem;
-  line-height: 150%
+  line-height: 1.2
 }
 body .editor-styles-wrapper .gform_confirmation_wrapper .gform_confirmation_message,
 body .editor-styles-wrapper li,
 body .editor-styles-wrapper p {
   font-size: 1.125rem;
-  line-height: 165%
+  line-height: 1.4
 }
 body .editor-styles-wrapper body {
   color: var(--wp--preset--color--black)
@@ -151,18 +161,12 @@ body .editor-styles-wrapper li,
 body .editor-styles-wrapper p {
   margin-bottom: 20px
 }
-body .editor-styles-wrapper blockquote {
-  border-top: 2px solid var(--wp--preset--color--black);
-  border-bottom: 2px solid var(--wp--preset--color--black);
-  position: relative
+body .editor-styles-wrapper blockquote p {
+  font-size: 1.5rem
 }
-body .editor-styles-wrapper blockquote:before {
-  content: "“";
-  display: block;
-  margin-bottom: 25px
-}
-body .editor-styles-wrapper blockquote p:last-of-type {
-  margin-bottom: 0
+body .editor-styles-wrapper blockquote cite {
+  font-size: 1rem;
+  font-weight: 700
 }
 body .editor-styles-wrapper body:not(.wp-admin) {
   font-family: var(--wp--preset--font-family--body)
@@ -171,7 +175,6 @@ body .editor-styles-wrapper main a {
   transition: .6s cubic-bezier(.23,1,.32,1);
   color: red
 }
-body .editor-styles-wrapper main a:active,
 body .editor-styles-wrapper main a:focus,
 body .editor-styles-wrapper main a:hover {
   color: purple
@@ -182,7 +185,7 @@ body .editor-styles-wrapper h3,
 body .editor-styles-wrapper h4,
 body .editor-styles-wrapper h5,
 body .editor-styles-wrapper h6 {
-  margin: 0 0 15px
+  margin: 0 0 20px
 }
 body .editor-styles-wrapper .gform_wrapper.gravity-theme {
   margin: 0
@@ -206,13 +209,10 @@ body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea {
   color: #000;
   border-width: 2px
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]:active,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]:focus,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]:hover,
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form select:active,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form select:focus,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form select:hover,
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea:active,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea:focus,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea:hover {
   border-color: green
@@ -286,7 +286,6 @@ body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform_footer butt
   border-color: #000;
   margin: 0
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform_footer button:active,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform_footer button:focus,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform_footer button:hover {
   color: #fff;
@@ -311,19 +310,14 @@ body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield
   color: red;
   border-width: 2px
 }
-body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error input:active,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error input:focus,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error input:hover,
-body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error label:active,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error label:focus,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error label:hover,
-body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error legend:active,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error legend:focus,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error legend:hover,
-body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error select:active,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error select:focus,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error select:hover,
-body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error textarea:active,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error textarea:focus,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error textarea:hover {
   border-color: green
@@ -366,22 +360,16 @@ body .editor-styles-wrapper .wp-block.editor-block .button .button {
   color: #000;
   border-color: #000
 }
-body .editor-styles-wrapper .acf-block-preview .button:active,
 body .editor-styles-wrapper .acf-block-preview .button:focus,
 body .editor-styles-wrapper .acf-block-preview .button:hover,
-body .editor-styles-wrapper .edit-post-visual-editor .button .button:active,
 body .editor-styles-wrapper .edit-post-visual-editor .button .button:focus,
 body .editor-styles-wrapper .edit-post-visual-editor .button .button:hover,
-body .editor-styles-wrapper .mce-content-body .button .button:active,
 body .editor-styles-wrapper .mce-content-body .button .button:focus,
 body .editor-styles-wrapper .mce-content-body .button .button:hover,
-body .editor-styles-wrapper .wp-block-button__link .button:active,
 body .editor-styles-wrapper .wp-block-button__link .button:focus,
 body .editor-styles-wrapper .wp-block-button__link .button:hover,
-body .editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .button:active,
 body .editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .button:focus,
 body .editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .button .button:hover,
-body .editor-styles-wrapper .wp-block.editor-block .button .button:active,
 body .editor-styles-wrapper .wp-block.editor-block .button .button:focus,
 body .editor-styles-wrapper .wp-block.editor-block .button .button:hover {
   color: #fff;
@@ -392,7 +380,6 @@ body .editor-styles-wrapper .wp-block-button .wp-block-button__link {
   color: #000;
   border-color: #000
 }
-body .editor-styles-wrapper .wp-block-button .wp-block-button__link:active,
 body .editor-styles-wrapper .wp-block-button .wp-block-button__link:focus,
 body .editor-styles-wrapper .wp-block-button .wp-block-button__link:hover {
   color: #fff;
@@ -439,64 +426,27 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
   z-index: 20;
   position: relative
 }
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:769px) {
   .flex.reverse {
     flex-direction: row-reverse
   }
+  .hide-mobile-up {
+    display: none
+  }
 }
-@media only screen and (max-width:1440px) {
-  body .editor-styles-wrapper .h1,
-  body .editor-styles-wrapper .preset1,
-  body .editor-styles-wrapper h1 {
-    font-size: 3.5rem
+@media only screen and (min-width:1025px) {
+  .container {
+    padding: 0 80px
   }
-  body .editor-styles-wrapper .h2,
-  body .editor-styles-wrapper .preset2,
-  body .editor-styles-wrapper h2 {
-    font-size: 2.5rem
-  }
-  body .editor-styles-wrapper .h3,
-  body .editor-styles-wrapper .preset3,
-  body .editor-styles-wrapper h3 {
-    font-size: 2rem
-  }
-  body .editor-styles-wrapper .h4,
-  body .editor-styles-wrapper .preset4,
-  body .editor-styles-wrapper h4 {
-    font-size: 1.6875rem
-  }
-  body .editor-styles-wrapper .h5,
-  body .editor-styles-wrapper .preset5,
-  body .editor-styles-wrapper h5 {
-    font-size: 1.25rem
+  .hide-tablet-up {
+    display: none
   }
 }
 @media only screen and (max-width:1024px) {
-  body .editor-styles-wrapper .h1,
-  body .editor-styles-wrapper .preset1,
-  body .editor-styles-wrapper h1 {
-    font-size: 2.5rem
+  .container {
+    padding: 0 40px
   }
-  body .editor-styles-wrapper .h2,
-  body .editor-styles-wrapper .preset2,
-  body .editor-styles-wrapper h2 {
-    font-size: 1.875rem
-  }
-  body .editor-styles-wrapper .h3,
-  body .editor-styles-wrapper .preset3,
-  body .editor-styles-wrapper h3 {
-    font-size: 1.75rem
-  }
-  body .editor-styles-wrapper .h4,
-  body .editor-styles-wrapper .preset4,
-  body .editor-styles-wrapper h4 {
-    font-size: 1.5rem
-  }
-  body .editor-styles-wrapper .h6,
-  body .editor-styles-wrapper .preset6,
-  body .editor-styles-wrapper h6 {
-    font-size: 1rem
-  }
+  .hide-tablet,
   body .editor-styles-wrapper h1 br,
   body .editor-styles-wrapper h2 br,
   body .editor-styles-wrapper h3 br,
@@ -507,8 +457,14 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
   }
 }
 @media only screen and (max-width:768px) {
+  .container {
+    padding: 0 20px
+  }
   .flex {
     flex-direction: column
+  }
+  .hide-mobile {
+    display: none
   }
   body .social-icons ul {
     justify-content: center
@@ -518,7 +474,6 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
   body .editor-styles-wrapper .gform_confirmation_wrapper .gform_confirmation_message,
   body .editor-styles-wrapper li,
   body .editor-styles-wrapper p {
-    font-size: 1rem;
-    line-height: 170%
+    font-size: 1rem
   }
 }
