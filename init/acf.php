@@ -11,7 +11,9 @@ $acf_blocks  = true;
 
 /* Register Fields (can be removed if $acf_builder == false)
 ========================================================= */
+
 use StoutLogic\AcfBuilder\FieldsBuilder;
+
 define('FIELDS_DIR', dirname(__FILE__) . '/fields');
 define('BLOCK_FIELDS_DIR', dirname(__DIR__) . '/partials/acf-blocks/');
 
@@ -19,7 +21,7 @@ function acf_field_builder_registration() {
   if (is_dir(FIELDS_DIR)) {
     add_action('acf/init', function () {
       foreach (glob(FIELDS_DIR . '/partials/*.php') as $partial) {
-// include partials first
+        // include partials first
         if (file_exists($partial)) {
           include $partial;
         }
@@ -45,7 +47,7 @@ function acf_field_builder_registration() {
 function acf_block_field_builder_registration() {
   add_action('acf/init', function () {
     foreach (glob(FIELDS_DIR . '/partials/*.php') as $partial) {
-// include partials first
+      // include partials first
       if (file_exists($partial)) {
         include $partial;
       }
@@ -54,7 +56,6 @@ function acf_block_field_builder_registration() {
       if (($fields = require_once $file_path) !== true) {
         if (!is_array($fields)) {
           $fields = [$fields];
-
         }
         foreach ($fields as $field) {
           if ($field instanceof FieldsBuilder) {
@@ -167,5 +168,6 @@ if (class_exists('ACF')) {
     'capability' => 'edit_theme_options',
     'position' => '999',
     'autoload' => true,
+    'parent_slug' => 'options-general.php'
   ]);
 }

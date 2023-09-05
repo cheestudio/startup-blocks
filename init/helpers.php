@@ -563,7 +563,7 @@ if (class_exists('WP_Customize_Control')) {
       $wp_customize->add_control('mobile_height', array(
         'label' => 'Height',
         'section' => 'site_logos_section',
-        'type' => 'textarea',
+        'type' => 'number',
       ));
 
       // Footer Divider
