@@ -1064,11 +1064,18 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 .gform_wrapper.gform_validation_error .gform_validation_errors {
   margin-bottom: 25px;
-  border-color: red
+  padding: 25px 20px!important;
+  border-color: red!important;
+  border-radius: 0!important;
+  box-shadow: none!important;
+  border-width: 2px!important
 }
 .gform_wrapper.gform_validation_error .gform_validation_errors h2.gform_submission_error {
-  font-size: 18px;
-  color: red
+  font-family: var(--wp--preset--font-family--body);
+  font-size: 1rem;
+  font-style: italic;
+  color: red;
+  text-align: center
 }
 .gform_wrapper.gform_validation_error .gfield.gfield_error input,
 .gform_wrapper.gform_validation_error .gfield.gfield_error label,

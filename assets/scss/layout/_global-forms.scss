@@ -173,9 +173,20 @@ $box-shadow: none;
   .gform_validation_errors {
     margin-bottom: 25px;
     border-color: $border-color-error;
+    padding: 25px 20px !important;
+    border-top-width: $border-width-top + px !important;
+    border-bottom-width: $border-width-bottom + px !important;
+    border-right-width: $border-width-right + px !important;
+    border-left-width: $border-width-left + px !important;
+    border-color: $border-color-error !important;
+    border-radius: $border-radius + px !important;
+    box-shadow: $box-shadow !important;
     h2.gform_submission_error {
-      font-size: 18px;
+      @include font("body");
+      font-size: rem(16);
+      font-style: italic;
       color: $border-color-error;
+      text-align: center;
     }
   }
   .gfield.gfield_error {
