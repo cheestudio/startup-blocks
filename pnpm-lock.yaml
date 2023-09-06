@@ -8,6 +8,7 @@ specifiers:
   gulp-concat: ^2.6.1
   gulp-filter: ^7.0.0
   gulp-if: ^3.0.0
+  gulp-ignore: ^3.0.0
   gulp-line-ending-corrector: ^1.0.3
   gulp-merge-media-queries: ^0.2.1
   gulp-notify: ^4.0.0
@@ -26,6 +27,7 @@ devDependencies:
   gulp-concat: 2.6.1
   gulp-filter: 7.0.0_gulp@4.0.2
   gulp-if: 3.0.0
+  gulp-ignore: 3.0.0
   gulp-line-ending-corrector: 1.0.3
   gulp-merge-media-queries: 0.2.1
   gulp-notify: 4.0.0
@@ -1394,7 +1396,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -1616,6 +1618,13 @@ packages:
     dependencies:
       gulp-match: 1.1.0
       ternary-stream: 3.0.0
+      through2: 3.0.2
+    dev: true
+
+  /gulp-ignore/3.0.0:
+    resolution: {integrity: sha512-hRQDJipaU5A84J7QacNGG+bnFU3QLESdjuJCRTAZ5VuKsz4LmvOrECFJeeCtqxP3RV0Pn6mawU0Q3CFZGpirSg==}
+    dependencies:
+      gulp-match: 1.1.0
       through2: 3.0.2
     dev: true
 
@@ -1874,7 +1883,7 @@ packages:
     dev: true
 
   /inherits/2.0.3:
-    resolution: {integrity: sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=}
+    resolution: {integrity: sha512-x00IRNXNy63jwGkJmzPigoySHbaqpNuzKbBOmzK+g2OdZpQ9w+sxCN+VSB3ja7IAge2OP2qpfxTjeNcyjmW1uw==}
     dev: true
 
   /inherits/2.0.4:
@@ -2987,7 +2996,7 @@ packages:
     dev: true
 
   /readable-stream/1.0.34:
-    resolution: {integrity: sha1-Elgg40vIQtLyqq+v5MKRbuMsFXw=}
+    resolution: {integrity: sha512-ok1qVCJuRkNmvebYikljxJA/UEsKwLl2nI1OmaqAu4/UE+h0wKCHok4XkL/gvi39OacXvw59RJUOFUkDib2rHg==}
     dependencies:
       core-util-is: 1.0.2
       inherits: 2.0.4
@@ -2996,7 +3005,7 @@ packages:
     dev: true
 
   /readable-stream/1.1.14:
-    resolution: {integrity: sha1-fPTFTvZI44EwhMY23SB54WbAgdk=}
+    resolution: {integrity: sha512-+MeVjFf4L44XUkhM1eYbD8fyEsxcV81pqMSR5gblfcLCHfZvbrqy4/qYHE+/R5HoBUT11WV5O08Cr1n3YXkWVQ==}
     dependencies:
       core-util-is: 1.0.2
       inherits: 2.0.4
@@ -3559,7 +3568,7 @@ packages:
     dev: true
 
   /string_decoder/0.10.31:
-    resolution: {integrity: sha1-YuIDvEF2bGwoyfyEMB2rHFMQ+pQ=}
+    resolution: {integrity: sha512-ev2QzSzWPYmy9GuqfIVildA4OdcGLeFZQrq5ys6RtiuF+RQQiZWr8TZNyAcuVXyQRYfEO+MsoB/1BuQVhOJuoQ==}
     dev: true
 
   /string_decoder/1.1.1:
@@ -3676,7 +3685,7 @@ packages:
     dev: true
 
   /through2/0.5.1:
-    resolution: {integrity: sha1-390BLrnHAOIyP9M084rGIqs3Lac=}
+    resolution: {integrity: sha512-zexCrAOTbjkBCXGyozn7hhS3aEaqdrc59mAD2E3dKYzV1vFuEGQ1hEDJN2oQMQFwy4he2zyLqPZV+AlfS8ZWJA==}
     dependencies:
       readable-stream: 1.0.34
       xtend: 3.0.0
@@ -3863,7 +3872,7 @@ packages:
     dev: true
 
   /util-deprecate/1.0.2:
-    resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
+    resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
   /utils-merge/1.0.1:
