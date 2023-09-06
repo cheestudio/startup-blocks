@@ -1,12 +1,11 @@
-/* CUSTOM
+/* JS Ready
 ========================================================= */
-// window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener("DOMContentLoaded", function () {
+  //
+});
 
-// });
-
-// Doc Ready
-
-(function($){
-
-
+/* jQuery Ready
+========================================================= */
+(function ($) {
+  //
 })(jQuery);
