@@ -62,7 +62,16 @@ get_header();
     <p style="display:inline">Non-Inline Links: </p> <a href="">Link 3</a> <a href="">Link 4</a>
 
     <div class="button-wrap">
-      <a href="#" class="button blue">Apply Now</a>
+      <a href="#" class="button">Single Button</a>
+    </div>
+
+    <div class="buttons-wrap">
+      <div class="button-wrap">
+        <a href="#" class="button">Dual Buttons 1</a>
+      </div>
+      <div class="button-wrap">
+        <a href="#" class="button">Dual Buttons 2</a>
+      </div>
     </div>
 
     <hr>

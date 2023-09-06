@@ -1,14 +1,10 @@
-
 /* Buttons Wrap
 ========================================================= */
 .buttons-wrap {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  .button {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+  gap: 20px;
 }
 
 .button-wrap {

@@ -1505,11 +1505,8 @@ img {
 .buttons-wrap {
   display: flex;
   align-items: center;
-  flex-wrap: wrap
-}
-.buttons-wrap .button {
-  margin-left: 10px;
-  margin-right: 10px
+  flex-wrap: wrap;
+  gap: 20px
 }
 .button-wrap {
   padding-top: 30px
