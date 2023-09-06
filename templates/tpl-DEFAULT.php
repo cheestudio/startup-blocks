@@ -2,8 +2,8 @@
 /* Template Name: DEFAULT STYLES
 ========================================================= */ ?>
 
-<?php 
-if ( !defined('ABSPATH') ) exit;
+<?php
+if (!defined('ABSPATH')) exit;
 get_header();
 ?>
 
@@ -20,7 +20,7 @@ get_header();
     <h6>Heading #6</h6>
 
     <hr>
-    
+
     <p style="font-weight: 300">Font Weight: 300</p>
     <p style="font-weight: 400">Font Weight: 400</p>
     <p style="font-weight: 500">Font Weight: 500</p>
@@ -29,7 +29,7 @@ get_header();
     <p style="font-weight: 800">Font Weight: 800</p>
 
     <hr>
-    
+
     <ul>
       <li>Unordered list item 1</li>
       <li>Unordered list item 2</li>
@@ -82,11 +82,11 @@ get_header();
 
     <?php gravity_form('Example Form', true, true, false, '', false); ?>
 
-        </div>
-      </form>
-    </div>
-
   </div>
+  </form>
+</div>
+
+</div>
 </div>
 <!-- PLACEHOLDER END -->
 

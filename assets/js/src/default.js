@@ -71,7 +71,7 @@ function debounce(func, delay) {
 
   /* SMOOTH INTERNAL LINKS
 ========================================================= */
-  $('a[href*="#"]')
+  $('a[href^="#"]')
     .not('[href="#"]')
     .click(function (event) {
       if (
