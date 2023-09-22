@@ -3,6 +3,7 @@
   "version": 2,
   "settings": {
     "appearanceTools": true,
+    "useRootPaddingAwareAlignments": false,
     "border": {
       "radius": false,
       "color": false,
@@ -116,7 +117,13 @@
   },
   "styles": {
     "spacing": {
-      "blockGap": "50px"
+      "blockGap": "50px",
+      "padding": {
+        "top": "0px",
+        "right": "0",
+        "bottom": "0px",
+        "left": "0"
+      }
     }
   }
 }
