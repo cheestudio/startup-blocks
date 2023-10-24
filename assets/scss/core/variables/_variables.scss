@@ -52,8 +52,8 @@ $browser-context: 16; // Default
     padding-bottom: $bottom-large + px;
   }
   @include for-size(tablet) {
-    padding-top: $top-small + px;
-    padding-bottom: $bottom-small + px;
+    padding-top: $top-medium + px;
+    padding-bottom: $bottom-medium + px;
   }
   @include for-size(tablet-sm) {
     padding-top: $top-small + px;
@@ -147,6 +147,24 @@ $browser-context: 16; // Default
   } @else if ($state == "hide") {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::placeholder {
+    @content;
   }
 }
 
