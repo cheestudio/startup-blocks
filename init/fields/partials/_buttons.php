@@ -8,22 +8,11 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 $buttons = new FieldsBuilder('buttons');
 
 $buttons
-->addGroup('button_primary_group', [
-  'label'        => 'Button (primary)',
-  'layout'       => 'block',
-  'wrapper' => [
-    'class' => 'center',
-  ]
-])
+  ->addRepeater('buttons_rep', [
+    'label' => 'Buttons',
+    'layout' => 'table',
+    'button_label' => 'Add Button'
+  ])
   ->addFields($button)
-->endGroup()
 
-->addGroup('button_secondary_group', [
-  'label'        => 'Button (secondary)',
-  'layout'       => 'block',
-  'wrapper' => [
-    'class' => 'center',
-  ]
-])
-  ->addFields($button)
-->endGroup();
+  ->endRepeater();
