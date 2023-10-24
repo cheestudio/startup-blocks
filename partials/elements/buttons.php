@@ -1,15 +1,12 @@
 <?php
-$group_primary   = $args['button_primary_group'];
-$group_secondary = $args['button_secondary_group'];
-?>
+$buttons = $args['buttons_rep']; ?>
 
-<?php if ( $group_primary || $group_secondary ) : ?>
+<?php if ($buttons) : ?>
   <div class="buttons-wrap">
-    <?php get_template_part('partials/elements/button', null, [ 
-      'button_group' => $group_primary['button_group'],
-    ]); ?>
-    <?php get_template_part('partials/elements/button', null, [ 
-      'button_group' => $group_secondary['button_group'],
-    ]); ?>
+    <?php foreach ($buttons as $button) : ?>
+      <?php get_template_part('partials/elements/button', null, [
+        'button_group' => $button['button_group']
+      ]); ?>
+    <?php endforeach; ?>
   </div>
 <?php endif; ?>
