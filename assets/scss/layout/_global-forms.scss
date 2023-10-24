@@ -1,25 +1,6 @@
 /* Gravity Form Styles
 ========================================================= */
 
-// Placeholder
-@mixin placeholder {
-  &::-webkit-input-placeholder {
-    @content;
-  }
-  &:-moz-placeholder {
-    @content;
-  }
-  &::-moz-placeholder {
-    @content;
-  }
-  &:-ms-input-placeholder {
-    @content;
-  }
-  &::placeholder {
-    @content;
-  }
-}
-
 // Settings
 $border-width-top: 2;
 $border-width-bottom: 2;
@@ -144,6 +125,8 @@ $box-shadow: none;
         input {
           margin-right: 10px;
         }
+      }
+      .gfield--type-submit {
       }
     }
 

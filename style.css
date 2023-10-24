@@ -1576,26 +1576,6 @@ img {
     display: none
   }
 }
-@media all and (min-width:1024px) {
-  .fancybox__container {
-    --carousel-button-width: 48px;
-    --carousel-button-height: 48px;
-    --carousel-button-svg-width: 27px;
-    --carousel-button-svg-height: 27px
-  }
-  .fancybox__nav .carousel__button.is-next {
-    right: 40px
-  }
-  .fancybox__nav .carousel__button.is-prev {
-    left: 40px
-  }
-  .carousel__button.is-close {
-    right: 40px
-  }
-  .fancybox__toolbar {
-    padding: 8px
-  }
-}
 @media only screen and (min-width:1024px) {
   .fancybox__slide {
     padding: 50px 100px
@@ -1646,6 +1626,24 @@ img {
   }
   .hide-tablet-up {
     display: none
+  }
+  .fancybox__container {
+    --carousel-button-width: 48px;
+    --carousel-button-height: 48px;
+    --carousel-button-svg-width: 27px;
+    --carousel-button-svg-height: 27px
+  }
+  .fancybox__nav .carousel__button.is-next {
+    right: 40px
+  }
+  .fancybox__nav .carousel__button.is-prev {
+    left: 40px
+  }
+  .carousel__button.is-close {
+    right: 40px
+  }
+  .fancybox__toolbar {
+    padding: 8px
   }
   .archive-index,
   .post-single,
@@ -1946,7 +1944,7 @@ img {
     padding-bottom: 60px
   }
 }
-@media (max-width:640px) {
+@media only screen and (max-width:640px) {
   .fancybox__toolbar__items--center:not(:last-child) {
     display: none
   }

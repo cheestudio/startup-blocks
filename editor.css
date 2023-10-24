@@ -71,11 +71,8 @@ body .wp-block-button .wp-block-button__link {
 body .buttons-wrap {
   display: flex;
   align-items: center;
-  flex-wrap: wrap
-}
-body .buttons-wrap .button {
-  margin-left: 10px;
-  margin-right: 10px
+  flex-wrap: wrap;
+  gap: 20px
 }
 body .button-wrap {
   padding-top: 30px
@@ -293,11 +290,18 @@ body .editor-styles-wrapper .gform_wrapper.gravity-theme form .gform_footer butt
 }
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gform_validation_errors {
   margin-bottom: 25px;
-  border-color: red
+  padding: 25px 20px!important;
+  border-color: red!important;
+  border-radius: 0!important;
+  box-shadow: none!important;
+  border-width: 2px!important
 }
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gform_validation_errors h2.gform_submission_error {
-  font-size: 18px;
-  color: red
+  font-family: var(--wp--preset--font-family--body);
+  font-size: 1rem;
+  font-style: italic;
+  color: red;
+  text-align: center
 }
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error input,
 body .editor-styles-wrapper .gform_wrapper.gform_validation_error .gfield.gfield_error label,
