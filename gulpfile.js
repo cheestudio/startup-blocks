@@ -98,7 +98,7 @@ function block_styles() {
         format: "beautify",
         level: {
           1: {
-            roundingPrecision: "all=10, px=2, em=2, rem=2, font-size=2, line-height=2",
+            roundingPrecision: "all=3",
           },
           2: {
             mergeNonAdjacentRules: false,
@@ -132,7 +132,7 @@ function editor_styles() {
         format: "beautify",
         level: {
           1: {
-            roundingPrecision: "all=10, px=2, em=2, rem=2, font-size=2, line-height=2",
+            roundingPrecision: "all=3",
           },
           2: {
             mergeNonAdjacentRules: false,
