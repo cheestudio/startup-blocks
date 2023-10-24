@@ -168,6 +168,15 @@ if (class_exists('ACF')) {
     'capability' => 'edit_theme_options',
     'position' => '999',
     'autoload' => true,
-    'parent_slug' => 'options-general.php'
+    'parent_slug' => 'themes.php',
   ]);
+  // acf_add_options_page([
+  //   'page_title' => 'Index Page (Posts)',
+  //   'menu_title' => 'Index Page',
+  //   'menu_slug' => 'posts-options',
+  //   'capability' => 'edit_theme_options',
+  //   'position' => '999',
+  //   'autoload' => true,
+  //   'parent_slug' => 'edit.php',
+  // ]);
 }
