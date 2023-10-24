@@ -1,7 +1,6 @@
 <?php // VARs & Optional ACF Footer Code
-$logo = get_template_directory_uri() . '/assets/img/svg/logo.svg';
-if ( function_exists('get_field') ) :
- $footer_code = get_field('footer_code', 'option');
+if (function_exists('get_field')) :
+  $footer_code = get_field('footer_code', 'option');
 endif; ?>
 
 </main>
@@ -9,15 +8,13 @@ endif; ?>
 <footer class="footer">
   <div class="container">
 
-    <?php if ($logo): ?>
     <div class="footer--logo">
       <a href="<?= home_url(); ?>" class="footer-brand" title="Link to Go Home">
-        <?php get_template_part('partials/elements/logo', null, [ 
-            'location' => 'footer',
-          ]); ?>
+        <?php get_template_part('partials/elements/logo', null, [
+          'location' => 'footer',
+        ]); ?>
       </a>
     </div>
-    <?php endif;?>
 
     <div class="footer--menu">
       <?php get_template_part('partials/navs/nav-footer'); ?>
@@ -32,7 +29,7 @@ endif; ?>
 
 <?php wp_footer(); ?>
 
-<?php if ( isset($footer_code) ) echo $footer_code; ?>
+<?php if (isset($footer_code)) echo $footer_code; ?>
 
 </body>
 

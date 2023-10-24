@@ -1,10 +1,10 @@
-<?php 
+<?php
 $location = $args['location'];
 
 // fallback to desktop if no mobile or footer assigned
-if ( $location !== 'desktop') {
+if ($location !== 'desktop') {
   $image_url = get_theme_mod($location . '_image');
-  if ( empty($image_url)) {
+  if (empty($image_url)) {
     $image_url = get_theme_mod('desktop_image');
   }
 } else {
@@ -12,8 +12,8 @@ if ( $location !== 'desktop') {
 }
 
 // width & height
-$image_width = !empty(get_theme_mod($location . '_width')) ? esc_attr(get_theme_mod($location . '_width')) : 'auto';
-$image_height = !empty(get_theme_mod($location . '_height')) ? esc_attr(get_theme_mod($location . '_height')) : 'auto';
+$image_width = !empty(get_theme_mod($location . '_width')) ? esc_attr(get_theme_mod($location . '_width')) : esc_attr(get_theme_mod('desktop_width'));
+$image_height = !empty(get_theme_mod($location . '_height')) ? esc_attr(get_theme_mod($location . '_height')) : esc_attr(get_theme_mod('desktop_height'));
 
 // output
 if (!empty($image_url)) {
