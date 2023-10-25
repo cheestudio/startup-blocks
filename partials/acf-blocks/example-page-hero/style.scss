@@ -4,20 +4,20 @@
 
 /* Custom Block Styles
 ========================================================= */
-$class: '.hero-row';
+$class: ".hero-row";
 
 #{$class} {
   @include bg;
 
   &.normal {
-    @include for-size(tablet, up) {
+    @include for-size(tablet, up, offset) {
       figure {
         margin-left: auto;
       }
     }
   }
   &.reverse {
-    @include for-size(tablet, up) {
+    @include for-size(tablet, up, offset) {
       .wrapper {
         flex-direction: row-reverse;
       }
@@ -38,7 +38,7 @@ $class: '.hero-row';
   }
 
   #{$class}--image {
-    @include for-size(tablet-sm, up) {
+    @include for-size(tablet-sm, up, offset) {
       flex: 0 1 50%;
     }
     figure {
@@ -47,7 +47,7 @@ $class: '.hero-row';
   }
 
   #{$class}--content {
-    @include for-size(tablet-sm, up) {
+    @include for-size(tablet-sm, up, offset) {
       flex: 0 1 50%;
     }
     .inner {

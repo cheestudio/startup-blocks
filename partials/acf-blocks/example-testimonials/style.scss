@@ -4,7 +4,7 @@
 
 /* Custom Block Styles
 ========================================================= */
-$class: '.testimonials-row';
+$class: ".testimonials-row";
 
 #{$class} {
   .testimonial-entry {
@@ -27,11 +27,11 @@ $class: '.testimonials-row';
       border-radius: 50%;
     }
     p {
-      @include for-size(tablet-sm, up) {
+      @include for-size(tablet-sm, up, offset) {
         font-size: rem(24);
       }
     }
-   cite.author {
+    cite.author {
       font-weight: 700;
     }
   }

@@ -279,12 +279,10 @@ h6 {
 }
 .carousel.is-draggable {
   cursor: move;
-  cursor: -webkit-grab;
   cursor: grab
 }
 .carousel.is-dragging {
   cursor: move;
-  cursor: -webkit-grabbing;
   cursor: grabbing
 }
 .carousel__viewport {
@@ -565,7 +563,6 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   z-index: 1053
 }
 .fancybox__spinner svg {
-  -webkit-animation: 2s linear infinite fancybox-rotate;
   animation: 2s linear infinite fancybox-rotate;
   transform-origin: center center;
   position: absolute;
@@ -583,7 +580,6 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   stroke-miterlimit: 10;
   stroke-dasharray: 1,200;
   stroke-dashoffset: 0;
-  -webkit-animation: 1.5s ease-in-out infinite fancybox-dash;
   animation: 1.5s ease-in-out infinite fancybox-dash;
   stroke-linecap: round;
   stroke: currentColor
@@ -600,7 +596,6 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .fancybox__container.is-animated[aria-hidden=false] .fancybox__backdrop,
 .fancybox__container.is-animated[aria-hidden=false] .fancybox__caption,
 .fancybox__container.is-animated[aria-hidden=false] .fancybox__nav {
-  -webkit-animation: .15s backwards fancybox-fadeIn;
   animation: .15s backwards fancybox-fadeIn
 }
 .fancybox__container.is-animated.is-closing .carousel__button.is-close,
@@ -608,31 +603,24 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .fancybox__container.is-animated.is-closing .fancybox__backdrop,
 .fancybox__container.is-animated.is-closing .fancybox__caption,
 .fancybox__container.is-animated.is-closing .fancybox__nav {
-  -webkit-animation: .15s both fancybox-fadeOut;
   animation: .15s both fancybox-fadeOut
 }
 .fancybox-fadeIn {
-  -webkit-animation: .15s both fancybox-fadeIn;
   animation: .15s both fancybox-fadeIn
 }
 .fancybox-fadeOut {
-  -webkit-animation: .1s both fancybox-fadeOut;
   animation: .1s both fancybox-fadeOut
 }
 .fancybox-zoomInUp {
-  -webkit-animation: .2s both fancybox-zoomInUp;
   animation: .2s both fancybox-zoomInUp
 }
 .fancybox-zoomOutDown {
-  -webkit-animation: .15s both fancybox-zoomOutDown;
   animation: .15s both fancybox-zoomOutDown
 }
 .fancybox-throwOutUp {
-  -webkit-animation: .15s both fancybox-throwOutUp;
   animation: .15s both fancybox-throwOutUp
 }
 .fancybox-throwOutDown {
-  -webkit-animation: .15s both fancybox-throwOutDown;
   animation: .15s both fancybox-throwOutDown
 }
 .fancybox__carousel .carousel__slide {
@@ -654,13 +642,11 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .fancybox__carousel.is-draggable .fancybox__slide,
 .fancybox__carousel.is-draggable .fancybox__slide .fancybox__content {
   cursor: move;
-  cursor: -webkit-grab;
   cursor: grab
 }
 .fancybox__carousel.is-dragging .fancybox__slide,
 .fancybox__carousel.is-dragging .fancybox__slide .fancybox__content {
   cursor: move;
-  cursor: -webkit-grabbing;
   cursor: grabbing
 }
 .fancybox__carousel .fancybox__slide .fancybox__content {
@@ -674,12 +660,10 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 .fancybox__carousel .fancybox__slide.is-draggable .fancybox__content {
   cursor: move;
-  cursor: -webkit-grab;
   cursor: grab
 }
 .fancybox__carousel .fancybox__slide.is-dragging .fancybox__content {
   cursor: move;
-  cursor: -webkit-grabbing;
   cursor: grabbing
 }
 .fancybox__image {
@@ -797,7 +781,6 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   opacity: var(--fancybox-opacity,1)
 }
 .fancybox__container.is-animated[aria-hidden=false] .fancybox__thumbs {
-  -webkit-animation: .15s ease-in backwards fancybox-fadeIn;
   animation: .15s ease-in backwards fancybox-fadeIn
 }
 .fancybox__container.is-animated.is-closing .fancybox__thumbs {
@@ -855,7 +838,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   right: 0;
   left: 0;
   z-index: 20;
-  background: linear-gradient(to top,hsla(0deg,0%,0%,0) 0,hsla(0deg,0%,0%,.006) 8.1%,hsla(0deg,0%,0%,.021) 15.5%,hsla(0deg,0%,0%,.046) 22.5%,hsla(0deg,0%,0%,.077) 29%,hsla(0deg,0%,0%,.114) 35.3%,hsla(0deg,0%,0%,.155) 41.2%,hsla(0deg,0%,0%,.198) 47.1%,hsla(0deg,0%,0%,.242) 52.9%,hsla(0deg,0%,0%,.285) 58.8%,hsla(0deg,0%,0%,.326) 64.7%,hsla(0deg,0%,0%,.363) 71%,hsla(0deg,0%,0%,.394) 77.5%,hsla(0deg,0%,0%,.419) 84.5%,hsla(0deg,0%,0%,.434) 91.9%,hsla(0deg,0%,0%,.44) 100%);
+  background: linear-gradient(to top,hsla(0,0%,0%,0) 0,hsla(0,0%,0%,.006) 8.1%,hsla(0,0%,0%,.021) 15.5%,hsla(0,0%,0%,.046) 22.5%,hsla(0,0%,0%,.077) 29%,hsla(0,0%,0%,.114) 35.3%,hsla(0,0%,0%,.155) 41.2%,hsla(0,0%,0%,.198) 47.1%,hsla(0,0%,0%,.242) 52.9%,hsla(0,0%,0%,.285) 58.8%,hsla(0,0%,0%,.326) 64.7%,hsla(0,0%,0%,.363) 71%,hsla(0,0%,0%,.394) 77.5%,hsla(0,0%,0%,.419) 84.5%,hsla(0,0%,0%,.434) 91.9%,hsla(0,0%,0%,.44) 100%);
   padding: 0;
   touch-action: none;
   display: flex;
@@ -866,7 +849,6 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   text-shadow: var(--fancybox-toolbar-text-shadow,1px 1px 1px rgba(0,0,0,.4))
 }
 .fancybox__container.is-animated[aria-hidden=false] .fancybox__toolbar {
-  -webkit-animation: .15s ease-in backwards fancybox-fadeIn;
   animation: .15s ease-in backwards fancybox-fadeIn
 }
 .fancybox__container.is-animated.is-closing .fancybox__toolbar {
@@ -918,7 +900,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .fancybox__container:-ms-fullscreen::backdrop {
   opacity: 0
 }
-.fancybox__container:fullscreen::-webkit-backdrop {
+.fancybox__container:fullscreen::-ms-backdrop {
   opacity: 0
 }
 .fancybox__container:fullscreen::backdrop {
@@ -1576,9 +1558,33 @@ img {
     display: none
   }
 }
-@media only screen and (min-width:1024px) {
+@media only screen and (min-width:1025px) {
+  .container {
+    padding: 0 80px
+  }
+  .hide-tablet-up {
+    display: none
+  }
+  .fancybox__container {
+    --carousel-button-width: 48px;
+    --carousel-button-height: 48px;
+    --carousel-button-svg-width: 27px;
+    --carousel-button-svg-height: 27px
+  }
   .fancybox__slide {
     padding: 50px 100px
+  }
+  .fancybox__nav .carousel__button.is-next {
+    right: 40px
+  }
+  .fancybox__nav .carousel__button.is-prev {
+    left: 40px
+  }
+  .carousel__button.is-close {
+    right: 40px
+  }
+  .fancybox__toolbar {
+    padding: 8px
   }
   header.main-banner .container {
     display: flex;
@@ -1618,32 +1624,6 @@ img {
     left: 0;
     margin: 0;
     padding: 20px
-  }
-}
-@media only screen and (min-width:1025px) {
-  .container {
-    padding: 0 80px
-  }
-  .hide-tablet-up {
-    display: none
-  }
-  .fancybox__container {
-    --carousel-button-width: 48px;
-    --carousel-button-height: 48px;
-    --carousel-button-svg-width: 27px;
-    --carousel-button-svg-height: 27px
-  }
-  .fancybox__nav .carousel__button.is-next {
-    right: 40px
-  }
-  .fancybox__nav .carousel__button.is-prev {
-    left: 40px
-  }
-  .carousel__button.is-close {
-    right: 40px
-  }
-  .fancybox__toolbar {
-    padding: 8px
   }
   .archive-index,
   .post-single,
@@ -1956,28 +1936,9 @@ img {
     font-size: 1rem
   }
 }
-@-webkit-keyframes fancybox-rotate {
-  100% {
-    transform: rotate(360deg)
-  }
-}
 @keyframes fancybox-rotate {
   100% {
     transform: rotate(360deg)
-  }
-}
-@-webkit-keyframes fancybox-dash {
-  0% {
-    stroke-dasharray: 1,200;
-    stroke-dashoffset: 0
-  }
-  50% {
-    stroke-dasharray: 89,200;
-    stroke-dashoffset: -35px
-  }
-  100% {
-    stroke-dasharray: 89,200;
-    stroke-dashoffset: -124px
   }
 }
 @keyframes fancybox-dash {
@@ -1994,14 +1955,6 @@ img {
     stroke-dashoffset: -124px
   }
 }
-@-webkit-keyframes fancybox-fadeIn {
-  from {
-    opacity: 0
-  }
-  to {
-    opacity: 1
-  }
-}
 @keyframes fancybox-fadeIn {
   from {
     opacity: 0
@@ -2010,24 +1963,9 @@ img {
     opacity: 1
   }
 }
-@-webkit-keyframes fancybox-fadeOut {
-  to {
-    opacity: 0
-  }
-}
 @keyframes fancybox-fadeOut {
   to {
     opacity: 0
-  }
-}
-@-webkit-keyframes fancybox-zoomInUp {
-  from {
-    transform: scale(.97) translate3d(0,16px,0);
-    opacity: 0
-  }
-  to {
-    transform: scale(1) translate3d(0,0,0);
-    opacity: 1
   }
 }
 @keyframes fancybox-zoomInUp {
@@ -2040,33 +1978,15 @@ img {
     opacity: 1
   }
 }
-@-webkit-keyframes fancybox-zoomOutDown {
-  to {
-    transform: scale(.97) translate3d(0,16px,0);
-    opacity: 0
-  }
-}
 @keyframes fancybox-zoomOutDown {
   to {
     transform: scale(.97) translate3d(0,16px,0);
     opacity: 0
   }
 }
-@-webkit-keyframes fancybox-throwOutUp {
-  to {
-    transform: translate3d(0,-30%,0);
-    opacity: 0
-  }
-}
 @keyframes fancybox-throwOutUp {
   to {
     transform: translate3d(0,-30%,0);
-    opacity: 0
-  }
-}
-@-webkit-keyframes fancybox-throwOutDown {
-  to {
-    transform: translate3d(0,30%,0);
     opacity: 0
   }
 }

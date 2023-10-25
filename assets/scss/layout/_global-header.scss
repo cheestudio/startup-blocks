@@ -1,4 +1,4 @@
-@include for-size(tablet, up) {
+@include for-size(tablet, up, offset) {
   header.main-banner {
     .container {
       display: flex;

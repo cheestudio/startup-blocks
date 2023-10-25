@@ -256,7 +256,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 
 .fancybox__slide {
-  @include for-size(tablet, up) {
+  @include for-size(tablet, up, offset) {
     padding: 50px 100px;
   }
   @include for-size(tablet) {
