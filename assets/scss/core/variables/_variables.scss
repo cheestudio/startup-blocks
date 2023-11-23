@@ -89,13 +89,18 @@ $browser-context: 16; // Default
   $slope: calc(($maxSize - $minSize) / ($maxViewWidth - $minViewWidth));
   $yAxis: calc($minSize + ($minViewWidth * $slope * -1));
 
-  $minSizeRem: math.div($minSize, 16) + rem;
-  $maxSizeRem: math.div($maxSize, 16) + rem;
+  $minSizeRem: (math.div($minSize, 16)) * 1rem;
+  $maxSizeRem: (math.div($maxSize, 16)) * 1rem;
   $slopeViewWidth: calc(#{$slope * 100}vw);
-  $yAxisRem: math.div($yAxis, 16) + rem;
-
-  $preferredValue: clamp($minSizeRem, calc($yAxisRem + $slopeViewWidth), $maxSizeRem);
-  @return $preferredValue;
+  $yAxisRem: (math.div($yAxis, 16)) * 1rem;
+  
+  @if ($yAxisRem == 0rem) {
+    $preferredValue: clamp($minSizeRem, $slopeViewWidth, $maxSizeRem);
+    @return $preferredValue;
+  } @else {
+    $preferredValue: clamp($minSizeRem, calc($yAxisRem + $slopeViewWidth), $maxSizeRem);
+    @return $preferredValue;
+  }
 }
 
 /* Additional Helper Mixins
