@@ -1,6 +1,6 @@
 <?php
 use StoutLogic\AcfBuilder\FieldsBuilder;
-$options = new FieldsBuilder('theme_options');
+$options = new FieldsBuilder('theme_options', ['style' => 'seamless']);
 
 $options
 ->addTab('Social Media')

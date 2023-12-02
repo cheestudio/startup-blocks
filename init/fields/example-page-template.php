@@ -1,9 +1,14 @@
 <?php
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-$templates = new FieldsBuilder('template_example');
+$templates = new FieldsBuilder('template_example', ['style' => 'seamless']);
 
 $templates
+// ->setGroupConfig('hide_on_screen', [
+//   'the_content',
+//   'featured_image'
+// ])
+  
 ->addGroup('template_example_group', [
   'label'        => 'Group Field for Templates',
   'instructions' => '',
