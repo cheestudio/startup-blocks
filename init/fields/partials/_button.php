@@ -9,23 +9,18 @@ $button
 ->addGroup('button_group', [
   'label'        => '',
   'instructions' => '',
-  'layout'       => 'block',
-  'wrapper' => [
-    'class' => 'center',
-  ]
+  'layout'       => 'block'
 ])
   ->addTrueFalse('toggle', [
     'label'         => 'Show Button',
     'default_value' => 0,
     'ui'            => '1',
     'wrapper' => [
-      'class' => 'center',
       'width' => '25%',
     ]
   ])
   ->addLink('link', [
     'wrapper' => [
-      'class' => 'center',
       'width' => '25%',
     ],
     'conditional_logic' => [
@@ -43,7 +38,6 @@ $button
     ],
     'default_value' => 'black',
     'wrapper' => [
-      'class' => 'center',
       'width' => '25%',
     ],
     'conditional_logic' => [

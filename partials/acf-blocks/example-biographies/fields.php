@@ -28,19 +28,16 @@ $name
   ])
     ->addImage('image', [
       'wrapper' => [
-        'class' => 'center',
         'width' => '33%',
       ]
     ])
     ->addText('name', [
       'wrapper' => [
-        'class' => 'center',
         'width' => '33%',
       ]
     ])
     ->addText('title', [
       'wrapper' => [
-        'class' => 'center',
         'width' => '33%',
       ]
     ])
@@ -48,7 +45,6 @@ $name
       'label' => 'Bio (short)',
       'media_upload' => 0,
       'wrapper' => [
-        'class' => 'center',
         'width' => '50%',
       ]
     ])
@@ -56,7 +52,6 @@ $name
       'label' => 'Bio (long)',
       'media_upload' => 0,
       'wrapper' => [
-        'class' => 'center',
         'width' => '50%',
       ]
     ])

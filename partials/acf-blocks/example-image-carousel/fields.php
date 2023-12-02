@@ -22,10 +22,7 @@ $name
 ]) // REQUIRED GROUP
 
   ->addGallery('gallery', [
-    'label' => 'Image Gallery',
-    'wrapper' => [
-      'class' => 'center',
-    ]
+    'label' => 'Image Gallery'
   ])
 
 ->endGroup() // END REQUIRED GROUP

@@ -29,9 +29,6 @@ $name
     ['auto'   => 'Recent'],
     ['random' => 'Random'],
     ['manual' => 'Manual Selection'],
-  ],
-  'wrapper' => [
-    'class' => 'center',
   ]
 ])
 ->addRelationship('related_picker', [
@@ -49,9 +46,6 @@ $name
         'value' => 'manual',
       ],
     ],
-  ],
-  'wrapper' => [
-    'class' => 'center',
   ]
 ])
 

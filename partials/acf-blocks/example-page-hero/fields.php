@@ -28,21 +28,18 @@ $name
       'reverse' => 'Right',
     ],
     'wrapper' => [
-      'class' => 'center',
       'width' => '20%',
     ]
   ])
   ->addImage('image_bg', [
     'label' => 'Background Image',
     'wrapper' => [
-      'class' => 'center',
       'width' => '40%',
     ]
   ])
   ->addImage('image', [
     'label' => 'Side Image',
     'wrapper' => [
-      'class' => 'center',
       'width' => '40%',
     ]
   ])

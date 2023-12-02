@@ -23,10 +23,7 @@ $name
   ->addRepeater('sections_rep', [
     'label' => 'Entries',
     'layout' => 'block',
-    'button_label' => 'Add Entry',
-    'wrapper' => [
-      'class' => 'center',
-    ]
+    'button_label' => 'Add Entry'
   ])
     ->addText('title')
     ->addWysiwyg('content')
