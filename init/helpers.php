@@ -66,7 +66,7 @@ add_action('admin_head', 'hide_help');
 function hide_help() {
   echo '<style type="text/css">
     #contextual-help-link-wrap { display: none !important; }
- </style>';
+  </style>';
 }
 
 /* Remove footer branding
@@ -157,7 +157,7 @@ function my_custom_toolbars($toolbars) {
 ========================================================= */
 add_action('acf/input/admin_head', 'my_acf_admin_head');
 function my_acf_admin_head() {
-?>
+  ?>
   <style type="text/css">
     .acf-field .image-wrap,
     .acf-field .image-wrap img {
@@ -432,15 +432,15 @@ add_action('admin_head', 'custom_admin_css');
 function custom_admin_css() {
   echo '<style>
   #adminmenu li.wp-menu-separator {
-    margin:10px 0 5px 0;
-  }
+  margin:10px 0 5px 0;
+}
   #adminmenu div.separator {
-      background:rgba(255,255,255,0.1);
-  } 
+background:rgba(255,255,255,0.1);
+} 
   #adminmenu .wp-submenu-head, #adminmenu a.menu-top {
-      font-size:13px;
-  }
-  </style>';
+font-size:13px;
+}
+</style>';
 }
 
 /* Disable Pingbacks
@@ -469,173 +469,184 @@ if (!current_user_can('manage_options')) {
   show_admin_bar(false);
 }
 
+
+/* Increase the image size threshold
+========================================================= */
+function custom_default_image_size_threshold( $threshold ) {
+  return 3840;
+}
+add_filter('big_image_size_threshold', 'custom_default_image_size_threshold', 999, 1);
+
+
 /* Add Logos to Customizer
 ========================================================= */
 if (class_exists('WP_Customize_Control')) {
   class Section_Divider_Control extends WP_Customize_Control {
-    public function render_content() {
-  ?><p style="font-weight: 600; font-size: 15px; margin-bottom: 0; text-transform: uppercase;">
-        <?= esc_html($this->label); ?></p>
-      <hr style="margin: 6px 0; border: none; border-top: 2px solid #50575E;"><?php
-                                                                            }
-                                                                          }
+    public function render_content() { ?>
+      <p style="font-weight: 600; font-size: 15px; margin-bottom: 0; text-transform: uppercase;">
+        <?= esc_html($this->label); ?>
+        </p>
+        <hr style="margin: 6px 0; border: none; border-top: 2px solid #50575E;">
+        <?php
+      }
+    }
 
-                                                                          function add_site_logos_to_customize($wp_customize) {
-                                                                            // Add a new section
-                                                                            $wp_customize->add_section('site_logos_section', array(
-                                                                              'title' => 'Site Logos',
-                                                                              'priority' => 10,
-                                                                            ));
+    function add_site_logos_to_customize($wp_customize) {
+      // Add a new section
+      $wp_customize->add_section('site_logos_section', array(
+        'title' => 'Site Logos',
+        'priority' => 10,
+      ));
 
-                                                                            // Desktop Divider
-                                                                            $wp_customize->add_setting(
-                                                                              'desktop_divider',
-                                                                              array(
-                                                                                'default' => ''
-                                                                              )
-                                                                            );
-                                                                            $wp_customize->add_control(new Section_Divider_Control(
-                                                                              $wp_customize,
-                                                                              'desktop_divider',
-                                                                              array(
-                                                                                'label' => 'Desktop',
-                                                                                'section' => 'site_logos_section'
-                                                                              )
-                                                                            ));
+      // Desktop Divider
+      $wp_customize->add_setting(
+        'desktop_divider',
+        array(
+          'default' => ''
+        )
+      );
+      $wp_customize->add_control(new Section_Divider_Control(
+        $wp_customize,
+        'desktop_divider',
+        array(
+          'label' => 'Desktop',
+          'section' => 'site_logos_section'
+        )
+      ));
 
-                                                                            // Desktop Image
-                                                                            $wp_customize->add_setting('desktop_image', array(
-                                                                              'default' => ''
-                                                                            ));
-                                                                            $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'desktop_image', array(
-                                                                              'label' => 'Image',
-                                                                              'section' => 'site_logos_section',
-                                                                              'settings' => 'desktop_image',
-                                                                              'description' => 'Default logo',
-                                                                            )));
+      // Desktop Image
+      $wp_customize->add_setting('desktop_image', array(
+        'default' => ''
+      ));
+      $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'desktop_image', array(
+        'label' => 'Image',
+        'section' => 'site_logos_section',
+        'settings' => 'desktop_image',
+        'description' => 'Default logo',
+      )));
 
-                                                                            // Desktop Width
-                                                                            $wp_customize->add_setting('desktop_width', array(
-                                                                              'default' => ''
-                                                                            ));
-                                                                            $wp_customize->add_control('desktop_width', array(
-                                                                              'label' => 'Width',
-                                                                              'section' => 'site_logos_section',
-                                                                              'type' => 'number',
-                                                                            ));
+      // Desktop Width
+      $wp_customize->add_setting('desktop_width', array(
+        'default' => ''
+      ));
+      $wp_customize->add_control('desktop_width', array(
+        'label' => 'Width',
+        'section' => 'site_logos_section',
+        'type' => 'number',
+      ));
 
-                                                                            // Desktop Height
-                                                                            $wp_customize->add_setting('desktop_height', array(
-                                                                              'default' => ''
-                                                                            ));
-                                                                            $wp_customize->add_control('desktop_height', array(
-                                                                              'label' => 'Height',
-                                                                              'section' => 'site_logos_section',
-                                                                              'type' => 'number',
-                                                                            ));
+      // Desktop Height
+      $wp_customize->add_setting('desktop_height', array(
+        'default' => ''
+      ));
+      $wp_customize->add_control('desktop_height', array(
+        'label' => 'Height',
+        'section' => 'site_logos_section',
+        'type' => 'number',
+      ));
 
-                                                                            // Mobile Divider
-                                                                            $wp_customize->add_setting(
-                                                                              'mobile_divider',
-                                                                              array(
-                                                                                'default' => ''
-                                                                              )
-                                                                            );
-                                                                            $wp_customize->add_control(new Section_Divider_Control(
-                                                                              $wp_customize,
-                                                                              'mobile_divider',
-                                                                              array(
-                                                                                'label' => 'Mobile',
-                                                                                'section' => 'site_logos_section'
-                                                                              )
-                                                                            ));
+      // Mobile Divider
+      $wp_customize->add_setting(
+        'mobile_divider',
+        array(
+          'default' => ''
+        )
+      );
+      $wp_customize->add_control(new Section_Divider_Control(
+        $wp_customize,
+        'mobile_divider',
+        array(
+          'label' => 'Mobile',
+          'section' => 'site_logos_section'
+        )
+      ));
 
-                                                                            // Mobile Image
-                                                                            $wp_customize->add_setting('mobile_image', array(
-                                                                              'default' => ''
-                                                                            ));
-                                                                            $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'mobile_image', array(
-                                                                              'label' => 'Image',
-                                                                              'section' => 'site_logos_section',
-                                                                              'settings' => 'mobile_image',
-                                                                              'description' => 'Leave blank to use desktop logo',
-                                                                            )));
+      // Mobile Image
+      $wp_customize->add_setting('mobile_image', array(
+        'default' => ''
+      ));
+      $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'mobile_image', array(
+        'label' => 'Image',
+        'section' => 'site_logos_section',
+        'settings' => 'mobile_image',
+        'description' => 'Leave blank to use desktop logo',
+      )));
 
-                                                                            // Mobile Width
-                                                                            $wp_customize->add_setting('mobile_width', array(
-                                                                              'default' => ''
-                                                                            ));
-                                                                            $wp_customize->add_control('mobile_width', array(
-                                                                              'label' => 'Width',
-                                                                              'section' => 'site_logos_section',
-                                                                              'type' => 'number',
-                                                                            ));
+      // Mobile Width
+      $wp_customize->add_setting('mobile_width', array(
+        'default' => ''
+      ));
+      $wp_customize->add_control('mobile_width', array(
+        'label' => 'Width',
+        'section' => 'site_logos_section',
+        'type' => 'number',
+      ));
 
-                                                                            // Mobile Height
-                                                                            $wp_customize->add_setting('mobile_height', array(
-                                                                              'default' => ''
-                                                                            ));
-                                                                            $wp_customize->add_control('mobile_height', array(
-                                                                              'label' => 'Height',
-                                                                              'section' => 'site_logos_section',
-                                                                              'type' => 'number',
-                                                                            ));
+      // Mobile Height
+      $wp_customize->add_setting('mobile_height', array(
+        'default' => ''
+      ));
+      $wp_customize->add_control('mobile_height', array(
+        'label' => 'Height',
+        'section' => 'site_logos_section',
+        'type' => 'number',
+      ));
 
-                                                                            // Footer Divider
-                                                                            $wp_customize->add_setting(
-                                                                              'footer_divider',
-                                                                              array(
-                                                                                'default' => ''
-                                                                              )
-                                                                            );
-                                                                            $wp_customize->add_control(new Section_Divider_Control(
-                                                                              $wp_customize,
-                                                                              'footer_divider',
-                                                                              array(
-                                                                                'label' => 'Footer',
-                                                                                'section' => 'site_logos_section'
-                                                                              )
-                                                                            ));
+      // Footer Divider
+      $wp_customize->add_setting(
+        'footer_divider',
+        array(
+          'default' => ''
+        )
+      );
+      $wp_customize->add_control(new Section_Divider_Control(
+        $wp_customize,
+        'footer_divider',
+        array(
+          'label' => 'Footer',
+          'section' => 'site_logos_section'
+        )
+      ));
 
-                                                                            // Footer Image
-                                                                            $wp_customize->add_setting('footer_image', array(
-                                                                              'default' => ''
-                                                                            ));
-                                                                            $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_image', array(
-                                                                              'label' => 'Image',
-                                                                              'section' => 'site_logos_section',
-                                                                              'settings' => 'footer_image',
-                                                                              'description' => 'Leave blank to use desktop logo',
-                                                                            )));
+      // Footer Image
+      $wp_customize->add_setting('footer_image', array(
+        'default' => ''
+      ));
+      $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_image', array(
+        'label' => 'Image',
+        'section' => 'site_logos_section',
+        'settings' => 'footer_image',
+        'description' => 'Leave blank to use desktop logo',
+      )));
 
-                                                                            // Footer Width
-                                                                            $wp_customize->add_setting('footer_width', array(
-                                                                              'default' => ''
-                                                                            ));
-                                                                            $wp_customize->add_control('footer_width', array(
-                                                                              'label' => 'Width',
-                                                                              'section' => 'site_logos_section',
-                                                                              'type' => 'number',
-                                                                            ));
+      // Footer Width
+      $wp_customize->add_setting('footer_width', array(
+        'default' => ''
+      ));
+      $wp_customize->add_control('footer_width', array(
+        'label' => 'Width',
+        'section' => 'site_logos_section',
+        'type' => 'number',
+      ));
 
-                                                                            // Footer Height
-                                                                            $wp_customize->add_setting('footer_height', array(
-                                                                              'default' => ''
-                                                                            ));
-                                                                            $wp_customize->add_control('footer_height', array(
-                                                                              'label' => 'Height',
-                                                                              'section' => 'site_logos_section',
-                                                                              'type' => 'number',
-                                                                            ));
-                                                                          }
-                                                                          add_action('customize_register', 'add_site_logos_to_customize');
-                                                                        }
+      // Footer Height
+      $wp_customize->add_setting('footer_height', array(
+        'default' => ''
+      ));
+      $wp_customize->add_control('footer_height', array(
+        'label' => 'Height',
+        'section' => 'site_logos_section',
+        'type' => 'number',
+      ));
+    }
+    add_action('customize_register', 'add_site_logos_to_customize');
+  }
 
-                                                                        /* Menu Class Names
+
+/* Menu Class Names
 ========================================================= */
-
-                                                                        function add_depth_to_nav_class($classes, $item, $args, $depth) {
-                                                                          $classes[] = 'depth-' . $depth;
-                                                                          return $classes;
-                                                                        }
-                                                                        add_filter('nav_menu_css_class', 'add_depth_to_nav_class', 10, 4);
+function add_depth_to_nav_class($classes, $item, $args, $depth) {
+  $classes[] = 'depth-' . $depth;
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'add_depth_to_nav_class', 10, 4); 
