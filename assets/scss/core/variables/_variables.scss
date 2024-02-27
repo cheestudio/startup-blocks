@@ -18,13 +18,13 @@
 ========================================================= */
 $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
-  @return math.div($pixels, $context) + em;
+  @return math.div($pixels, $context) * 1rem;
 }
 
 /* REM to PX
 ========================================================= */
 @function rem($size) {
-  @return (math.div($size, 16) + rem);
+  @return math.div($size, 16) * 1rem;
 }
 
 /* BG Image
@@ -48,16 +48,16 @@ $browser-context: 16; // Default
   $bottom-small: $bottom-medium
 ) {
   @include for-size(tablet, up, offset) {
-    padding-top: $top-large + px;
-    padding-bottom: $bottom-large + px;
+    padding-top: $top-large * 1px;
+    padding-bottom: $bottom-large * 1px;
   }
   @include for-size(tablet) {
-    padding-top: $top-medium + px;
-    padding-bottom: $bottom-medium + px;
+    padding-top: $top-medium * 1px;
+    padding-bottom: $bottom-medium * 1px;
   }
   @include for-size(tablet-sm) {
-    padding-top: $top-small + px;
-    padding-bottom: $bottom-small + px;
+    padding-top: $top-small * 1px;
+    padding-bottom: $bottom-small * 1px;
   }
 }
 

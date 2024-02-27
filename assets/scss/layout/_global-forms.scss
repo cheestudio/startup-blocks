@@ -13,12 +13,12 @@ $border-radius: 0;
 $box-shadow: none;
 
 @mixin formInputStyles {
-  border-top-width: $border-width-top + px;
-  border-bottom-width: $border-width-bottom + px;
-  border-right-width: $border-width-right + px;
-  border-left-width: $border-width-left + px;
+  border-top-width: $border-width-top * 1px;
+  border-bottom-width: $border-width-bottom * 1px;
+  border-right-width: $border-width-right * 1px;
+  border-left-width: $border-width-left * 1px;
   border-color: $border-color;
-  border-radius: $border-radius + px;
+  border-radius: $border-radius * 1px;
   box-shadow: $box-shadow;
   &:hover,
   &:focus {
@@ -157,12 +157,12 @@ $box-shadow: none;
     margin-bottom: 25px;
     border-color: $border-color-error;
     padding: 25px 20px !important;
-    border-top-width: $border-width-top + px !important;
-    border-bottom-width: $border-width-bottom + px !important;
-    border-right-width: $border-width-right + px !important;
-    border-left-width: $border-width-left + px !important;
+    border-top-width: $border-width-top * 1px !important;
+    border-bottom-width: $border-width-bottom * 1px !important;
+    border-right-width: $border-width-right * 1px !important;
+    border-left-width: $border-width-left * 1px !important;
     border-color: $border-color-error !important;
-    border-radius: $border-radius + px !important;
+    border-radius: $border-radius * 1px !important;
     box-shadow: $box-shadow !important;
     h2.gform_submission_error {
       @include font("body");
