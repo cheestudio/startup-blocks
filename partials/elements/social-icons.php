@@ -7,9 +7,10 @@ if ( function_exists('get_field') ) :
     <div class="social-icons">
       <ul>
         <?php foreach ( $icons as $icon ) :
-          $title = $icon['title'];
+          $title = $icon['title'] ?: "social media page";
           $link  = $icon['link'];
           $class = $icon['class_name']; ?>
+          <?php if (!empty($link) && !empty($class)) : ?>
           <li>
             <a 
             href   = "<?= $link; ?>"
@@ -18,12 +19,13 @@ if ( function_exists('get_field') ) :
             target = "_blank"
             >
             <span class="fab fa-<?= $class; ?>"></span>
-            </a>
-          </li>
+          </a>
+        </li>
+      <?php endif; ?>
 
-        <?php endforeach; ?>
-      </ul>
-    </div>
-  <?php endif; ?>
+    <?php endforeach; ?>
+  </ul>
+</div>
+<?php endif; ?>
 
 <?php endif; ?>
