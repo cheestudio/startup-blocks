@@ -11,10 +11,9 @@ $link-background: white;
 $link-color: black;
 $link-border-color: lightgray;
 
-$link-hover-background: black;
-$link-hover-color: white;
+$link-hover-color: red;
 
-$link-current-background: transparent;
+$link-current-background: white;
 $link-current-color: red;
 
 /* Initiate Mobile Nav
@@ -168,14 +167,14 @@ $link-current-color: red;
             margin: 0;
             padding: 10px 20px;
             background-color: $link-background;
-            &:hover,
-            &:focus {
-              background-color: $link-hover-background;
-              color: $link-hover-color;
-              ~ .expand {
-                background-color: $link-hover-background;
-                > svg path {
-                  stroke: $link-hover-color;
+            &:not(.expand) {
+              &:hover,
+              &:focus {
+                color: $link-hover-color;
+                ~ .expand {
+                  > svg path {
+                    stroke: $link-hover-color;
+                  }
                 }
               }
             }

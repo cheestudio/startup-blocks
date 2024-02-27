@@ -1803,18 +1803,13 @@ img {
     padding: 10px 20px;
     background-color: #fff
   }
-  .mobile-nav-wrap .mobile-nav ul li a:focus,
-  .mobile-nav-wrap .mobile-nav ul li a:hover {
-    background-color: #000;
-    color: #fff
+  .mobile-nav-wrap .mobile-nav ul li a:not(.expand):focus,
+  .mobile-nav-wrap .mobile-nav ul li a:not(.expand):hover {
+    color: red
   }
-  .mobile-nav-wrap .mobile-nav ul li a:focus ~ .expand,
-  .mobile-nav-wrap .mobile-nav ul li a:hover ~ .expand {
-    background-color: #000
-  }
-  .mobile-nav-wrap .mobile-nav ul li a:focus ~ .expand > svg path,
-  .mobile-nav-wrap .mobile-nav ul li a:hover ~ .expand > svg path {
-    stroke: #fff
+  .mobile-nav-wrap .mobile-nav ul li a:not(.expand):focus ~ .expand > svg path,
+  .mobile-nav-wrap .mobile-nav ul li a:not(.expand):hover ~ .expand > svg path {
+    stroke: red
   }
   .mobile-nav-wrap .mobile-nav ul li .expand {
     display: inline-flex;
@@ -1828,7 +1823,7 @@ img {
   }
   .mobile-nav-wrap .mobile-nav ul li .expand:focus svg path,
   .mobile-nav-wrap .mobile-nav ul li .expand:hover svg path {
-    stroke: #fff
+    stroke: red
   }
   .mobile-nav-wrap .mobile-nav ul li .expand svg {
     transition: .6s cubic-bezier(.23,1,.32,1);
@@ -1865,7 +1860,7 @@ img {
   .mobile-nav-wrap .mobile-nav ul li.current-menu-item > a,
   .mobile-nav-wrap .mobile-nav ul li.current-page-ancestor > a,
   .mobile-nav-wrap .mobile-nav ul li.current_page_item > a {
-    background-color: transparent;
+    background-color: #fff;
     color: red
   }
   .mobile-nav-wrap.open {
