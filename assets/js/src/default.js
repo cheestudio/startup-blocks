@@ -37,23 +37,35 @@ function debounce(func, delay) {
   // Doc Ready
 
   /* MOBILE NAV
-========================================================= */
+  ========================================================= */
+  // Close Mobile Menu
+  function closeMobileMenu() {
+    $(".mobile-nav-wrap .mobile-nav").fadeToggle();
+    $(".mobile-nav-wrap .mobile-nav .sub-menu").removeClass("sub-open");
+    $(".mobile-nav-wrap").toggleClass("open");
+    return false;
+  }
 
   // Mobile Nav Toggle
   $(".navbar-toggle").click(function () {
-    $(".mobile-nav").fadeToggle();
-    $(this).parents(".mobile-nav-wrap").toggleClass("open");
-    $(".sub-menu").removeClass("sub-open");
-    return false;
+    closeMobileMenu();
   });
 
-  // Mobile Nav with Dropdown Menus
+  // Mobile menu close on # link
+  $(".mobile-menu li a:not('.expand')").click(function(e) {
+    const link = $(this).attr('href');
+    if (link.length > 0 && link.includes('#')) {
+      e.preventDefault();
+      closeMobileMenu();
+    }
+  });
 
+  // Mobile Nav with Expandable Menus
   $(".mobile-menu li")
-    .has("ul")
-    .find("> a")
-    .after(
-      '<a href="#" class="expand" aria-label="Expand Menu"><svg viewBox="0 0 15 15" width="15" height="15" xmlns="http://www.w3.org/2000/svg" role="img"><path fill="none" stroke="#000000" stroke-width="3" d="M4.7,13.1l5.6-5.6L4.7,1.9"/></svg></a>'
+  .has("ul")
+  .find("> a")
+  .after(
+    '<a href="#" class="expand" aria-label="Expand Menu"><svg viewBox="0 0 15 15" width="15" height="15" xmlns="http://www.w3.org/2000/svg" role="img"><path fill="none" stroke="#000000" stroke-width="3" d="M4.7,13.1l5.6-5.6L4.7,1.9"/></svg></a>'
     );
   $(".mobile-menu .menu-item-has-children > .expand").click(function (e) {
     e.preventDefault();
@@ -70,27 +82,27 @@ function debounce(func, delay) {
   });
 
   /* SMOOTH INTERNAL LINKS
-========================================================= */
+  ========================================================= */
   $('a[href^="#"]')
-    .not('[href="#"]')
-    .click(function (event) {
-      if (!$(this).hasClass("no-scroll")) {
-        if (
-          location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") &&
-          location.hostname == this.hostname
+  .not('[href="#"]')
+  .click(function (event) {
+    if (!$(this).hasClass("no-scroll")) {
+      if (
+        location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") &&
+        location.hostname == this.hostname
         ) {
-          var target = $(this.hash);
-          target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
-          if (target.length) {
-            event.preventDefault();
-            $("html, body").animate(
-              {
-                scrollTop: target.offset().top,
-              },
-              800
-            );
-          }
-        }
+        var target = $(this.hash);
+      target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+      if (target.length) {
+        event.preventDefault();
+        $("html, body").animate(
+        {
+          scrollTop: target.offset().top,
+        },
+        800
+        );
       }
-    });
+    }
+  }
+});
 })(jQuery); // End Document Ready
