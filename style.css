@@ -1839,21 +1839,6 @@ img {
     transition: .6s cubic-bezier(.23,1,.32,1);
     stroke: #000
   }
-  .mobile-nav-wrap .mobile-nav ul li .close-sub {
-    transition: .6s cubic-bezier(.23,1,.32,1);
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 30px;
-    background: url(assets/img/svg/nav-arrow-left.svg) center no-repeat;
-    background-color: transparent!important;
-    z-index: 2000
-  }
-  .mobile-nav-wrap .mobile-nav ul li .close-sub:focus,
-  .mobile-nav-wrap .mobile-nav ul li .close-sub:hover {
-    transform: translateX(-5px)
-  }
   .mobile-nav-wrap .mobile-nav ul li .sub-menu {
     margin: 0;
     padding: 0;

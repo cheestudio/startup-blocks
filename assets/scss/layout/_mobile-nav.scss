@@ -209,22 +209,6 @@ $link-current-color: red;
             }
           }
 
-          .close-sub {
-            @include trans;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 30px;
-            background: url(assets/img/svg/nav-arrow-left.svg) center no-repeat;
-            background-color: transparent !important;
-            z-index: 2000;
-            &:hover,
-            &:focus {
-              transform: translateX(-5px);
-            }
-          }
-
           .sub-menu {
             @include list-reset;
             display: none;
