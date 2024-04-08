@@ -11,8 +11,12 @@ $options
     A list of valid brand icons <a target="_blank" href="https://fontawesome.com/v5/search?o=r&m=free&f=brands">can be viewed here</a></p>'
   ])
     ->addText('title')
-    ->addURL('link')
-    ->addText('class_name')
+    ->addURL('link', [
+      'required' => 1,
+    ])
+    ->addText('class_name', [
+      'required' => 1,
+    ])
   ->endRepeater()
 ->addTab('Custom Scripts')
   ->addTextarea('head_code')
