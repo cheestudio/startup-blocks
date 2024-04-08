@@ -36,7 +36,7 @@ $box-shadow: none;
 
   // Global
   form {
-    input[type],
+    input:not([type="checkbox"]):not([type="radio"]):not([type="number"]):not([type="file"]):not([type="submit"]),
     select,
     textarea {
       @include trans($dur: 300);
