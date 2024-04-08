@@ -4,9 +4,10 @@
 ========================================================= */
 add_theme_support( 'title-tag' );
 
-/* Add Post Thumbnails (add CPT, page, etc to array as needed)
+/* Add Post Thumbnails (add CPT, page, etc to array as needed, or uncomment first for all)
 ========================================================= */
-add_theme_support('post-thumbnails');
+// add_theme_support('post-thumbnails');
+add_theme_support('post-thumbnails', array('post'));
 
 /* Additional Gutenberg Alignment Classes
 ========================================================= */
