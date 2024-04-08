@@ -302,46 +302,6 @@ function custom_order_post_type($query) {
   return $query;
 }
 
-/* Output inline SVG
-========================================================= */
-function svg_inline($filename = false, $path = false, $echo = true) {
-
-  // set file path (default to /assets/ dir)
-  if ($path) {
-    $filepath = $path;
-  } else if ($filename) {
-    $filepath = get_stylesheet_directory_uri() . '/assets/img/svg/' . $filename;
-  } else {
-    return false;
-  }
-
-  // require mime type .svg & valid url
-  $args_get = array(
-    'headers' => array(
-      'Content-Type' => 'image/svg+xml',
-    ),
-    'response' => array(
-      'code' => 200,
-    )
-  );
-
-  // get file using above settings
-  $svg_file = wp_safe_remote_get($filepath, $args_get);
-
-  // exit if fail
-  if (is_wp_error($svg_file) || $svg_file['response']['code'] != 200 || $svg_file['headers']['content-type'] != 'image/svg+xml') {
-    return false;
-  }
-
-  // if file found, output or return result
-  else {
-    if ($echo) {
-      echo wp_remote_retrieve_body($svg_file);
-    } else {
-      return wp_remote_retrieve_body($svg_file);
-    }
-  }
-}
 
 /* Limit Post Revisions
 ========================================================= */
@@ -431,16 +391,16 @@ add_action('init', function () {
 add_action('admin_head', 'custom_admin_css');
 function custom_admin_css() {
   echo '<style>
-  #adminmenu li.wp-menu-separator {
-  margin:10px 0 5px 0;
-}
+    #adminmenu li.wp-menu-separator {
+    margin:10px 0 5px 0;
+  }
   #adminmenu div.separator {
-background:rgba(255,255,255,0.1);
-} 
+    background:rgba(255,255,255,0.1);
+  } 
   #adminmenu .wp-submenu-head, #adminmenu a.menu-top {
-font-size:13px;
-}
-</style>';
+    font-size:13px;
+  }
+  </style>';
 }
 
 /* Disable Pingbacks
