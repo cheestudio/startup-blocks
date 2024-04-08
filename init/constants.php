@@ -1,5 +1,12 @@
 <?php
 
+/* Disable tags support in posts (optional)
+========================================================= */
+// add_action('init', 'custom_unregister_tags');
+// function custom_unregister_tags() {
+//   unregister_taxonomy_for_object_type('post_tag', 'post');
+// }
+
 /* Add Title Tag Support to wp_head();
 ========================================================= */
 add_theme_support( 'title-tag' );
