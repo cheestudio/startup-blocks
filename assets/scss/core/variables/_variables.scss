@@ -123,16 +123,8 @@ $browser-context: 16; // Default
 }
 
 @mixin padding-remove {
-  margin-left: -#{$padding-lg};
-  margin-right: -#{$padding-lg};
-  @include for-size(tablet) {
-    margin-left: -#{$padding-md};
-    margin-right: -#{$padding-md};
-  }
-  @include for-size(tablet-sm) {
-    margin-left: -#{$padding-sm};
-    margin-right: -#{$padding-sm};
-  }
+  margin-left: $padding-side * -1;
+  margin-right: $padding-side * -1;
 }
 
 @mixin center($dir: "vert") {
