@@ -33,6 +33,11 @@ function debounce(func, delay) {
   };
 }
 
+// Media Breakpoint ('min' or 'max')
+function mediaBreakpoint(dir, size) {
+  return window.matchMedia(`(${dir}-width: ${size}px)`).matches;
+}
+
 (function ($) {
   // Doc Ready
 
@@ -52,9 +57,9 @@ function debounce(func, delay) {
   });
 
   // Mobile menu close on # link
-  $(".mobile-menu li a:not('.expand')").click(function(e) {
-    const link = $(this).attr('href');
-    if (link.length > 0 && link.includes('#')) {
+  $(".mobile-menu li a:not('.expand')").click(function (e) {
+    const link = $(this).attr("href");
+    if (link.length > 0 && link.includes("#")) {
       e.preventDefault();
       closeMobileMenu();
     }
@@ -62,10 +67,10 @@ function debounce(func, delay) {
 
   // Mobile Nav with Expandable Menus
   $(".mobile-menu li")
-  .has("ul")
-  .find("> a")
-  .after(
-    '<a href="#" class="expand" aria-label="Expand Menu"><svg viewBox="0 0 15 15" width="15" height="15" xmlns="http://www.w3.org/2000/svg" role="img"><path fill="none" stroke="#000000" stroke-width="3" d="M4.7,13.1l5.6-5.6L4.7,1.9"/></svg></a>'
+    .has("ul")
+    .find("> a")
+    .after(
+      '<a href="#" class="expand" aria-label="Expand Menu"><svg viewBox="0 0 15 15" width="15" height="15" xmlns="http://www.w3.org/2000/svg" role="img"><path fill="none" stroke="#000000" stroke-width="3" d="M4.7,13.1l5.6-5.6L4.7,1.9"/></svg></a>'
     );
   $(".mobile-menu .menu-item-has-children > .expand").click(function (e) {
     e.preventDefault();
@@ -84,25 +89,25 @@ function debounce(func, delay) {
   /* SMOOTH INTERNAL LINKS
   ========================================================= */
   $('a[href^="#"]')
-  .not('[href="#"]')
-  .click(function (event) {
-    if (!$(this).hasClass("no-scroll")) {
-      if (
-        location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") &&
-        location.hostname == this.hostname
+    .not('[href="#"]')
+    .click(function (event) {
+      if (!$(this).hasClass("no-scroll")) {
+        if (
+          location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") &&
+          location.hostname == this.hostname
         ) {
-        var target = $(this.hash);
-      target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
-      if (target.length) {
-        event.preventDefault();
-        $("html, body").animate(
-        {
-          scrollTop: target.offset().top,
-        },
-        800
-        );
+          var target = $(this.hash);
+          target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+          if (target.length) {
+            event.preventDefault();
+            $("html, body").animate(
+              {
+                scrollTop: target.offset().top,
+              },
+              800
+            );
+          }
+        }
       }
-    }
-  }
-});
+    });
 })(jQuery); // End Document Ready
