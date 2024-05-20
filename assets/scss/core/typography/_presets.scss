@@ -2,85 +2,39 @@
 ========================================================= */
 
 %preset1 {
-  @include font('heading');
-  font-size: rem(60);
+  @include font("heading");
+  font-size: resize(50, 60, 480, 1280);
   line-height: 1.2;
-  // font-size: resize(40, 60, 768, 1440);
-  @include for-size(laptop) {
-    // font-size: rem(50);
-  }
-  @include for-size(tablet) {
-    // font-size: rem(45);
-  }
-  @include for-size(tablet-sm) {
-    // font-size: rem(40);
-  }
-
 }
 
 %preset2 {
-  @include font('heading');
-  font-size: rem(50);
+  @include font("heading");
+  font-size: resize(40, 50, 480, 1280);
   line-height: 1.2;
-  @include for-size(laptop) {
-    // font-size: rem(40);
-  }
-  @include for-size(tablet) {
-    // font-size: rem(35);
-  }
-  @include for-size(tablet-sm) {
-    // font-size: rem(30);
-  }
 }
 
 %preset3 {
-  @include font('heading');
-  font-size: rem(40);
+  @include font("heading");
+  font-size: resize(30, 40, 480, 1280);
   line-height: 1.2;
-  @include for-size(laptop) {
-    // font-size: rem(35);
-  }
-  @include for-size(tablet) {
-    // font-size: rem(30);
-  }
-  @include for-size(tablet-sm) {
-    // font-size: rem(25);
-  }
-
 }
 
 %preset4 {
-  @include font('heading');
-  font-size: rem(30);
+  @include font("heading");
+  font-size: resize(25, 30, 480, 1280);
   line-height: 1.2;
-  @include for-size(laptop) {
-    // font-size: rem(30);
-  }
-  @include for-size(tablet) {
-    // font-size: rem(25);
-  }
-  @include for-size(tablet-sm) {
-    // font-size: rem(20);
-  }
-
 }
 
 %preset5 {
-  @include font('heading');
-  font-size: rem(24);
+  @include font("heading");
+  font-size: resize(20, 25, 480, 1280);
   line-height: 1.2;
-  @include for-size(tablet) {
-    // font-size: rem(20);
-  }
 }
 
 %preset6 {
-  @include font('heading');
-  font-size: rem(20);
+  @include font("heading");
+  font-size: resize(18, 20, 480, 1280);
   line-height: 1.2;
-  @include for-size(tablet) {
-    // font-size: rem(16);
-  }
 }
 
 %body-copy {
