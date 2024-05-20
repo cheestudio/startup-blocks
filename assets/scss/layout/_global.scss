@@ -1,7 +1,10 @@
 /* Core Global Styles
 ========================================================= */
 
-*, * * { box-sizing: border-box; }
+*,
+* * {
+  box-sizing: border-box;
+}
 
 ::selection {
   background: black;
@@ -14,23 +17,26 @@
 a {
   text-decoration: none;
 }
-a:active, a:hover {
+a:active,
+a:hover {
   outline: 0;
 }
-a[href^=tel] {
+a[href^="tel"] {
   color: inherit;
   text-decoration: none;
 }
 abbr[title] {
   border-bottom: 1px dotted;
 }
-b, strong {
+b,
+strong {
   font-weight: 700;
 }
 blockquote {
   margin: 30px;
 }
-dfn, em {
+dfn,
+em {
   font-style: italic;
 }
 hr {
@@ -44,8 +50,11 @@ mark {
   background: #ff0;
   color: #000;
 }
-code, kbd, pre, samp {
-  font-family: monospace,serif;
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
   font-size: 1em;
 }
 pre {
@@ -63,8 +72,9 @@ pre {
 q {
   quotes: none;
 }
-q:before, q:after {
-  content: '';
+q:before,
+q:after {
+  content: "";
   content: none;
 }
 small {
@@ -86,14 +96,18 @@ sup {
 sub {
   bottom: -0.25em;
 }
-dl, menu, ol, ul {
+dl,
+menu,
+ol,
+ul {
   margin: 25px;
   padding: 0;
 }
 dd {
   margin: 0 0 0 20px;
 }
-nav ul, nav ol {
+nav ul,
+nav ol {
   list-style: none;
   list-style-image: none;
 }
@@ -110,7 +124,8 @@ svg {
   max-width: 100%;
   height: auto;
 }
-figure, form {
+figure,
+form {
   margin: 0;
 }
 figure {
@@ -121,7 +136,7 @@ figure {
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
-  padding: .35em .625em .75em;
+  padding: 0.35em 0.625em 0.75em;
 }
 legend {
   border: 0;
@@ -129,43 +144,54 @@ legend {
   white-space: normal;
   *margin-left: -7px;
 }
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-size: 100%;
   margin: 0;
   vertical-align: baseline;
   *vertical-align: middle;
   font-family: inherit;
 }
-button, input {
+button,
+input {
   line-height: normal;
 }
-button, select {
+button,
+select {
   text-transform: none;
 }
-button, html input[type=button] {
+button,
+html input[type="button"] {
   cursor: pointer;
   *overflow: visible;
 }
-input[type=reset], input[type=submit] {
+input[type="reset"],
+input[type="submit"] {
   cursor: pointer;
   *overflow: visible;
 }
-button[disabled], html input[disabled] {
+button[disabled],
+html input[disabled] {
   cursor: default;
 }
-input[type=checkbox], input[type=radio] {
+input[type="checkbox"],
+input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
   *height: 13px;
   *width: 13px;
 }
-input[type=search] {
+input[type="search"] {
   box-sizing: content-box;
 }
-input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -180,20 +206,25 @@ table {
 
 /* Buttons
 ========================================================= */
-button, .button, input[type="submit"] {
+button,
+.button,
+input[type="submit"] {
   @include button;
 }
-.button::-moz-focus-inner, button::-moz-focus-inner {
+.button::-moz-focus-inner,
+button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
-.button:focus, button:focus {
+.button:focus,
+button:focus {
   outline: 0;
 }
-.button[disabled], button[disabled] {
+.button[disabled],
+button[disabled] {
   border: 0;
   background-image: none;
-  opacity: .4;
+  opacity: 0.4;
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -208,11 +239,12 @@ table {
 }
 table caption {
   color: black;
-  font: italic 85% / 1 arial,sans-serif;
+  font: italic 85% / 1 arial, sans-serif;
   padding: 1em 0;
   text-align: center;
 }
-table td, table th {
+table td,
+table th {
   border-left: 1px solid #cbcbcb;
   border-width: 0 0 0 1px;
   font-size: inherit;
@@ -220,7 +252,8 @@ table td, table th {
   overflow: visible;
   padding: 6px 12px;
 }
-table td:first-child, table th:first-child {
+table td:first-child,
+table th:first-child {
   border-left-width: 0;
 }
 table thead {
@@ -241,7 +274,8 @@ table td {
 .table-horizontal tbody > tr:last-child td {
   border-bottom-width: 0;
 }
-.table-horizontal td, .table-horizontal th {
+.table-horizontal td,
+.table-horizontal th {
   border-width: 0 0 1px;
   border-bottom: 1px solid #cbcbcb;
 }
@@ -279,7 +313,7 @@ img {
 /* WordPress
 ========================================================= */
 .aligncenter {
-  margin: 15px auto;
+  margin: 0 auto;
   display: block;
 }
 .alignleft {
@@ -339,7 +373,6 @@ img {
   text-align: center;
 }
 
-
 /* Text meant only for screen readers. */
 .screen-reader-text {
   border: 0;
@@ -351,27 +384,27 @@ img {
   padding: 0;
   position: absolute !important;
   width: 1px;
-    word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-    &:focus {
-      background-color: black;
-      border-radius: 3px;
-      border: none;
-      clip: auto !important;
-      clip-path: none;
-      color: #fff;
-      display: block;
-      font-size: rem(20);
-      font-weight: 700;
-      height: auto;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      line-height: normal;
-      padding: 10px;
-      text-decoration: none;
-      top: 50px;
-      width: 150px;
-      text-align: center;
-        z-index: 100000; /* Above WP toolbar. */
-      }
-    }
+  word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+  &:focus {
+    background-color: black;
+    border-radius: 3px;
+    border: none;
+    clip: auto !important;
+    clip-path: none;
+    color: #fff;
+    display: block;
+    font-size: rem(20);
+    font-weight: 700;
+    height: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    line-height: normal;
+    padding: 10px;
+    text-decoration: none;
+    top: 50px;
+    width: 150px;
+    text-align: center;
+    z-index: 100000; /* Above WP toolbar. */
+  }
+}
