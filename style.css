@@ -894,9 +894,6 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   -ms-user-select: none;
   user-select: none
 }
-.fancybox__container:-webkit-full-screen::backdrop {
-  opacity: 0
-}
 .fancybox__container:-ms-fullscreen::backdrop {
   opacity: 0
 }
@@ -909,17 +906,11 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .fancybox__button--fullscreen g:nth-child(2) {
   display: none
 }
-.fancybox__container:-webkit-full-screen .fancybox__button--fullscreen g:nth-child(1) {
-  display: none
-}
 .fancybox__container:-ms-fullscreen .fancybox__button--fullscreen g:nth-child(1) {
   display: none
 }
 .fancybox__container:fullscreen .fancybox__button--fullscreen g:nth-child(1) {
   display: none
-}
-.fancybox__container:-webkit-full-screen .fancybox__button--fullscreen g:nth-child(2) {
-  display: block
 }
 .fancybox__container:-ms-fullscreen .fancybox__button--fullscreen g:nth-child(2) {
   display: block
@@ -946,7 +937,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .gform_wrapper.gravity-theme .gform_heading {
   display: none
 }
-.gform_wrapper.gravity-theme form input[type],
+.gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit]),
 .gform_wrapper.gravity-theme form select,
 .gform_wrapper.gravity-theme form textarea {
   transition: .3s cubic-bezier(.23,1,.32,1);
@@ -962,30 +953,30 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   color: #000;
   border-width: 2px
 }
-.gform_wrapper.gravity-theme form input[type]:focus,
-.gform_wrapper.gravity-theme form input[type]:hover,
+.gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit]):focus,
+.gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit]):hover,
 .gform_wrapper.gravity-theme form select:focus,
 .gform_wrapper.gravity-theme form select:hover,
 .gform_wrapper.gravity-theme form textarea:focus,
 .gform_wrapper.gravity-theme form textarea:hover {
   border-color: green
 }
-.gform_wrapper.gravity-theme form input[type]::-moz-placeholder,
+.gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit])::-moz-placeholder,
 .gform_wrapper.gravity-theme form select::-moz-placeholder,
 .gform_wrapper.gravity-theme form textarea::-moz-placeholder {
   color: #000
 }
-.gform_wrapper.gravity-theme form input[type]:-ms-input-placeholder,
+.gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit]):-ms-input-placeholder,
 .gform_wrapper.gravity-theme form select:-ms-input-placeholder,
 .gform_wrapper.gravity-theme form textarea:-ms-input-placeholder {
   color: #000
 }
-.gform_wrapper.gravity-theme form input[type]::placeholder,
+.gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit])::placeholder,
 .gform_wrapper.gravity-theme form select::placeholder,
 .gform_wrapper.gravity-theme form textarea::placeholder {
   color: #000
 }
-.gform_wrapper.gravity-theme form input[type]:focus,
+.gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit]):focus,
 .gform_wrapper.gravity-theme form select:focus,
 .gform_wrapper.gravity-theme form textarea:focus {
   border-color: green

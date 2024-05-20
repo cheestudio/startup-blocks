@@ -29,7 +29,7 @@ $browser-context: 16; // Default
 
 /* BG Image
 ========================================================= */
-@mixin bg($sizing: "cover", $position: "center", $repeat: "no-repeat") {
+@mixin bg($sizing: cover, $position: center, $repeat: no-repeat) {
   background: {
     position: $position;
     repeat: $repeat;
@@ -93,7 +93,7 @@ $browser-context: 16; // Default
   $maxSizeRem: (math.div($maxSize, 16)) * 1rem;
   $slopeViewWidth: calc(#{$slope * 100}vw);
   $yAxisRem: (math.div($yAxis, 16)) * 1rem;
-  
+
   @if ($yAxisRem == 0rem) {
     $preferredValue: clamp($minSizeRem, $slopeViewWidth, $maxSizeRem);
     @return $preferredValue;
