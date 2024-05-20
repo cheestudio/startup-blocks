@@ -25,13 +25,9 @@
   ul {
     @include list-reset;
     display: flex;
-    @include for-size(tablet-sm) {
-      justify-content: center;
-    }
+    gap: 15px;
     li {
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
+      margin: 0;
       a {
         @include trans;
         font-size: rem(20);
