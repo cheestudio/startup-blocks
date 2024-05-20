@@ -122,8 +122,9 @@ q:before {
   content: none
 }
 .container {
-  max-width: var(--wp--style--global--content-size);
-  margin: 0 auto
+  max-width: calc(var(--wp--style--global--content-size) + 40px);
+  margin: 0 auto;
+  padding: 0 20px
 }
 .grid {
   display: grid;
@@ -191,42 +192,42 @@ input[type=submit] {
 .preset1,
 h1 {
   font-family: var(--wp--preset--font-family--header);
-  font-size: 3.75rem;
+  font-size: clamp(3.125rem,2.75rem + 1.25vw,3.75rem);
   line-height: 1.2
 }
 .h2,
 .preset2,
 h2 {
   font-family: var(--wp--preset--font-family--header);
-  font-size: 3.125rem;
+  font-size: clamp(2.5rem,2.125rem + 1.25vw,3.125rem);
   line-height: 1.2
 }
 .h3,
 .preset3,
 h3 {
   font-family: var(--wp--preset--font-family--header);
-  font-size: 2.5rem;
+  font-size: clamp(1.875rem,1.5rem + 1.25vw,2.5rem);
   line-height: 1.2
 }
 .h4,
 .preset4,
 h4 {
   font-family: var(--wp--preset--font-family--header);
-  font-size: 1.875rem;
+  font-size: clamp(1.5625rem,1.375rem + .625vw,1.875rem);
   line-height: 1.2
 }
 .h5,
 .preset5,
 h5 {
   font-family: var(--wp--preset--font-family--header);
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem,1.0625rem + .625vw,1.5625rem);
   line-height: 1.2
 }
 .h6,
 .preset6,
 h6 {
   font-family: var(--wp--preset--font-family--header);
-  font-size: 1.25rem;
+  font-size: clamp(1.125rem,1.05rem + .25vw,1.25rem);
   line-height: 1.2
 }
 .gform_confirmation_wrapper .gform_confirmation_message,
@@ -1389,7 +1390,7 @@ img {
   height: 100%
 }
 .aligncenter {
-  margin: 15px auto;
+  margin: 0 auto;
   display: block
 }
 .alignleft {
@@ -1505,10 +1506,11 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex
+  display: flex;
+  gap: 15px
 }
-.social-icons ul li:not(:last-child) {
-  margin-right: 20px
+.social-icons ul li {
+  margin: 0
 }
 .social-icons ul li a {
   transition: .6s cubic-bezier(.23,1,.32,1);
@@ -1557,9 +1559,6 @@ img {
   }
 }
 @media only screen and (min-width:1025px) {
-  .container {
-    padding: 0 80px
-  }
   .hide-tablet-up {
     display: none
   }
@@ -1632,9 +1631,6 @@ img {
   }
 }
 @media only screen and (max-width:1024px) {
-  .container {
-    padding: 0 40px
-  }
   .hide-tablet,
   h1 br,
   h2 br,
@@ -1882,17 +1878,11 @@ img {
   }
 }
 @media only screen and (max-width:768px) {
-  .container {
-    padding: 0 20px
-  }
   .flex {
     flex-direction: column
   }
   .hide-mobile {
     display: none
-  }
-  .social-icons ul {
-    justify-content: center
   }
   .archive-index,
   .post-single,
