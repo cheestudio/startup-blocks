@@ -1,28 +1,30 @@
 <?php
+
 use StoutLogic\AcfBuilder\FieldsBuilder;
+
 $options = new FieldsBuilder('theme_options', ['style' => 'seamless']);
 
 $options
-->addTab('Social Media')
+  ->addTab('Social Media')
   ->addRepeater('social_media_icons', [
     'button_label' => 'Add Icon',
     'instructions' => '<p>If you are using FontAwesome icons: <br>
-    Copy the <strong><em>end</em></strong> of the class name of the icon you’re wanting to use. (e.g. <em>facebook</em>) <br>
-    A list of valid brand icons <a target="_blank" href="https://fontawesome.com/v5/search?o=r&m=free&f=brands">can be viewed here</a></p>'
+    Copy the icon name (upper left corner of the popup) you are wanting to use. (e.g. <em>facebook</em>)<br>
+    A list of valid brand icons can be <a target="_blank" href="https://fontawesome.com/search?o=r&m=free&f=brands">viewed here</a></p>'
   ])
-    ->addText('title')
-    ->addURL('link', [
-      'required' => 1,
-    ])
-    ->addText('class_name', [
-      'required' => 1,
-    ])
+  ->addText('title')
+  ->addUrl('link', [
+    'required' => 1,
+  ])
+  ->addText('class_name', [
+    'required' => 1,
+  ])
   ->endRepeater()
-->addTab('Custom Scripts')
+  ->addTab('Custom Scripts')
   ->addTextarea('head_code')
   ->addTextarea('body_code')
   ->addTextarea('footer_code')
 
-->setLocation('options_page', '==', 'theme-options');
+  ->setLocation('options_page', '==', 'theme-options');
 
 return $options;
