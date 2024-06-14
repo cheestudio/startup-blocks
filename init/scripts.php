@@ -54,18 +54,18 @@ add_action('wp_enqueue_scripts', 'post_type_scripts');*/
 
 /* Blocks
 ========================================================= */
-add_action('enqueue_block_editor_assets', 'chee_block_editor_assets');
-function chee_block_editor_assets() {
-  wp_enqueue_script(
-    'chee-block-editor',
-    get_theme_file_uri('assets/js/block-editor.js'),
-    array(
-      'wp-blocks',
-      'wp-element',
-      'wp-components',
-      'wp-editor',
-      'wp-dom-ready',
-      'wp-edit-post'
-    )
-  );
-}
+// add_action('enqueue_block_editor_assets', 'chee_block_editor_assets');
+// function chee_block_editor_assets() {
+//   wp_enqueue_script(
+//     'chee-block-editor',
+//     get_theme_file_uri('assets/js/block-editor.js'),
+//     array(
+//       'wp-blocks',
+//       'wp-element',
+//       'wp-components',
+//       'wp-editor',
+//       'wp-dom-ready',
+//       'wp-edit-post'
+//     )
+//   );
+// }
