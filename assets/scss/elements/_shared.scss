@@ -35,3 +35,17 @@
     }
   }
 }
+
+/* Smooth Scroll Links with offset
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-block-start: 130px;
+  @include for-size(tablet) {
+    scroll-margin-block-start: 70px;
+  }
+}
