@@ -8,35 +8,32 @@
 /* Typography
 ========================================================= */
 
-
 body {
   @import "elements/**/*.scss";
   .editor-styles-wrapper {
-    
     @include font;
     @import "core/typography/main";
     @import "layout/global-forms";
-    
 
     h1.wp-block-post-title {
-     font-size: 40px; 
+      font-size: 40px;
     }
-  
+
     .edit-post-visual-editor .button,
     .mce-content-body .button,
     .wp-block.editor-block .button,
-    .wp-block-freeform.block-library-rich-text__tinymce .button, .wp-block-button__link,
+    .wp-block-freeform.block-library-rich-text__tinymce .button,
+    .wp-block-button__link,
     .acf-block-preview {
       .button {
-       @include button;
-     }
+        @include button;
+      }
     }
     .wp-block-button .wp-block-button__link {
-     @include button;
-   }
+      @include button;
+    }
   }
 }
-
 
 /* Additional Styles
 ========================================================= */
@@ -53,20 +50,26 @@ body {
 .wp-block-group__inner-container {
   max-width: 1210px;
   margin: 0 auto;
-  padding:0 15px;
+  padding: 0 15px;
 }
 
 .editor-rich-text__tinymce.mce-content-body {
   line-height: 1.5;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   &.editor-rich-text__tinymce.mce-content-body {
     line-height: 1.2;
   }
 }
 .mce-content-body .editor-styles-wrapper,
 .edit-post-visual-editor,
-.editor-post-title .editor-post-title__input, .edit-post-visual-editor p {
+.editor-post-title .editor-post-title__input,
+.edit-post-visual-editor p {
   @include font();
 }
 body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text,

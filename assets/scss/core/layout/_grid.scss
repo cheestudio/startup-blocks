@@ -66,6 +66,13 @@ $padding-side: 20px;
 
 /* Gutenberg Width Fixes
 ========================================================= */
+.kb-row-layout-wrap {
+  > .kt-row-column-wrap {
+    padding-left: $padding-side;
+    padding-right: $padding-side;
+  }
+}
+
 .content-blocks {
   > *:not(.alignfull) {
     width: 100%;
@@ -74,16 +81,6 @@ $padding-side: 20px;
     margin-right: auto;
     &.alignwide {
       max-width: var(--wp--style--global--wide-size);
-    }
-  }
-  > .alignfull {
-    > .kt-row-column-wrap {
-      padding-left: $padding-side;
-      padding-right: $padding-side;
-      &.kb-theme-content-width {
-        padding-left: $padding-side;
-        padding-right: $padding-side;
-      }
     }
   }
 }
@@ -118,4 +115,7 @@ $padding-side: 20px;
   --global-kb-gap-md: 40px;
   --global-row-gutter-lg: 60px;
   --global-kb-gap-lg: 60px;
+
+  // padding
+  --global-content-edge-padding: #{$padding-side};
 }

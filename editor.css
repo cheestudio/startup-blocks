@@ -1,6 +1,7 @@
 .container {
-  max-width: var(--wp--style--global--content-size);
-  margin: 0 auto
+  max-width: calc(var(--wp--style--global--content-size) + 40px);
+  margin: 0 auto;
+  padding: 0 20px
 }
 .grid {
   display: grid;
@@ -21,6 +22,11 @@
 }
 .content-blocks > :not(.alignfull).alignwide {
   max-width: var(--wp--style--global--wide-size)
+}
+.content-blocks>.alignfull>.kt-row-column-wrap,
+.content-blocks>.alignfull>.kt-row-column-wrap.kb-theme-content-width {
+  padding-left: 20px;
+  padding-right: 20px
 }
 .wp-block-kadence-column.full-width {
   grid-column: 1/-1
@@ -91,14 +97,21 @@ body .social-icons ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex
+  display: flex;
+  gap: 15px
 }
-body .social-icons ul li:not(:last-child) {
-  margin-right: 20px
+body .social-icons ul li {
+  margin: 0
 }
 body .social-icons ul li a {
   transition: .6s cubic-bezier(.23,1,.32,1);
   font-size: 1.25rem
+}
+body html {
+  scroll-behavior: smooth
+}
+body [id] {
+  scroll-margin-block-start: 130px
 }
 body .editor-styles-wrapper {
   font-family: var(--wp--preset--font-family--body)
@@ -107,42 +120,42 @@ body .editor-styles-wrapper .h1,
 body .editor-styles-wrapper .preset1,
 body .editor-styles-wrapper h1 {
   font-family: var(--wp--preset--font-family--header);
-  font-size: 3.75rem;
+  font-size: clamp(3.125rem,2.75rem + 1.25vw,3.75rem);
   line-height: 1.2
 }
 body .editor-styles-wrapper .h2,
 body .editor-styles-wrapper .preset2,
 body .editor-styles-wrapper h2 {
   font-family: var(--wp--preset--font-family--header);
-  font-size: 3.125rem;
+  font-size: clamp(2.5rem,2.125rem + 1.25vw,3.125rem);
   line-height: 1.2
 }
 body .editor-styles-wrapper .h3,
 body .editor-styles-wrapper .preset3,
 body .editor-styles-wrapper h3 {
   font-family: var(--wp--preset--font-family--header);
-  font-size: 2.5rem;
+  font-size: clamp(1.875rem,1.5rem + 1.25vw,2.5rem);
   line-height: 1.2
 }
 body .editor-styles-wrapper .h4,
 body .editor-styles-wrapper .preset4,
 body .editor-styles-wrapper h4 {
   font-family: var(--wp--preset--font-family--header);
-  font-size: 1.875rem;
+  font-size: clamp(1.563rem,1.375rem + .625vw,1.875rem);
   line-height: 1.2
 }
 body .editor-styles-wrapper .h5,
 body .editor-styles-wrapper .preset5,
 body .editor-styles-wrapper h5 {
   font-family: var(--wp--preset--font-family--header);
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem,1.063rem + .625vw,1.563rem);
   line-height: 1.2
 }
 body .editor-styles-wrapper .h6,
 body .editor-styles-wrapper .preset6,
 body .editor-styles-wrapper h6 {
   font-family: var(--wp--preset--font-family--header);
-  font-size: 1.25rem;
+  font-size: clamp(1.125rem,1.05rem + .25vw,1.25rem);
   line-height: 1.2
 }
 body .editor-styles-wrapper .gform_confirmation_wrapper .gform_confirmation_message,
@@ -190,7 +203,7 @@ body .editor-styles-wrapper .gform_wrapper.gravity-theme {
 body .editor-styles-wrapper .gform_wrapper.gravity-theme .gform_heading {
   display: none
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type],
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit]),
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form select,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea {
   transition: .3s cubic-bezier(.23,1,.32,1);
@@ -206,30 +219,30 @@ body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea {
   color: #000;
   border-width: 2px
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]:focus,
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]:hover,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit]):focus,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit]):hover,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form select:focus,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form select:hover,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea:focus,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea:hover {
   border-color: green
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]::-moz-placeholder,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit])::-moz-placeholder,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form select::-moz-placeholder,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea::-moz-placeholder {
   color: #000
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]:-ms-input-placeholder,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit]):-ms-input-placeholder,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form select:-ms-input-placeholder,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea:-ms-input-placeholder {
   color: #000
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]::placeholder,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit])::placeholder,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form select::placeholder,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea::placeholder {
   color: #000
 }
-body .editor-styles-wrapper .gform_wrapper.gravity-theme form input[type]:focus,
+body .editor-styles-wrapper .gform_wrapper.gravity-theme form input:not([type=checkbox]):not([type=radio]):not([type=number]):not([type=file]):not([type=submit]):focus,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form select:focus,
 body .editor-styles-wrapper .gform_wrapper.gravity-theme form textarea:focus {
   border-color: green
@@ -439,18 +452,17 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
   }
 }
 @media only screen and (min-width:1025px) {
-  .container {
-    padding: 0 80px
-  }
   .hide-tablet-up {
     display: none
   }
 }
 @media only screen and (max-width:1024px) {
-  .container {
-    padding: 0 40px
+  .hide-tablet {
+    display: none
   }
-  .hide-tablet,
+  body [id] {
+    scroll-margin-block-start: 70px
+  }
   body .editor-styles-wrapper h1 br,
   body .editor-styles-wrapper h2 br,
   body .editor-styles-wrapper h3 br,
@@ -461,17 +473,11 @@ body .mce-menu-item.mce-menu-item-preview.mce-active .mce-text {
   }
 }
 @media only screen and (max-width:768px) {
-  .container {
-    padding: 0 20px
-  }
   .flex {
     flex-direction: column
   }
   .hide-mobile {
     display: none
-  }
-  body .social-icons ul {
-    justify-content: center
   }
 }
 @media only screen and (max-width:480px) {

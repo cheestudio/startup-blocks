@@ -137,6 +137,10 @@ q:before {
 .flex.wrap {
   flex-wrap: wrap
 }
+.kb-row-layout-wrap > .kt-row-column-wrap {
+  padding-left: 20px;
+  padding-right: 20px
+}
 .content-blocks > :not(.alignfull) {
   width: 100%;
   max-width: var(--wp--style--global--content-size);
@@ -165,7 +169,8 @@ q:before {
   --global-row-gutter-md: 40px;
   --global-kb-gap-md: 40px;
   --global-row-gutter-lg: 60px;
-  --global-kb-gap-lg: 60px
+  --global-kb-gap-lg: 60px;
+  --global-content-edge-padding: 20px
 }
 .button,
 .gform_wrapper.gravity-theme form .gform_footer button,
@@ -1516,6 +1521,12 @@ img {
   transition: .6s cubic-bezier(.23,1,.32,1);
   font-size: 1.25rem
 }
+html {
+  scroll-behavior: smooth
+}
+[id] {
+  scroll-margin-block-start: 130px
+}
 .posts-grid .grid {
   grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
   justify-content: center
@@ -1597,11 +1608,11 @@ img {
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center
+    align-items: center;
+    gap: 40px
   }
   .desktop-nav-wrap > ul > li {
-    padding-left: 20px;
-    padding-right: 20px
+    margin-bottom: 0
   }
   .desktop-nav-wrap > ul > li.menu-item-has-children {
     position: relative
@@ -1868,6 +1879,9 @@ img {
     background: 0 0;
     opacity: 0;
     transform: scale(0)
+  }
+  [id] {
+    scroll-margin-block-start: 70px
   }
   .archive-index,
   .post-single,
